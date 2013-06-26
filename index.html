@@ -14,6 +14,8 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/onboardingFlow.css">
+        <link rel="stylesheet" href="themes/basicTheme.min.css" />
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile.structure-1.3.1.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
@@ -24,12 +26,16 @@
 
 
         <!-- Add your site or application content here -->
-        <div data-role="page" id="one">
+        <div data-role="page" id="tour" class="clearfix">
+          <div class="marketing">
             <p>Here is our really awesome page one</p>
-            <p><a href="#two" data-role="button">Show page "two"</a></p>
+          </div>
+          <div class="signIn">
+            <a href="#startTasks" data-role="button"  data-theme="a" data-inline="true" data-transition="slide">Get Started</a>
+          </div>
         </div>
 
-        <div data-role="page" id="two">
+        <div data-role="page" id="startTasks">
             <p>Here is our really awesome page two</p>
         </div>
 

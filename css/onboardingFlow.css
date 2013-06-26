@@ -1,0 +1,25 @@
+/* -----------------------
+ * Tour/Sign In page
+ * -------------------------*/
+#tour {
+  height: 100%;
+}
+#tour .marketing {
+  background: #aaf;
+  width: 70%;
+  float: left;
+}
+#tour .signIn {
+  background: #333;
+  color: #eee;
+  width: 30%;
+  float: left;
+}
+
+
+/* -----------------------
+ * Start Tasks page
+ * -------------------------*/
+#startTasks {
+  
+}
