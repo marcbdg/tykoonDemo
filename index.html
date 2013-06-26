@@ -32,7 +32,15 @@
                     <p>Here is our really awesome page one</p>
                 </div>
                 <div class="ui-block-b signIn">
-                    <a href="#startTasks" data-role="button"  data-theme="a" data-inline="true">Get Started</a>
+                    <h2>New Users</h2>
+                    <p>We just need a little info to help you customize a plan for your kids!</p>
+                    <form method="post" id="getStartedForm">
+                        <label for="getStartedFormChildFirstName" data-theme="a">Child First Name</label>
+                        <input type="text" name="getStartedFormChildFirstName" id="getStartedFormChildFirstName" data-theme="a"/>
+                        <label for="getStartedFormChildBirthday">Birthday</label>
+                        <input type="date" id="getStartedFormChildBirthday" data-theme="a"/>
+                    </form>
+                    <a href="#startTasks" data-role="button"  data-theme="a" data-inline="true" id="getStartedFormSubmit">Get Started</a>
                 </div>
             </div>
         </div>
@@ -49,6 +57,7 @@
         <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/tykoon.js"></script>
 
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
