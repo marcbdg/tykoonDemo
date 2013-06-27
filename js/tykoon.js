@@ -8,8 +8,8 @@
 
 $(document).ready(function() {
    $('#tour').bind('resize', function(event) {
-      $('#tour').css({'min-height': '100%'});
-      $('#tour').css({'min-width': '100%'});
+      $('#tour').css({'min-height': 768});
+      $('#tour').css({'min-width': 1024});
       //alert('orientation change');
 
    });
