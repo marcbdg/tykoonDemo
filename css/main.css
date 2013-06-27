@@ -96,12 +96,25 @@ textarea {
 .ui-header {
   height: 60px;
 }
-
-
-
-
-
-
+.ui-header .logo {
+  float: left;
+  margin-left: 20px;
+}
+.ui-header .userModule {
+  float: right;
+  border-left: 1px solid #fff;
+  width: 300px;
+}
+.ui-header .userModule .avatar {
+  float: left;
+  width: 50px;
+  height: 50px;
+  margin: 5px 10px;
+}
+.ui-header .userModule .userInfo {
+  float: left;
+  padding-top: 5px;
+}
 
 
 

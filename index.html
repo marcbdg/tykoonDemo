@@ -25,12 +25,16 @@
         <![endif]-->
 
 
-        <!-- Add your site or application content here -->
+        <!-- === Tour / Sign Up page === -->
         <div data-role="page" id="tour" class="clearfix">
             <div class="ui-grid-a">
+                
+                <!-- Tour column -->
                 <div class="ui-block-a introTour">
                     <p>Here is our really awesome page one</p>
                 </div>
+                
+                <!-- Sign Up column -->
                 <div class="ui-block-b signIn">
                     <h2>New Users</h2>
                     <p>We just need a little info to help you customize a plan for your kids!</p>
@@ -43,14 +47,54 @@
                     <a href="#startTasks" data-role="button"  data-theme="a" data-inline="true" id="getStartedFormSubmit">Get Started</a>
                 </div>
             </div>
-        </div>
+            
+        </div><!-- END tour page -->
 
+
+        <!-- ===  Tasks / Pay / Goals page === -->
         <div data-role="page" id="startTasks">
-            <div data-role="header" data-position="fixed">Tykoon header</div>
-            <div data-role="content">
-                <p>Here is our really awesome page two</p>
+            
+            <!-- header bar -->
+            <div data-role="header" data-position="fixed" class="clearfix">
+                <div class="logo">Tykoon</div>
+                
+                <!-- user module / account switcher -->
+                <div class="userModule clearfix">
+                    <img src="boyAvatar.png" class="avatar" alt="[firstName]">
+                    <div class="userInfo">
+                        <div class="firstName">[firstName]</div>
+                        <div class="balance">$0.00</div>
+                    </div>
+                </div>
             </div>
-        </div>
+            
+            <!-- 3 col layout -->
+            <div class="ui-grid-b">
+                <div class="ui-block-a">
+                    <div data-role="content">
+                        <h2>Tasks</h2>
+                    </div>
+                </div>
+                <div class="ui-block-b">
+                    <div data-role="content">
+                        <h2>Pay</h2>
+                    </div>
+                </div>
+                <div class="ui-block-c">
+                    <div data-role="content">
+                        <h2>Goals</h2>
+                    </div>
+                </div>
+                
+                <!-- Page cover that contains instructions and reveals the page -->
+                <div class="cover">
+                    peek-a-boo
+                </div>
+                
+            </div>
+            
+            
+        </div><!-- END startTasks page -->
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>

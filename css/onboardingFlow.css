@@ -26,5 +26,12 @@
  * Start Tasks page
  * -------------------------*/
 #startTasks {
-
+    position: relative;
+}
+#startTasks .cover {
+    position: absolute;
+    left: 33%;
+    width: 66%;
+    background: rgba(246,246,246,.9);
+    z-index: 100;
 }
