@@ -7,11 +7,16 @@
  */
 
 $(document).ready(function() {
-   $("#getStartedFormSubmit").on("click", function(){
-
+   $("#getStartedFormSubmit").on("click", function(e){
+      var name = $('#getStartedFormChildFirstName').val();
+      var birthday = $('#getStartedFormChildBirthday').val();
+      var child = new Child(0, name, '', '', birthday, 0);
+      tykoonData.parent.children.push(child);
    });
 });
 
 var tykoonData = {
-
+   parent: {
+      children: []
+   }
 };
