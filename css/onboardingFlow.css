@@ -42,8 +42,7 @@
     height: 91%;
     height: calc(100% - 62px);
     right: 0;
-    width: 66%;
-    width: calc(100% / 3 * 2);
+    width: 50%;
     background: rgba(3,246,246,.9);
     z-index: 100;
 }
