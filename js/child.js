@@ -43,4 +43,8 @@ var Child = function(balance, name, username, password, emailAddress, birthday, 
       }
       return calcAge;
    }
+   
+   this.genderNoun = function() {
+     return (this.gender == "m") ? "boy" : "girl";
+   }
 };
