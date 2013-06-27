@@ -7,6 +7,13 @@
  */
 
 $(document).ready(function() {
+   $('#tour').bind('resize', function(event) {
+      $('#tour').css({'min-height': 768});
+      $('#tour').css({'min-width': 1024});
+      //alert('orientation change');
+
+   });
+
    $("#getStartedFormSubmit").on("click", function(e){
       var name = $('#getStartedFormChildFirstName').val();
       var birthday = $('#getStartedFormChildBirthday').val();
