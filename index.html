@@ -62,7 +62,7 @@
                 <div class="userModule clearfix">
                     <img src="boyAvatar.png" class="avatar" alt="[firstName]">
                     <div class="userInfo">
-                        <div class="firstName">[firstName]</div>
+                        <div class="childFirstName">[firstName]</div>
                         <div class="balance">$0.00</div>
                     </div>
                 </div>
@@ -72,23 +72,34 @@
             <div class="ui-grid-b tasksPayGoals">
                 <div class="ui-block-a">
                     <div data-role="content">
-                        <h2>Tasks</h2>
+                        <div class="sectionTitle">Tasks</div>
+                        <div class="subTitle">What <span class="childFirstName">[firstName]</span> will do</div>
                     </div>
                 </div>
                 <div class="ui-block-b">
                     <div data-role="content">
-                        <h2>Pay</h2>
+                        <div class="sectionTitle">Pay</div>
                     </div>
                 </div>
                 <div class="ui-block-c">
                     <div data-role="content">
-                        <h2>Goals</h2>
+                        <div class="sectionTitle">Goals</div>
                     </div>
                 </div>
                 
                 <!-- Page cover that contains instructions and reveals the page -->
                 <div class="cover">
-                    peek-a-boo
+                    <div data-role="content">
+
+                        <!-- content in cover to add a new task -->
+                        <div class="addTaskContent">
+                            <form method="post" id="addTasksForm">
+                                <label class="title" for="addTasksFormTaskName">What do you want <span class="childFirstName">[firstName]</span> to do?</label>
+                                <input type="text" id="addTasksFormTaskName" data-theme="a" placeholder="Type here to create your own" />
+                            </form>
+                        </div>
+
+                    </div>
                 </div>
                 
             </div>

@@ -32,6 +32,11 @@
     height: 100%;
     background: #eee;
 }
+#startTasks .tasksPayGoals .sectionTitle {
+    font-size: 1.6em;
+    line-height: 1.7em;
+    font-weight: bold;
+}
 #startTasks .cover {
     position: absolute;
     height: 91%;
@@ -54,4 +59,10 @@
     position: absolute;
     left: -21px;
     top: 40px;
+}
+
+#startTasks .addTaskContent .title {
+    font-size: 1.6em;
+    line-height: 1.7em;
+    font-weight: bold;
 }
