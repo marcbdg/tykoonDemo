@@ -36,8 +36,10 @@ var transitionToStartTasks = function(e) {
    var child = new Child(0, name, '', '', '', birthday, 0, gender);
    tykoonData.parent.children.push(child);
 
-   //populate page with name
+   //populate page with child data
    $(".childFirstName").html(child.name);
+   $(".childAge").html(child.age());
+   $(".childGender").html(child.genderNoun());
 
    //populate page with tasks from catalog
    for(var i in cannedTasks.tasks) {
