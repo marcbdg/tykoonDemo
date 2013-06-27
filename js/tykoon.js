@@ -12,6 +12,8 @@ $(document).ready(function() {
       var birthday = $('#getStartedFormChildBirthday').val();
       var child = new Child(0, name, '', '', birthday, 0);
       tykoonData.parent.children.push(child);
+      
+      $(".childFirstName").html(child.name);
    });
 });
 
