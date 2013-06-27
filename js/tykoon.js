@@ -15,17 +15,38 @@ $(document).ready(function() {
    });
 
    $("#getStartedFormSubmit").on("click", function(e){
-      var name = $('#getStartedFormChildFirstName').val();
-      var birthday = $('#getStartedFormChildBirthday').val();
-      var child = new Child(0, name, '', '', birthday, 0);
-      tykoonData.parent.children.push(child);
-      
-      $(".childFirstName").html(child.name);
+      transitionToStartTasks(e);
    });
 });
 
 var tykoonData = {
    parent: {
       children: []
+   }
+};
+
+var transitionToStartTasks = function(e) {
+
+   // populate main data object
+   var name = $('#getStartedFormChildFirstName').val();
+   var birthdayString = $('#getStartedFormChildBirthday').val();
+   // -1 on month, apparently 0-based for months
+   var birthday = new Date(parseInt(birthdayString.substring(0,4)), parseInt(birthdayString.substring(5,7))-1, parseInt(birthdayString.substring(8)));
+   var gender = $('#getStartedFormChildGender').val();
+   var child = new Child(0, name, '', '', birthday, 0, gender);
+   tykoonData.parent.children.push(child);
+
+   //populate page with name
+   $(".childFirstName").html(child.name);
+
+   //populate page with tasks from catalog
+   for(var i in cannedTasks.tasks) {
+      if (cannedTasks.tasks.hasOwnProperty(i)) {
+         var task = cannedTasks.tasks(i);
+         if ((task.gender == b || task.gender == child.gender) && (child.age >= task.ageRange.min && child.age <= task.ageRange.max)) {
+            var html = '<div class="taskItem"><h4>' + task.name + '</h4><p>' + task.numPeople + ' kids are doing this</p></div>';
+            $('#startTasks .taskCatalog').append(html);
+         }
+      }
    }
 };
