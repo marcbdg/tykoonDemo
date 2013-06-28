@@ -57,7 +57,7 @@
     z-index: 100;
     box-shadow: 0 0 35px 0 rgba(0,0,0,.5);
     border: 1px solid #777;
-    border-radius: 20px;
+/*    border-radius: 20px;*/
 }
 #startTasks .cover:before,
 #startTasks .cover:after {

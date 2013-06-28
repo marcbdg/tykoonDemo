@@ -17,12 +17,22 @@ $(document).ready(function() {
    $("#getStartedFormSubmit").on("click", function(e){
       transitionToStartTasks(e);
    });
+   
+   $("#startTasks .taskCatalog .taskItem").on("click", function(e){
+     var taskltem = $(e.currentTarget);
+     var taskName = $(taskltem).find(".title").html();
+     // var task = new Task(id, name, repeatDays, payType, payAmt, dueDate);
+     var task = new Task(0, taskName, '', '', '', '');
+     
+     alert("ready to add: " + taskName + ", to " + currentChild.name + "'s tasks");
+   })
 });
 
 var tykoonData = {
    parent: {
       children: []
-   }
+   },
+   currentChildIndex : 0
 };
 var currentChild;
 
@@ -62,7 +72,7 @@ var populateTasksWithChild = function(child) {
   }
 };
 
-/* ======== TEST DATA, comment me out to run for real =========== 
+/* ======== TEST DATA, comment me out to run for real ===========  */
 
 var testBdayString = '2006-10-29';
 var testBirthday = new Date(parseInt(testBdayString.substring(0,4)), parseInt(testBdayString.substring(5,7))-1, parseInt(testBdayString.substring(8)));
