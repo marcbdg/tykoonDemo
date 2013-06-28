@@ -116,7 +116,9 @@ textarea {
   padding-top: 5px;
 }
 
-
+.ui-content {
+    padding: 20px;
+}
 
 
 
