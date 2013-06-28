@@ -19,12 +19,12 @@ $(document).ready(function() {
    });
    
    $("#startTasks .taskCatalog .taskItem").on("click", function(e){
-     var taskltem = $(e.currentTarget);
-     var taskName = $(taskltem).find(".title").html();
+     var taskltem = $(e.currentTarget),
+       taskName = $(taskltem).find(".title").html();
      // var task = new Task(id, name, repeatDays, payType, payAmt, dueDate);
      var task = new Task(0, taskName, '', '', '', '');
      
-     alert("ready to add: " + taskName + ", to " + currentChild.name + "'s tasks");
+     alert("ready to add: " + task.name + ", to " + currentChild.name + "'s tasks");
    })
 });
 
