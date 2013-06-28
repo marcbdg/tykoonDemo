@@ -118,7 +118,7 @@
                         <div class="taskTemplate">
                             <div class="taskItem clearfix">
                                 <div class="taskDetails">
-                                    <div class="title"></div>
+                                    <div class="title"><a href="#configureTasks" data-rel="dialog">+</a> <span></span></div>
                                     <div class="numKids"><span></span> kids are doing this</div>
                                 </div>
                             </div>
@@ -135,6 +135,7 @@
             
         </div><!-- END startTasks page -->
 
+        <!-- start configureTasks -->
         <div data-role="page" id="configureTasks">
             <div class="taskTitle"></div>
             <div class="taskContent">
@@ -143,29 +144,36 @@
                     <option value="1">yes</option>
                     <option value="0">no</option>
                 </select>
-                <label for="configureTasksWeeklyOn">Weekly on</label>
-                <select multiple="multiple" id="configureTasksWeeklyOn">
-                    <option value="mon">Mon</option>
-                    <option value="mon">Tues</option>
-                    <option value="mon">Wed</option>
-                    <option value="mon">Thur</option>
-                    <option value="mon">Fri</option>
-                    <option value="mon">Sat</option>
-                    <option value="mon">Sun</option>
-                </select>
-                <label for="configureTasksDueDate">Due date</label>
-                <input type="date" id ="configureTasksDueDate">
+                <div class="hideRepeat">
+                    <label for="configureTasksWeeklyOn">Weekly on</label>
+                    <select multiple="multiple" id="configureTasksWeeklyOn">
+                        <option value="mon">Mon</option>
+                        <option value="mon">Tues</option>
+                        <option value="mon">Wed</option>
+                        <option value="mon">Thur</option>
+                        <option value="mon">Fri</option>
+                        <option value="mon">Sat</option>
+                        <option value="mon">Sun</option>
+                    </select>
+                </div>
+                <div class="hideNonRepeat">
+                    <label for="configureTasksDueDate">Due date</label>
+                    <input type="date" id ="configureTasksDueDate">
+                </div>
                 <label for="configureTasksPayment">Payment</label>
                 <select id="configureTasksPayment">
                     <option value="allowance">Allowance</option>
                     <option value="responsibility">Responsibility</option>
                 </select>
                 <p>Goes towards weekly allowance</p>
-                <label for="configureTasksHowMuch">How Much?</label>
-                <input type="text" id="configureTasksHowMuch">
+                <div class="hideNonRepeat">
+                    <label for="configureTasksHowMuch">How Much?</label>
+                    <input type="text" id="configureTasksHowMuch">
+                </div>
                 <button id="configureTasksAddIt">Add it</button>
             </div>
         </div>
+        <!-- end configureTasks -->
 
         <!-- script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script -->
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>

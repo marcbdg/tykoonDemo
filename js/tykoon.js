@@ -54,7 +54,7 @@ var configureTasks = function(e) {
 
    $('#configureTasks .taskTitle').html(task.name);
    // navigate to the popup disclosure to configure it
-   alert("ready to configure: " + task.name + ", for " + currentChild.name);
+   //alert("ready to configure: " + task.name + ", for " + currentChild.name);
 };
 
 var populateTasksWithChild = function(child) {

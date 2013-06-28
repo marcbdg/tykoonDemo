@@ -103,3 +103,7 @@ padding: 10px 15px;
 #startTasks .taskCatalog .taskItem .numKids {
     font-color: #777;
 }
+
+#configureTasks .hideNonRepeat{
+    display:none;
+}
