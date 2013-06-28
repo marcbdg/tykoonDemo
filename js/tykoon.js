@@ -20,6 +20,10 @@ $(document).ready(function() {
    $("#startTasks .taskCatalog .taskItem").on("click", function(e){
       configureTasks(e);
    });
+
+   $('#configureTasksRepeats').on('change', function(e) {
+      swapConfigureTasksRepeats(e);
+   })
 });
 
 var tykoonData = {
@@ -76,6 +80,16 @@ var populateTasksWithChild = function(child) {
       $('#startTasks .taskCatalog .tasks').append($(taskItem));
     }
   }
+};
+
+var swapConfigureTasksRepeats = function(e) {
+   if ($(e.currentTarget).val == 1) {
+      $('#configureTasks .hideNonRepeat').hide();
+      $('#configureTasks .hideRepeat').show();
+   } else {
+      $('#configureTasks .hideNonRepeat').show();
+      $('#configureTasks .hideRepeat').hide();
+   }
 };
 
 /* ======== TEST DATA, comment me out to run for real ===========  */
