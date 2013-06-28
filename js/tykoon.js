@@ -52,13 +52,13 @@ var transitionToStartTasks = function(e) {
 var configureTasks = function(e) {
    // FInd the task clicked on and collect it's data
    var taskltem = $(e.currentTarget),
-      taskName = $(taskltem).find(".title span").text();
+      taskName = $(taskltem).find(".title").text();
 
    var task = new Task(0, taskName, '', '', '', '');  // new Task(id, name, repeatDays, payType, payAmt, dueDate);
 
+   // populate the popup disclosure and show it
    $('#configureTasks .taskTitle').html(task.name);
-   // navigate to the popup disclosure to configure it
-   //alert("ready to configure: " + task.name + ", for " + currentChild.name);
+   $("#configureTasks").popup().popup("open", {transition: "pop"} );
 };
 
 var populateTasksWithChild = function(child) {
@@ -74,7 +74,7 @@ var populateTasksWithChild = function(child) {
     var task = cannedTasks.tasks[i];
     if ((task.gender == "b" || task.gender == child.gender) && (child.getAge() >= task.ageRange.min && child.getAge() <= task.ageRange.max)) {
       var taskItem = $(taskTemplate).clone()
-      $(taskItem).find(".title span").append(task.name);
+      $(taskItem).find(".title").html(task.name);
       $(taskItem).find(".numKids span").html(task.numPeople);
       // var html = '<div class="taskItem"><div class="title">' + task.name + '</div><div class="numKids">' + task.numPeople + ' kids are doing this</div></div>';
       $('#startTasks .taskCatalog .tasks').append($(taskItem));

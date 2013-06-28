@@ -117,8 +117,9 @@
                         <!-- Task HTML template for populating the UI from the DB -->
                         <div class="taskTemplate">
                             <div class="taskItem clearfix">
+                                <div class="addButton"><input type="button" data-icon="plus" data-iconpos="notext" data-theme="a" /></div>
                                 <div class="taskDetails">
-                                    <div class="title"><a href="#configureTasks" data-rel="dialog">+</a> <span></span></div>
+                                    <div class="title"></div>
                                     <div class="numKids"><span></span> kids are doing this</div>
                                 </div>
                             </div>
@@ -133,47 +134,48 @@
                 <input type="button" value="Done setting Tasks" data-icon="arrow-r" data-iconpos="right" />
             </div>
             
-        </div><!-- END startTasks page -->
-
-        <!-- start configureTasks -->
-        <div data-role="page" id="configureTasks">
-            <div class="taskTitle"></div>
-            <div class="taskContent">
-                <label for="configureTasksRepeats">Repeats</label>
-                <select id="configureTasksRepeats">
-                    <option value="1">yes</option>
-                    <option value="0">no</option>
-                </select>
-                <div class="hideRepeat">
-                    <label for="configureTasksWeeklyOn">Weekly on</label>
-                    <select multiple="multiple" id="configureTasksWeeklyOn">
-                        <option value="mon">Mon</option>
-                        <option value="mon">Tues</option>
-                        <option value="mon">Wed</option>
-                        <option value="mon">Thur</option>
-                        <option value="mon">Fri</option>
-                        <option value="mon">Sat</option>
-                        <option value="mon">Sun</option>
+            <!-- start configureTasks -->
+            <div data-role="popup" id="configureTasks">
+                <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+                <div class="taskTitle"></div>
+                <div class="taskContent" data-role="content">
+                    <label for="configureTasksRepeats">Repeats</label>
+                    <select id="configureTasksRepeats">
+                        <option value="1">yes</option>
+                        <option value="0">no</option>
                     </select>
+                    <div class="hideRepeat">
+                        <label for="configureTasksWeeklyOn">Weekly on</label>
+                        <select multiple="multiple" id="configureTasksWeeklyOn">
+                            <option value="mon">Mon</option>
+                            <option value="mon">Tues</option>
+                            <option value="mon">Wed</option>
+                            <option value="mon">Thur</option>
+                            <option value="mon">Fri</option>
+                            <option value="mon">Sat</option>
+                            <option value="mon">Sun</option>
+                        </select>
+                    </div>
+                    <div class="hideNonRepeat">
+                        <label for="configureTasksDueDate">Due date</label>
+                        <input type="date" id ="configureTasksDueDate">
+                    </div>
+                    <label for="configureTasksPayment">Payment</label>
+                    <select id="configureTasksPayment">
+                        <option value="allowance">Allowance</option>
+                        <option value="responsibility">Responsibility</option>
+                    </select>
+                    <p>Goes towards weekly allowance</p>
+                    <div class="hideNonRepeat">
+                        <label for="configureTasksHowMuch">How Much?</label>
+                        <input type="text" id="configureTasksHowMuch">
+                    </div>
+                    <button id="configureTasksAddIt">Add it</button>
                 </div>
-                <div class="hideNonRepeat">
-                    <label for="configureTasksDueDate">Due date</label>
-                    <input type="date" id ="configureTasksDueDate">
-                </div>
-                <label for="configureTasksPayment">Payment</label>
-                <select id="configureTasksPayment">
-                    <option value="allowance">Allowance</option>
-                    <option value="responsibility">Responsibility</option>
-                </select>
-                <p>Goes towards weekly allowance</p>
-                <div class="hideNonRepeat">
-                    <label for="configureTasksHowMuch">How Much?</label>
-                    <input type="text" id="configureTasksHowMuch">
-                </div>
-                <button id="configureTasksAddIt">Add it</button>
             </div>
-        </div>
-        <!-- end configureTasks -->
+            <!-- end configureTasks -->
+
+        </div><!-- END startTasks page -->
 
         <!-- script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script -->
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
