@@ -34,8 +34,6 @@ var Child = function(balance, name, username, password, emailAddress, birthday, 
 
       var birthday = this.birthday;
 
-      debugger;
-
       if (now.getMonth() < birthday.getMonth()) {
          calcAge = now.getFullYear() - birthday.getFullYear() - 1;
       } else {
