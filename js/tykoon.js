@@ -49,17 +49,20 @@ var populateTasksWithChild = function(child) {
 
   //clean page and populate page with tasks from catalog
  $('#startTasks .taskCatalog .tasks').empty();
+ var taskTemplate = $("#startTasks .taskCatalog .taskTemplate .taskItem")[0];
   for(var i in cannedTasks.tasks) {
-      var task = cannedTasks.tasks[i];
-
-      if ((task.gender == "b" || task.gender == child.gender) && (child.getAge() >= task.ageRange.min && child.getAge() <= task.ageRange.max)) {
-         var html = '<div class="taskItem"><div class="title">' + task.name + '</div><div class="numKids">' + task.numPeople + ' kids are doing this</div></div>';
-         $('#startTasks .taskCatalog .tasks').append(html);
-      }
+    var task = cannedTasks.tasks[i];
+    if ((task.gender == "b" || task.gender == child.gender) && (child.getAge() >= task.ageRange.min && child.getAge() <= task.ageRange.max)) {
+      var taskItem = $(taskTemplate).clone()
+      $(taskItem).find(".title").html(task.name);
+      $(taskItem).find(".numKids span").html(task.numPeople);
+      // var html = '<div class="taskItem"><div class="title">' + task.name + '</div><div class="numKids">' + task.numPeople + ' kids are doing this</div></div>';
+      $('#startTasks .taskCatalog .tasks').append($(taskItem));
+    }
   }
 };
 
-/* ======== TEST DATA, comment me out to run for real =========== */
+/* ======== TEST DATA, comment me out to run for real =========== 
 
 var testBdayString = '2006-10-29';
 var testBirthday = new Date(parseInt(testBdayString.substring(0,4)), parseInt(testBdayString.substring(5,7))-1, parseInt(testBdayString.substring(8)));

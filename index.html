@@ -81,7 +81,7 @@
                 <div class="ui-block-a">
                     <div data-role="content">
                         <div class="sectionTitle">Tasks &amp; Pay</div>
-                        <div class="subTitle">What <span class="childFirstName">[firstName]</span> will do</div>
+                        <div class="subTitle">How <span class="childFirstName">[firstName]</span> will earn money</div>
                     </div>
                 </div>
                 <div class="ui-block-b">
@@ -113,6 +113,17 @@
                     <div class="taskCatalog clearfix">
                         <div class="title">Popular tasks for <span class="childAge">[#]</span> year old <span class="childGender">[gender]</span>s</div>
                         <div class="tasks"></div>
+                        
+                        <!-- Task HTML template for populating the UI from the DB -->
+                        <div class="taskTemplate">
+                            <div class="taskItem clearfix">
+                                <div class="addButton"><input type="button" value="+" data-theme="a" /></div>
+                                <div class="taskDetails">
+                                    <div class="title"></div>
+                                    <div class="numKids"><span></span> kids are doing this</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>

@@ -93,12 +93,24 @@
     color: #fff;
     margin-top: 15px;
 }
+#startTasks .taskCatalog .taskTemplate {
+    display: none;
+}
 #startTasks .taskCatalog .taskItem {
 border-bottom: 1px solid #ccc;
 border-top: 1px solid #aaa;
 padding: 10px 20px;
 }
-#startTasks .taskCatalog .taskItem .title {
+#startTasks .taskCatalog .taskItem:hover {
+    background: #ddd;
+}
+#startTasks .taskCatalog .taskItem .addButton {
+    width: 50px;
+    margin-right: 10px;
+    float: left;
+}
+#startTasks .taskCatalog .taskItem .taskDetails {
+    float: left;
 }
 #startTasks .taskCatalog .taskItem .numKids {
     font-color: #777;
