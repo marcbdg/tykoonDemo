@@ -9,7 +9,7 @@
 }
 #tour .introTour {
     background: #eee;
-    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     box-sizing: border-box;
     width: 70%;
     height: 100%;
@@ -55,9 +55,9 @@
     width: 50%;
     background: #fff;
     z-index: 100;
+    -moz-box-shadow: 0 0 35px 0 rgba(0,0,0,.5);
     box-shadow: 0 0 35px 0 rgba(0,0,0,.5);
     border: 1px solid #777;
-/*    border-radius: 20px;*/
 }
 #startTasks .cover:before,
 #startTasks .cover:after {
@@ -88,29 +88,17 @@
     font-weight: bold;
 }
 #startTasks .taskCatalog > .title {
-    padding: 0 20px;
+    padding: 0 15px;
     background: #777;
     color: #fff;
     margin-top: 15px;
 }
-#startTasks .taskCatalog .taskTemplate {
-    display: none;
-}
 #startTasks .taskCatalog .taskItem {
 border-bottom: 1px solid #ccc;
 border-top: 1px solid #aaa;
-padding: 10px 20px;
+padding: 10px 15px;
 }
-#startTasks .taskCatalog .taskItem:hover {
-    background: #ddd;
-}
-#startTasks .taskCatalog .taskItem .addButton {
-    width: 50px;
-    margin-right: 10px;
-    float: left;
-}
-#startTasks .taskCatalog .taskItem .taskDetails {
-    float: left;
+#startTasks .taskCatalog .taskItem .title {
 }
 #startTasks .taskCatalog .taskItem .numKids {
     font-color: #777;

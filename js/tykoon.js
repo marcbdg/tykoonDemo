@@ -11,7 +11,6 @@ $(document).ready(function() {
       $('#tour').css({'min-height': 768});
       $('#tour').css({'min-width': 1024});
       //alert('orientation change');
-
    });
 
    $("#getStartedFormSubmit").on("click", function(e){
@@ -19,15 +18,7 @@ $(document).ready(function() {
    });
    
    $("#startTasks .taskCatalog .taskItem").on("click", function(e){
-
-     // FInd the task clicked on and collect it's data
-     var taskltem = $(e.currentTarget),
-       taskName = $(taskltem).find(".title").html();
-
-     var task = new Task(0, taskName, '', '', '', '');  // new Task(id, name, repeatDays, payType, payAmt, dueDate);
-       
-     // navigate to the popup disclosure to configure it
-     alert("ready to configure: " + task.name + ", for " + currentChild.name);
+      configureTasks(e);
    });
 });
 
@@ -54,6 +45,18 @@ var transitionToStartTasks = function(e) {
    populateTasksWithChild(child);
 };
 
+var configureTasks = function(e) {
+   // FInd the task clicked on and collect it's data
+   var taskltem = $(e.currentTarget),
+      taskName = $(taskltem).find(".title span").text();
+
+   var task = new Task(0, taskName, '', '', '', '');  // new Task(id, name, repeatDays, payType, payAmt, dueDate);
+
+   $('#configureTasks .taskTitle').html(task.name);
+   // navigate to the popup disclosure to configure it
+   alert("ready to configure: " + task.name + ", for " + currentChild.name);
+};
+
 var populateTasksWithChild = function(child) {
   //populate page with child data
   $(".childFirstName").html(child.name);
@@ -67,7 +70,7 @@ var populateTasksWithChild = function(child) {
     var task = cannedTasks.tasks[i];
     if ((task.gender == "b" || task.gender == child.gender) && (child.getAge() >= task.ageRange.min && child.getAge() <= task.ageRange.max)) {
       var taskItem = $(taskTemplate).clone()
-      $(taskItem).find(".title").html(task.name);
+      $(taskItem).find(".title span").append(task.name);
       $(taskItem).find(".numKids span").html(task.numPeople);
       // var html = '<div class="taskItem"><div class="title">' + task.name + '</div><div class="numKids">' + task.numPeople + ' kids are doing this</div></div>';
       $('#startTasks .taskCatalog .tasks').append($(taskItem));
