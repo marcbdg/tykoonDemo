@@ -92,22 +92,27 @@
                 
                 <!-- Page cover that contains instructions and reveals the page -->
                 <div class="cover">
-                    <div data-role="content">
 
-                        <!-- content in cover to add a new task -->
-                        <div class="addTaskContent">
-                            <form method="post" id="addTasksForm">
-                                <label class="title" for="addTasksFormTaskName">What do you want <span class="childFirstName">[firstName]</span> to do?</label>
-                                <input type="text" id="addTasksFormTaskName" data-theme="a" placeholder="Type here to create your own" />
-                            </form>
-                            <hr />
-                            <div class="title">Popular tasks for <span class="childAge">[#]</span> year old <span class="childGender">[gender]</span>s</div>
-                        </div>
-
-                        <div class="taskCatalog clearfix">
-                        </div>
-
+                    <!-- content in cover to add a new task -->
+                    <div class="addTaskContent">
+                        
+                        <form method="post" id="addTasksForm" data-role="content">
+                            <label class="title" for="addTasksFormTaskName">What do you want <span class="childFirstName">[firstName]</span> to do?</label>
+                            <div class="ui-grid-a">
+                                <div class="ui-block-a">
+                                    <input type="text" id="addTasksFormTaskName" data-theme="a" placeholder="Type here to create your own" />
+                                </div>
+                                <div class="ui-block-b">
+                                    <input type="button" data-theme="a" value="Configure" />
+                                </div>
+                            </div>
+                        </form>
                     </div>
+
+                    <div class="taskCatalog clearfix">
+                        <div class="title">Popular tasks for <span class="childAge">[#]</span> year old <span class="childGender">[gender]</span>s</div>
+                    </div>
+
                 </div>
                 
             </div>

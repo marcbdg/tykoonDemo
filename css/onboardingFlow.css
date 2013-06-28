@@ -37,16 +37,30 @@
     line-height: 1.7em;
     font-weight: bold;
 }
+#addTasksForm .ui-btn-shadow.ui-body-a {
+    margin: .8em 0;
+}
+#addTasksForm .ui-block-a {
+    width: 65%;
+    margin-right: 1%;
+}
+#addTasksForm .ui-block-b {
+    width: 34%;
+}
 #startTasks .cover {
     position: absolute;
     height: 91%;
     height: calc(100% - 62px);
     right: 0;
     width: 50%;
-    background: rgba(3,246,246,.9);
+    background: #fff;
     z-index: 100;
+    -moz-box-shadow: 0 0 35px 0 rgba(0,0,0,.5);
+    box-shadow: 0 0 35px 0 rgba(0,0,0,.5);
+    border: 1px solid #777;
 }
-#startTasks .cover:before {
+#startTasks .cover:before,
+#startTasks .cover:after {
     content: "";
     width: 1px;
     height: 1px;
@@ -54,14 +68,38 @@
     border-left: 1px solid transparent;
     border-top: 20px solid transparent;
     border-bottom: 20px solid transparent;
-    border-right: 20px solid rgba(3,246,246,.9);
+    border-right: 20px solid white;
     position: absolute;
     left: -21px;
     top: 40px;
+    z-index: 100;
+}
+#startTasks .cover:after {
+    border-right-color: #666;
+    z-index: 99;
+    left: -22px;
 }
 
+
+#startTasks .taskCatalog .title,
 #startTasks .addTaskContent .title {
     font-size: 1.6em;
     line-height: 1.7em;
     font-weight: bold;
+}
+#startTasks .taskCatalog > .title {
+    padding: 0 15px;
+    background: #777;
+    color: #fff;
+    margin-top: 15px;
+}
+#startTasks .taskCatalog .taskItem {
+border-bottom: 1px solid #ccc;
+border-top: 1px solid #aaa;
+padding: 10px 15px;
+}
+#startTasks .taskCatalog .taskItem .title {
+}
+#startTasks .taskCatalog .taskItem .numKids {
+    font-color: #777;
 }

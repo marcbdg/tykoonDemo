@@ -46,7 +46,7 @@ var transitionToStartTasks = function(e) {
        var task = cannedTasks.tasks[i];
 
        if ((task.gender == "b" || task.gender == child.gender) && (child.getAge() >= task.ageRange.min && child.getAge() <= task.ageRange.max)) {
-          var html = '<div class="taskItem"><h4>' + task.name + '</h4><p>' + task.numPeople + ' kids are doing this</p></div>';
+          var html = '<div class="taskItem"><div class="title">' + task.name + '</div><div class="numKids">' + task.numPeople + ' kids are doing this</div></div>';
           $('#startTasks .taskCatalog').append(html);
        }
    }
