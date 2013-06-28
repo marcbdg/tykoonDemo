@@ -32,21 +32,20 @@ var Child = function(balance, name, username, password, emailAddress, birthday, 
       var calcAge = 0;
       var now = new Date();
 
-      // in a month that is after the birthday month
-      if (now.getMonth > this.birthday.getMonth()) {
-         calcAge = now.getFullYear() - this.birthday.getFullYear() + 1;
+      var birthday = this.birthday;
+
+      debugger;
+
+      if (now.getMonth() < birthday.getMonth()) {
+         calcAge = now.getFullYear() - birthday.getFullYear() - 1;
       } else {
-         //in a month before birthday month
-         if (now.getMonth < this.birthday.getMonth()) {
-            calcAge = now.getFullYear() - this.birthday.getFullYear();
+         if (now.getMonth() > birthday.getMonth()) {
+            calcAge = now.getFullYear() - birthday.getFullYear();
          } else {
-            //in the same month as the birthday month
-            //after (or same) birthday day
-            if (now.getDay >= this.birthday.getDay()) {
-               calcAge = now.getFullYear() - this.birthday.getFullYear() + 1;
+            if (now.getMonth() == this.birthday.getMonth() && now.getDay() < this.birthday.getDay()) {
+               calcAge = now.getFullYear() - birthday.getFullYear() - 1;
             } else {
-               //before birthday day
-               calcAge = now.getFullYear() - this.birthday.getFullYear();
+               calcAge = now.getFullYear() - birthday.getFullYear();
             }
          }
       }
