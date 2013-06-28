@@ -19,13 +19,16 @@ $(document).ready(function() {
    });
    
    $("#startTasks .taskCatalog .taskItem").on("click", function(e){
+
+     // FInd the task clicked on and collect it's data
      var taskltem = $(e.currentTarget),
        taskName = $(taskltem).find(".title").html();
-     // var task = new Task(id, name, repeatDays, payType, payAmt, dueDate);
-     var task = new Task(0, taskName, '', '', '', '');
-     
-     alert("ready to add: " + task.name + ", to " + currentChild.name + "'s tasks");
-   })
+
+     var task = new Task(0, taskName, '', '', '', '');  // new Task(id, name, repeatDays, payType, payAmt, dueDate);
+       
+     // navigate to the popup disclosure to configure it
+     alert("ready to configure: " + task.name + ", for " + currentChild.name);
+   });
 });
 
 var tykoonData = {
