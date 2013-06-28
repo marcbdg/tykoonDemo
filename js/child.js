@@ -28,7 +28,7 @@ var Child = function(balance, name, username, password, emailAddress, birthday, 
       tasks.push(taskId);
    };
 
-   this.age = function() {
+   this.getAge = function() {
       var calcAge = 0;
       var now = new Date();
 
@@ -53,7 +53,7 @@ var Child = function(balance, name, username, password, emailAddress, birthday, 
       return calcAge;
    }
    
-   this.genderNoun = function() {
+   this.getGenderNoun = function() {
      return (this.gender == "m") ? "boy" : "girl";
    }
 };

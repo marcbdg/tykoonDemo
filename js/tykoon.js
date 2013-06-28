@@ -38,22 +38,16 @@ var transitionToStartTasks = function(e) {
 
    //populate page with child data
    $(".childFirstName").html(child.name);
-   $(".childAge").html(child.age());
-   $(".childGender").html(child.genderNoun());
+   $(".childAge").html(child.getAge());
+   $(".childGender").html(child.getGenderNoun());
 
    //populate page with tasks from catalog
    for(var i in cannedTasks.tasks) {
-      if (cannedTasks.tasks.hasOwnProperty(i)) {
-         var task = cannedTasks.tasks(i);
+       var task = cannedTasks.tasks[i];
 
-         alert('task.gender: ' + task.gender);
-         alert('task.age.min: ' + task.ageRange.min);
-         alert('task.age.max: ' + task.ageRange.max);
-
-         if ((task.gender == b || task.gender == child.gender) && (child.age >= task.ageRange.min && child.age <= task.ageRange.max)) {
-            var html = '<div class="taskItem"><h4>' + task.name + '</h4><p>' + task.numPeople + ' kids are doing this</p></div>';
-            $('#startTasks .taskCatalog').append(html);
-         }
-      }
+       if ((task.gender == "b" || task.gender == child.gender) && (child.getAge() >= task.ageRange.min && child.getAge() <= task.ageRange.max)) {
+          var html = '<div class="taskItem"><h4>' + task.name + '</h4><p>' + task.numPeople + ' kids are doing this</p></div>';
+          $('#startTasks .taskCatalog').append(html);
+       }
    }
 };
