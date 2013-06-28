@@ -24,6 +24,7 @@ var tykoonData = {
       children: []
    }
 };
+var currentChild;
 
 var transitionToStartTasks = function(e) {
 
@@ -35,19 +36,35 @@ var transitionToStartTasks = function(e) {
    var gender = $('#getStartedFormChildGender').val();
    var child = new Child(0, name, '', '', '', birthday, 0, gender);
    tykoonData.parent.children.push(child);
-
-   //populate page with child data
-   $(".childFirstName").html(child.name);
-   $(".childAge").html(child.getAge());
-   $(".childGender").html(child.getGenderNoun());
-
-   //populate page with tasks from catalog
-   for(var i in cannedTasks.tasks) {
-       var task = cannedTasks.tasks[i];
-
-       if ((task.gender == "b" || task.gender == child.gender) && (child.getAge() >= task.ageRange.min && child.getAge() <= task.ageRange.max)) {
-          var html = '<div class="taskItem"><div class="title">' + task.name + '</div><div class="numKids">' + task.numPeople + ' kids are doing this</div></div>';
-          $('#startTasks .taskCatalog').append(html);
-       }
-   }
+   
+   currentChild = child;
+   populateTasksWithChild(child);
 };
+
+var populateTasksWithChild = function(child) {
+  //populate page with child data
+  $(".childFirstName").html(child.name);
+  $(".childAge").html(child.getAge());
+  $(".childGender").html(child.getGenderNoun());
+
+  //clean page and populate page with tasks from catalog
+ $('#startTasks .taskCatalog .tasks').empty();
+  for(var i in cannedTasks.tasks) {
+      var task = cannedTasks.tasks[i];
+
+      if ((task.gender == "b" || task.gender == child.gender) && (child.getAge() >= task.ageRange.min && child.getAge() <= task.ageRange.max)) {
+         var html = '<div class="taskItem"><div class="title">' + task.name + '</div><div class="numKids">' + task.numPeople + ' kids are doing this</div></div>';
+         $('#startTasks .taskCatalog .tasks').append(html);
+      }
+  }
+};
+
+/* ======== TEST DATA, comment me out to run for real =========== */
+
+var testBdayString = '2006-10-29';
+var testBirthday = new Date(parseInt(testBdayString.substring(0,4)), parseInt(testBdayString.substring(5,7))-1, parseInt(testBdayString.substring(8)));
+currentChild = new Child(0, 'Kaiya', '', '', '', testBirthday, 0, 'f');
+tykoonData.parent.children.push(currentChild);
+populateTasksWithChild(currentChild);
+
+/* ======== END TEST DATA  ============================ */
