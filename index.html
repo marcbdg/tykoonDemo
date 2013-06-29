@@ -46,10 +46,12 @@
                             <label for="getStartedFormChildBirthday">Birthday</label>
                             <input type="date" id="getStartedFormChildBirthday" data-theme="a"/>
                             <label for="getStartedFormChildGender">Gender</label>
-                            <select id="getStartedFormChildGender" data-theme="a">
-                                <option value="m">Boy</option>
-                                <option value="f">Girl</option>
-                            </select>
+                            <fieldset data-role="controlgroup" data-type="horizontal" id="getStartedFormChildGender" data-theme="a">
+                                <input type="radio" name="getStartedFormChildGender" id="genderBoy" value="m"  data-theme="a" />
+                                <label for="genderBoy">Boy</label>
+                                <input type="radio" name="getStartedFormChildGender" id="genderGirl" value="f"  data-theme="a" />
+                                <label for="genderGirl">Girl</label>
+                            </fieldset>
                         </form>
                         <a href="#startTasks" data-role="button"  data-theme="a" data-inline="true" id="getStartedFormSubmit">Get Started</a>
                     </div>
@@ -139,11 +141,15 @@
                 <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
                 <div class="taskTitle ui-bar ui-bar-a"></div>
                 <div class="taskContent" data-role="content">
-                    <label for="configureTasksRepeats">Repeats</label>
-                    <select id="configureTasksRepeats">
-                        <option value="1">yes</option>
-                        <option value="0">no</option>
-                    </select>
+                    <label>Repeats</label>
+
+                    <fieldset data-role="controlgroup" data-type="horizontal" id="configureTasksRepeats" data-theme="a">
+                        <input type="radio" name="configureTasksRepeats" id="configureTaskRepeatsYes" value="1"  data-theme="a" checked="checked" />
+                        <label for="configureTaskRepeatsYes">Yes</label>
+                        <input type="radio" name="configureTasksRepeats" id="configureTaskRepeatsNo" value="0"  data-theme="a" />
+                        <label for="configureTaskRepeatsNo">No</label>
+                    </fieldset>
+
                     <div class="hideRepeat">
                         <label for="configureTasksWeeklyOn">Weekly on</label>
                         <select multiple="multiple" id="configureTasksWeeklyOn">

@@ -41,19 +41,25 @@ var transitionToStartTasks = function(e) {
    var birthdayString = $('#getStartedFormChildBirthday').val();
    // -1 on month, apparently 0-based for months
    var birthday = new Date(parseInt(birthdayString.substring(0,4)), parseInt(birthdayString.substring(5,7))-1, parseInt(birthdayString.substring(8)));
-   var gender = $('#getStartedFormChildGender').val();
+   var gender = $("input:radio[name='getStartedFormChildGender']:checked").val();
    var child = new Child(0, name, '', '', '', birthday, 0, gender);
    tykoonData.parent.children.push(child);
    
    currentChild = child;
    populateTasksWithChild(child);
+   
+   $("#startTasks .taskCatalog .taskItem").on("click", function(e){
+      configureTasks(e);
+   });
+
+   
 };
 
 var configureTasks = function(e) {
    // FInd the task clicked on and collect it's data
    var taskltem = $(e.currentTarget),
       taskName = $(taskltem).find(".title").text();
-
+      console.log('yo')
    var task = new Task(0, taskName, '', '', '', '');  // new Task(id, name, repeatDays, payType, payAmt, dueDate);
 
    // populate the popup disclosure and show it
@@ -83,7 +89,7 @@ var populateTasksWithChild = function(child) {
 };
 
 var swapConfigureTasksRepeats = function(e) {
-   if ($(e.currentTarget).val == 1) {
+   if ($("input:radio[name='configureTasksRepeats']:checked").val() == 1) {
       $('#configureTasks .hideNonRepeat').hide();
       $('#configureTasks .hideRepeat').show();
    } else {
