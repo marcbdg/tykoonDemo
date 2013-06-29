@@ -100,8 +100,12 @@ var swapConfigureTasksRepeats = function(e) {
 
 var transitionToStartGoals = function(e) {
   
+  $(".addTaskContent").fadeOut(200);
+  
   // move the cover
   $(".cover").addClass("leftCover").css("left","0");
+  
+  $(".addGoalContent").delay(200).fadeIn(200);
   
 }
 

@@ -98,7 +98,6 @@
 
                     <!-- content in cover to add a new task -->
                     <div class="addTaskContent">
-                        
                         <form method="post" id="addTasksForm" data-role="content">
                             <label class="title" for="addTasksFormTaskName">What do you want <span class="childFirstName">[firstName]</span> to do?</label>
                             <div class="ui-grid-a">
@@ -110,26 +109,42 @@
                                 </div>
                             </div>
                         </form>
-                    </div>
-
-                    <div class="taskCatalog clearfix">
-                        <div class="title">Popular tasks for <span class="childAge">[#]</span> year old <span class="childGender">[gender]</span>s</div>
-                        <div class="tasks"></div>
                         
-                        <!-- Task HTML template for populating the UI from the DB -->
-                        <div class="taskTemplate">
-                            <div class="taskItem clearfix">
-                                <div class="addButton"><input type="button" data-icon="plus" data-iconpos="notext" data-theme="a" /></div>
-                                <div class="taskDetails">
-                                    <div class="title"></div>
-                                    <div class="numKids"><span></span> kids are doing this</div>
+                        <div class="taskCatalog clearfix">
+                            <div class="title">Popular tasks for <span class="childAge">[#]</span> year old <span class="childGender">[gender]</span>s</div>
+                            <div class="tasks"></div>
+                        
+                            <!-- Task HTML template for populating the UI from the DB -->
+                            <div class="taskTemplate">
+                                <div class="taskItem clearfix">
+                                    <div class="addButton"><input type="button" data-icon="plus" data-iconpos="notext" data-theme="a" /></div>
+                                    <div class="taskDetails">
+                                        <div class="title"></div>
+                                        <div class="numKids"><span></span> kids are doing this</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                </div>
-            </div><!-- END cover -->
+                    <!-- content in cover to add new goals -->
+                    <div class="addGoalContent">
+                        <form method="post" id="addGoalsForm" data-role="content">
+                            <label class="title" for="addGoalsFormGoalName">What would motivate <span class="childFirstName">[firstName]</span>?</label>
+                            <div class="ui-grid-a">
+                                <div class="ui-block-a">
+                                    <input type="text" id="addGoalsFormGoalName" data-theme="a" placeholder="Product / charity / save" />
+                                </div>
+                                <div class="ui-block-b">
+                                    <input type="button" data-theme="a" value="Configure" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>                
+                
+                </div><!-- END cover -->
+                
+            </div><!-- END 3-col layout ui-grid-a -->
             
             <div data-role="footer" class="ui-bar">
                 After you have added some tasks and reviewed pay, move on to set some goals
