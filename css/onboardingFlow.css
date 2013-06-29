@@ -157,6 +157,10 @@ padding: 10px 20px;
 #configureTasks .hideNonRepeat{
     display:none;
 }
+#configureTasks .taskRepeatPaymentDetails .resp,
+#configureTasks .taskNonRepeatPaymentDetails .resp {
+    display: none;
+}
 
 #startTasks .addGoalContent {
     display: none;

@@ -24,6 +24,14 @@ $(document).ready(function() {
    $('#configureTasksRepeats').on('change', function(e) {
       swapConfigureTasksRepeats(e);
    })
+
+   $('#configureRepeatPayment').on('change', function(e) {
+      swapConfigureRepeatPayment(e);
+   })
+   $('#configureNonRepeatPayment').on('change', function(e) {
+      swapConfigureNonRepeatPayment(e);
+   })
+   
 });
 
 var tykoonData = {
@@ -54,7 +62,7 @@ var configureTasks = function(e) {
    // FInd the task clicked on and collect it's data
    var taskltem = $(e.currentTarget),
       taskName = $(taskltem).find(".title").text();
-      console.log('yo')
+
    var task = new Task(0, taskName, '', '', '', '');  // new Task(id, name, repeatDays, payType, payAmt, dueDate);
 
    // populate the popup disclosure and show it
@@ -95,6 +103,25 @@ var swapConfigureTasksRepeats = function(e) {
    } else {
       $('#configureTasks .hideNonRepeat').show();
       $('#configureTasks .hideRepeat').hide();
+   }
+};
+
+var swapConfigureRepeatPayment = function(e) {
+   if ($("input:radio[name='configureRepeatPayment']:checked").val() == 'allowance') {
+      $('#configureTasks .taskRepeatPaymentDetails .resp').hide();
+      $('#configureTasks .taskRepeatPaymentDetails .allow').show();
+   } else {
+     $('#configureTasks .taskRepeatPaymentDetails .resp').show();
+     $('#configureTasks .taskRepeatPaymentDetails .allow').hide();
+   }
+};
+var swapConfigureNonRepeatPayment = function(e) {
+   if ($("input:radio[name='configureNonRepeatPayment']:checked").val() == 'money') {
+      $('#configureTasks .taskNonRepeatPaymentDetails .resp').hide();
+      $('#configureTasks .taskNonRepeatPaymentDetails .money').show();
+   } else {
+     $('#configureTasks .taskNonRepeatPaymentDetails .resp').show();
+     $('#configureTasks .taskNonRepeatPaymentDetails .money').hide();
    }
 };
 
