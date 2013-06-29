@@ -16,11 +16,11 @@ $(document).ready(function() {
    $("#getStartedFormSubmit").on("click", function(e){
       transitionToStartTasks(e);
    });
-   
-   $("#startTasks .taskCatalog .taskItem").on("click", function(e){
-      configureTasks(e);
-   });
 
+   $("#doneWithTasksButton").on("click", function(e){
+      transitionToStartGoals(e);
+   });
+   
    $('#configureTasksRepeats').on('change', function(e) {
       swapConfigureTasksRepeats(e);
    })
@@ -47,12 +47,7 @@ var transitionToStartTasks = function(e) {
    
    currentChild = child;
    populateTasksWithChild(child);
-   
-   $("#startTasks .taskCatalog .taskItem").on("click", function(e){
-      configureTasks(e);
-   });
-
-   
+      
 };
 
 var configureTasks = function(e) {
@@ -86,6 +81,11 @@ var populateTasksWithChild = function(child) {
       $('#startTasks .taskCatalog .tasks').append($(taskItem));
     }
   }
+  
+  // hook up the taps on taskItems to configure them
+  $("#startTasks .taskCatalog .taskItem").on("click", function(e){
+     configureTasks(e);
+  });
 };
 
 var swapConfigureTasksRepeats = function(e) {
@@ -97,6 +97,13 @@ var swapConfigureTasksRepeats = function(e) {
       $('#configureTasks .hideRepeat').hide();
    }
 };
+
+var transitionToStartGoals = function(e) {
+  
+  // move the cover
+  $(".cover").addClass("leftCover").css("left","0");
+  
+}
 
 /* ======== TEST DATA, comment me out to run for real ===========  */
 

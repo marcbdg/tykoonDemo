@@ -51,13 +51,27 @@
     position: absolute;
     height: 91%;
     height: calc(100% - 62px);
-    right: 0;
+    left: 50%;
     width: 50%;
     background: #fff;
     z-index: 100;
     box-shadow: 0 0 35px 0 rgba(0,0,0,.5);
     border: 1px solid #777;
 /*    border-radius: 20px;*/
+    -webkit-transition: all .4s ease-in-out;
+/*    -webkit-transition: all 500ms cubic-bezier(0.680, 0, 0.495, 1); /* older webkit 
+    -webkit-transition: all 500ms cubic-bezier(0.680, -0.440, 0.495, 1.405); 
+       -moz-transition: all 500ms cubic-bezier(0.680, -0.440, 0.495, 1.405); 
+        -ms-transition: all 500ms cubic-bezier(0.680, -0.440, 0.495, 1.405); 
+         -o-transition: all 500ms cubic-bezier(0.680, -0.440, 0.495, 1.405); 
+            transition: all 500ms cubic-bezier(0.680, -0.440, 0.495, 1.405); /* custom 
+
+    -webkit-transition-timing-function: cubic-bezier(0.680, 0, 0.495, 1); /* older webkit 
+    -webkit-transition-timing-function: cubic-bezier(0.680, -0.440, 0.495, 1.405); 
+       -moz-transition-timing-function: cubic-bezier(0.680, -0.440, 0.495, 1.405); 
+        -ms-transition-timing-function: cubic-bezier(0.680, -0.440, 0.495, 1.405); 
+         -o-transition-timing-function: cubic-bezier(0.680, -0.440, 0.495, 1.405); 
+            transition-timing-function: cubic-bezier(0.680, -0.440, 0.495, 1.405); /* custom */
 }
 #startTasks .cover:before,
 #startTasks .cover:after {
@@ -78,6 +92,20 @@
     border-right-color: #666;
     z-index: 99;
     left: -22px;
+}
+#startTasks .cover.leftCover:before,
+#startTasks .cover.leftCover:after {
+    left: auto;
+    right: -21px;
+    border-left-width: 20px;
+    border-right-width: 1px;
+    border-left-color: #fff;
+    border-right-color: transparent;
+}
+#startTasks .cover.leftCover:after {
+    border-left-color: #666;
+    left: auto;
+    right: -22px;
 }
 
 #startTasks .taskCatalog .title,
