@@ -17,7 +17,12 @@ var cannedProduct = {
          altIMG: ['http://ecx.images-amazon.com/images/I/51A9Cgfy9WL.jpg', 'http://ecx.images-amazon.com/images/I/412kVB1ADkL.jpg', 'http://ecx.images-amazon.com/images/I/51t0Ma3WRBL.jpg'],
          desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in.',
          likes: 5,
-         numPeople: 659
+         numPeople: 659,
+         ageRange: {
+            min: 6,
+            max: 18
+         },
+         gender: 'b'
       },
       {
          id:1,
@@ -28,7 +33,12 @@ var cannedProduct = {
          altIMG: [],
          desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in.',
          likes: 22,
-         numPeople: 329
+         numPeople: 329,
+         ageRange: {
+            min: 3,
+            max: 18
+         },
+         gender: 'b'
       },
       {
          id:2,
@@ -39,7 +49,12 @@ var cannedProduct = {
          altIMG: [],
          desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in.',
          likes: 18,
-         numPeople: 865
+         numPeople: 865,
+         ageRange: {
+            min: 8,
+            max: 18
+         },
+         gender: 'b'
       }
    ]
 };

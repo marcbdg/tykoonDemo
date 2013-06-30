@@ -147,8 +147,14 @@
             </div><!-- END 3-col layout ui-grid-a -->
             
             <div data-role="footer" class="ui-bar">
-                After you have added some tasks and reviewed pay, move on to set some goals
-                <input type="button" id="doneWithTasksButton" value="Done setting Tasks" data-icon="arrow-r" data-iconpos="right" />
+                <div class="startTasksFooter">
+                    After you have added some tasks and reviewed pay, move on to set some goals
+                    <input type="button" id="doneWithTasksButton" value="Done setting Tasks" data-icon="arrow-r" data-iconpos="right" data-inline="true" />
+                </div>
+                <div  class="startGoalsFooter">
+                    Once you and <span class="childFirstName">[childName]</span> have agreed your selections, your account is ready to use.
+                    <input type="button" id="doneWithGoalsButton" value="Finish and Activate" data-icon="arrow-r" data-iconpos="right" data-inline="true" />
+                </div>
             </div>
             
             <!-- start configureTasks -->

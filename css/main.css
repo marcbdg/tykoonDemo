@@ -122,11 +122,12 @@ textarea {
 #startTasks .ui-footer {
     position: absolute;
     width: 100%;
+    text-align: center;
     bottom: 0;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     z-index: 1000;
-    opacity: .9;
+    opacity: .94;
 }
 .ui-popup-screen {
     background: #ccc;
