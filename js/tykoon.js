@@ -162,7 +162,7 @@ var populateProductsForChild = function(child) {
 
 var showProductDetails = function(e) {
   var productItem = $(e.currentTarget),
-      productName = $(productltem).find(".title").text();
+      productName = $(productItem).find(".title").text();
   alert("tapped on: " + productName);
 }
 
