@@ -110,6 +110,7 @@
                             </div>
                         </form>
                         
+                        <!-- Task Catalog of recommended tasks for age/gender -->
                         <div class="taskCatalog clearfix">
                             <div class="title">Popular tasks for <span class="childAge">[#]</span> year old <span class="childGender">[gender]</span>s</div>
                             <div class="tasks"></div>
@@ -124,23 +125,40 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        </div><!-- END taskCatalog-->
+                    </div><!-- END addTaskContent-->
 
                     <!-- content in cover to add new goals -->
                     <div class="addGoalContent">
-                        <form method="post" id="addGoalsForm" data-role="content">
-                            <label class="title" for="addGoalsFormGoalName">What would motivate <span class="childFirstName">[firstName]</span>?</label>
+                        <form method="post" id="addGoalForm" data-role="content">
+                            <label class="title" for="addGoalFormGoalName">What would motivate <span class="childFirstName">[firstName]</span>?</label>
                             <div class="ui-grid-a">
                                 <div class="ui-block-a">
-                                    <input type="text" id="addGoalsFormGoalName" data-theme="a" placeholder="Product / charity / save" />
+                                    <input type="text" id="addGoalFormGoalName" data-theme="a" placeholder="Product / charity / save" />
                                 </div>
                                 <div class="ui-block-b">
                                     <input type="button" data-theme="a" value="Configure" />
                                 </div>
                             </div>
                         </form>
-                    </div>                
+                        
+                        <!-- Product Catalog of recommended products for age/gender -->
+                        <div class="productCatalog clearfix">
+                            <div class="title">Popular Goals for <span class="childAge">[#]</span> year old <span class="childGender">[gender]</span>s</div>
+                            <div class="products"></div>
+                        
+                            <!-- Product HTML template for populating the UI from the DB -->
+                            <div class="productTemplate">
+                                <div class="productItem clearfix">
+                                    <div class="addButton"><input type="button" data-icon="plus" data-iconpos="notext" data-theme="a" /></div>
+                                    <div class="productDetails">
+                                        <div class="title"></div>
+                                        <div class="numKids"><span></span> kids are doing this</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- END productCatalog-->
+                    </div><!-- END addProductContent-->
                 
                 </div><!-- END cover -->
                 

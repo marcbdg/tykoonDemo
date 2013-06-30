@@ -6,7 +6,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
-var cannedProduct = {
+var cannedProducts = {
    products: [
       {
          id:0,

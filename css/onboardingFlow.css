@@ -38,16 +38,16 @@
     font-weight: bold;
 }
 #addTasksForm .ui-btn-shadow.ui-body-a,
-#addGoalsForm .ui-btn-shadow.ui-body-a {
+#addGoalForm .ui-btn-shadow.ui-body-a {
     margin: .8em 0;
 }
 #addTasksForm .ui-block-a,
-#addGoalsForm .ui-block-a {
+#addGoalForm .ui-block-a {
     width: 65%;
     margin-right: 1%;
 }
 #addTasksForm .ui-block-b,
-#addGoalsForm .ui-block-b {
+#addGoalForm .ui-block-b {
     width: 34%;
 }
 #startTasks .cover {
@@ -118,13 +118,15 @@
     line-height: 1.7em;
     font-weight: bold;
 }
-#startTasks .taskCatalog > .title {
+#startTasks .taskCatalog > .title,
+#startTasks .productCatalog > .title {
     padding: 0 20px;
     background: #777;
     color: #fff;
     margin-top: 15px;
 }
-#startTasks .taskCatalog .taskTemplate {
+#startTasks .taskCatalog .taskTemplate,
+#startTasks .productCatalog .productTemplate {
     display: none;
 }
 #startTasks .taskCatalog .taskItem {

@@ -54,7 +54,7 @@ var transitionToStartTasks = function(e) {
    tykoonData.parent.children.push(child);
    
    currentChild = child;
-   populateTasksWithChild(child);
+   populateTasksForChild(child);
       
 };
 
@@ -70,7 +70,7 @@ var configureTasks = function(e) {
    $("#configureTasks").popup().popup("open", {transition: "pop"} );
 };
 
-var populateTasksWithChild = function(child) {
+var populateTasksForChild = function(child) {
   //populate page with child data
   $(".childFirstName").html(child.name);
   $(".childAge").html(child.getAge());
@@ -125,16 +125,48 @@ var swapConfigureNonRepeatPayment = function(e) {
    }
 };
 
+
+/* ADD GOALS section */
+
 var transitionToStartGoals = function(e) {
   
+  populateProductsForChild(currentChild);
   $(".addTaskContent, .startTasksFooter").fadeOut(200);
   
   // move the cover
   $(".cover").addClass("leftCover").css("left","0");
   
   $(".addGoalContent, .startGoalsFooter").delay(200).fadeIn(200);
-  
 }
+
+var populateProductsForChild = function(child) {
+
+  //clean page and populate page with tasks from catalog
+ $('#startTasks .productCatalog .goals').empty();
+ var productTemplate = $("#startTasks .productCatalog .productTemplate .productItem")[0];
+  for(var i in cannedProducts.products) {
+    var product = cannedProducts.products[i];
+    if ((product.gender == "b" || product.gender == child.gender) && (child.getAge() >= product.ageRange.min && child.getAge() <= product.ageRange.max)) {
+      var productItem = $(productTemplate).clone();
+      $(productItem).find(".title").html(product.name);
+      $(productItem).find(".numKids span").html(product.numPeople);
+      $('#startTasks .productCatalog .products').append($(productItem));
+    }
+  }
+  
+  // hook up the taps on productItems to configure them
+  $("#startTasks .productCatalog .productItem").on("click", function(e){
+     showProductDetails(e);
+  });
+};
+
+var showProductDetails = function(e) {
+  var productItem = $(e.currentTarget),
+      productName = $(productltem).find(".title").text();
+  alert("tapped on: " + productName);
+}
+
+
 
 /* ======== TEST DATA, comment me out to run for real ===========  */
 
@@ -142,6 +174,6 @@ var testBdayString = '2006-10-29';
 var testBirthday = new Date(parseInt(testBdayString.substring(0,4)), parseInt(testBdayString.substring(5,7))-1, parseInt(testBdayString.substring(8)));
 currentChild = new Child(0, 'Kaiya', '', '', '', testBirthday, 0, 'f');
 tykoonData.parent.children.push(currentChild);
-populateTasksWithChild(currentChild);
+populateTasksForChild(currentChild);
 
 /* ======== END TEST DATA  ============================ */
