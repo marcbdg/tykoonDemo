@@ -24,10 +24,6 @@ var Child = function(balance, name, username, password, emailAddress, birthday, 
       products.push(productId);
    };
 
-   this.addTask = function(taskId) {
-      tasks.push(taskId);
-   };
-
    this.getAge = function() {
       var calcAge = 0;
       var now = new Date();

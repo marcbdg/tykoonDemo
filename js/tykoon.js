@@ -89,13 +89,13 @@ var addConfiguredTaskToChild = function(e) {
       if (day.hasOwnProperty('type') && day.checked) {
         currentTask.repeatDays.push($(day).val());
       }
-      
     }
     
   // Otherwise
   } else {
     
   }
+  currentChild.tasks.push(currentTask);
 }
 
 var populateTasksForChild = function(child) {
