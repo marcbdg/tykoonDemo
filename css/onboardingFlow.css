@@ -134,7 +134,8 @@ border-bottom: 1px solid #ccc;
 border-top: 1px solid #aaa;
 padding: 10px 20px;
 }
-#startTasks .taskCatalog .taskItem:hover {
+#startTasks .taskCatalog .taskItem:hover,
+#startTasks .productCatalog .productItem:hover {
     background: #ddd;
 }
 #startTasks .taskCatalog .taskItem .addButton {
@@ -142,10 +143,12 @@ padding: 10px 20px;
     margin-right: 10px;
     float: left;
 }
-#startTasks .taskCatalog .taskItem .taskDetails {
+#startTasks .taskCatalog .taskItem .taskDetails,
+#startTasks .productCatalog .productItem .productDetails {
     float: left;
 }
-#startTasks .taskCatalog .taskItem .numKids {
+#startTasks .taskCatalog .taskItem .numKids,
+#startTasks .productCatalog .productItem .numKids {
     font-color: #777;
 }
 
@@ -169,4 +172,19 @@ padding: 10px 20px;
 }
 #startTasks .startGoalsFooter {
     display: none;
+}
+
+/* Product catalog */
+
+#startTasks .productCatalog .productItem {
+border-bottom: 1px solid #ccc;
+border-top: 1px solid #aaa;
+padding: 10px 20px;
+}
+#startTasks .productCatalog .productItem .thumbnail {
+    width: 150px;
+    height: 150px;
+    border: 1px solid #ccc;
+    margin-right: 20px;
+    float: left;
 }

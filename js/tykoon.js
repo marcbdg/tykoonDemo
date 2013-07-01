@@ -150,6 +150,7 @@ var populateProductsForChild = function(child) {
       var productItem = $(productTemplate).clone();
       $(productItem).find(".title").html(product.name);
       $(productItem).find(".numKids span").html(product.numPeople);
+      $(productItem).find(".thumbnail").attr({src: product.imgURL, alt: product.name});
       $('#startTasks .productCatalog .products').append($(productItem));
     }
   }
