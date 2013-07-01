@@ -134,9 +134,9 @@ var transitionToStartGoals = function(e) {
   $(".addTaskContent, .startTasksFooter").fadeOut(200);
   
   // move the cover
-  $(".cover").addClass("leftCover").css("left","0");
+  $(".cover").addClass("leftCover"); //.css("left","0");
   
-  $(".addGoalContent, .startGoalsFooter").delay(200).fadeIn(200);
+  $(".addGoalContent, .startGoalsFooter").delay(400).fadeIn(200);
 }
 
 var populateProductsForChild = function(child) {

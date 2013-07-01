@@ -61,20 +61,23 @@
     box-shadow: 0 0 35px 0 rgba(0,0,0,.5);
     border: 1px solid #777;
 /*    border-radius: 20px;*/
-    -webkit-transition: all .4s ease-in-out;
-/*    -webkit-transition: all 500ms cubic-bezier(0.680, 0, 0.495, 1); /* older webkit 
-    -webkit-transition: all 500ms cubic-bezier(0.680, -0.440, 0.495, 1.405); 
-       -moz-transition: all 500ms cubic-bezier(0.680, -0.440, 0.495, 1.405); 
-        -ms-transition: all 500ms cubic-bezier(0.680, -0.440, 0.495, 1.405); 
-         -o-transition: all 500ms cubic-bezier(0.680, -0.440, 0.495, 1.405); 
-            transition: all 500ms cubic-bezier(0.680, -0.440, 0.495, 1.405); /* custom 
-
-    -webkit-transition-timing-function: cubic-bezier(0.680, 0, 0.495, 1); /* older webkit 
-    -webkit-transition-timing-function: cubic-bezier(0.680, -0.440, 0.495, 1.405); 
-       -moz-transition-timing-function: cubic-bezier(0.680, -0.440, 0.495, 1.405); 
-        -ms-transition-timing-function: cubic-bezier(0.680, -0.440, 0.495, 1.405); 
-         -o-transition-timing-function: cubic-bezier(0.680, -0.440, 0.495, 1.405); 
-            transition-timing-function: cubic-bezier(0.680, -0.440, 0.495, 1.405); /* custom */
+}
+@-webkit-keyframes slideLeft {
+    20% {
+        -webkit-transform: translateX(5%);
+    }
+    70%, 100% {
+        -webkit-transform: translateX(-100%);
+    }
+    80% {
+        -webkit-transform: translateX(-105%);
+    }
+    90% {
+        -webkit-transform: translateX(-97%);
+    }
+}
+#startTasks .cover.leftCover {
+    -webkit-animation: slideLeft .7s ease-in-out forwards;
 }
 #startTasks .cover:before,
 #startTasks .cover:after {
@@ -203,6 +206,6 @@ padding: 10px 20px;
     z-index: 10;
 }
 #startTasks .productCatalog .productItem .thumbnail {
-    max-height: 100%;
+            max-height: 100%;
     max-width: 100%;
 }
