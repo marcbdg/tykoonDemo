@@ -49,9 +49,6 @@ $(document).ready(function() {
      addConfiguredTaskToChild(e);
      return false;
    });
-   $('body').on( "scrollstart", function(e) {
-      alert('hi');
-   });
 });
 
 var tykoonData = {
