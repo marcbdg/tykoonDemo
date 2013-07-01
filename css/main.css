@@ -132,7 +132,13 @@ textarea {
 .ui-popup-screen {
     background: #ccc;
 }
-
+.verticalWrapper {
+    display: table;
+}
+.verticalMiddle {
+    display: table-cell;
+    vertical-align: middle;
+}
 
 
 

@@ -184,12 +184,17 @@ padding: 10px 20px;
 #startTasks .productCatalog .productItem .productImage {
     position: relative;
     background: #fff;
-    text-align: center;
     width: 150px;
     height: 150px;
     border: 1px solid #ccc;
     margin-right: 20px;
     float: left;
+    display: table;
+}
+#startTasks .productCatalog .productItem .productImage .verticalMiddle {
+    width: inherit;
+    height:inherit;
+    text-align: center;
 }
 #startTasks .productCatalog .productItem .ui-btn-icon-notext{
     position: absolute;
