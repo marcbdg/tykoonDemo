@@ -31,6 +31,10 @@ $(document).ready(function() {
    $('#configureNonRepeatPayment').on('change', function(e) {
       swapConfigureNonRepeatPayment(e);
    })
+   $("#configureTasksAddIt").on('click', function(e) {
+     addConfiguredTaskToChild(e);
+     return false;
+   })
    
 });
 
@@ -40,7 +44,8 @@ var tykoonData = {
    },
    currentChildIndex : 0
 };
-var currentChild;
+var currentChild,
+  currentTask;
 
 var transitionToStartTasks = function(e) {
 
@@ -63,12 +68,35 @@ var configureTasks = function(e) {
    var taskltem = $(e.currentTarget),
       taskName = $(taskltem).find(".title").text();
 
-   var task = new Task(0, taskName, '', '', '', '');  // new Task(id, name, repeatDays, payType, payAmt, dueDate);
+   var task = new Task(0, taskName, [], '', '', '');  // new Task(id, name, repeatDays, payType, payAmt, dueDate);
 
    // populate the popup disclosure and show it
+   currentTask = task;
    $('#configureTasks .taskTitle').html(task.name);
    $("#configureTasks").popup().popup("open", {transition: "pop"} );
 };
+
+var addConfiguredTaskToChild = function(e) {
+  var repeats = $("input:radio[name='configureTasksRepeats']:checked").val();
+  
+  // If repeating task
+  if ( repeats == "1") {
+    
+    // add to 'repeatDays' array the days it repeats
+    var weekDays = $("#configureTasksWeeklyOn input[type='checkbox']");
+    for (i in weekDays) {
+      var day = weekDays[i];
+      if (day.hasOwnProperty('type') && day.checked) {
+        currentTask.repeatDays.push($(day).val());
+      }
+      
+    }
+    
+  // Otherwise
+  } else {
+    
+  }
+}
 
 var populateTasksForChild = function(child) {
   //populate page with child data

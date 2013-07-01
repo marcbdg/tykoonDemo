@@ -185,73 +185,75 @@
                 <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
                 <div class="taskTitle ui-bar ui-bar-a"></div>
                 <div class="taskContent" data-role="content">
-                    <label>Repeats</label>
+                    <form method="post" id="configureTaskForm">
+                        <label>Repeats</label>
 
-                    <fieldset data-role="controlgroup" data-type="horizontal" id="configureTasksRepeats" data-theme="a">
-                        <input type="radio" name="configureTasksRepeats" id="configureTaskRepeatsYes" value="1"  data-theme="a" checked="checked" />
-                        <label for="configureTaskRepeatsYes">Yes</label>
-                        <input type="radio" name="configureTasksRepeats" id="configureTaskRepeatsNo" value="0"  data-theme="a" />
-                        <label for="configureTaskRepeatsNo">No</label>
-                    </fieldset>
+                        <fieldset data-role="controlgroup" data-type="horizontal" id="configureTasksRepeats" data-theme="a">
+                            <input type="radio" name="configureTasksRepeats" id="configureTaskRepeatsYes" value="1"  data-theme="a" checked="checked" />
+                            <label for="configureTaskRepeatsYes">Yes</label>
+                            <input type="radio" name="configureTasksRepeats" id="configureTaskRepeatsNo" value="0"  data-theme="a" />
+                            <label for="configureTaskRepeatsNo">No</label>
+                        </fieldset>
 
-                    <div class="hideRepeat">
-                        <label>Weekly on</label>
-                        <div data-role="fieldcontain">
-                            <fieldset data-role="controlgroup" data-type="horizontal" id="configureTasksWeeklyOn" data-theme="a">
-                                <input type="checkbox" name="weeklyMon" id="weeklyMon" data-theme="a" value="mon" />
-                                <label for="weeklyMon">M</label>
-                                <input type="checkbox" name="weeklyTue" id="weeklyTue" data-theme="a" value="tue" />
-                                <label for="weeklyTue">T</label>
-                                <input type="checkbox" name="weeklyWed" id="weeklyWed" data-theme="a" value="wed" />
-                                <label for="weeklyWed">W</label>
-                                <input type="checkbox" name="weeklyThu" id="weeklyThu" data-theme="a" value="thu" />
-                                <label for="weeklyThu">Th</label>
-                                <input type="checkbox" name="weeklyFri" id="weeklyFri" data-theme="a" value="fri" />
-                                <label for="weeklyFri">F</label>
-                                <input type="checkbox" name="weeklySat" id="weeklySat" data-theme="a" value="sat" />
-                                <label for="weeklySat">Sat</label>
-                                <input type="checkbox" name="weeklySun" id="weeklySun" data-theme="a" value="sun" />
-                                <label for="weeklySun">Sun</label>
-                            </fieldset>
-                        </div>
+                        <div class="hideRepeat">
+                            <label>Weekly on</label>
+                            <div data-role="fieldcontain">
+                                <fieldset data-role="controlgroup" data-type="horizontal" id="configureTasksWeeklyOn" data-theme="a">
+                                    <input type="checkbox" name="weeklyMon" id="weeklyMon" data-theme="a" value="mon" />
+                                    <label for="weeklyMon">M</label>
+                                    <input type="checkbox" name="weeklyTue" id="weeklyTue" data-theme="a" value="tue" />
+                                    <label for="weeklyTue">T</label>
+                                    <input type="checkbox" name="weeklyWed" id="weeklyWed" data-theme="a" value="wed" />
+                                    <label for="weeklyWed">W</label>
+                                    <input type="checkbox" name="weeklyThu" id="weeklyThu" data-theme="a" value="thu" />
+                                    <label for="weeklyThu">Th</label>
+                                    <input type="checkbox" name="weeklyFri" id="weeklyFri" data-theme="a" value="fri" />
+                                    <label for="weeklyFri">F</label>
+                                    <input type="checkbox" name="weeklySat" id="weeklySat" data-theme="a" value="sat" />
+                                    <label for="weeklySat">Sat</label>
+                                    <input type="checkbox" name="weeklySun" id="weeklySun" data-theme="a" value="sun" />
+                                    <label for="weeklySun">Sun</label>
+                                </fieldset>
+                            </div>
                         
-                    </div>
-                    <div class="hideNonRepeat">
-                        <label for="configureTasksDueDate">Due date</label>
-                        <input type="date" id ="configureTasksDueDate">
-                    </div>
-
-                    <label>Payment</label>
-                    <div class="hideRepeat">
-                        <fieldset data-role="controlgroup" data-type="horizontal" id="configureRepeatPayment" data-theme="a">
-                            <input type="radio" name="configureRepeatPayment" id="configureRepeatPaymentAllow" value="allowance"  data-theme="a" checked="checked" />
-                            <label for="configureRepeatPaymentAllow">Allowance</label>
-                            <input type="radio" name="configureRepeatPayment" id="configureRepeatPaymentResp" value="responsibility"  data-theme="a" />
-                            <label for="configureRepeatPaymentResp">Responsibility</label>
-                        </fieldset>
-                        <div class="taskRepeatPaymentDetails">
-                            <p class="allow">Goes towards weekly allowance</p>
-                            <p class="resp">It's nice to help out just because</p>
                         </div>
-                    </div>
-
-                    <div class="hideNonRepeat">
-                        <fieldset data-role="controlgroup" data-type="horizontal" id="configureNonRepeatPayment" data-theme="a">
-                            <input type="radio" name="configureNonRepeatPayment" id="configureNonRepeatPaymentMoney" value="money"  data-theme="a" checked="checked" />
-                            <label for="configureNonRepeatPaymentMoney">Money</label>
-                            <input type="radio" name="configureNonRepeatPayment" id="configureNonRepeatPaymentResp" value="responsibility"  data-theme="a" />
-                            <label for="configureNonRepeatPaymentResp">Responsibility</label>
-                        </fieldset>
-                        <div class="taskNonRepeatPaymentDetails">
-                            <p class="money">
-                                <label for="configureTasksHowMuch">How Much?</label>
-                                <input type="text" id="configureTasksHowMuch">
-                            </p>
-                            <p class="resp">It's nice to help out just because</p>
+                        <div class="hideNonRepeat">
+                            <label for="configureTasksDueDate">Due date</label>
+                            <input type="date" id ="configureTasksDueDate">
                         </div>
-                    </div>
 
-                    <button id="configureTasksAddIt">Add it</button>
+                        <label>Payment</label>
+                        <div class="hideRepeat">
+                            <fieldset data-role="controlgroup" data-type="horizontal" id="configureRepeatPayment" data-theme="a">
+                                <input type="radio" name="configureRepeatPayment" id="configureRepeatPaymentAllow" value="allowance"  data-theme="a" checked="checked" />
+                                <label for="configureRepeatPaymentAllow">Allowance</label>
+                                <input type="radio" name="configureRepeatPayment" id="configureRepeatPaymentResp" value="responsibility"  data-theme="a" />
+                                <label for="configureRepeatPaymentResp">Responsibility</label>
+                            </fieldset>
+                            <div class="taskRepeatPaymentDetails">
+                                <p class="allow">Goes towards weekly allowance</p>
+                                <p class="resp">It's nice to help out just because</p>
+                            </div>
+                        </div>
+
+                        <div class="hideNonRepeat">
+                            <fieldset data-role="controlgroup" data-type="horizontal" id="configureNonRepeatPayment" data-theme="a">
+                                <input type="radio" name="configureNonRepeatPayment" id="configureNonRepeatPaymentMoney" value="money"  data-theme="a" checked="checked" />
+                                <label for="configureNonRepeatPaymentMoney">Money</label>
+                                <input type="radio" name="configureNonRepeatPayment" id="configureNonRepeatPaymentResp" value="responsibility"  data-theme="a" />
+                                <label for="configureNonRepeatPaymentResp">Responsibility</label>
+                            </fieldset>
+                            <div class="taskNonRepeatPaymentDetails">
+                                <p class="money">
+                                    <label for="configureTasksHowMuch">How Much?</label>
+                                    <input type="text" id="configureTasksHowMuch">
+                                </p>
+                                <p class="resp">It's nice to help out just because</p>
+                            </div>
+                        </div>
+
+                        <button id="configureTasksAddIt">Add it</button>
+                    </form>
                 </div>
             </div>
             <!-- end configureTasks -->
