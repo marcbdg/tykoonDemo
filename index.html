@@ -185,7 +185,7 @@
                 <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
                 <div class="taskTitle ui-bar ui-bar-a"></div>
                 <div class="taskContent" data-role="content">
-                    <form method="post" id="configureTaskForm">
+                    <form method="get" id="configureTaskForm">
                         <label>Repeats</label>
 
                         <fieldset data-role="controlgroup" data-type="horizontal" id="configureTasksRepeats" data-theme="a">
@@ -246,7 +246,7 @@
                             <div class="taskNonRepeatPaymentDetails">
                                 <p class="money">
                                     <label for="configureTasksHowMuch">How Much?</label>
-                                    <input type="text" id="configureTasksHowMuch">
+                                    <input type="number" id="configureTasksHowMuch">
                                 </p>
                                 <p class="resp">It's nice to help out just because</p>
                             </div>

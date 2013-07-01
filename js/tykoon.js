@@ -79,7 +79,7 @@ var configureTasks = function(e) {
 var addConfiguredTaskToChild = function(e) {
   var repeats = $("input:radio[name='configureTasksRepeats']:checked").val();
   
-  // If repeating task
+  // If repeating task, collect repeatDays and paymentType
   if ( repeats == "1") {
     
     // add to 'repeatDays' array the days it repeats
@@ -91,10 +91,25 @@ var addConfiguredTaskToChild = function(e) {
       }
     }
     
-  // Otherwise
-  } else {
+    var paymentType = $("input:radio[name='configureRepeatPayment']:checked").val();
+    currentTask.payType = paymentType;
     
+  // Otherwise just collect payment type/amount and optional due date
+  } else {
+    var paymentType = $("input:radio[name='configureNonRepeatPayment']:checked").val();
+    currentTask.payType = paymentType;
+    if (paymentType == "money") {
+      currentTask.payAmt = $("#configureTasksHowMuch").val();
+    }
+    
+    // due date
+    var dueDateString = $('#configureTasksDueDate').val();
+    if (dueDateString != "") {
+      var dueDate = new Date(parseInt(dueDateString.substring(0,4)), parseInt(dueDateString.substring(5,7))-1, parseInt(dueDateString.substring(8)));
+      currentTask.dueDate = dueDate;
+    }
   }
+  
   currentChild.tasks.push(currentTask);
 }
 
@@ -113,7 +128,6 @@ var populateTasksForChild = function(child) {
       var taskItem = $(taskTemplate).clone()
       $(taskItem).find(".title").html(task.name);
       $(taskItem).find(".numKids span").html(task.numPeople);
-      // var html = '<div class="taskItem"><div class="title">' + task.name + '</div><div class="numKids">' + task.numPeople + ' kids are doing this</div></div>';
       $('#startTasks .taskCatalog .tasks').append($(taskItem));
     }
   }
