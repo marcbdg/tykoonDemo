@@ -27,8 +27,10 @@ $(document).ready(function() {
       $('#getStartedFormChildBirthday').focus();
    });
 
-   $("#getStartedFormSubmit").on("click", function(e){
+   $("#getStartedForm").submit(function(e){
       transitionToStartTasks(e);
+      $.mobile.navigate( "#startTasks" );
+      return false;
    });
 
    $("#doneWithTasksButton").on("click", function(e){ 
