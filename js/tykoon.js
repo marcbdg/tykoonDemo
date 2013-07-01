@@ -6,6 +6,12 @@
  * To change this template use File | Settings | File Templates.
  */
 
+//http://stackoverflow.com/questions/5937339/ipad-safari-make-keyboard-disappear
+var hideKeyboard = function() {
+   document.activeElement.blur();
+   $("input").blur();
+};
+
 $(document).ready(function() {
    $('#tour').bind('resize', function(event) {
       $('#tour').css({'min-height': 768});
@@ -14,6 +20,12 @@ $(document).ready(function() {
    });
    // Set so birthday can't be past today
    $("#getStartedFormChildBirthday").attr("max", dateToYMD(new Date()));
+
+
+   $('#getStartedFormChildBirthday').on('click', function(e) {
+      hideKeyboard();
+      $('#getStartedFormChildBirthday').focus();
+   });
 
    $("#getStartedFormSubmit").on("click", function(e){
       transitionToStartTasks(e);
