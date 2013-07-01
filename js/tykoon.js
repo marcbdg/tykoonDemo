@@ -12,6 +12,8 @@ $(document).ready(function() {
       $('#tour').css({'min-width': 1024});
       //alert('orientation change');
    });
+   // Set so birthday can't be past today
+   $("#getStartedFormChildBirthday").attr("max", dateToYMD(new Date()));
 
    $("#getStartedFormSubmit").on("click", function(e){
       transitionToStartTasks(e);
@@ -60,7 +62,6 @@ var transitionToStartTasks = function(e) {
    
    currentChild = child;
    populateTasksForChild(child);
-      
 };
 
 var configureTasks = function(e) {
@@ -73,8 +74,18 @@ var configureTasks = function(e) {
    // populate the popup disclosure and show it
    currentTask = task;
    $('#configureTasks .taskTitle').html(task.name);
+   // set due date of today or later
+   $("#configureTasksDueDate").attr("min", dateToYMD(new Date()));
+   
    $("#configureTasks").popup().popup("open", {transition: "pop"} );
 };
+
+function dateToYMD(date) {
+    var d = date.getDate();
+    var m = date.getMonth() + 1;
+    var y = date.getFullYear();
+    return '' + y + '-' + (m<=9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d);
+}
 
 var addConfiguredTaskToChild = function(e) {
   var repeats = $("input:radio[name='configureTasksRepeats']:checked").val();
