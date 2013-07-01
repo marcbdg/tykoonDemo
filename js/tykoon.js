@@ -14,8 +14,8 @@ var hideKeyboard = function() {
 
 $(document).ready(function() {
    $('#tour').bind('resize', function(event) {
-      $('#tour').css({'min-height': 768});
-      $('#tour').css({'min-width': 1024});
+      $('#tour').css({'height': 768});
+      $('#tour').css({'width': 1024});
       //alert('orientation change');
    });
    // Set so birthday can't be past today
@@ -41,15 +41,17 @@ $(document).ready(function() {
 
    $('#configureRepeatPayment').on('change', function(e) {
       swapConfigureRepeatPayment(e);
-   })
+   });
    $('#configureNonRepeatPayment').on('change', function(e) {
       swapConfigureNonRepeatPayment(e);
-   })
+   });
    $("#configureTasksAddIt").on('click', function(e) {
      addConfiguredTaskToChild(e);
      return false;
-   })
-   
+   });
+   $('body').on( "scrollstart", function(e) {
+      alert('hi');
+   });
 });
 
 var tykoonData = {
