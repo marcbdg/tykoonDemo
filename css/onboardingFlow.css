@@ -206,6 +206,9 @@ padding: 10px 20px;
     z-index: 10;
 }
 #startTasks .productCatalog .productItem .thumbnail {
-            max-height: 100%;
+    max-height: 100%;
     max-width: 100%;
+}
+#startTasks .productCatalog .productItem .productDetails {
+    width: 63%;
 }
