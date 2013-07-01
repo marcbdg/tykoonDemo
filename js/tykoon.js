@@ -90,6 +90,12 @@ var configureTasks = function(e) {
    $("#configureTasksDueDate").attr("min", dateToYMD(new Date()));
    
    $("#configureTasks").popup().popup("open", {transition: "pop"} );
+   
+   // reset the form before opening
+   $("#configureTaskRepeatsYes, #configureRepeatPaymentAllow, #configureNonRepeatPaymentMoney" ).prop( "checked", true ).checkboxradio( "refresh" );
+   $("#configureTaskRepeatsNo, #configureRepeatPaymentResp, #configureNonRepeatPaymentResp, #configureTasksWeeklyOn input[type='checkbox']" ).prop( "checked", false ).checkboxradio( "refresh" );
+   $("#configureTasksHowMuch, #configureTasksDueDate").val("");
+   swapConfigureTasksRepeats();
 };
 
 function dateToYMD(date) {
