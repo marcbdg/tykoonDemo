@@ -181,10 +181,23 @@ border-bottom: 1px solid #ccc;
 border-top: 1px solid #aaa;
 padding: 10px 20px;
 }
-#startTasks .productCatalog .productItem .thumbnail {
+#startTasks .productCatalog .productItem .productImage {
+    position: relative;
+    background: #fff;
+    text-align: center;
     width: 150px;
     height: 150px;
     border: 1px solid #ccc;
     margin-right: 20px;
     float: left;
+}
+#startTasks .productCatalog .productItem .ui-btn-icon-notext{
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    z-index: 10;
+}
+#startTasks .productCatalog .productItem .thumbnail {
+    max-height: 100%;
+    max-width: 100%;
 }
