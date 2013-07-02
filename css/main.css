@@ -139,7 +139,11 @@ textarea {
     display: table-cell;
     vertical-align: middle;
 }
-
+.error {
+    margin-top: 5px;
+    color: #a00;
+    display: none;
+}
 
 
 

@@ -48,6 +48,7 @@ $(document).ready(function() {
       swapConfigureNonRepeatPayment(e);
    });
    $("#configureTaskForm").submit( function(e) {
+     $("#configureTaskForm .error").hide();
      addConfiguredTaskToChild(e);
      return false;
    });
@@ -120,6 +121,11 @@ var addConfiguredTaskToChild = function(e) {
         currentTask.repeatDays.push($(day).val());
       }
     }
+    // check for length of repeatDays
+    if  (!currentTask.repeatDays.length) {
+      $("#pickADay").show("fast");
+      return false;
+    }
     
     var paymentType = $("input:radio[name='configureRepeatPayment']:checked").val();
     currentTask.payType = paymentType;
@@ -129,7 +135,12 @@ var addConfiguredTaskToChild = function(e) {
     var paymentType = $("input:radio[name='configureNonRepeatPayment']:checked").val();
     currentTask.payType = paymentType;
     if (paymentType == "money") {
-      currentTask.payAmt = $("#configureTasksHowMuch").val();
+      var moneyAmount = $("#configureTasksHowMuch").val();
+      if (moneyAmount == "" || moneyAmount == "0") {
+        $("#enterTaskMoney").show("fast");
+        return false;
+      }
+      currentTask.payAmt = moneyAmount;
     }
     
     // due date
