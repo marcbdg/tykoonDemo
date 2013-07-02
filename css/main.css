@@ -128,6 +128,7 @@ textarea {
     box-sizing: border-box;
     z-index: 1000;
     opacity: .94;
+    height: 65px;
 }
 .ui-popup-screen {
     background: #ccc;
