@@ -47,7 +47,7 @@ $(document).ready(function() {
    $('#configureNonRepeatPayment').on('change', function(e) {
       swapConfigureNonRepeatPayment(e);
    });
-   $("#configureTasksAddIt").on('click', function(e) {
+   $("#configureTaskForm").submit( function(e) {
      addConfiguredTaskToChild(e);
      return false;
    });
@@ -59,8 +59,7 @@ var tykoonData = {
    },
    currentChildIndex : 0
 };
-var currentChild,
-  currentTask;
+var currentChild;
 
 var transitionToStartTasks = function(e) {
 
@@ -80,13 +79,11 @@ var transitionToStartTasks = function(e) {
 var configureTasks = function(e) {
    // FInd the task clicked on and collect it's data
    var taskltem = $(e.currentTarget),
-      taskName = $(taskltem).find(".title").text();
-
-   var task = new Task(0, taskName, [], '', '', '');  // new Task(id, name, repeatDays, payType, payAmt, dueDate);
+      taskName = $(taskltem).find(".title").text(),
+      taskId = $(taskltem).find(".title").attr("data-taskId");
 
    // populate the popup disclosure and show it
-   currentTask = task;
-   $('#configureTasks .taskTitle').html(task.name);
+   $('#configureTasks .taskTitle').html(taskName).attr("data-taskId",taskId);
    // set due date of today or later
    $("#configureTasksDueDate").attr("min", dateToYMD(new Date()));
    
@@ -107,9 +104,12 @@ function dateToYMD(date) {
 }
 
 var addConfiguredTaskToChild = function(e) {
-  var repeats = $("input:radio[name='configureTasksRepeats']:checked").val();
+  var taskTitle = $("#configureTasks .taskTitle").html(),
+    taskId = $("#configureTasks .taskTitle").attr("data-taskId"),
+    currentTask = new Task(taskId, taskTitle, [], '', '', '');  // new Task(id, name, repeatDays, payType, payAmt, dueDate);
   
   // If repeating task, collect repeatDays and paymentType
+  var repeats = $("input:radio[name='configureTasksRepeats']:checked").val();
   if ( repeats == "1") {
     
     // add to 'repeatDays' array the days it repeats
@@ -156,7 +156,7 @@ var populateTasksForChild = function(child) {
     var task = cannedTasks.tasks[i];
     if ((task.gender == "b" || task.gender == child.gender) && (child.getAge() >= task.ageRange.min && child.getAge() <= task.ageRange.max)) {
       var taskItem = $(taskTemplate).clone()
-      $(taskItem).find(".title").html(task.name);
+      $(taskItem).find(".title").html(task.name).attr("data-taskId", task.id);
       $(taskItem).find(".numKids span").html(task.numPeople);
       $('#startTasks .taskCatalog .tasks').append($(taskItem));
     }
