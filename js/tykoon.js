@@ -216,7 +216,6 @@ var getTaskPay = function(task) {
   }
 };
 
-
 var populateTasksForChild = function(child) {
   //populate page with child data
   $(".childFirstName").html(child.name);
