@@ -138,8 +138,8 @@
 }
 
 #startTasks .taskCatalog .tasks {
-    height: 360px;
-    overflow:scroll;
+    height: 483px;
+    overflow: auto;
 }
 #startTasks .taskCatalog .title,
 #startTasks .addTaskContent .title,
