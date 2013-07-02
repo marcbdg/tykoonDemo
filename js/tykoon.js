@@ -18,9 +18,16 @@ $(document).ready(function() {
       $('#tour').css({'width': 1024});
       //alert('orientation change');
    });
+   
+   // Adjust element sizes based on the window size
+   if ($(window).height() > 672) {   // FULLSCREEN ipad landscape
+     $("#startTasks .taskCatalog .tasks").css("height","483px");
+   } else {  // BROWSER bars ipad landscape
+     $("#startTasks .taskCatalog .tasks").css("height","410px");
+   }
+   
    // Set so birthday can't be past today
    $("#getStartedFormChildBirthday").attr("max", dateToYMD(new Date()));
-
 
    $('#getStartedFormChildBirthday').on('click', function(e) {
       hideKeyboard();
