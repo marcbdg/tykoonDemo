@@ -60,12 +60,18 @@ $(document).ready(function() {
      return false;
    });
 
-   // $('#filterListContent').jplist({
-   //    items_box: '.tasks',
-   //    item_path: '.taskItem',
-   //    panel_path: '.filterPanel',
-   //    cookies: true
-   // });
+   $('#filterListContent').jplist({
+      items_box: '.tasks',
+      item_path: '.taskItem',
+      panel_path: '.filterPanel',
+      cookies: true,
+      redraw_callback: function() {
+         $("#startTasks .taskCatalog .taskItem").on("click", function(e){
+            configureTasks(e);
+         });
+      }
+   });
+
 });
 
 var tykoonData = {
@@ -189,7 +195,7 @@ var addConfiguredTaskToChild = function(e) {
   $(taskUI).appendTo("#startTasks .selectedTasks");
   $(taskUI).find(".numKids").addClass("taskSettings").removeClass("numKids").html("<span class='recurrance'>" + getTaskRecurrance(currentTask) + "</span> <span class='payment'>" + getTaskPay(currentTask) + "</span>");
   $(taskUI).find(".addButton").remove();
-}
+};
 
 var getTaskRecurrance = function(task) {
   if (task.repeatDays.length > 0) {   // repeating tasks
@@ -201,14 +207,14 @@ var getTaskRecurrance = function(task) {
       return "one time";
     }
   }
-}
+};
 var getTaskPay = function(task) {
   if (task.payType == "money") {
     return "<span class='money'>$" + task.payAmt + "</span>";
   } else {
     return "<span class='" + task.payType + "'>" + task.payType + "</span>";
   }
-}
+};
 
 
 var populateTasksForChild = function(child) {
@@ -231,11 +237,6 @@ var populateTasksForChild = function(child) {
       $('#startTasks .taskCatalog .tasks').append($(taskItem));
     }
   }
-  
-  // hook up the taps on taskItems to configure them
-  $("#startTasks .taskCatalog .taskItem").on("click", function(e){
-     configureTasks(e);
-  });
 };
 
 var swapConfigureTasksRepeats = function(e) {
@@ -279,7 +280,7 @@ var transitionToStartGoals = function(e) {
   $(".cover").addClass("leftCover"); //.css("left","0");
   
   $(".addGoalContent, .startGoalsFooter").delay(400).fadeIn(200);
-}
+};
 
 var populateProductsForChild = function(child) {
 
@@ -308,7 +309,7 @@ var showProductDetails = function(e) {
   var productItem = $(e.currentTarget),
       productName = $(productItem).find(".title").text();
   alert("tapped on: " + productName);
-}
+};
 
 
 
