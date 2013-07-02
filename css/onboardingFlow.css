@@ -49,13 +49,21 @@
     background: #ccc;
 }
 #startTasks .tasksPayGoals .setAllowance label {
-    color: #065b8c;
+    color: #006d8e;
 }
 #startTasks .setAllowance .ui-slider {
     width: 95%;
 }
 #startTasks .setAllowance input.ui-input-text.ui-slider-input {
     float: right;
+    background: #8ab106;
+    border: 2px solid #fff;
+    color: #fff;
+    text-shadow: 0 1px 0 #333;
+    border-radius: 50%;
+    height: 2em;
+    font-size: 1.2em;
+    margin-top: -.5em;
 }
 #startTasks .setAllowance .ui-slider-track {
     margin: 0 68px 0 15px;
@@ -143,9 +151,9 @@
 }
 #startTasks .taskCatalog .title,
 #startTasks .addTaskContent .title,
+#startTasks .selectedTasks .title,
 #startTasks .addGoalContent .title {
     font-size: 1.6em;
-    line-height: 1.7em;
     font-weight: bold;
 }
 #startTasks .taskCatalog > .title,
@@ -159,7 +167,8 @@
 #startTasks .productCatalog .productTemplate {
     display: none;
 }
-#startTasks .taskCatalog .taskItem {
+#startTasks .taskCatalog .taskItem,
+#startTasks .selectedTasks .taskItem {
 border-bottom: 1px solid #ccc;
 border-top: 1px solid #aaa;
 padding: 10px 20px;
@@ -179,9 +188,8 @@ padding: 10px 20px;
 }
 #startTasks .taskCatalog .taskItem .numKids,
 #startTasks .productCatalog .productItem .numKids {
-    font-color: #777;
+    color: #777;
 }
-
 #configureTasks {
     background: #fff;
 }
@@ -192,12 +200,30 @@ padding: 10px 20px;
     border-top-left-radius: inherit;
     border-top-right-radius: inherit;
 }
-#configureTasks .hideNonRepeat{
+#configureTasks .hideNonRepeat {
     display:none;
 }
 #configureTasks .taskRepeatPaymentDetails .resp,
 #configureTasks .taskNonRepeatPaymentDetails .resp {
     display: none;
+}
+#startTasks .selectedTasks .taskItem .recurrance {
+    color: #006d8e;
+    text-shadow: 0 1px 0 #fff;
+}
+#startTasks .selectedTasks .taskItem .payment {
+    float: right;
+}
+#startTasks .selectedTasks .taskItem .payment .money {
+    color: #000;
+    font-weight: bold;
+}
+#startTasks .selectedTasks .taskItem .payment .allowance {
+    color: #8ab106;
+}
+#startTasks .selectedTasks .taskItem .payment .responsibility {
+    font-style: italic;
+    color: #777;
 }
 
 #startTasks .addGoalContent {

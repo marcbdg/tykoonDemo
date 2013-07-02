@@ -60,12 +60,12 @@ $(document).ready(function() {
      return false;
    });
 
-   $('#filterListContent').jplist({
-      items_box: '.tasks',
-      item_path: '.taskItem',
-      panel_path: '.filterPanel',
-      cookies: true
-   });
+   // $('#filterListContent').jplist({
+   //    items_box: '.tasks',
+   //    item_path: '.taskItem',
+   //    panel_path: '.filterPanel',
+   //    cookies: true
+   // });
 });
 
 var tykoonData = {
@@ -187,9 +187,29 @@ var addConfiguredTaskToChild = function(e) {
   // move and update the task
   var taskUI = $(".taskItem[data-taskId = '" + taskId + "']")
   $(taskUI).appendTo("#startTasks .selectedTasks");
-  $(taskUI).find(".numKids").addClass("taskSettings").removeClass("numKids").html("<span class='recurrance'>.</span> <span class='payment'>" + currentTask.payType + "</span>");
-  $(taskUI)
+  $(taskUI).find(".numKids").addClass("taskSettings").removeClass("numKids").html("<span class='recurrance'>" + getTaskRecurrance(currentTask) + "</span> <span class='payment'>" + getTaskPay(currentTask) + "</span>");
+  $(taskUI).find(".addButton").remove();
 }
+
+var getTaskRecurrance = function(task) {
+  if (task.repeatDays.length > 0) {   // repeating tasks
+    return "↻ every " + task.repeatDays.join(", ");
+  } else {    // non-repeating tasks
+    if (task.dueDate != "") {
+      return "<strong>By:</strong> " + task.dueDate;
+    } else {
+      return "one time";
+    }
+  }
+}
+var getTaskPay = function(task) {
+  if (task.payType == "money") {
+    return "<span class='money'>$" + task.payAmt + "</span>";
+  } else {
+    return "<span class='" + task.payType + "'>" + task.payType + "</span>";
+  }
+}
+
 
 var populateTasksForChild = function(child) {
   //populate page with child data
