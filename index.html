@@ -114,38 +114,41 @@
 
                 <!-- Page cover that contains instructions and reveals the page -->
                 <div class="cover">
-
-                    <!-- content in cover to add a new task -->
-                    <div class="addTaskContent">
-                        <form method="post" id="addTasksForm" data-role="content">
-                            <label class="title" for="addTasksFormTaskName">What do you want <span class="childFirstName">[firstName]</span> to do?</label>
-                            <div class="ui-grid-a">
-                                <div class="ui-block-a">
-                                    <input type="text" id="addTasksFormTaskName" data-theme="a" placeholder="Type here to create your own" />
-                                </div>
-                                <div class="ui-block-b">
-                                    <input type="button" data-theme="a" value="Configure" />
-                                </div>
+                    <div id="filterListContent">
+                        <!-- content in cover to add a new task -->
+                        <div class="addTaskContent">
+                            <div class="filterPanel">
+                                <form method="post" id="addTasksForm" data-role="content">
+                                    <label class="title" for="addTasksFormTaskName">What do you want <span class="childFirstName">[firstName]</span> to do?</label>
+                                    <div class="ui-grid-a">
+                                        <div class="ui-block-a">
+                                            <input type="text" id="addTasksFormTaskName" data-theme="a" placeholder="Type here to create your own" data-path=".title" data-control-type="textbox" data-control-name="title-filter" data-control-action="filter" />
+                                        </div>
+                                        <div class="ui-block-b">
+                                            <input type="button" data-theme="a" value="Configure" />
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
-                        </form>
-                        
-                        <!-- Task Catalog of recommended tasks for age/gender -->
-                        <div class="taskCatalog">
-                            <div class="title">Popular tasks for <span class="childAge">[#]</span> year old <span class="childGender">[gender]</span>s</div>
-                            <div class="tasks"></div>
-                        
-                            <!-- Task HTML template for populating the UI from the DB -->
-                            <div class="taskTemplate">
-                                <div class="taskItem clearfix">
-                                    <div class="addButton"><input type="button" data-icon="plus" data-iconpos="notext" data-theme="a" /></div>
-                                    <div class="taskDetails">
-                                        <div class="title"></div>
-                                        <div class="numKids"><span></span> kids are doing this</div>
+
+                            <!-- Task Catalog of recommended tasks for age/gender -->
+                            <div class="taskCatalog">
+                                <div class="title">Popular tasks for <span class="childAge">[#]</span> year old <span class="childGender">[gender]</span>s</div>
+                                <div class="tasks"></div>
+
+                                <!-- Task HTML template for populating the UI from the DB -->
+                                <div class="taskTemplate">
+                                    <div class="taskItem clearfix">
+                                        <div class="addButton"><input type="button" data-icon="plus" data-iconpos="notext" data-theme="a" /></div>
+                                        <div class="taskDetails">
+                                            <div class="title"></div>
+                                            <div class="numKids"><span></span> kids are doing this</div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div><!-- END taskCatalog-->
-                    </div><!-- END addTaskContent-->
+                            </div><!-- END taskCatalog-->
+                        </div><!-- END addTaskContent-->
+                    </div><!-- /filterListContent -->
 
                     <!-- content in cover to add new goals -->
                     <div class="addGoalContent">
@@ -285,6 +288,7 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
         <!-- script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script -->
         <script src="js/vendor/jquery.mobile-1.3.1.min.js"></script>
+        <script src="js/vendor/jplist.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 
