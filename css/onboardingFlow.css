@@ -22,7 +22,9 @@
     width: 30%;
     height: 100%;
 }
-
+#tour .signIn .error {
+    margin-bottom: 20px;
+}
 
 /* -----------------------
  * Start Tasks page

@@ -28,8 +28,8 @@ $(document).ready(function() {
    });
 
    $("#getStartedForm").submit(function(e){
+     $("#getStartedForm .error").hide();
       transitionToStartTasks(e);
-      $.mobile.navigate( "#startTasks" );
       return false;
    });
 
@@ -67,6 +67,20 @@ var transitionToStartTasks = function(e) {
    // populate main data object
    var name = $('#getStartedFormChildFirstName').val();
    var birthdayString = $('#getStartedFormChildBirthday').val();
+   var errors = false;
+
+   if (name == "") {
+     $("#noNameError").show("fast");
+     errors = true;
+   }
+   if (birthdayString == "") {
+     $("#noBirthdayError").show("fast");
+     errors = true;
+   }
+   if (errors) {
+     return false;
+   }
+   
    // -1 on month, apparently 0-based for months
    var birthday = new Date(parseInt(birthdayString.substring(0,4)), parseInt(birthdayString.substring(5,7))-1, parseInt(birthdayString.substring(8)));
    var gender = $("input:radio[name='getStartedFormChildGender']:checked").val();
@@ -75,6 +89,8 @@ var transitionToStartTasks = function(e) {
    
    currentChild = child;
    populateTasksForChild(child);
+
+   $.mobile.navigate( "#startTasks" );
 };
 
 var configureTasks = function(e) {

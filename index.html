@@ -50,8 +50,10 @@
                         <form method="post" id="getStartedForm">
                             <label for="getStartedFormChildFirstName" data-theme="a">Child First Name</label>
                             <input type="text" name="getStartedFormChildFirstName" id="getStartedFormChildFirstName" data-theme="a"/>
+                            <div class="error" id="noNameError">Please enter a name</div>
                             <label for="getStartedFormChildBirthday">Birthday</label>
                             <input type="date" id="getStartedFormChildBirthday" data-theme="a" />
+                            <div class="error" id="noBirthdayError">Please enter a birthday</div>
                             <label for="getStartedFormChildGender">Gender</label>
                             <fieldset data-role="controlgroup" data-type="horizontal" id="getStartedFormChildGender" data-theme="a">
                                 <input type="radio" name="getStartedFormChildGender" checked id="genderBoy" value="m"  data-theme="a" />

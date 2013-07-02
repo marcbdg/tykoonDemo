@@ -141,10 +141,10 @@ textarea {
 }
 .error {
     margin-top: 5px;
-    color: #a00;
+    color: #f33;
+    padding: 5px;
     display: none;
 }
-
 
 
 
