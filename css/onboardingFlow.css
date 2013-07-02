@@ -19,11 +19,13 @@
 #tour .signIn {
     background: #333;
     color: #eee;
+    text-shadow: 0 1px 0 #000;
     width: 30%;
     height: 100%;
 }
 #tour .signIn .error {
     margin-bottom: 15px;
+    text-shadow: none;
 }
 
 /* -----------------------
@@ -162,6 +164,7 @@
     background: #777;
     color: #fff;
     margin-top: 15px;
+    text-shadow: 0 1px 0 #333;
 }
 #startTasks .taskCatalog .taskTemplate,
 #startTasks .productCatalog .productTemplate {

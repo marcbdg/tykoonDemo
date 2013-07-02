@@ -146,7 +146,9 @@ textarea {
     padding: 5px;
     display: none;
 }
-
+.ui-slider-track .ui-btn.ui-slider-handle {
+    border-radius: 50%;
+}
 
 
 /* ==========================================================================

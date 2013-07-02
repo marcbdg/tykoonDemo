@@ -18,7 +18,8 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
 
-        <link rel="stylesheet" href="themes/basicTheme.min.css" />
+        <!-- <link rel="stylesheet" href="themes/basic/basicTheme.min.css" /> -->
+        <link rel="stylesheet" href="themes/tykoon2/tykoon2.min.css" />
         <!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile.structure-1.3.1.css"> -->
         <link rel="stylesheet" href="css/vendor/jquery.mobile.structure-1.3.1.css">
 
@@ -55,13 +56,13 @@
                             <input type="date" id="getStartedFormChildBirthday" data-theme="a" />
                             <div class="error" id="noBirthdayError">Please enter a birthday</div>
                             <label for="getStartedFormChildGender">Gender</label>
-                            <fieldset data-role="controlgroup" data-type="horizontal" id="getStartedFormChildGender" data-theme="a">
-                                <input type="radio" name="getStartedFormChildGender" checked id="genderBoy" value="m"  data-theme="a" />
+                            <fieldset data-role="controlgroup" data-type="horizontal" id="getStartedFormChildGender" data-theme="c">
+                                <input type="radio" name="getStartedFormChildGender" checked id="genderBoy" value="m"  data-theme="c" />
                                 <label for="genderBoy">Boy</label>
-                                <input type="radio" name="getStartedFormChildGender" id="genderGirl" value="f"  data-theme="a" />
+                                <input type="radio" name="getStartedFormChildGender" id="genderGirl" value="f"  data-theme="c" />
                                 <label for="genderGirl">Girl</label>
                             </fieldset>
-                            <input type="submit"  data-theme="a" data-inline="true" id="getStartedFormSubmit" value="Get Started" />
+                            <input type="submit"  data-theme="b" data-inline="true" id="getStartedFormSubmit" value="Get Started" />
                         </form>
                     </div>
                  </div>
@@ -98,7 +99,7 @@
                     </div>
                     <div data-role="content" class="setAllowance">
                         <label for="slider-fill">Set <span class="childPossesivePronoun"></span> allowance per week</label>
-                        <input type="range" name="slider-fill" data-theme="a" id="slider-fill" value="10" min="1" max="40" step=".5" data-highlight="true">
+                        <input type="range" name="slider-fill" data-theme="c" id="slider-fill" value="10" min="1" max="40" step=".5" data-highlight="true">
                     </div>
                     <div class="selectedTasks">
                     </div>
@@ -122,7 +123,7 @@
                                     <label class="title" for="addTasksFormTaskName">What do you want <span class="childFirstName">[firstName]</span> to do?</label>
                                     <div class="ui-grid-a">
                                         <div class="ui-block-a">
-                                            <input type="text" id="addTasksFormTaskName" data-theme="a" placeholder="Type here to create your own" data-clear-btn="true" data-path=".title" data-control-type="textbox" data-control-name="title-filter" data-control-action="filter" />
+                                            <input type="text" id="addTasksFormTaskName" data-theme="c" placeholder="Type here to create your own" data-clear-btn="true" data-path=".title" data-control-type="textbox" data-control-name="title-filter" data-control-action="filter" />
                                         </div>
                                         <div class="ui-block-b">
                                             <input type="button" data-theme="a" value="Configure" />
@@ -156,7 +157,7 @@
                             <label class="title" for="addGoalFormGoalName">What would motivate <span class="childFirstName">[firstName]</span>?</label>
                             <div class="ui-grid-a">
                                 <div class="ui-block-a">
-                                    <input type="text" id="addGoalFormGoalName" data-theme="a" data-clear-btn="true" placeholder="Product / charity / save" />
+                                    <input type="text" id="addGoalFormGoalName" data-theme="c" data-clear-btn="true" placeholder="Product / charity / save" />
                                 </div>
                                 <div class="ui-block-b">
                                     <input type="button" data-theme="a" value="Configure" />
@@ -194,26 +195,26 @@
             <div data-role="footer" class="ui-bar">
                 <div class="startTasksFooter">
                     After you have added some tasks and reviewed pay, move on to set some goals
-                    <input type="button" id="doneWithTasksButton" value="Done setting Tasks" data-icon="arrow-r" data-iconpos="right" data-inline="true" />
+                    <input type="button" id="doneWithTasksButton" data-theme="b" value="Done setting Tasks" data-icon="arrow-r" data-iconpos="right" data-inline="true" />
                 </div>
                 <div  class="startGoalsFooter">
                     Once you and <span class="childFirstName">[childName]</span> have agreed your selections, your account is ready to use.
-                    <input type="button" id="doneWithGoalsButton" value="Finish and Activate" data-icon="arrow-r" data-iconpos="right" data-inline="true" />
+                    <input type="button" id="doneWithGoalsButton" data-theme="b" value="Finish and Activate" data-icon="arrow-r" data-iconpos="right" data-inline="true" />
                 </div>
             </div>
             
             <!-- start configureTasks -->
             <div data-role="popup" id="configureTasks">
-                <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+                <a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
                 <div class="taskTitle ui-bar ui-bar-a"></div>
                 <div class="taskContent" data-role="content">
                     <form method="get" id="configureTaskForm">
                         <label>Repeats</label>
 
                         <fieldset data-role="controlgroup" data-type="horizontal" id="configureTasksRepeats" data-theme="a">
-                            <input type="radio" name="configureTasksRepeats" id="configureTaskRepeatsYes" value="1"  data-theme="a" checked="checked" />
+                            <input type="radio" name="configureTasksRepeats" id="configureTaskRepeatsYes" value="1"  data-theme="c" checked="checked" />
                             <label for="configureTaskRepeatsYes">Yes</label>
-                            <input type="radio" name="configureTasksRepeats" id="configureTaskRepeatsNo" value="0"  data-theme="a" />
+                            <input type="radio" name="configureTasksRepeats" id="configureTaskRepeatsNo" value="0"  data-theme="c" />
                             <label for="configureTaskRepeatsNo">No</label>
                         </fieldset>
 
@@ -221,19 +222,19 @@
                             <label>Weekly on</label>
                             <div data-role="fieldcontain">
                                 <fieldset data-role="controlgroup" data-type="horizontal" id="configureTasksWeeklyOn" data-theme="a">
-                                    <input type="checkbox" name="weeklyMon" id="weeklyMon" data-theme="a" value="mon" />
+                                    <input type="checkbox" name="weeklyMon" id="weeklyMon" data-theme="c" value="mon" />
                                     <label for="weeklyMon">M</label>
-                                    <input type="checkbox" name="weeklyTue" id="weeklyTue" data-theme="a" value="tue" />
+                                    <input type="checkbox" name="weeklyTue" id="weeklyTue" data-theme="c" value="tue" />
                                     <label for="weeklyTue">T</label>
-                                    <input type="checkbox" name="weeklyWed" id="weeklyWed" data-theme="a" value="wed" />
+                                    <input type="checkbox" name="weeklyWed" id="weeklyWed" data-theme="c" value="wed" />
                                     <label for="weeklyWed">W</label>
-                                    <input type="checkbox" name="weeklyThu" id="weeklyThu" data-theme="a" value="thu" />
+                                    <input type="checkbox" name="weeklyThu" id="weeklyThu" data-theme="c" value="thu" />
                                     <label for="weeklyThu">Th</label>
-                                    <input type="checkbox" name="weeklyFri" id="weeklyFri" data-theme="a" value="fri" />
+                                    <input type="checkbox" name="weeklyFri" id="weeklyFri" data-theme="c" value="fri" />
                                     <label for="weeklyFri">F</label>
-                                    <input type="checkbox" name="weeklySat" id="weeklySat" data-theme="a" value="sat" />
+                                    <input type="checkbox" name="weeklySat" id="weeklySat" data-theme="c" value="sat" />
                                     <label for="weeklySat">Sat</label>
-                                    <input type="checkbox" name="weeklySun" id="weeklySun" data-theme="a" value="sun" />
+                                    <input type="checkbox" name="weeklySun" id="weeklySun" data-theme="c" value="sun" />
                                     <label for="weeklySun">Sun</label>
                                 </fieldset>
                                 <div class="error" id="pickADay">Choose at least 1 day of the week</div>
@@ -247,10 +248,10 @@
 
                         <label>Payment</label>
                         <div class="hideRepeat">
-                            <fieldset data-role="controlgroup" data-type="horizontal" id="configureRepeatPayment" data-theme="a">
-                                <input type="radio" name="configureRepeatPayment" id="configureRepeatPaymentAllow" value="allowance"  data-theme="a" checked="checked" />
+                            <fieldset data-role="controlgroup" data-type="horizontal" id="configureRepeatPayment" data-theme="c">
+                                <input type="radio" name="configureRepeatPayment" id="configureRepeatPaymentAllow" value="allowance"  data-theme="c" checked="checked" />
                                 <label for="configureRepeatPaymentAllow">Allowance</label>
-                                <input type="radio" name="configureRepeatPayment" id="configureRepeatPaymentResp" value="responsibility"  data-theme="a" />
+                                <input type="radio" name="configureRepeatPayment" id="configureRepeatPaymentResp" value="responsibility"  data-theme="c" />
                                 <label for="configureRepeatPaymentResp">Responsibility</label>
                             </fieldset>
                             <div class="taskRepeatPaymentDetails">
@@ -261,9 +262,9 @@
 
                         <div class="hideNonRepeat">
                             <fieldset data-role="controlgroup" data-type="horizontal" id="configureNonRepeatPayment" data-theme="a">
-                                <input type="radio" name="configureNonRepeatPayment" id="configureNonRepeatPaymentMoney" value="money"  data-theme="a" checked="checked" />
+                                <input type="radio" name="configureNonRepeatPayment" id="configureNonRepeatPaymentMoney" value="money"  data-theme="c" checked="checked" />
                                 <label for="configureNonRepeatPaymentMoney">Money</label>
-                                <input type="radio" name="configureNonRepeatPayment" id="configureNonRepeatPaymentResp" value="responsibility"  data-theme="a" />
+                                <input type="radio" name="configureNonRepeatPayment" id="configureNonRepeatPaymentResp" value="responsibility"  data-theme="c" />
                                 <label for="configureNonRepeatPaymentResp">Responsibility</label>
                             </fieldset>
                             <div class="taskNonRepeatPaymentDetails">
@@ -276,7 +277,7 @@
                             </div>
                         </div>
 
-                        <input type="submit" id="configureTasksAddIt" value="Add it" />
+                        <input type="submit" id="configureTasksAddIt" value="Add it" data-theme="a" />
                     </form>
                 </div>
             </div>
