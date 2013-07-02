@@ -52,6 +52,13 @@ $(document).ready(function() {
      addConfiguredTaskToChild(e);
      return false;
    });
+
+   $('#filterListContent').jplist({
+      items_box: '.tasks',
+      item_path: '.taskItem',
+      panel_path: '.filterPanel',
+      cookies: true
+   });
 });
 
 var tykoonData = {
