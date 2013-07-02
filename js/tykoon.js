@@ -169,7 +169,12 @@ var addConfiguredTaskToChild = function(e) {
   
   currentChild.tasks.push(currentTask);
   $("#configureTasks" ).popup( "close" );
-  $(".taskItem[data-taskId = '" + taskId + "']").slideUp();
+  
+  // move and update the task
+  var taskUI = $(".taskItem[data-taskId = '" + taskId + "']")
+  $(taskUI).appendTo("#startTasks .selectedTasks");
+  $(taskUI).find(".numKids").addClass("taskSettings").removeClass("numKids").html("<span class='recurrance'>.</span> <span class='payment'>" + currentTask.payType + "</span>");
+  $(taskUI)
 }
 
 var populateTasksForChild = function(child) {
@@ -177,6 +182,7 @@ var populateTasksForChild = function(child) {
   $(".childFirstName").html(child.name);
   $(".childAge").html(child.getAge());
   $(".childGender").html(child.getGenderNoun());
+  $(".childPossesivePronoun").html(child.getPossesivePronoun());
 
   //clean page and populate page with tasks from catalog
  $('#startTasks .taskCatalog .tasks').empty();

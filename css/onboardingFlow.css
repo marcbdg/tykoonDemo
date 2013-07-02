@@ -36,10 +36,29 @@
     height: 100%;
     background: #eee;
 }
+#startTasks .tasksPayGoals .header {
+    border-bottom: 3px solid #aaa;
+}
 #startTasks .tasksPayGoals .sectionTitle {
     font-size: 1.6em;
     line-height: 1.7em;
     font-weight: bold;
+}
+#startTasks .tasksPayGoals .setAllowance {
+    border-top: 2px solid #bbb;
+    background: #ccc;
+}
+#startTasks .tasksPayGoals .setAllowance label {
+    color: #065b8c;
+}
+#startTasks .setAllowance .ui-slider {
+    width: 95%;
+}
+#startTasks .setAllowance input.ui-input-text.ui-slider-input {
+    float: right;
+}
+#startTasks .setAllowance .ui-slider-track {
+    margin: 0 68px 0 15px;
 }
 #addTasksForm .ui-btn-shadow.ui-body-a,
 #addGoalForm .ui-btn-shadow.ui-body-a {

@@ -89,14 +89,24 @@
             
             <!-- 3 col layout -->
             <div class="ui-grid-a tasksPayGoals">
+                
+                <!-- TASKS/PAY column -->
                 <div class="ui-block-a">
-                    <div data-role="content">
+                    <div data-role="content" class="header ui-bar-a">
                         <div class="sectionTitle">Tasks &amp; Pay</div>
                         <div class="subTitle">How <span class="childFirstName">[firstName]</span> will earn money</div>
                     </div>
+                    <div data-role="content" class="setAllowance">
+                        <label for="slider-fill">Set <span class="childPossesivePronoun"></span> allowance per week</label>
+                        <input type="range" name="slider-fill" data-theme="a" id="slider-fill" value="10" min="1" max="40" step=".5" data-highlight="true">
+                    </div>
+                    <div class="selectedTasks">
+                    </div>
                 </div>
+
+                <!-- GOALS column -->
                 <div class="ui-block-b">
-                    <div data-role="content">
+                    <div data-role="content" class="header ui-bar-a">
                         <div class="sectionTitle">Goals</div>
                         <div class="subTitle">What <span class="childFirstName">[firstName]</span> will save for</div>
                     </div>

@@ -49,4 +49,8 @@ var Child = function(balance, name, username, password, emailAddress, birthday, 
    this.getGenderNoun = function() {
      return (this.gender == "m") ? "boy" : "girl";
    }
+   this.getPossesivePronoun = function() {
+     return (this.gender == "m") ? "his" : "her";
+   }
+   
 };
