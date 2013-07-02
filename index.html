@@ -221,9 +221,10 @@
                                     <input type="checkbox" name="weeklySun" id="weeklySun" data-theme="a" value="sun" />
                                     <label for="weeklySun">Sun</label>
                                 </fieldset>
+                                <div class="error" id="pickADay">Choose at least 1 day of the week</div>
                             </div>
-                        
                         </div>
+                        
                         <div class="hideNonRepeat">
                             <label for="configureTasksDueDate">Due date</label>
                             <input type="date" id ="configureTasksDueDate" data-theme="a">
@@ -254,12 +255,13 @@
                                 <p class="money">
                                     <label for="configureTasksHowMuch">How Much?</label>
                                     <input type="number" id="configureTasksHowMuch">
+                                    <div class="error" id="enterTaskMoney">Please enter how much</div>
                                 </p>
                                 <p class="resp">It's nice to help out just because</p>
                             </div>
                         </div>
 
-                        <button id="configureTasksAddIt">Add it</button>
+                        <input type="submit" id="configureTasksAddIt" value="Add it" />
                     </form>
                 </div>
             </div>
