@@ -81,7 +81,7 @@ var configureTasks = function(e) {
    // FInd the task clicked on and collect it's data
    var taskltem = $(e.currentTarget),
       taskName = $(taskltem).find(".title").text(),
-      taskId = $(taskltem).find(".title").attr("data-taskId");
+      taskId = $(taskltem).attr("data-taskId");
 
    // populate the popup disclosure and show it
    $('#configureTasks .taskTitle').html(taskName).attr("data-taskId",taskId);
@@ -152,6 +152,8 @@ var addConfiguredTaskToChild = function(e) {
   }
   
   currentChild.tasks.push(currentTask);
+  $("#configureTasks" ).popup( "close" );
+  $(".taskItem[data-taskId = '" + taskId + "']").slideUp();
 }
 
 var populateTasksForChild = function(child) {
@@ -166,8 +168,9 @@ var populateTasksForChild = function(child) {
   for(var i in cannedTasks.tasks) {
     var task = cannedTasks.tasks[i];
     if ((task.gender == "b" || task.gender == child.gender) && (child.getAge() >= task.ageRange.min && child.getAge() <= task.ageRange.max)) {
-      var taskItem = $(taskTemplate).clone()
-      $(taskItem).find(".title").html(task.name).attr("data-taskId", task.id);
+      var taskItem = $(taskTemplate).clone();
+      $(taskItem).attr("data-taskId", task.id);
+      $(taskItem).find(".title").html(task.name);
       $(taskItem).find(".numKids span").html(task.numPeople);
       $('#startTasks .taskCatalog .tasks').append($(taskItem));
     }
@@ -231,6 +234,7 @@ var populateProductsForChild = function(child) {
     var product = cannedProducts.products[i];
     if ((product.gender == "b" || product.gender == child.gender) && (child.getAge() >= product.ageRange.min && child.getAge() <= product.ageRange.max)) {
       var productItem = $(productTemplate).clone();
+      $(productItem).attr("data-productId", product.id);
       $(productItem).find(".title").html(product.name);
       $(productItem).find(".numKids span").html(product.numPeople);
       $(productItem).find(".thumbnail").attr({src: product.imgURL, alt: product.name});
