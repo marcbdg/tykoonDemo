@@ -69,10 +69,20 @@ $(document).ready(function() {
          $("#startTasks .taskCatalog .taskItem").on("click", function(e){
             configureTasks(e);
          });
-      }
-   });
 
+      },
+      no_results: '.tasksNoResults',
+      ask_event: 'blah()'
+
+   });
+   $('#addTasksFormTaskName').on('keyup', function(e) {
+      $('span.taskSearchTerm').text(e.currentTarget.value);
+   });
 });
+
+function blah() {
+   alert('blah');
+}
 
 var tykoonData = {
    parent: {
