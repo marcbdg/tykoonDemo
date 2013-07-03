@@ -179,6 +179,10 @@
     margin-top: 15px;
     text-shadow: 0 1px 0 #333;
 }
+#startTasks .taskCatalog .taskSearchTerm {
+    font-weight: bold;
+    font-style: italic;
+}
 #startTasks .taskCatalog .taskTemplate,
 #startTasks .productCatalog .productTemplate {
     display: none;
