@@ -69,13 +69,11 @@
 #startTasks .tasksPayGoals .setAllowance {
     border-top: 2px solid #bbb;
     background: #ccc;
+    padding-right: 30px;
     position: relative;
 }
 #startTasks .tasksPayGoals .setAllowance label {
     color: #006d8e;
-}
-#startTasks .setAllowance .ui-slider {
-    width: 96%;
 }
 #startTasks .setAllowance input.ui-input-text.ui-slider-input {
     float: right;
@@ -97,7 +95,7 @@
     color: #fff;
     text-shadow: 0 1px 0 #333;
     position: absolute;
-    right: 14.2%;
+    right: 63px;
     bottom: 2.15em;
     display: block;
     z-index: 10;
