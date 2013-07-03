@@ -40,6 +40,19 @@ $(document).ready(function() {
       return false;
    });
 
+   //matched pair of entering in field
+   $('#addTasksFormTaskName').on('keyup', function(e) {
+      watchUserFilterInput(e);
+   });
+   //and hitting clear button
+   $('#taskFilterContainer').on('click', '.ui-icon-delete', function(e) {
+      clearFilterTriggerPlugin(e);
+   });
+   $('.backToPopularTasks').on('click', function(e) {
+      clearFilterTriggerPlugin(e);
+   });
+
+
    $("#doneWithTasksButton").on("click", function(e){ 
       transitionToStartGoals(e);
    });
@@ -75,14 +88,8 @@ $(document).ready(function() {
       ask_event: 'blah()'
 
    });
-   $('#addTasksFormTaskName').on('keyup', function(e) {
-      $('span.taskSearchTerm').text(e.currentTarget.value);
-   });
-});
 
-function blah() {
-   alert('blah');
-}
+});
 
 var tykoonData = {
    parent: {
@@ -149,6 +156,22 @@ function dateToYMD(date) {
     var y = date.getFullYear();
     return '' + y + '-' + (m<=9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d);
 }
+
+var clearFilterTriggerPlugin = function(e) {
+   $('#addTasksFormTaskName').val('').trigger('keypress').trigger('keyup');
+};
+
+var watchUserFilterInput = function(e) {
+   $('span.taskSearchTerm').text(e.currentTarget.value);
+   if (e.currentTarget.value) {
+      $('.taskCatalog .title').hide();
+      $('.taskCatalog .altTitle').show();
+   } else {
+      $('.taskCatalog .title').show();
+      $('.taskCatalog .altTitle').hide();
+   }
+};
+
 
 var addConfiguredTaskToChild = function(e) {
   var taskTitle = $("#configureTasks .taskTitle").html(),
