@@ -214,8 +214,8 @@ border-bottom: 1px solid #ccc;
 border-top: 1px solid #aaa;
 padding: 10px 20px;
 }
-#startTasks .taskCatalog .taskItem:hover,
-#startTasks .productCatalog .productItem:hover {
+#startTasks .taskCatalog .taskItem:touch,
+#startTasks .productCatalog .productItem:touch {
     background: #ddd;
 }
 #startTasks .taskCatalog .taskItem .addButton {
