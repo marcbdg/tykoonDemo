@@ -199,7 +199,13 @@
 }
 
 #startTasks .taskCatalog .altTitle {display:none;}
-
+#startTasks .taskCatalog .altTitle .backToPopularTasks {
+    text-decoration: underline;
+    font-weight: normal;
+    float: right;
+    font-size: .8em;
+    line-height: 1.8em;
+}
 #startTasks .taskCatalog .taskSearchTerm {
     font-weight: bold;
     font-style: italic;
