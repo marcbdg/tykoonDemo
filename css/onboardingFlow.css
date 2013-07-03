@@ -69,12 +69,13 @@
 #startTasks .tasksPayGoals .setAllowance {
     border-top: 2px solid #bbb;
     background: #ccc;
+    position: relative;
 }
 #startTasks .tasksPayGoals .setAllowance label {
     color: #006d8e;
 }
 #startTasks .setAllowance .ui-slider {
-    width: 95%;
+    width: 96%;
 }
 #startTasks .setAllowance input.ui-input-text.ui-slider-input {
     float: right;
@@ -83,9 +84,23 @@
     color: #fff;
     text-shadow: 0 1px 0 #333;
     border-radius: 50%;
-    height: 2em;
+    height: 2.7em;
+    width: 2.7em;
     font-size: 1.2em;
-    margin-top: -.5em;
+    margin-top: -.6em;
+    padding-left: .7em;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+}
+#startTasks .setAllowance .dollarSign {
+    color: #fff;
+    text-shadow: 0 1px 0 #333;
+    position: absolute;
+    right: 13.2%;
+    bottom: 1.85em;
+    display: block;
+    z-index: 10;
 }
 #startTasks .setAllowance .ui-slider-track {
     margin: 0 68px 0 15px;
