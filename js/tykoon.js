@@ -236,6 +236,11 @@ var populateTasksForChild = function(child) {
       $('#startTasks .taskCatalog .tasks').append($(taskItem));
     }
   }
+
+  // attach click events to freshly drawn tasks in the catalog
+  $("#startTasks .taskCatalog .taskItem").on("click", function(e){
+     configureTasks(e);
+  });
 };
 
 var swapConfigureTasksRepeats = function(e) {
@@ -276,7 +281,7 @@ var transitionToStartGoals = function(e) {
   $(".addTaskContent, .startTasksFooter").fadeOut(200);
   
   // move the cover
-  $(".cover").addClass("leftCover"); //.css("left","0");
+  $("#startTasks .tasksPayGoals").addClass("left"); //.css("left","0");
   
   $(".addGoalContent, .startGoalsFooter").delay(400).fadeIn(200);
 };

@@ -88,7 +88,7 @@
                 </div>
             </div>
             
-            <!-- 3 col layout -->
+            <!-- 2 col layout -->
             <div class="ui-grid-a tasksPayGoals">
                 
                 <!-- TASKS/PAY column -->
@@ -112,86 +112,88 @@
                         <div class="subTitle">What <span class="childFirstName">[firstName]</span> will save for</div>
                     </div>
                 </div>
-
-                <!-- Page cover that contains instructions and reveals the page -->
-                <div class="cover">
-                    <div id="filterListContent">
-                        <!-- content in cover to add a new task -->
-                        <div class="addTaskContent">
-                            <div class="filterPanel">
-                                <form method="post" id="addTasksForm" data-role="content">
-                                    <label class="title" for="addTasksFormTaskName">What do you want <span class="childFirstName">[firstName]</span> to do?</label>
-                                    <div class="ui-grid-a">
-                                        <div class="ui-block-a">
-                                            <input type="text" id="addTasksFormTaskName" data-theme="c" placeholder="Type here to create your own" data-clear-btn="true" data-path=".title" data-control-type="textbox" data-control-name="title-filter" data-control-action="filter" />
-                                        </div>
-                                        <div class="ui-block-b">
-                                            <input type="button" data-theme="a" value="Configure" />
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-
-                            <!-- Task Catalog of recommended tasks for age/gender -->
-                            <div class="taskCatalog">
-                                <div class="title">Popular tasks for <span class="childAge">[#]</span> year old <span class="childGender">[gender]</span>s</div>
-                                <div class="tasks"></div>
-
-                                <!-- Task HTML template for populating the UI from the DB -->
-                                <div class="taskTemplate">
-                                    <div class="taskItem clearfix">
-                                        <div class="addButton">+</div>
-                                        <div class="taskDetails">
-                                            <div class="title"></div>
-                                            <div class="numKids"><span></span> kids are doing this</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- END taskCatalog-->
-                        </div><!-- END addTaskContent-->
-                    </div><!-- /filterListContent -->
-
-                    <!-- content in cover to add new goals -->
-                    <div class="addGoalContent">
-                        <form method="post" id="addGoalForm" data-role="content">
-                            <label class="title" for="addGoalFormGoalName">What would motivate <span class="childFirstName">[firstName]</span>?</label>
-                            <div class="ui-grid-a">
-                                <div class="ui-block-a">
-                                    <input type="text" id="addGoalFormGoalName" data-theme="c" data-clear-btn="true" placeholder="Product / charity / save" />
-                                </div>
-                                <div class="ui-block-b">
-                                    <input type="button" data-theme="a" value="Configure" />
-                                </div>
-                            </div>
-                        </form>
-                        
-                        <!-- Product Catalog of recommended products for age/gender -->
-                        <div class="productCatalog clearfix">
-                            <div class="title">Popular Goals for <span class="childAge">[#]</span> year old <span class="childGender">[gender]</span>s</div>
-                            <div class="products"></div>
-                        
-                            <!-- Product HTML template for populating the UI from the DB -->
-                            <div class="productTemplate">
-                                <div class="productItem clearfix">
-                                    <div class="productImage verticalWrapper">
-                                        <div class="verticalMiddle">
-                                            <img class="thumbnail" />
-                                        </div>
-                                        <input class="productDetailsIcon" type="button" data-icon="search" data-iconpos="notext" data-theme="a" />
-                                    </div>
-                                    <div class="productDetails">
-                                        <div class="title"></div>
-                                        <div class="numKids"><span></span> kids saving for this</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- END productCatalog-->
-                    </div><!-- END addProductContent-->
                 
-                </div><!-- END cover -->
-                
-            </div><!-- END 3-col layout ui-grid-a -->
+            </div><!-- END 2-col layout ui-grid-a -->
             
+            <!-- Page cover that contains instructions and reveals the page -->
+            <div class="cover">
+                <div id="filterListContent">
+                    <!-- content in cover to add a new task -->
+                    <div class="addTaskContent">
+                        <div class="filterPanel">
+                            <form method="post" id="addTasksForm" data-role="content">
+                                <label class="title" for="addTasksFormTaskName">What do you want <span class="childFirstName">[firstName]</span> to do?</label>
+                                <div class="ui-grid-a">
+                                    <div class="ui-block-a">
+                                        <input type="text" id="addTasksFormTaskName" data-theme="c" placeholder="Type here to create your own" data-clear-btn="true" data-path=".title" data-control-type="textbox" data-control-name="title-filter" data-control-action="filter" />
+                                    </div>
+                                    <div class="ui-block-b">
+                                        <input type="button" data-theme="a" value="Configure" />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Task Catalog of recommended tasks for age/gender -->
+                        <div class="taskCatalog">
+                            <div class="title">Popular tasks for <span class="childAge">[#]</span> year old <span class="childGender">[gender]</span>s</div>
+                            <div class="tasks"></div>
+
+                            <!-- Task HTML template for populating the UI from the DB -->
+                            <div class="taskTemplate">
+                                <div class="taskItem clearfix">
+                                    <div class="addButton">+</div>
+                                    <div class="taskDetails">
+                                        <div class="title"></div>
+                                        <div class="numKids"><span></span> kids are doing this</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- END taskCatalog-->
+                    </div><!-- END addTaskContent-->
+                </div><!-- /filterListContent -->
+
+                <!-- content in cover to add new goals -->
+                <div class="addGoalContent">
+                    <form method="post" id="addGoalForm" data-role="content">
+                        <label class="title" for="addGoalFormGoalName">What would motivate <span class="childFirstName">[firstName]</span>?</label>
+                        <div class="ui-grid-a">
+                            <div class="ui-block-a">
+                                <input type="text" id="addGoalFormGoalName" data-theme="c" data-clear-btn="true" placeholder="Product / charity / save" />
+                            </div>
+                            <div class="ui-block-b">
+                                <input type="button" data-theme="a" value="Configure" />
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <!-- Product Catalog of recommended products for age/gender -->
+                    <div class="productCatalog clearfix">
+                        <div class="title">Popular Goals for <span class="childAge">[#]</span> year old <span class="childGender">[gender]</span>s</div>
+                        <div class="products"></div>
+                    
+                        <!-- Product HTML template for populating the UI from the DB -->
+                        <div class="productTemplate">
+                            <div class="productItem clearfix">
+                                <div class="productImage verticalWrapper">
+                                    <div class="verticalMiddle">
+                                        <img class="thumbnail" />
+                                    </div>
+                                    <input class="productDetailsIcon" type="button" data-icon="search" data-iconpos="notext" data-theme="a" />
+                                </div>
+                                <div class="productDetails">
+                                    <div class="title"></div>
+                                    <div class="numKids"><span></span> kids saving for this</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- END productCatalog-->
+                </div><!-- END addProductContent-->
+            
+            </div><!-- END cover -->
+
+            
+            <!-- start footer -->
             <div data-role="footer" class="ui-bar">
                 <div class="startTasksFooter">
                     After you have added some tasks and reviewed pay, move on to set some goals
@@ -201,7 +203,8 @@
                     Once you and <span class="childFirstName">[childName]</span> have agreed your selections, your account is ready to use.
                     <input type="button" id="doneWithGoalsButton" data-theme="b" value="Finish and Activate" data-icon="arrow-r" data-iconpos="right" data-inline="true" />
                 </div>
-            </div>
+            </div> <!-- end footer -->
+
             
             <!-- start configureTasks -->
             <div data-role="popup" id="configureTasks">
