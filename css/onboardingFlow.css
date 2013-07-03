@@ -178,6 +178,7 @@
 #startTasks .taskCatalog .tasks {
     height: 483px;
     overflow: auto;
+    -webkit-overflow-scrolling: touch;
 }
 #startTasks .taskCatalog .title,
 #startTasks .taskCatalog .altTitle,
