@@ -93,46 +93,6 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-.ui-header {
-  height: 60px;
-}
-.ui-header .logo {
-  float: left;
-  margin-left: 20px;
-}
-.ui-header .userModule {
-  float: right;
-  border-left: 1px solid #fff;
-  width: 300px;
-}
-.ui-header .userModule .avatar {
-  float: left;
-  width: 50px;
-  height: 50px;
-  margin: 5px 10px;
-}
-.ui-header .userModule .userInfo {
-  float: left;
-  padding-top: 5px;
-}
-
-.ui-content {
-    padding: 20px;
-}
-#startTasks .ui-footer {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    bottom: 0;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    z-index: 1000;
-    opacity: .94;
-    height: 65px;
-}
-.ui-popup-screen {
-    background: #ccc;
-}
 .verticalWrapper {
     display: table;
 }
@@ -145,9 +105,6 @@ textarea {
     color: #f33;
     padding: 5px;
     display: none;
-}
-.ui-slider-track .ui-btn.ui-slider-handle {
-    border-radius: 50%;
 }
 
 

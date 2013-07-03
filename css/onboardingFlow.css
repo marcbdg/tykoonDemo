@@ -97,8 +97,8 @@
     color: #fff;
     text-shadow: 0 1px 0 #333;
     position: absolute;
-    right: 13.2%;
-    bottom: 1.85em;
+    right: 14.2%;
+    bottom: 2.15em;
     display: block;
     z-index: 10;
 }
@@ -221,22 +221,24 @@ padding: 10px 20px;
 #startTasks .taskCatalog .taskItem .addButton {
     width: 50px;
     height: 50px;
+    margin-right: 15px;
+    float: left;
     border-radius: 10px;
-    color: white;
+    color: #fff;
     text-align: center;
     line-height: 45px;
     font-size: 2em;
     font-weight: bold;
-    border: 1px solid #c1b8b3;
-    background: #77e1f9;
-    background-image: -webkit-gradient(linear,left top,left bottom,from( #77e1f9 ),to( #009bce ));
-    background-image: -webkit-linear-gradient( #77e1f9,#009bce );
-    background-image: -moz-linear-gradient( #77e1f9,#009bce );
-    background-image: -ms-linear-gradient( #77e1f9,#009bce );
-    background-image: -o-linear-gradient( #77e1f9,#009bce );
-    background-image: linear-gradient( #77e1f9,#009bce );    text-shadow: 0 1px 2px #2f3e46;
-    margin-right: 15px;
-    float: left;
+
+    border: 1px solid #199CC3;
+    background: #1abeee;
+    text-shadow: 0 1px 2px #2f3e46;
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #86e3fe ),to( #1abeee ));
+    background-image: -webkit-linear-gradient( #86e3fe,#1abeee );
+    background-image: -moz-linear-gradient( #86e3fe,#1abeee );
+    background-image: -ms-linear-gradient( #86e3fe,#1abeee );
+    background-image: -o-linear-gradient( #86e3fe,#1abeee );
+    background-image: linear-gradient( #86e3fe,#1abeee );
 }
 #startTasks .taskCatalog .taskItem .taskDetails,
 #startTasks .productCatalog .productItem .productDetails {

@@ -1,0 +1,64 @@
+.ui-header {
+  height: 60px;
+}
+.ui-header .logo {
+  float: left;
+  margin-left: 20px;
+}
+.ui-header .userModule {
+  float: right;
+  border-left: 1px solid #fff;
+  width: 300px;
+}
+.ui-header .userModule .avatar {
+  float: left;
+  width: 50px;
+  height: 50px;
+  margin: 5px 10px;
+}
+.ui-header .userModule .userInfo {
+  float: left;
+  padding-top: 5px;
+}
+
+.ui-content {
+    padding: 20px;
+}
+#startTasks .ui-footer {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    z-index: 1000;
+    opacity: .94;
+    height: 65px;
+}
+.ui-popup-screen {
+    background: #ccc;
+}
+.ui-slider-track .ui-btn.ui-slider-handle {
+    border-radius: 50%;
+}
+
+.ui-bar-a {
+    background-image: url(../img/texture.png), -webkit-gradient(linear,left top,left bottom,from( #3691ae ),to( #59bbd8 ));
+    background-image: url(../img/texture.png), -webkit-linear-gradient( #3691ae,#59bbd8 );
+    background-image: url(../img/texture.png), -moz-linear-gradient( #3691ae,#59bbd8 );
+    background-image: url(../img/texture.png), -ms-linear-gradient( #3691ae,#59bbd8 );
+    background-image: url(../img/texture.png), -o-linear-gradient( #3691ae,#59bbd8 );
+    background-image: url(../img/texture.png), linear-gradient( #3691ae,#59bbd8 ) url(/img/texture.png);
+}
+
+/* RETINA IMAGES */
+@media all and (-webkit-min-device-pixel-ratio: 2) {
+    .ui-bar-a {
+        background-image: url(../img/texture@2x.png), -webkit-gradient(linear,left top,left bottom,from( #3691ae ),to( #59bbd8 ));
+        background-image: url(../img/texture@2x.png), -webkit-linear-gradient( #3691ae,#59bbd8 );
+        background-image: url(../img/texture@2x.png), -moz-linear-gradient( #3691ae,#59bbd8 );
+        background-image: url(../img/texture@2x.png), -ms-linear-gradient( #3691ae,#59bbd8 );
+        background-image: url(../img/texture@2x.png), -o-linear-gradient( #3691ae,#59bbd8 );
+        background-image: url(../img/texture@2x.png), linear-gradient( #3691ae,#59bbd8 ) url(/img/texture.png);
+    }
+}
