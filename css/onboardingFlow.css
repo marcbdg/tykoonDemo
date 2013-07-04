@@ -115,6 +115,7 @@
 #addTasksForm .ui-block-b,
 #addGoalForm .ui-block-b {
     width: 34%;
+    margin-top: -4px;
 }
 #startTasks .cover {
     position: absolute;

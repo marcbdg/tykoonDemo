@@ -130,8 +130,7 @@
                                         <input type="text" id="addTasksFormTaskName" data-theme="c" placeholder="Type here to create your own" data-clear-btn="true" data-path=".title" data-control-type="textbox" data-control-name="title-filter" data-control-action="filter" />
                                     </div>
                                     <div class="ui-block-b">
-                                        <!-- <input type="button" data-theme="a" value="Configure" /> -->
-                                        <a data-role="button" href="#configureTasks" data-rel="popup" data-theme="a" data-position-to="window" class="createNewTask">Configure</a>
+                                        <a data-role="button" href="#configureTasks" data-rel="popup" data-theme="a" data-position-to="window" class="createNewTask ui-disabled">Configure</a>
                                     </div>
                                 </div>
                             </form>
@@ -144,7 +143,7 @@
                             <div class="tasks"></div>
                             <div class="tasksNoResults" data-role="content">
                                 <p>Nothing in our catalog matches <span class="taskSearchTerm"></span></p>
-                                <p><a href="#configureTasks" data-rel="popup" data-position-to="window" class="createNewTask">Create your own task</a></p>
+                                <p><a href="#configureTasks" data-role="button" data-rel="popup" data-position-to="window" class="createNewTask">Create your own task</a></p>
                             </div>
 
                             <!-- Task HTML template for populating the UI from the DB -->
@@ -181,7 +180,7 @@
                                 <input type="text" id="addGoalFormGoalName" data-theme="c" data-clear-btn="true" placeholder="Product / charity / save" />
                             </div>
                             <div class="ui-block-b">
-                                <input type="button" data-theme="a" value="Configure" />
+                                <a data-role="button" href="#configureNewProduct" data-rel="popup" data-theme="a" data-position-to="window" class="createNewGoal ui-disabled">Configure</a>
                             </div>
                         </div>
                     </form>

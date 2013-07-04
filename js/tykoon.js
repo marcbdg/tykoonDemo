@@ -176,9 +176,11 @@ var watchUserFilterInput = function(e) {
    if (e.currentTarget.value) {
       $('.taskCatalog .title').hide();
       $('.taskCatalog .altTitle').show();
+      $(".createNewTask").removeClass("ui-disabled");
    } else {
       $('.taskCatalog .title').show();
       $('.taskCatalog .altTitle').hide();
+      $(".createNewTask").addClass("ui-disabled");
    }
 };
 
@@ -232,6 +234,7 @@ var addConfiguredTaskToChild = function(e) {
   
   currentChild.tasks.push(currentTask);
   $("#configureTasks" ).popup( "close" );
+  clearFilterTriggerPlugin(e);
   
   // create a template selectedTask and put it in the UI
   var taskUI = $($(".newTaskTemplate .taskItem")[0]).clone();
