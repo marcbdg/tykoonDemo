@@ -181,7 +181,7 @@
 #startTasks .taskCatalog .title,
 #startTasks .taskCatalog .altTitle,
 #startTasks .addTaskContent .title,
-#startTasks .selectedTasks .title,
+#startTasks .selectedTasks .taskTitle,
 #startTasks .addGoalContent .title {
     font-size: 1.6em;
     font-weight: bold;
@@ -209,6 +209,7 @@
     font-style: italic;
 }
 #startTasks .taskCatalog .taskTemplate,
+#startTasks .taskCatalog .newTaskTemplate,
 #startTasks .productCatalog .productTemplate {
     display: none;
 }

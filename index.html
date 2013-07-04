@@ -130,7 +130,8 @@
                                         <input type="text" id="addTasksFormTaskName" data-theme="c" placeholder="Type here to create your own" data-clear-btn="true" data-path=".title" data-control-type="textbox" data-control-name="title-filter" data-control-action="filter" />
                                     </div>
                                     <div class="ui-block-b">
-                                        <input type="button" data-theme="a" value="Configure" />
+                                        <!-- <input type="button" data-theme="a" value="Configure" /> -->
+                                        <a data-role="button" href="#configureTasks" data-rel="popup" data-theme="a" data-position-to="window" class="createNewTask">Configure</a>
                                     </div>
                                 </div>
                             </form>
@@ -143,7 +144,7 @@
                             <div class="tasks"></div>
                             <div class="tasksNoResults" data-role="content">
                                 <p>Nothing in our catalog matches <span class="taskSearchTerm"></span></p>
-                                <p><a href="#createTask">Create your own task</a></p>
+                                <p><a href="#configureTasks" data-rel="popup" data-position-to="window" class="createNewTask">Create your own task</a></p>
                             </div>
 
                             <!-- Task HTML template for populating the UI from the DB -->
@@ -153,6 +154,17 @@
                                     <div class="taskDetails">
                                         <div class="title"></div>
                                         <div class="numKids"><span></span> kids are doing this</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="newTaskTemplate">
+                                <div class="taskItem clearfix">
+                                    <div class="taskDetails">
+                                        <div class="taskTitle"></div>
+                                        <div class="taskSettings">
+                                            <span class='recurrance'></span>
+                                            <span class='payment'></span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

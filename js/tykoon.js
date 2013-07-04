@@ -52,7 +52,10 @@ $(document).ready(function() {
       clearFilterTriggerPlugin(e);
    });
 
-
+   $("#startTasks .createNewTask").on("click", function(e) {
+      $('#configureTasks .taskTitle').html( $("#addTasksFormTaskName").val() ).attr("data-taskId","-1");
+   });
+   
    $("#doneWithTasksButton").on("click", function(e){ 
       transitionToStartGoals(e);
    });
@@ -177,7 +180,7 @@ var addConfiguredTaskToChild = function(e) {
   var taskTitle = $("#configureTasks .taskTitle").html(),
     taskId = $("#configureTasks .taskTitle").attr("data-taskId"),
     currentTask = new Task(taskId, taskTitle, [], '', '', '');  // new Task(id, name, repeatDays, payType, payAmt, dueDate);
-  
+
   // If repeating task, collect repeatDays and paymentType
   var repeats = $("input:radio[name='configureTasksRepeats']:checked").val();
   if ( repeats == "1") {
@@ -223,11 +226,15 @@ var addConfiguredTaskToChild = function(e) {
   currentChild.tasks.push(currentTask);
   $("#configureTasks" ).popup( "close" );
   
-  // move and update the task
-  var taskUI = $(".taskItem[data-taskId = '" + taskId + "']")
-  $(taskUI).appendTo("#startTasks .selectedTasks");
-  $(taskUI).find(".numKids").addClass("taskSettings").removeClass("numKids").html("<span class='recurrance'>" + getTaskRecurrance(currentTask) + "</span> <span class='payment'>" + getTaskPay(currentTask) + "</span>");
-  $(taskUI).find(".addButton").remove();
+  // create a template selectedTask and put it in the UI
+  var taskUI = $($(".newTaskTemplate .taskItem")[0]).clone();
+  $(taskUI).css("display","none").attr("data-taskId", currentTask.id);
+  $(taskUI).find(".taskTitle").html(currentTask.name);
+  $(taskUI).find(".recurrance").html(getTaskRecurrance(currentTask));
+  $(taskUI).find(".payment").html(getTaskPay(currentTask));
+  $(taskUI).prependTo("#startTasks .selectedTasks").slideDown();
+  
+  $(".taskCatalog .taskItem[data-taskId='" + currentTask.id + "']").slideUp().delay(400);
 };
 
 var getTaskRecurrance = function(task) {
