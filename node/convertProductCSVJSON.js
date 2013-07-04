@@ -34,16 +34,16 @@ fs.readFile('products.tsv', 'utf8', function(err, data) {
       if (cellData.hasOwnProperty(i)) {
          var row = cellData[i];
          var product = {
-            id: i,
+            id: Number(i),
             name: row[0],
             price: row[2],
             desc: row[3],
             type: row[4],
-            numPeople: row[5],
-            likes: row[6],
+            numPeople: Number(row[5]),
+            likes: Number(row[6]),
             ageRange: {
-               min: row[7],
-               max: row[8]
+               min: Number(row[7]),
+               max: Number(row[8])
             },
             gender: row[9],
             imgURL: row[10],
