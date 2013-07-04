@@ -171,42 +171,46 @@
                     </div><!-- END addTaskContent-->
                 </div><!-- /filterListContent -->
 
-                <!-- content in cover to add new goals -->
-                <div class="addGoalContent">
-                    <form method="post" id="addGoalForm" data-role="content">
-                        <label class="title" for="addGoalFormGoalName">What would motivate <span class="childFirstName">[firstName]</span>?</label>
-                        <div class="ui-grid-a">
-                            <div class="ui-block-a">
-                                <input type="text" id="addGoalFormGoalName" data-theme="c" data-clear-btn="true" placeholder="Product / charity / save" />
-                            </div>
-                            <div class="ui-block-b">
-                                <a data-role="button" href="#configureNewProduct" data-rel="popup" data-theme="a" data-position-to="window" class="createNewGoal ui-disabled">Configure</a>
-                            </div>
-                        </div>
-                    </form>
-                    
-                    <!-- Product Catalog of recommended products for age/gender -->
-                    <div class="productCatalog clearfix">
-                        <div class="title">Popular Goals for <span class="childAge">[#]</span> year old <span class="childGender">[gender]</span>s</div>
-                        <div class="products"></div>
-                    
-                        <!-- Product HTML template for populating the UI from the DB -->
-                        <div class="productTemplate">
-                            <div class="productItem clearfix">
-                                <div class="productImage verticalWrapper">
-                                    <div class="verticalMiddle">
-                                        <img class="thumbnail" />
+                <div id="filterProductListContent">
+                    <!-- content in cover to add new goals -->
+                    <div class="addGoalContent">
+                        <div class="filterProductPanel">
+                            <form method="post" id="addGoalForm" data-role="content">
+                                <label class="title" for="addGoalFormGoalName">What would motivate <span class="childFirstName">[firstName]</span>?</label>
+                                <div class="ui-grid-a">
+                                    <div class="ui-block-a">
+                                        <input type="text" id="addGoalFormGoalName" data-theme="c" data-clear-btn="true" placeholder="Product / charity / save" data-path=".title" data-control-type="textbox" data-control-name="title-product-filter" data-control-action="filter" />
                                     </div>
-                                    <input class="productDetailsIcon" type="button" data-icon="search" data-iconpos="notext" data-theme="a" />
+                                    <div class="ui-block-b">
+                                        <a data-role="button" href="#configureNewProduct" data-rel="popup" data-theme="a" data-position-to="window" class="createNewGoal ui-disabled">Configure</a>
+                                    </div>
                                 </div>
-                                <div class="productDetails">
-                                    <div class="title"></div>
-                                    <div class="numKids"><span></span> kids saving for this</div>
+                            </form>
+                        </div>
+
+                        <!-- Product Catalog of recommended products for age/gender -->
+                        <div class="productCatalog clearfix">
+                            <div class="title">Popular Goals for <span class="childAge">[#]</span> year old <span class="childGender">[gender]</span>s</div>
+                            <div class="products"></div>
+
+                            <!-- Product HTML template for populating the UI from the DB -->
+                            <div class="productTemplate">
+                                <div class="productItem clearfix">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" />
+                                        </div>
+                                        <input class="productDetailsIcon" type="button" data-icon="search" data-iconpos="notext" data-theme="a" />
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title"></div>
+                                        <div class="numKids"><span></span> kids saving for this</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div><!-- END productCatalog-->
-                </div><!-- END addGoalContent -->
+                        </div><!-- END productCatalog-->
+                    </div><!-- END addGoalContent -->
+                </div><!-- /filterlistProductContent -->
                 
             </div><!-- END cover -->
             

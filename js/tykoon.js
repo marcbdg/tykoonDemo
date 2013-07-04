@@ -77,6 +77,7 @@ $(document).ready(function() {
      return false;
    });
 
+
    $('#filterListContent').jplist({
       items_box: '.tasks',
       item_path: '.taskItem',
@@ -90,9 +91,24 @@ $(document).ready(function() {
       },
       no_results: '.tasksNoResults',
       ask_event: 'blah()'
-
    });
 
+
+   $('#filterProductListContent').jplist({
+      items_box: '.products',
+      item_path: '.productItem',
+      panel_path: '.filterProductPanel',
+      cookies: true,
+      redraw_callback: function() {
+         // hook up the taps on productItems to configure them
+         $("#startTasks .productCatalog .productItem").on("click", function(e){
+            showProductDetails(e);
+         });
+
+      },
+      no_results: '.tasksNoResults',
+      ask_event: 'blah()'
+   });
 });
 
 var tykoonData = {
@@ -130,6 +146,7 @@ var transitionToStartTasks = function(e) {
    
    currentChild = child;
    populateTasksForChild(child);
+   populateProductsForChild(child);
 
    $.mobile.navigate( "#startTasks" );
 };
@@ -326,8 +343,8 @@ var swapConfigureNonRepeatPayment = function(e) {
 /* ADD GOALS section */
 
 var transitionToStartGoals = function(e) {
-  
-  populateProductsForChild(currentChild);
+
+
   $(".addTaskContent, .startTasksFooter").fadeOut(200);
   
   // move the cover
@@ -338,25 +355,22 @@ var transitionToStartGoals = function(e) {
 
 var populateProductsForChild = function(child) {
 
-  //clean page and populate page with tasks from catalog
- $('#startTasks .productCatalog .goals').empty();
- var productTemplate = $("#startTasks .productCatalog .productTemplate .productItem")[0];
-  for(var i in cannedProducts.products) {
-    var product = cannedProducts.products[i];
-    if ((product.gender == "b" || product.gender == child.gender) && (child.getAge() >= product.ageRange.min && child.getAge() <= product.ageRange.max)) {
-      var productItem = $(productTemplate).clone();
-      $(productItem).attr("data-productId", product.id);
-      $(productItem).find(".title").html(product.name);
-      $(productItem).find(".numKids span").html(product.numPeople);
-      $(productItem).find(".thumbnail").attr({src: product.imgURL, alt: product.name});
-      $('#startTasks .productCatalog .products').append($(productItem));
-    }
-  }
-  
-  // hook up the taps on productItems to configure them
-  $("#startTasks .productCatalog .productItem").on("click", function(e){
-     showProductDetails(e);
-  });
+   //clean page and populate page with tasks from catalog
+   $('#startTasks .productCatalog .goals').empty();
+   var productTemplate = $("#startTasks .productCatalog .productTemplate .productItem")[0];
+   for(var i in cannedProducts.products) {
+
+      var product = cannedProducts.products[i];
+
+      if ((product.gender == "b" || product.gender == child.gender) && (child.getAge() >= product.ageRange.min && child.getAge() <= product.ageRange.max)) {
+         var productItem = $(productTemplate).clone();
+         $(productItem).attr("data-productId", product.id);
+         $(productItem).find(".title").html(product.name);
+         $(productItem).find(".numKids span").html(product.numPeople);
+         $(productItem).find(".thumbnail").attr({src: product.imgURL, alt: product.name});
+         $('#startTasks .productCatalog .products').append($(productItem));
+      }
+   }
 };
 
 var showProductDetails = function(e) {
@@ -369,10 +383,11 @@ var showProductDetails = function(e) {
 
 /* ======== TEST DATA, comment me out to run for real ===========  */
 
-var testBdayString = '2006-10-29';
+var testBdayString = '1998-10-29';
 var testBirthday = new Date(parseInt(testBdayString.substring(0,4)), parseInt(testBdayString.substring(5,7))-1, parseInt(testBdayString.substring(8)));
 currentChild = new Child(0, 'Kaiya', '', '', '', testBirthday, 0, 'f');
 tykoonData.parent.children.push(currentChild);
 populateTasksForChild(currentChild);
+populateProductsForChild(currentChild);
 
 /* ======== END TEST DATA  ============================ */
