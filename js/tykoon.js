@@ -21,9 +21,9 @@ $(document).ready(function() {
    
    // Adjust element sizes based on the window size
    if ($(window).height() > 672) {   // FULLSCREEN ipad landscape
-     $("#startTasks .taskCatalog .tasks").css("height","483px");
+     $("#startTasks .taskCatalog .tasks, #startTasks .productCatalog .products").css("height","483px");
    } else {  // BROWSER bars ipad landscape
-     $("#startTasks .taskCatalog .tasks").css("height","410px");
+     $("#startTasks .taskCatalog .tasks, #startTasks .productCatalog .products").css("height","410px");
    }
    
    // Set so birthday can't be past today
