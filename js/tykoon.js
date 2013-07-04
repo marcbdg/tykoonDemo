@@ -57,6 +57,10 @@ $(document).ready(function() {
      $('#configureTasks .taskTitle').html( $("#addTasksFormTaskName").val() ).attr("data-taskId","-1");
    });
    
+   $("#startTasks .selectedTasks").on("click", ".taskItem", function(e) {
+     restoreConfigureTaskPopup( $(e.currentTarget) );
+   });
+   
    $("#doneWithTasksButton").on("click", function(e){ 
       transitionToStartGoals(e);
    });
@@ -87,7 +91,6 @@ $(document).ready(function() {
          $("#startTasks .taskCatalog .taskItem").on("click", function(e){
             configureTasks(e);
          });
-
       },
       no_results: '.tasksNoResults',
       ask_event: 'blah()'
@@ -104,7 +107,6 @@ $(document).ready(function() {
          $("#startTasks .productCatalog .productItem").on("click", function(e){
             showProductDetails(e);
          });
-
       },
       no_results: '.tasksNoResults',
       ask_event: 'blah()'
@@ -176,6 +178,54 @@ var resetConfigureTaskPopup = function(e) {
   
   swapConfigureTasksRepeats();
 }
+var restoreConfigureTaskPopup = function(taskUI) {
+  resetConfigureTaskPopup();
+  var taskId = $(taskUI).attr("data-taskId"),
+    title = $(taskUI).find(".taskTitle").html();
+
+  // find the fully configured task object matching the id and title of the task tapped
+ for (i in currentChild.tasks) {
+   var task = currentChild.tasks[i];
+   if (task.id == taskId && task.name == title) {
+     
+     // populate the disclosure
+     $("#configureTasks").find(".taskTitle").html(task.name).attr("data-taskId",task.id);
+     
+      if ( task.repeatDays.length > 0) {
+        $("#configureTasksRepeats input[value='1']").prop("checked",true);
+        $("#configureRepeatPayment input[value='" + task.payType + "']").prop("checked",true);
+        $("#configureRepeatPayment input").checkboxradio("refresh");
+        for (j in task.repeatDays) {
+          $("#configureTasksWeeklyOn input[value='" + task.repeatDays[j] + "']").prop("checked",true).checkboxradio("refresh");
+        }
+        swapConfigureRepeatPayment();
+      } else {  // NON-repeating task
+        $("#configureTasksRepeats input[value='0']").prop("checked",true);
+        $("#configureNonRepeatPayment input[value='" + task.payType + "']").prop("checked",true);
+        $("#configureNonRepeatPayment input").checkboxradio("refresh");
+        if (task.payType == "money") {
+          $("#configureTasksHowMuch").val(task.payAmt);
+        }
+        if (task.dueDate != "") {
+          $("#configureTasksDueDate").val( dateToYMD(task.dueDate) );
+        }
+        swapConfigureNonRepeatPayment();
+      }
+      $("#configureTasksRepeats input").checkboxradio("refresh");
+     
+     $("#configureTasks").popup().popup("open", {transition: "pop"} );
+     swapConfigureTasksRepeats();
+     break;
+   }
+ }       
+}
+
+// function dateToMDY(date) {
+//   var d = date.getDate();
+//   var m = date.getMonth() + 1;
+//   var y = date.getFullYear();
+//   return '' + (m<=9 ? '0' + m : m) + '/' + (d <= 9 ? '0' + d : d) + '/' + y;
+// }
 
 function dateToYMD(date) {
     var d = date.getDate();
@@ -249,19 +299,40 @@ var addConfiguredTaskToChild = function(e) {
     }
   }
   
-  currentChild.tasks.push(currentTask);
   $("#configureTasks" ).popup( "close" );
-  clearFilterTriggerPlugin(e);
-  
-  // create a template selectedTask and put it in the UI
+  if ( $("#addTasksFormTaskName").val() != "" ) {
+    clearFilterTriggerPlugin(e); 
+  }
+
+  // create a template selectedTask and populate it
   var taskUI = $($(".newTaskTemplate .taskItem")[0]).clone();
   $(taskUI).css("display","none").attr("data-taskId", currentTask.id);
   $(taskUI).find(".taskTitle").html(currentTask.name);
   $(taskUI).find(".recurrance").html(getTaskRecurrance(currentTask));
   $(taskUI).find(".payment").html(getTaskPay(currentTask));
-  $(taskUI).prependTo("#startTasks .selectedTasks").slideDown();
-  
-  $(".taskCatalog .taskItem[data-taskId='" + currentTask.id + "']").slideUp().delay(400);
+
+  // IF the task already exists, update it
+  var taskExists = false;
+  for (i in currentChild.tasks) {
+    var task = currentChild.tasks[i];
+    if (task.id == currentTask.id && task.name == currentTask.name) {
+      taskExists = true;
+      currentChild.tasks[i] = currentTask;
+      $(".selectedTasks [data-taskId='" + currentTask.id + "']").each( function(e) {
+        if ( $(this).find(".taskTitle").html() == currentTask.name) {
+          $(this).replaceWith( $(taskUI).show() );
+        }
+      });
+      break;
+    }
+  }
+
+  // IF the task doesn't exist, add it  
+  if (!taskExists) {
+    currentChild.tasks.push(currentTask);
+    $(taskUI).prependTo("#startTasks .selectedTasks").slideDown();  
+    $(".taskCatalog .taskItem[data-taskId='" + currentTask.id + "']").slideUp().delay(400);
+  }
 };
 
 var getTaskRecurrance = function(task) {
