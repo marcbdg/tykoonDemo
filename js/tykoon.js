@@ -13,11 +13,11 @@ var hideKeyboard = function() {
 };
 
 $(document).ready(function() {
-   $('#tour').bind('resize', function(event) {
-      $('#tour').css({'height': 768});
-      $('#tour').css({'width': 1024});
-      //alert('orientation change');
-   });
+   // $('#tour').bind('resize', function(event) {
+   //    $('#tour').css({'height': 768});
+   //    $('#tour').css({'width': 1024});
+   //    //alert('orientation change');
+   // });
    
    // Adjust element sizes based on the window size
    if ($(window).height() > 672) {   // FULLSCREEN ipad landscape
