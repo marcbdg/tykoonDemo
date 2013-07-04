@@ -53,7 +53,8 @@ $(document).ready(function() {
    });
 
    $("#startTasks .createNewTask").on("click", function(e) {
-      $('#configureTasks .taskTitle').html( $("#addTasksFormTaskName").val() ).attr("data-taskId","-1");
+     resetConfigureTaskPopup();
+     $('#configureTasks .taskTitle').html( $("#addTasksFormTaskName").val() ).attr("data-taskId","-1");
    });
    
    $("#doneWithTasksButton").on("click", function(e){ 
@@ -144,14 +145,20 @@ var configureTasks = function(e) {
    // set due date of today or later
    $("#configureTasksDueDate").attr("min", dateToYMD(new Date()));
    
+   resetConfigureTaskPopup();
    $("#configureTasks").popup().popup("open", {transition: "pop"} );
-   
-   // reset the form before opening
-   $("#configureTaskRepeatsYes, #configureRepeatPaymentAllow, #configureNonRepeatPaymentMoney" ).prop( "checked", true ).checkboxradio( "refresh" );
-   $("#configureTaskRepeatsNo, #configureRepeatPaymentResp, #configureNonRepeatPaymentResp, #configureTasksWeeklyOn input[type='checkbox']" ).prop( "checked", false ).checkboxradio( "refresh" );
-   $("#configureTasksHowMuch, #configureTasksDueDate").val("");
-   swapConfigureTasksRepeats();
 };
+
+var resetConfigureTaskPopup = function(e) {
+  // reset the form before opening
+  $("#configureTaskRepeatsYes, #configureRepeatPaymentAllow, #configureNonRepeatPaymentMoney" ).prop( "checked", true ).checkboxradio( "refresh" );
+  $("#configureTaskRepeatsNo, #configureRepeatPaymentResp, #configureNonRepeatPaymentResp, #configureTasksWeeklyOn input[type='checkbox']" ).prop( "checked", false ).checkboxradio( "refresh" );
+  $("#configureTasksHowMuch, #configureTasksDueDate").val("");
+  $(".taskRepeatPaymentDetails .allow, .taskNonRepeatPaymentDetails .money").show();
+  $(".taskRepeatPaymentDetails .resp, .taskNonRepeatPaymentDetails .resp").hide();
+  
+  swapConfigureTasksRepeats();
+}
 
 function dateToYMD(date) {
     var d = date.getDate();
