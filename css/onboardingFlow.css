@@ -33,6 +33,8 @@
  * -------------------------*/
 #startTasks {
     position: relative;
+    width: 100%;
+    overflow: hidden;
 }
 #startTasks .tasksPayGoals {
     height: 100%;
