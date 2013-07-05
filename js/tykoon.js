@@ -481,7 +481,8 @@ var showProductDetails = function(e) {
       product = cannedProducts.products[productId];
 
   // populate the popup disclosure and show it
-  $('#productDetailsPopup .title').html(product.name)
+  $('#productDetailsPopup .title').html(product.name);
+  $('#productDetailsPopup .price').html(product.price);
   $('#productDetailsPopup .desc').html(product.desc).attr("data-productId",productId);
   $('#productDetailsPopup .numPeople').html(product.numPeople).attr("data-productId",productId);
   $('#productDetailsPopup .mainImage img').attr("src",product.imgURL).attr("data-productId",productId);

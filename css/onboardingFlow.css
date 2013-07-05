@@ -201,8 +201,9 @@
 #startTasks .selectedTasks .taskTitle,
 #startTasks .addGoalContent .title,
 #startTasks .productCatalog .title,
-#startTasks .productCatalog .altTitle
-
+#startTasks .productCatalog .altTitle,
+#productDetailsPopup .details .title,
+#productDetailsPopup .details .price
 {
     font-size: 1.6em;
     line-height: 1.2em;
@@ -385,6 +386,9 @@ padding: 10px 20px;
 }
 #productDetailsPopup .details {
     float: left;
+}
+#productDetailsPopup .details p {
+    margin: .5em 0;
 }
 #productDetailsPopup .bottom {
     background: #e9e9e9;
