@@ -178,7 +178,7 @@
                             <form method="post" id="addGoalForm" data-role="content">
                                 <label class="title" for="addGoalFormGoalName">What would motivate <span class="childFirstName">[firstName]</span>?</label>
                                 <div class="ui-grid-a">
-                                    <div class="ui-block-a">
+                                    <div class="ui-block-a" id="productFilterContainer">
                                         <input type="text" id="addGoalFormGoalName" data-theme="c" data-clear-btn="true" placeholder="Product / charity / save" data-path=".title" data-control-type="textbox" data-control-name="title-product-filter" data-control-action="filter" />
                                     </div>
                                     <div class="ui-block-b">
@@ -191,7 +191,12 @@
                         <!-- Product Catalog of recommended products for age/gender -->
                         <div class="productCatalog clearfix">
                             <div class="title">Popular Goals for <span class="childAge">[#]</span> year old <span class="childGender">[gender]</span>s</div>
+                            <div class="altTitle">Matches from our catalog <span class="backToPopularProducts">Clear</span></div>
                             <div class="products"></div>
+                            <div class="productsNoResults" data-role="content">
+                                <p>Nothing in our catalog matches <span class="productSearchTerm"></span></p>
+                                <p><a href="#configureProducts" data-role="button" data-rel="popup" data-position-to="window" class="createNewProduct">Create your own goal</a></p>
+                            </div>
 
                             <!-- Product HTML template for populating the UI from the DB -->
                             <div class="productTemplate">
