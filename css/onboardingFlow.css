@@ -350,10 +350,11 @@ padding: 10px 20px;
     height:inherit;
     text-align: center;
 }
-#startTasks .productCatalog .productItem .ui-btn-icon-notext{
+#startTasks .productCatalog .productItem .productDetailsIcon {
     position: absolute;
-    top: -12px;
-    left: -12px;
+    top: -5px;
+    left: -5px;
+    opacity: .8;
     z-index: 10;
 }
 #startTasks .productCatalog .productItem .thumbnail {
