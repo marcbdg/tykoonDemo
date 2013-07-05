@@ -81,7 +81,7 @@
                 
                 <!-- user module / account switcher -->
                 <div class="userModule clearfix">
-                    <img src="boyAvatar.png" class="avatar" alt="[firstName]">
+                    <img src="img/accountImage@2x.png" class="avatar" alt="[firstName]">
                     <div class="userInfo">
                         <div class="childFirstName">[firstName]</div>
                         <div class="balance">$0.00</div>
@@ -178,7 +178,7 @@
                             <form method="post" id="addGoalForm" data-role="content">
                                 <label class="title" for="addGoalFormGoalName">What would motivate <span class="childFirstName">[firstName]</span>?</label>
                                 <div class="ui-grid-a">
-                                    <div class="ui-block-a" id="productFilterContainer">
+                                    <div class="ui-block-a">
                                         <input type="text" id="addGoalFormGoalName" data-theme="c" data-clear-btn="true" placeholder="Product / charity / save" data-path=".title" data-control-type="textbox" data-control-name="title-product-filter" data-control-action="filter" />
                                     </div>
                                     <div class="ui-block-b">
@@ -191,12 +191,7 @@
                         <!-- Product Catalog of recommended products for age/gender -->
                         <div class="productCatalog clearfix">
                             <div class="title">Popular Goals for <span class="childAge">[#]</span> year old <span class="childGender">[gender]</span>s</div>
-                            <div class="altTitle">Matches from our catalog <span class="backToPopularProducts">Clear</span></div>
                             <div class="products"></div>
-                            <div class="productsNoResults" data-role="content">
-                                <p>Nothing in our catalog matches <span class="productSearchTerm"></span></p>
-                                <p><a href="#configureProducts" data-role="button" data-rel="popup" data-position-to="window" class="createNewProduct">Create your own goal</a></p>
-                            </div>
 
                             <!-- Product HTML template for populating the UI from the DB -->
                             <div class="productTemplate">
@@ -298,7 +293,33 @@
                     </form>
                 </div>
             </div>
-            <!-- end configureTasks -->
+            <!-- END configureTasks -->
+
+            <!-- START productDetails popup -->
+            <div data-role="popup" id="productDetailsPopup">
+                <a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+                <div class="taskContent" data-role="content">
+                    <div class="images">
+                        <div class="mainImage">
+                            <img src="" />
+                        </div>
+                        <div class="altImages">
+                        </div>
+                    </div>
+                    <div class="details">
+                        <div class="title"></div>
+                        <div class="desc"></div>
+                        <input type="button" data-theme="b" value="ADD TO WISHLIST" data-inline="true" />
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="othersCount"><span class="numPeople"></span> others are earning this</div>
+                    <div class="othersFaces"></div>
+                    <div class="shareButtons">
+                        <input type="button" data-theme="b" value="SHARE THIS" data-inline="true" data-mini="true" />
+                    </div>
+                </div>
+            </div> <!-- END product details popup -->
 
             <!-- start footer -->
             <div data-role="footer" class="ui-bar">

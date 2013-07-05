@@ -36,6 +36,15 @@
     width: 100%;
     overflow: hidden;
 }
+
+.logo {
+    overflow: hidden;
+    text-indent: -9000px;
+    width: 160px;
+    height: 60px;
+    background: transparent url(../img/logo@2x.png) no-repeat;
+    background-size: 100%;
+}
 #startTasks .tasksPayGoals {
     height: 100%;
     position: relative;
@@ -192,6 +201,7 @@
 #startTasks .selectedTasks .taskTitle,
 #startTasks .addGoalContent .title {
     font-size: 1.6em;
+    line-height: 1.2em;
     font-weight: bold;
 }
 #startTasks .taskCatalog > .title,
@@ -202,6 +212,8 @@
     color: #fff;
     margin-top: 15px;
     text-shadow: 0 1px 0 #333;
+    font-size: 1.5em;
+    line-height: 1.7em;
 }
 
 #startTasks .taskCatalog .altTitle {display:none;}

@@ -7,14 +7,14 @@
 }
 .ui-header .userModule {
   float: right;
-  border-left: 1px solid #fff;
+  border-left: 1px solid #265465;;
   width: 300px;
 }
 .ui-header .userModule .avatar {
   float: left;
   width: 50px;
   height: 50px;
-  margin: 5px 10px;
+  margin: 5px 10px 5px 15px;
 }
 .ui-header .userModule .userInfo {
   float: left;

@@ -466,8 +466,12 @@ var populateProductsForChild = function(child) {
 
 var showProductDetails = function(e) {
   var productItem = $(e.currentTarget),
-      productName = $(productItem).find(".title").text();
-  alert("tapped on: " + productName);
+      productName = $(productItem).find(".title").text(),
+      productId = $(productItem).attr("data-productId");
+
+  // populate the popup disclosure and show it
+  $('#productDetailsPopup .title').html(productName).attr("data-productId",productId);
+  $("#productDetailsPopup").popup().popup("open", {transition: "pop"} );
 };
 
 
