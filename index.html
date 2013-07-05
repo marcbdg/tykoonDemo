@@ -304,7 +304,7 @@
             <!-- START productDetails popup -->
             <div data-role="popup" id="productDetailsPopup">
                 <a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-                <div class="taskContent" data-role="content">
+                <div class="taskContent clearfix" data-role="content">
                     <div class="images">
                         <div class="mainImage">
                             <img src="" />
@@ -319,10 +319,12 @@
                     </div>
                 </div>
                 <div class="bottom">
-                    <div class="othersCount"><span class="numPeople"></span> others are earning this</div>
-                    <div class="othersFaces"></div>
-                    <div class="shareButtons">
-                        <input type="button" data-theme="b" value="SHARE THIS" data-inline="true" data-mini="true" />
+                    <div data-role="content">
+                        <div class="othersCount"><span class="numPeople"></span> others are earning this</div>
+                        <div class="othersFaces"></div>
+                        <div class="shareButtons">
+                            <input type="button" data-theme="b" value="SHARE THIS" data-inline="true" data-mini="true" />
+                        </div>
                     </div>
                 </div>
             </div> <!-- END product details popup -->

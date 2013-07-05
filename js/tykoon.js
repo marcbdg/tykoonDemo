@@ -82,6 +82,17 @@ $(document).ready(function() {
      addConfiguredTaskToChild(e);
      return false;
    });
+   
+   // resize the productDetails popup before showing
+   $( "#productDetailsPopup" ).on({
+       popupbeforeposition: function() {
+           $( "#productDetailsPopup" )
+               .css( "width", $(window).width() * .8 )
+               .css( "max-height", $(window).height() * .8 );
+           $("#productDetailsPopup .details")
+               .css("width", $("#productDetailsPopup .taskContent").width()-320);
+       }
+   });
 
 
    $('#filterListContent').jplist({
