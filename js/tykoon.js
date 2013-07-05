@@ -41,16 +41,18 @@ $(document).ready(function() {
    });
 
    //matched pair of entering in field
-   $('#addTasksFormTaskName').on('keyup', function(e) {
+   $('#addTasksFormTaskName, #addGoalFormGoalName').on('keyup', function(e) {
       watchUserFilterInput(e);
    });
-   //and hitting clear button
-   $('#taskFilterContainer').on('click', '.ui-icon-delete', function(e) {
+   //and hitting clear button in the text input box
+   $('#taskFilterContainer, #productFilterContainer').on('click', '.ui-icon-delete', function(e) {
       clearFilterTriggerPlugin(e);
    });
-   $('.backToPopularTasks').on('click', function(e) {
+   // clicking the clear link in the header for results
+   $('.backToPopularTasks, .backToPopularProducts').on('click', function(e) {
       clearFilterTriggerPlugin(e);
    });
+
 
    $("#startTasks .createNewTask").on("click", function(e) {
      resetConfigureTaskPopup();
@@ -177,7 +179,7 @@ var resetConfigureTaskPopup = function(e) {
   $(".taskRepeatPaymentDetails .resp, .taskNonRepeatPaymentDetails .resp").hide();
   
   swapConfigureTasksRepeats();
-}
+};
 var restoreConfigureTaskPopup = function(taskUI) {
   resetConfigureTaskPopup();
   var taskId = $(taskUI).attr("data-taskId"),
@@ -218,7 +220,7 @@ var restoreConfigureTaskPopup = function(taskUI) {
      break;
    }
  }       
-}
+};
 
 // function dateToMDY(date) {
 //   var d = date.getDate();
@@ -235,19 +237,37 @@ function dateToYMD(date) {
 }
 
 var clearFilterTriggerPlugin = function(e) {
-   $('#addTasksFormTaskName').val('').trigger('keypress').trigger('keyup');
+   if (e.currentTarget.parentElement.parentElement.parentElement.parentElement.id == 'productFilterContainer' ||
+       e.currentTarget.parentElement.parentElement.parentElement.parentElement.id == 'filterProductListContent') {
+      $('#addGoalFormGoalName').val('').trigger('keypress').trigger('keyup');
+   } else {
+      $('#addTasksFormTaskName').val('').trigger('keypress').trigger('keyup');
+   }
 };
 
 var watchUserFilterInput = function(e) {
-   $('span.taskSearchTerm').text(e.currentTarget.value);
-   if (e.currentTarget.value) {
-      $('.taskCatalog .title').hide();
-      $('.taskCatalog .altTitle').show();
-      $(".createNewTask").removeClass("ui-disabled");
+   if(e.currentTarget.id == 'addGoalFormGoalName') {
+      $('span.productSearchTerm').text(e.currentTarget.value);
+      if (e.currentTarget.value) {
+         $('.productCatalog .title').hide();
+         $('.productCatalog .altTitle').show();
+         $(".createNewProduct").removeClass("ui-disabled");
+      } else {
+         $('.productCatalog .title').show();
+         $('.productCatalog .altTitle').hide();
+         $(".createNewProduct").addClass("ui-disabled");
+      }
    } else {
-      $('.taskCatalog .title').show();
-      $('.taskCatalog .altTitle').hide();
-      $(".createNewTask").addClass("ui-disabled");
+      $('span.taskSearchTerm').text(e.currentTarget.value);
+      if (e.currentTarget.value) {
+         $('.taskCatalog .title').hide();
+         $('.taskCatalog .altTitle').show();
+         $(".createNewTask").removeClass("ui-disabled");
+      } else {
+         $('.taskCatalog .title').show();
+         $('.taskCatalog .altTitle').hide();
+         $(".createNewTask").addClass("ui-disabled");
+      }
    }
 };
 
