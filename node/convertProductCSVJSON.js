@@ -9,7 +9,7 @@
 fs = require('fs');
 
 
-fs.readFile('products.tsv', 'utf8', function(err, data) {
+fs.readFile('products-2013-07-05.tsv', 'utf8', function(err, data) {
    var cannedProducts = {
       products: []
    };
