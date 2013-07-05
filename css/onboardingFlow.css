@@ -199,14 +199,19 @@
 #startTasks .taskCatalog .altTitle,
 #startTasks .addTaskContent .title,
 #startTasks .selectedTasks .taskTitle,
-#startTasks .addGoalContent .title {
+#startTasks .addGoalContent .title,
+#startTasks .productCatalog .title,
+#startTasks .productCatalog .altTitle
+
+{
     font-size: 1.6em;
     line-height: 1.2em;
     font-weight: bold;
 }
 #startTasks .taskCatalog > .title,
 #startTasks .taskCatalog > .altTitle,
-#startTasks .productCatalog > .title {
+#startTasks .productCatalog > .title,
+#startTasks .productCatalog > .altTitle {
     padding: 0 20px;
     background: #777;
     color: #fff;
@@ -216,21 +221,27 @@
     line-height: 1.7em;
 }
 
-#startTasks .taskCatalog .altTitle {display:none;}
-#startTasks .taskCatalog .altTitle .backToPopularTasks {
+#startTasks .taskCatalog .altTitle,
+#startTasks .productCatalog .altTitle {
+    display:none;
+}
+#startTasks .taskCatalog .altTitle .backToPopularTasks,
+#startTasks .productCatalog .altTitle .backToPopularProducts {
     text-decoration: underline;
     font-weight: normal;
     float: right;
     font-size: .8em;
     line-height: 1.8em;
 }
-#startTasks .taskCatalog .taskSearchTerm {
+#startTasks .taskCatalog .taskSearchTerm,
+#startTasks .productCatalog .productSearchTerm{
     font-weight: bold;
     font-style: italic;
 }
 #startTasks .taskCatalog .taskTemplate,
 #startTasks .taskCatalog .newTaskTemplate,
-#startTasks .productCatalog .productTemplate {
+#startTasks .productCatalog .productTemplate,
+#startTasks .productCatalog .newProductTemplate{
     display: none;
 }
 #startTasks .taskCatalog .taskItem,

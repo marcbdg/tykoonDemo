@@ -110,7 +110,7 @@ $(document).ready(function() {
             showProductDetails(e);
          });
       },
-      no_results: '.tasksNoResults',
+      no_results: '.productNoResults',
       ask_event: 'blah()'
    });
 });
