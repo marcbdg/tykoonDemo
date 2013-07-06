@@ -71,6 +71,12 @@
 
 #startTasks .tasksPayGoals .header {
     border-bottom: 3px solid #aaa;
+    position: relative;
+}
+#startTasks .tasksPayGoals .header .ui-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
 }
 #startTasks .tasksPayGoals .sectionTitle {
     font-size: 1.6em;

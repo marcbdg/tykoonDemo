@@ -468,6 +468,7 @@ var transitionToReview = function(e) {
   $(".startGoalsFooter").fadeOut(200);  
   $(".cover").fadeOut("slow");
   $(".finishSetupFooter").delay(400).fadeIn(200);
+  $( "#addTasksButton, #addGoalsButton" ).removeClass( "ui-disabled" );
 }
 
 var populateProductsForChild = function(child) {
