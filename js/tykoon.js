@@ -124,25 +124,10 @@ $(document).ready(function() {
             configureTasks(e);
          });
       },
-      no_results: '.tasksNoResults',
-      ask_event: 'blah()'
+      no_results: '.tasksNoResults'
    });
 
 
-   $('#filterProductListContent').jplist({
-      items_box: '.products',
-      item_path: '.productItem',
-      panel_path: '.filterProductPanel',
-      cookies: true,
-      redraw_callback: function() {
-         // hook up the taps on productItems to configure them
-         $("#startTasks .productCatalog .productItem").on("click", function(e){
-            showProductDetails(e);
-         });
-      },
-      no_results: '.productNoResults',
-      ask_event: 'blah()'
-   });
 });
 
 var tykoonData = {
@@ -500,14 +485,27 @@ var populateProductsForChild = function(child) {
       var product = cannedProducts.products[i];
       if ((product.gender == "b" || product.gender == child.gender) && (child.getAge() >= product.ageRange.min && child.getAge() <= product.ageRange.max)) {
 
-            var productItem = $(productTemplate).clone();
-            $(productItem).attr("data-productId", product.id);
-            $(productItem).find(".title").html(product.name);
-            $(productItem).find(".numKids span").html(product.numPeople);
-            $(productItem).find(".thumbnail").attr({src: product.imgURL, alt: product.name});
-            $('#startTasks .productCatalog .products').append($(productItem));
-         }
+         var productItem = $(productTemplate).clone();
+         $(productItem).attr("data-productId", product.id);
+         $(productItem).find(".title").html(product.name);
+         $(productItem).find(".numKids span").html(product.numPeople);
+         $(productItem).find(".thumbnail").attr({src: product.imgURL, alt: product.name});
+         $('#startTasks .productCatalog .products').append($(productItem));
       }
+   }
+    $('#filterProductListContent').jplist({
+       items_box: '.products',
+       item_path: '.productItem',
+       panel_path: '.filterProductPanel',
+       cookies: true,
+       redraw_callback: function() {
+         // hook up the taps on productItems to configure them
+         $("#startTasks .productCatalog .productItem").on("click", function(e){
+            showProductDetails(e);
+         });
+       },
+       no_results: '.productNoResults'
+    });
 };
 
 var showProductDetails = function(e) {
