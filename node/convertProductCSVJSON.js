@@ -9,7 +9,7 @@
 fs = require('fs');
 
 
-fs.readFile('products-2013-07-05.tsv', 'utf8', function(err, data) {
+fs.readFile('products.tsv', 'utf8', function(err, data) {
    var cannedProducts = {
       products: []
    };
@@ -20,6 +20,7 @@ fs.readFile('products-2013-07-05.tsv', 'utf8', function(err, data) {
 
       for (var x in rows) {
          if (rows.hasOwnProperty(x)) {
+            console.log('x: ' + x + ' row: ' + rows[x]);
             cellData[x] = rows[x].split(/\t/);
          }
       }
