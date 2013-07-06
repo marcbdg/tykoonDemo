@@ -53,6 +53,10 @@ $(document).ready(function() {
       clearFilterTriggerPlugin(e);
    });
 
+   // toggle alt product images
+   $("#productDetailsPopup").on("click", ".altWrapper", function(e) {
+     showAltProductImage(this);
+   });
 
    $("#startTasks .createNewTask").on("click", function(e) {
      resetConfigureTaskPopup();
@@ -487,10 +491,36 @@ var showProductDetails = function(e) {
   $('#productDetailsPopup .numPeople').html(product.numPeople).attr("data-productId",productId);
   $('#productDetailsPopup .mainImage img').attr("src",product.imgURL).attr("data-productId",productId);
   $("#productDetailsPopup .addProductButton").attr("data-productId",productId);
+  
+  // Count the alt images and show selector for proper number
+  $("#productDetailsPopup .altImages").empty();
+  var altImgs = product.altIMG,
+    totalImgs = 1;
+  for (i in altImgs) {
+    var imgSrc = altImgs[i];
+    if (imgSrc != "") {
+      ++totalImgs;
+      $("#productDetailsPopup .altImages").append("<div class='altWrapper verticalWrapper'><div class='verticalMiddle'><img src='" + imgSrc + "' /></div></div>");
+    }
+  }
+  if (totalImgs > 1) {
+    $("#productDetailsPopup .altImages").addClass("populated").prepend("<div class='altWrapper verticalWrapper selected'><div class='verticalMiddle'><img src='" + product.imgURL + "' /></div></div>");
+  } else {
+    $("#productDetailsPopup .altImages").removeClass("populated");
+  }
+  if (totalImgs == 4) {
+    $("#productDetailsPopup .altImages").addClass("fourAcross");
+  } else {
+    $("#productDetailsPopup .altImages").removeClass("fourAcross");
+  }
   $("#productDetailsPopup").popup().popup("open", {transition: "pop"} );
 };
 
-
+var showAltProductImage = function(imgWrapper) {
+  $("#productDetailsPopup .altWrapper").removeClass("selected");
+  $(imgWrapper).addClass("selected");
+  $("#productDetailsPopup .mainImage img").attr("src", $(imgWrapper).find("img").attr("src"));
+}
 
 /* ======== TEST DATA, comment me out to run for real ===========  */
 
