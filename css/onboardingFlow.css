@@ -426,6 +426,13 @@ padding: 10px 20px;
     max-width: 100%;
     max-height: 100%;
 }
+#productDetailsPopup .timeToEarn {
+    color: #f93d22;
+    padding-left: 20px;
+}
+#productDetailsPopup .timeToEarn .time {
+    border-bottom: 1px dotted #f93d22;
+}
 #productDetailsPopup .bottom {
     background: #e9e9e9;
 }

@@ -487,6 +487,7 @@ var showProductDetails = function(e) {
   // populate the popup disclosure and show it
   $('#productDetailsPopup .title').html(product.name);
   $('#productDetailsPopup .price').html(product.price);
+  $("#productDetailsPopup .time").html( getTimeToEarn(product.price) );
   $('#productDetailsPopup .desc').html(product.desc).attr("data-productId",productId);
   $('#productDetailsPopup .numPeople').html(product.numPeople).attr("data-productId",productId);
   $('#productDetailsPopup .mainImage img').attr("src",product.imgURL).attr("data-productId",productId);
@@ -522,6 +523,29 @@ var showAltProductImage = function(imgWrapper) {
   $("#productDetailsPopup .mainImage img").attr("src", $(imgWrapper).find("img").attr("src"));
 }
 
+var getTimeToEarn = function(price) {
+  price = price.substring(1);
+  var moneyPerWeek = $("#slider-fill").val() * 1,
+      moneyPerDay = (moneyPerWeek) / 7;
+
+  console.log  (price + " :: " + moneyPerWeek + " :: " + moneyPerDay);
+  
+  // Time to earn in WEEKS and DAYS
+  // if (price <= moneyPerWeek) {
+//     var days = Math.ceil(price / moneyPerDay);
+//     return (days == 7) ? "1 week" : days + " days";
+//   } else {
+//     var weeks = Math.floor(price / moneyPerWeek);
+//     var remainder = price - weeks*moneyPerWeek;
+//     var days = Math.ceil(remainder / moneyPerDay);
+//     var daysText = (days == 1) ? "1 day" : days + " days";
+//     var weeksText =  (weeks == 1) ? "1 week" : weeks + " weeks";
+//     return (remainder > 0) ? weeksText + " and " + daysText : weeksText;
+//   }
+  
+  // Time to earn in WEEKS only
+  return ( moneyPerWeek >= price) ? "1 week" : Math.ceil(price / moneyPerWeek) + " weeks";
+}
 /* ======== TEST DATA, comment me out to run for real ===========  */
 
 var testBdayString = '1998-10-29';
