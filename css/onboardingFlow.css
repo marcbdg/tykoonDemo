@@ -437,6 +437,7 @@ padding: 10px 20px;
 }
 #productDetailsPopup .timeToEarn .time {
     border-bottom: 1px dotted #f93d22;
+    font-size: 1.2em;
 }
 #productDetailsPopup .timeToEarnTooltip {
     display: block;
