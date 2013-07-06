@@ -468,7 +468,6 @@ var populateProductsForChild = function(child) {
    //clean page and populate page with tasks from catalog
    $('#startTasks .productCatalog .goals').empty();
    var productTemplate = $("#startTasks .productCatalog .productTemplate .productItem")[0];
-   debugger;
    var temp = 0;
    for(var i in cannedProducts.products) {
 
