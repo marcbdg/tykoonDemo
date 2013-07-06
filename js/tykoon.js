@@ -79,6 +79,13 @@ $(document).ready(function() {
       transitionToReview(e);
    });
 
+   $("#addTasksButton").on("click", function(e){ 
+      showAddTasks(e);
+   });
+   $("#addGoalsButton").on("click", function(e){ 
+      showAddGoals(e);
+   });
+
    $('#configureTasksRepeats').on('change', function(e) {
       swapConfigureTasksRepeats(e);
    });
@@ -464,12 +471,23 @@ var transitionToStartGoals = function(e) {
   
   $(".addGoalContent, .startGoalsFooter").delay(400).fadeIn(200);
 };
+
 var transitionToReview = function(e) {
   $(".startGoalsFooter").fadeOut(200);  
   $(".cover").fadeOut("slow");
   $(".finishSetupFooter").delay(400).fadeIn(200);
   $( "#addTasksButton, #addGoalsButton" ).removeClass( "ui-disabled" );
-}
+};
+
+var showAddTasks = function() {
+  
+};
+var showAddGoals = function() {
+  // $(".cover").show();
+  // $(".addTaskContent").fadeOut(200);
+  // $(".addGoalContent").delay(400).fadeIn(200);
+  // $("#addGoalsButton").addClass("ui-disabled");
+};
 
 var populateProductsForChild = function(child) {
 
@@ -480,11 +498,7 @@ var populateProductsForChild = function(child) {
    for(var i in cannedProducts.products) {
 
       var product = cannedProducts.products[i];
-
-
       if ((product.gender == "b" || product.gender == child.gender) && (child.getAge() >= product.ageRange.min && child.getAge() <= product.ageRange.max)) {
-
-         console.log(product.numPeople + ' ' + product.name);
 
             var productItem = $(productTemplate).clone();
             $(productItem).attr("data-productId", product.id);
@@ -492,11 +506,8 @@ var populateProductsForChild = function(child) {
             $(productItem).find(".numKids span").html(product.numPeople);
             $(productItem).find(".thumbnail").attr({src: product.imgURL, alt: product.name});
             $('#startTasks .productCatalog .products').append($(productItem));
-
          }
-
       }
-   
 };
 
 var showProductDetails = function(e) {

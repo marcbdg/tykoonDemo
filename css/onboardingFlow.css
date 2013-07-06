@@ -68,7 +68,9 @@
 #startTasks .tasksPayGoals.left {
     -webkit-animation: slideLeft .7s ease-in-out forwards;
 }
-
+#startTasks .tasksPayGoals .ui-block-a {
+    border-right: 1px solid #265465;
+}
 #startTasks .tasksPayGoals .header {
     border-bottom: 3px solid #aaa;
     position: relative;
