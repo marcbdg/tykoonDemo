@@ -75,9 +75,13 @@ $(document).ready(function() {
       transitionToStartGoals(e);
    });
    
+   $("#doneWithGoalsButton").on("click", function(e){ 
+      transitionToReview(e);
+   });
+
    $('#configureTasksRepeats').on('change', function(e) {
       swapConfigureTasksRepeats(e);
-   })
+   });
 
    $('#configureRepeatPayment').on('change', function(e) {
       swapConfigureRepeatPayment(e);
@@ -453,8 +457,6 @@ var swapConfigureNonRepeatPayment = function(e) {
 /* ADD GOALS section */
 
 var transitionToStartGoals = function(e) {
-
-
   $(".addTaskContent, .startTasksFooter").fadeOut(200);
   
   // move the cover
@@ -462,6 +464,11 @@ var transitionToStartGoals = function(e) {
   
   $(".addGoalContent, .startGoalsFooter").delay(400).fadeIn(200);
 };
+var transitionToReview = function(e) {
+  $(".startGoalsFooter").fadeOut(200);  
+  $(".cover").fadeOut("slow");
+  $(".finishSetupFooter").delay(400).fadeIn(200);
+}
 
 var populateProductsForChild = function(child) {
 

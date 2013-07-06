@@ -427,7 +427,7 @@ padding: 10px 20px;
     max-height: 100%;
 }
 #productDetailsPopup .moneyTime {
-    margin-bottom: 20px;
+    margin: .5em 0 20px;
 }
 #productDetailsPopup .timeToEarn {
     color: #f93d22;
