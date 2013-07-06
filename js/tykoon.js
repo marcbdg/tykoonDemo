@@ -57,7 +57,11 @@ $(document).ready(function() {
    $("#productDetailsPopup").on("click", ".altWrapper", function(e) {
      showAltProductImage(this);
    });
-
+   
+   $("#productDetailsPopup").on("click", ".timeToEarn", function(e) {
+     toggleTimeToEarnTooltip();
+   });
+   
    $("#startTasks .createNewTask").on("click", function(e) {
      resetConfigureTaskPopup();
      $('#configureTasks .taskTitle').html( $("#addTasksFormTaskName").val() ).attr("data-taskId","-1");
@@ -487,6 +491,7 @@ var showProductDetails = function(e) {
   // populate the popup disclosure and show it
   $('#productDetailsPopup .title').html(product.name);
   $('#productDetailsPopup .price').html(product.price);
+  $('#productDetailsPopup .allowance').html($("#slider-fill").val());
   $("#productDetailsPopup .time").html( getTimeToEarn(product.price) );
   $('#productDetailsPopup .desc').html(product.desc).attr("data-productId",productId);
   $('#productDetailsPopup .numPeople').html(product.numPeople).attr("data-productId",productId);
@@ -495,6 +500,7 @@ var showProductDetails = function(e) {
   
   // Count the alt images and show selector for proper number
   $("#productDetailsPopup .altImages").empty();
+  $("#productDetailsPopup .timeToEarnTooltip").hide();
   var altImgs = product.altIMG,
     totalImgs = 1;
   for (i in altImgs) {
@@ -521,14 +527,17 @@ var showAltProductImage = function(imgWrapper) {
   $("#productDetailsPopup .altWrapper").removeClass("selected");
   $(imgWrapper).addClass("selected");
   $("#productDetailsPopup .mainImage img").attr("src", $(imgWrapper).find("img").attr("src"));
-}
+};
 
+var toggleTimeToEarnTooltip = function() {
+  $("#productDetailsPopup .timeToEarnTooltip").toggle("fast");
+};
 var getTimeToEarn = function(price) {
   price = price.substring(1);
   var moneyPerWeek = $("#slider-fill").val() * 1,
       moneyPerDay = (moneyPerWeek) / 7;
 
-  console.log  (price + " :: " + moneyPerWeek + " :: " + moneyPerDay);
+  // console.log  (price + " :: " + moneyPerWeek + " :: " + moneyPerDay);
   
   // Time to earn in WEEKS and DAYS
   // if (price <= moneyPerWeek) {
@@ -546,6 +555,7 @@ var getTimeToEarn = function(price) {
   // Time to earn in WEEKS only
   return ( moneyPerWeek >= price) ? "1 week" : Math.ceil(price / moneyPerWeek) + " weeks";
 }
+
 /* ======== TEST DATA, comment me out to run for real ===========  */
 
 var testBdayString = '1998-10-29';
