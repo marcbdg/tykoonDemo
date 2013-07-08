@@ -1,0 +1,56 @@
+name	iconImage	numOfPeople	ageMin	ageMax	gender [m/f/b]
+Brush your teeth	iconGenericTask@2x.png	1020	3	12	b
+Pratice piano	iconGenericTask@2x.png	884	4	18	b
+Make your bed	iconGenericTask@2x.png	874	3	12	b
+Clean your room	iconCleanRoom@2x.png	865	3	18	b
+Do your homework	iconGenericTask@2x.png	785	8	18	b
+Wash your hands	iconGenericTask@2x.png	664	5	10	b
+Be nice	iconGenericTask@2x.png	652	3	7	b
+Read	iconGenericTask@2x.png	650	12	18	b
+Practice guitar	iconGenericTask@2x.png	642	8	18	b
+Practice reading	iconGenericTask@2x.png	599	6	8	b
+Pick up your toys	iconGenericTask@2x.png	562	3	9	b
+Wash your face	iconGenericTask@2x.png	546	5	12	b
+Good listening	iconGenericTask@2x.png	534	3	7	b
+Walk the dog	iconGenericTask@2x.png	532	14	18	m
+Practice basketball	iconGenericTask@2x.png	489	8	14	m
+Take out the trash	iconGenericTask@2x.png	456	8	18	m
+Have a great attitude	iconGenericTask@2x.png	436	3	9	b
+Nighttime reading	iconGenericTask@2x.png	420	7	10	b
+Practice ballet	iconGenericTask@2x.png	376	8	14	f
+Feed the dog	iconGenericTask@2x.png	362	6	18	b
+Take out the recycling	iconGenericTask@2x.png	354	8	18	b
+Sharing	iconGenericTask@2x.png	354	3	6	b
+Take a bath	iconGenericTask@2x.png	321	3	7	b
+Feed the cat	iconGenericTask@2x.png	310	6	18	b
+Take a shower	iconGenericTask@2x.png	299	8	18	b
+Do the dishes	iconGenericTask@2x.png	298	8	18	f
+No fighting	iconGenericTask@2x.png	298	5	9	m
+Good manners	iconGenericTask@2x.png	264	5	15	b
+Brush the dog	iconGenericTask@2x.png	223	10	16	b
+Mow the lawn	iconMowLawn@2x.png	220	12	18	m
+Dry the dishes	iconGenericTask@2x.png	220	10	18	b
+Be nice to your sister	iconGenericTask@2x.png	213	5	15	b
+Practice swimming	iconGenericTask@2x.png	210	9	17	b
+Empty the dishwasher	iconGenericTask@2x.png	197	8	18	b
+Practice Spanish	iconGenericTask@2x.png	197	10	18	b
+Brush the cat	iconGenericTask@2x.png	168	10	16	b
+Wash the car	iconWashCar@2x.png	157	10	17	m
+Vacuum	iconGenericTask@2x.png	146	12	18	f
+Be nice to your brother	iconGenericTask@2x.png	136	5	15	b
+Fold the laundry	iconGenericTask@2x.png	100	8	18	f
+Clean the dog run	iconGenericTask@2x.png	100	8	18	b
+Practice English	iconGenericTask@2x.png	92	10	18	b
+Rake the leaves	iconGenericTask@2x.png	90	10	18	m
+Read the newspaper	iconGenericTask@2x.png	88	14	18	b
+Do your book report	iconGenericTask@2x.png	77	8	18	b
+Practice French	iconGenericTask@2x.png	76	10	18	b
+Change the cat litter	iconGenericTask@2x.png	75	14	18	b
+Practice volleyball	iconGenericTask@2x.png	68	12	18	f
+Practice flute	iconGenericTask@2x.png	67	12	18	f
+Change the water in the fish tank	iconGenericTask@2x.png	61	10	16	m
+Practice Chinese	iconGenericTask@2x.png	54	14	18	b
+Clean the hamster cage	iconGenericTask@2x.png	37	8	12	b
+Practice trumpet	iconGenericTask@2x.png	37	12	18	m
+Practice German	iconGenericTask@2x.png	26	14	18	b
+Practice Latin	iconGenericTask@2x.png	12	13	15	b
