@@ -71,6 +71,9 @@
 #startTasks .tasksPayGoals .ui-block-a {
     border-right: 1px solid #265465;
 }
+#startTasks .tasksPayGoals .ui-block-b {
+    border-left: 1px solid #265465;
+}
 #startTasks .tasksPayGoals .header {
     border-bottom: 3px solid #aaa;
     position: relative;
@@ -342,8 +345,11 @@ padding: 10px 20px;
 #startTasks .addGoalContent {
     display: none;
 }
-#startTasks .startGoalsFooter {
+#startTasks .footerBar {
     display: none;
+}
+#startTasks .startTasksFooter {
+    display: block;
 }
 
 /* Product catalog */

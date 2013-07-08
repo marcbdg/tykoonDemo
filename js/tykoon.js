@@ -80,7 +80,7 @@ $(document).ready(function() {
       transitionToStartGoals(e);
    });
    
-   $("#doneWithGoalsButton").on("click", function(e){ 
+   $("#doneWithGoalsButton, .returnToReviewButton").on("click", function(e){ 
       transitionToReview(e);
    });
 
@@ -512,20 +512,24 @@ var transitionToStartGoals = function(e) {
 };
 
 var transitionToReview = function(e) {
-  $(".startGoalsFooter").fadeOut(200);  
+  $(".footerBar").fadeOut(200);
   $(".cover").fadeOut("slow");
   $(".finishSetupFooter").delay(400).fadeIn(200);
   $( "#addTasksButton, #addGoalsButton" ).removeClass( "ui-disabled" );
 };
-
 var showAddTasks = function() {
-  
+  $(".footerBar").fadeOut(200);
+  $(".addGoalContent").hide();
+  $(".cover").show();
+  $(".addTaskContent, .doneAddingTasks").delay(400).fadeIn(200);
+  $("#addTasksButton").addClass("ui-disabled");
 };
 var showAddGoals = function() {
-  // $(".cover").show();
-  // $(".addTaskContent").fadeOut(200);
-  // $(".addGoalContent").delay(400).fadeIn(200);
-  // $("#addGoalsButton").addClass("ui-disabled");
+  $(".footerBar").fadeOut(200);
+  $(".addTaskContent").hide();
+  $(".cover").show();
+  $(".addGoalContent, .doneAddingGoals").delay(400).fadeIn(200);
+  $("#addGoalsButton").addClass("ui-disabled");
 };
 
 var populateProductsForChild = function(child) {
