@@ -36,8 +36,9 @@ fs.readFile('products.tsv', 'utf8', function(err, data) {
    for (var i in cellData) {
       if (cellData.hasOwnProperty(i)) {
          var DOMString = '';
-
          var row = cellData[i];
+
+         //This must be kept in sync with the <div class="productTemplate"> in the index.html file
          DOMString += '<div class="productItem clearfix" data-productid="' + Number(i) + '" data-ageMin="' + Number(row[7]) + '"  data-ageMax="' + Number(row[8]) + '"  data-gender="' + row[9] + '">\n';
          DOMString += '   <div class="productImage verticalWrapper">\n';
          DOMString += '      <div class="verticalMiddle">\n';

@@ -193,8 +193,13 @@
     right: -22px;
 }
 
-#startTasks .taskCatalog .tasks,
 #startTasks .productCatalog .products{
+    display:none;
+}
+
+#startTasks .taskCatalog .tasks,
+#startTasks .productCatalog .products,
+#startTasks .productCatalog .popularProducts{
     height: 483px;
     overflow: auto;
     -webkit-overflow-scrolling: touch;

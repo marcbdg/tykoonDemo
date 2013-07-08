@@ -113,6 +113,19 @@ $(document).ready(function() {
        }
    });
 
+   $('#filterProductListContent').jplist({
+      items_box: '.products',
+      item_path: '.productItem',
+      panel_path: '.filterProductPanel',
+      cookies: true,
+      redraw_callback: function() {
+         // hook up the taps on productItems to configure them
+         $("#startTasks .productCatalog .productItem").on("click", function(e){
+            showProductDetails(e);
+         });
+      },
+      no_results: '.productNoResults'
+   });
 
    $('#filterListContent').jplist({
       items_box: '.tasks',
@@ -261,18 +274,22 @@ var clearFilterTriggerPlugin = function(e) {
 };
 
 var watchUserFilterInput = function(e) {
+   //Products
    if(e.currentTarget.id == 'addGoalFormGoalName') {
+
       $('span.productSearchTerm').text(e.currentTarget.value);
       if (e.currentTarget.value) {
-         $('.productCatalog .title').hide();
-         $('.productCatalog .altTitle').show();
+
+         $('.productCatalog .title, .productCatalog .popularProducts').hide();
+         $('.productCatalog .altTitle, .productCatalog .products').show();
          $(".createNewProduct").removeClass("ui-disabled");
       } else {
-         $('.productCatalog .title').show();
-         $('.productCatalog .altTitle').hide();
+         $('.productCatalog .title, .productCatalog .popularProducts').show();
+         $('.productCatalog .altTitle, .productCatalog .products').hide();
          $(".createNewProduct").addClass("ui-disabled");
       }
    } else {
+      //tasks
       $('span.taskSearchTerm').text(e.currentTarget.value);
       if (e.currentTarget.value) {
          $('.taskCatalog .title').hide();
@@ -490,24 +507,9 @@ var populateProductsForChild = function(child) {
          $(productItem).find(".title").html(product.name);
          $(productItem).find(".numKids span").html(product.numPeople);
          $(productItem).find(".thumbnail").attr({src: product.imgURL, alt: product.name});
-         $('#startTasks .productCatalog .products').append($(productItem));
+         $('#startTasks .productCatalog .popularProducts').append($(productItem));
       }
    }
-
-    $('#filterProductListContent').jplist({
-       items_box: '.products',
-       item_path: '.productItem',
-       panel_path: '.filterProductPanel',
-       cookies: true,
-       redraw_callback: function() {
-         // hook up the taps on productItems to configure them
-         $("#startTasks .productCatalog .productItem").on("click", function(e){
-            showProductDetails(e);
-         });
-       },
-       no_results: '.productNoResults'
-    });
-
 };
 
 var showProductDetails = function(e) {
