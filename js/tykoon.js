@@ -493,6 +493,7 @@ var populateProductsForChild = function(child) {
          $('#startTasks .productCatalog .products').append($(productItem));
       }
    }
+
     $('#filterProductListContent').jplist({
        items_box: '.products',
        item_path: '.productItem',
@@ -506,6 +507,7 @@ var populateProductsForChild = function(child) {
        },
        no_results: '.productNoResults'
     });
+
 };
 
 var showProductDetails = function(e) {
