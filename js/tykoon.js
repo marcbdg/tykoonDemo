@@ -316,12 +316,12 @@ var watchUserFilterInput = function(e) {
       //tasks
       $('span.taskSearchTerm').text(e.currentTarget.value);
       if (e.currentTarget.value) {
-         $('.taskCatalog .title').hide();
-         $('.taskCatalog .altTitle').show();
+         $('.taskCatalog .title, .taskCatalog .popularTasks').hide();
+         $('.taskCatalog .altTitle, .taskCatalog .tasks').show();
          $(".createNewTask").removeClass("ui-disabled");
       } else {
-         $('.taskCatalog .title').show();
-         $('.taskCatalog .altTitle').hide();
+         $('.taskCatalog .title, .taskCatalog .popularTasks').show();
+         $('.taskCatalog .altTitle, .taskCatalog .tasks').hide();
          $(".createNewTask").addClass("ui-disabled");
       }
    }
@@ -455,7 +455,7 @@ var populateTasksForChild = function(child) {
    $(".childPossesivePronoun").html(child.getPossesivePronoun());
 
    //clean page and populate page with tasks from catalog
-   $('#startTasks .taskCatalog .tasks').empty();
+   $('#startTasks .taskCatalog .popularTasks').empty();
    var taskTemplate = $("#startTasks .taskCatalog .taskTemplate .taskItem")[0];
 
 
@@ -470,10 +470,10 @@ var populateTasksForChild = function(child) {
          $(taskItem).find(".title").html(task.name);
          $(taskItem).find(".numKids span").html(task.numPeople);
 
-         $('#startTasks .taskCatalog .tasks').append($(taskItem));
+         $('#startTasks .taskCatalog .popularTasks').append($(taskItem));
       }
    }
-   $('#startTasks .taskCatalog .tasks').append("<div class='bottomSpacer'></div>");
+   $('#startTasks .taskCatalog .tasks, #startTasks .taskCatalog .popularTasks').append("<div class='bottomSpacer'></div>");
 
    // attach click events to freshly drawn tasks in the catalog
    $("#startTasks .taskCatalog .taskItem").on("click", function(e){
