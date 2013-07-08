@@ -264,6 +264,21 @@ function dateToYMD(date) {
     return '' + y + '-' + (m<=9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d);
 }
 
+function prettyDate(date) {
+  var m_names = new Array("Jan", "Feb", "Mar", 
+  "Apr", "May", "Jun", "Jul", "Aug", "Sep", 
+  "Oct", "Nov", "Dec");
+
+  var dow_names = new Array("Sunday", "Monday", "Tuesday", 
+  "Wednesday", "Thursday", "Friday", "Saturday");
+
+  var curr_date = date.getDate(),
+      curr_dow = date.getDay(),
+      curr_month = date.getMonth(), 
+      curr_year = date.getFullYear();
+  return dow_names[curr_dow] + ", " + m_names[curr_month]  + " " + curr_date + " " + curr_year;
+}
+
 var clearFilterTriggerPlugin = function(e) {
    if (e.currentTarget.parentElement.parentElement.parentElement.parentElement.id == 'productFilterContainer' ||
        e.currentTarget.parentElement.parentElement.parentElement.parentElement.id == 'filterProductListContent') {
@@ -392,7 +407,7 @@ var getTaskRecurrance = function(task) {
     return "↻ every " + task.repeatDays.join(", ");
   } else {    // non-repeating tasks
     if (task.dueDate != "") {
-      return "<strong>By:</strong> " + task.dueDate;
+      return "<strong>By:</strong> " + prettyDate(task.dueDate);
     } else {
       return "one time";
     }
