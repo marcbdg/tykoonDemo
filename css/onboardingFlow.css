@@ -197,6 +197,10 @@
     display:none;
 }
 
+#startTasks .productCatalog .productsNoResults{
+    display:none;
+}
+
 #startTasks .taskCatalog .tasks,
 #startTasks .productCatalog .products,
 #startTasks .productCatalog .popularProducts{

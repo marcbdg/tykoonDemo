@@ -124,7 +124,7 @@ $(document).ready(function() {
             showProductDetails(e);
          });
       },
-      no_results: '.productNoResults'
+      no_results: '.productsNoResults'
    });
 
    $('#filterListContent').jplist({
