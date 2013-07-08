@@ -294,7 +294,8 @@ padding: 10px 20px;
     background-image: linear-gradient( #86e3fe,#1abeee );
 }
 #startTasks .taskCatalog .taskItem .taskDetails,
-#startTasks .productCatalog .productItem .productDetails {
+#startTasks .productCatalog .productItem .productDetails,
+#startTasks .selectedProducts .productItem .productDetails {
     float: left;
 }
 #startTasks .taskCatalog .taskItem .numKids,
@@ -347,12 +348,14 @@ padding: 10px 20px;
 
 /* Product catalog */
 
-#startTasks .productCatalog .productItem {
-border-bottom: 1px solid #ccc;
-border-top: 1px solid #aaa;
-padding: 10px 20px;
+#startTasks .productCatalog .productItem,
+#startTasks .selectedProducts .productItem {
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #aaa;
+    padding: 10px 20px;
 }
-#startTasks .productCatalog .productItem .productImage {
+#startTasks .productCatalog .productItem .productImage,
+#startTasks .selectedProducts .productItem .productImage {
     position: relative;
     background: #fff;
     width: 150px;
@@ -362,24 +365,34 @@ padding: 10px 20px;
     float: left;
     display: table;
 }
-#startTasks .productCatalog .productItem .productImage .verticalMiddle {
+#startTasks .selectedProducts .productItem .productImage {
+    width: 100px;
+    height: 100px;
+}
+#startTasks .productCatalog .productItem .productImage .verticalMiddle,
+#startTasks .selectedProducts .productItem .productImage .verticalMiddle {
     width: inherit;
     height:inherit;
     text-align: center;
 }
-#startTasks .productCatalog .productItem .productDetailsIcon {
+#startTasks .productCatalog .productItem .productDetailsIcon,
+#startTasks .selectedProducts .productItem .productDetailsIcon {
     position: absolute;
     top: -5px;
     left: -5px;
     opacity: .8;
     z-index: 10;
 }
-#startTasks .productCatalog .productItem .thumbnail {
+#startTasks .productCatalog .productItem .thumbnail,
+#startTasks .selectedProducts .productItem .thumbnail {
     max-height: 100%;
     max-width: 100%;
 }
 #startTasks .productCatalog .productItem .productDetails {
     width: 63%;
+}
+#startTasks .selectedProducts .productItem .productDetails {
+    width: 74%;
 }
 
 /* Product details popup */

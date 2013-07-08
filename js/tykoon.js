@@ -61,6 +61,11 @@ $(document).ready(function() {
    $("#productDetailsPopup").on("click", ".timeToEarn", function(e) {
      toggleTimeToEarnTooltip();
    });
+   $("#productDetailsPopup").on("click", ".addProductButton", function(e) {
+     var productId = $(this).attr("data-productId");
+     addProductToChild( productId );
+     $("#productDetailsPopup").popup("close");
+   });
    
    $("#startTasks .createNewTask").on("click", function(e) {
      resetConfigureTaskPopup();
@@ -400,6 +405,22 @@ var addConfiguredTaskToChild = function(e) {
     $(taskUI).prependTo("#startTasks .selectedTasks").slideDown();  
     $(".taskCatalog .taskItem[data-taskId='" + currentTask.id + "']").slideUp().delay(400);
   }
+};
+
+var addProductToChild = function(productId) {
+  var productTemplate = $("#startTasks .productCatalog .addProductTemplate .productItem")[0],
+      newProduct = $(productTemplate).clone(),
+      currentProduct = cannedProducts.products[productId];
+      
+  $(newProduct).attr( "data-productId", productId);
+  $(newProduct).find(".productTitle").html( currentProduct.name);
+  $(newProduct).find(".thumbnail").attr({src: currentProduct.imgURL, alt: currentProduct.name});
+  
+      
+  currentChild.products.push(currentProduct);
+  $(newProduct).prependTo("#startTasks .selectedProducts").slideDown();  
+      
+  // $(".selectedProducts").append(newProduct);  
 };
 
 var getTaskRecurrance = function(task) {
