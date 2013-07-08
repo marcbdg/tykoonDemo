@@ -426,6 +426,7 @@ var populateTasksForChild = function(child) {
       $('#startTasks .taskCatalog .tasks').append($(taskItem));
     }
   }
+  $('#startTasks .taskCatalog .tasks').append("<div class='bottomSpacer'></div>");
 
   // attach click events to freshly drawn tasks in the catalog
   $("#startTasks .taskCatalog .taskItem").on("click", function(e){
@@ -510,6 +511,7 @@ var populateProductsForChild = function(child) {
          $('#startTasks .productCatalog .popularProducts').append($(productItem));
       }
    }
+   $('#startTasks .productCatalog .popularProducts').append("<div class='bottomSpacer'></div>");
 };
 
 var showProductDetails = function(e) {

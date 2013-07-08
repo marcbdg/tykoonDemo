@@ -208,9 +208,8 @@
     overflow: auto;
     -webkit-overflow-scrolling: touch;
 }
-#startTasks .taskCatalog .tasks .taskItem:last-child,
-#startTasks .productCatalog .products .productItem:last-child {
-    margin-bottom: 63px;
+#startTasks .bottomSpacer {
+    height: 63px;
 }
 #startTasks .taskCatalog .title,
 #startTasks .taskCatalog .altTitle,
