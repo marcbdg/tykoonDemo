@@ -113,22 +113,6 @@ $(document).ready(function() {
        }
    });
 
-
-   $('#filterListContent').jplist({
-      items_box: '.tasks',
-      item_path: '.taskItem',
-      panel_path: '.filterPanel',
-      cookies: true,
-      redraw_callback: function() {
-         $("#startTasks .taskCatalog .taskItem").on("click", function(e){
-            configureTasks(e);
-         });
-      },
-      no_results: '.tasksNoResults',
-      ask_event: 'blah()'
-   });
-
-
    $('#filterProductListContent').jplist({
       items_box: '.products',
       item_path: '.productItem',
@@ -140,9 +124,23 @@ $(document).ready(function() {
             showProductDetails(e);
          });
       },
-      no_results: '.productNoResults',
-      ask_event: 'blah()'
+      no_results: '.productsNoResults'
    });
+
+   $('#filterListContent').jplist({
+      items_box: '.tasks',
+      item_path: '.taskItem',
+      panel_path: '.filterPanel',
+      cookies: true,
+      redraw_callback: function() {
+         $("#startTasks .taskCatalog .taskItem").on("click", function(e){
+            configureTasks(e);
+         });
+      },
+      no_results: '.tasksNoResults'
+   });
+
+
 });
 
 var tykoonData = {
@@ -276,18 +274,22 @@ var clearFilterTriggerPlugin = function(e) {
 };
 
 var watchUserFilterInput = function(e) {
+   //Products
    if(e.currentTarget.id == 'addGoalFormGoalName') {
+
       $('span.productSearchTerm').text(e.currentTarget.value);
       if (e.currentTarget.value) {
-         $('.productCatalog .title').hide();
-         $('.productCatalog .altTitle').show();
+
+         $('.productCatalog .title, .productCatalog .popularProducts').hide();
+         $('.productCatalog .altTitle, .productCatalog .products').show();
          $(".createNewProduct").removeClass("ui-disabled");
       } else {
-         $('.productCatalog .title').show();
-         $('.productCatalog .altTitle').hide();
+         $('.productCatalog .title, .productCatalog .popularProducts').show();
+         $('.productCatalog .altTitle, .productCatalog .products').hide();
          $(".createNewProduct").addClass("ui-disabled");
       }
    } else {
+      //tasks
       $('span.taskSearchTerm').text(e.currentTarget.value);
       if (e.currentTarget.value) {
          $('.taskCatalog .title').hide();
@@ -500,14 +502,14 @@ var populateProductsForChild = function(child) {
       var product = cannedProducts.products[i];
       if ((product.gender == "b" || product.gender == child.gender) && (child.getAge() >= product.ageRange.min && child.getAge() <= product.ageRange.max)) {
 
-            var productItem = $(productTemplate).clone();
-            $(productItem).attr("data-productId", product.id);
-            $(productItem).find(".title").html(product.name);
-            $(productItem).find(".numKids span").html(product.numPeople);
-            $(productItem).find(".thumbnail").attr({src: product.imgURL, alt: product.name});
-            $('#startTasks .productCatalog .products').append($(productItem));
-         }
+         var productItem = $(productTemplate).clone();
+         $(productItem).attr("data-productId", product.id);
+         $(productItem).find(".title").html(product.name);
+         $(productItem).find(".numKids span").html(product.numPeople);
+         $(productItem).find(".thumbnail").attr({src: product.imgURL, alt: product.name});
+         $('#startTasks .productCatalog .popularProducts').append($(productItem));
       }
+   }
 };
 
 var showProductDetails = function(e) {

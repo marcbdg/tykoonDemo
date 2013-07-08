@@ -180,12 +180,19 @@
                             <form method="post" id="addGoalForm" data-role="content">
                                 <label class="title" for="addGoalFormGoalName">What would motivate <span class="childFirstName">[firstName]</span>?</label>
                                 <div class="ui-grid-a">
-                                    <div class="ui-block-a">
+                                    <div class="ui-block-a" id="productFilterContainer">
                                         <input type="text" id="addGoalFormGoalName" data-theme="c" data-clear-btn="true" placeholder="Product / charity / save" data-path=".title" data-control-type="textbox" data-control-name="title-product-filter" data-control-action="filter" />
                                     </div>
                                     <div class="ui-block-b">
                                         <a data-role="button" href="#configureNewProduct" data-rel="popup" data-theme="a" data-position-to="window" class="createNewGoal ui-disabled">Configure</a>
                                     </div>
+                                </div>
+                                <div class="drop-down" data-control-type="drop-down" data-control-name="sort" data-control-action="sort" style="display:none">
+                                    <ul>
+                                        <li><span data-path="default">Sort by</span></li>
+                                        <li><span data-path=".numPpl" data-order="desc" data-type="number" data-path="default">Num People desc</span></li>
+                                        <li><span data-path=".numPpl" data-order="asc" data-type="number">Num People asc</span></li>
+                                    </ul>
                                 </div>
                             </form>
                         </div>
@@ -195,13 +202,682 @@
                             <div class="title">Popular Goals for <span class="childAge">[#]</span> year old <span class="childGender">[gender]</span>s</div>
                             <div class="altTitle">Matches from our catalog <span class="backToPopularProducts">Clear</span></div>
 
-                            <div class="products"></div>
                             <div class="productsNoResults" data-role="content">
                                 <p>Nothing in our catalog matches <span class="productSearchTerm"></span></p>
                                 <p><a href="#configureProducts" data-role="button" data-rel="popup" data-position-to="window" class="createNewProduct">Create your own goal</a></p>
                             </div>
 
+                            <div class="popularProducts"></div>
+
+                            <div class="products">
+
+                                <div class="productItem clearfix" data-productid="0" data-ageMin="3"  data-ageMax="12"  data-gender="b">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/41dYk31NBJL._SX385_.jpg" alt="Air Swimmer Remote Control Inflatable Flying Shark">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Air Swimmer Remote Control Inflatable Flying Shark</div>
+                                        <div class="numKids"><span class="numPpl">330</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="1" data-ageMin="5"  data-ageMax="12"  data-gender="b">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/51iSxlUEOML._SL1040_.jpg" alt="Nintendo Wii U Console 8GB Basic Set - White">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Nintendo Wii U Console 8GB Basic Set - White</div>
+                                        <div class="numKids"><span class="numPpl">276</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="2" data-ageMin="6"  data-ageMax="18"  data-gender="b">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/41ecxKz%2BOCL._SX38_SY50_CR,0,0,38,50_.jpg" alt="Xbox One Console - Day One Edition">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Xbox One Console - Day One Edition</div>
+                                        <div class="numKids"><span class="numPpl">267</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="3" data-ageMin="6"  data-ageMax="11"  data-gender="b">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/41I7wnu9WfL._SX385_.jpg" alt="Apple iPod Touch">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Apple iPod Touch</div>
+                                        <div class="numKids"><span class="numPpl">240</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="4" data-ageMin="10"  data-ageMax="12"  data-gender="f">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/51guHmaGxYL._SX38_SY50_CR,0,0,38,50_.jpg" alt="Webkinz Batik Elephant">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Webkinz Batik Elephant</div>
+                                        <div class="numKids"><span class="numPpl">220</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="5" data-ageMin="7"  data-ageMax="18"  data-gender="f">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/51DfPS7P2EL._SY450_.jpg" alt="Shany Professional Makeup Kit, 78 Color">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Shany Professional Makeup Kit, 78 Color</div>
+                                        <div class="numKids"><span class="numPpl">187</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="6" data-ageMin="7"  data-ageMax="12"  data-gender="b">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/31CTobGlVHL._SX38_SY50_CR,0,0,38,50_.jpg" alt="8 Nebula Plasma Ball">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">8 Nebula Plasma Ball"</div>
+                                        <div class="numKids"><span class="numPpl">178</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="7" data-ageMin="4"  data-ageMax="10"  data-gender="f">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/51XQ5cfHPnL.jpg" alt="Barbie Princess Charm School Princess Blair Transforming Doll">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Barbie Princess Charm School Princess Blair Transforming Doll</div>
+                                        <div class="numKids"><span class="numPpl">175</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="8" data-ageMin="5"  data-ageMax="9"  data-gender="f">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/91KysPxL8aL._SL1500_.jpg" alt="LEGO Friends City Park Cafe 3061">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">LEGO Friends City Park Cafe 3061</div>
+                                        <div class="numKids"><span class="numPpl">165</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="9" data-ageMin="8"  data-ageMax="13"  data-gender="f">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/61o7hbE6iTS._SL1000_.jpg" alt="Barbie Collector Twilight Saga Bella Doll">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Barbie Collector Twilight Saga Bella Doll</div>
+                                        <div class="numKids"><span class="numPpl">156</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="10" data-ageMin="4"  data-ageMax="11"  data-gender="f">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/71%2BqQMBk5yL._SL1252_.jpg" alt="Monster High Dead Tired Clawdeen Wolf Doll And Bed Playset">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Monster High Dead Tired Clawdeen Wolf Doll And Bed Playset</div>
+                                        <div class="numKids"><span class="numPpl">143</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="11" data-ageMin="13"  data-ageMax="18"  data-gender="f">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/41oDLcgiM7L._SS40_.jpg" alt="OPI Katy Perry Collection Last Friday Night, 0.5-Fluid Ounce">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">OPI Katy Perry Collection Last Friday Night, 0.5-Fluid Ounce</div>
+                                        <div class="numKids"><span class="numPpl">134</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="12" data-ageMin="10"  data-ageMax="12"  data-gender="f">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/31M7IQWFf%2BL.jpg" alt="14mm Simulated White Coral Carved Rose Flower Ring Adjustable Finger Ring">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">14mm Simulated White Coral Carved Rose Flower Ring Adjustable Finger Ring</div>
+                                        <div class="numKids"><span class="numPpl">132</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="13" data-ageMin="7"  data-ageMax="12"  data-gender="b">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/91QsHE3FKQL._SL1500_.jpg" alt="Alvin and the Chipmunks: Chipwrecked">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Alvin and the Chipmunks: Chipwrecked</div>
+                                        <div class="numKids"><span class="numPpl">121</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="14" data-ageMin="8"  data-ageMax="18"  data-gender="b">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/41xolv8eXoL.jpg" alt="Apple iPad 2 (16GB, Wifi, White)">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Apple iPad 2 (16GB, Wifi, White)</div>
+                                        <div class="numKids"><span class="numPpl">120</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="15" data-ageMin="9"  data-ageMax="18"  data-gender="f">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/61QeP8ApfBL.jpg" alt="Just Dance 4">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Just Dance 4</div>
+                                        <div class="numKids"><span class="numPpl">99</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="16" data-ageMin="6"  data-ageMax="9"  data-gender="m">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/61QeP8ApfBL.jpg" alt="Just Dance 4">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Just Dance 4</div>
+                                        <div class="numKids"><span class="numPpl">99</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="17" data-ageMin="7"  data-ageMax="12"  data-gender="f">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/81oQAZshLKL._SL1500_.jpg" alt="American Girl Crafts Nail Sticker Craft Favors">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">American Girl Crafts Nail Sticker Craft Favors</div>
+                                        <div class="numKids"><span class="numPpl">96</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="18" data-ageMin="5"  data-ageMax="10"  data-gender="f">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/31VujRz%2B%2BBL.jpg" alt="Build-A-Bear Gift Card">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Build-A-Bear Gift Card</div>
+                                        <div class="numKids"><span class="numPpl">94</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="19" data-ageMin="10"  data-ageMax="18"  data-gender="f">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/31NcBbyC25L.jpg" alt="American Eagle Gift Card">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">American Eagle Gift Card</div>
+                                        <div class="numKids"><span class="numPpl">93</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="20" data-ageMin="12"  data-ageMax="18"  data-gender="f">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/31RfER0pzfL._AA160_.jpg" alt="Essie LuxEffects Top Coats">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Essie LuxEffects Top Coats</div>
+                                        <div class="numKids"><span class="numPpl">91</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="21" data-ageMin="5"  data-ageMax="12"  data-gender="f">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/41YwvCfRvOL.jpg" alt="CHARM IT! I Lost a Tooth Tooth Heart Charm">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">CHARM IT! I Lost a Tooth" Tooth Heart Charm"</div>
+                                        <div class="numKids"><span class="numPpl">89</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="22" data-ageMin="10"  data-ageMax="12"  data-gender="f">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/31mt3moOrbL._AA160_.jpg" alt="Ace Bayou 96706 Standard Bean Bag, Fuchsia Petal">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Ace Bayou 96706 Standard Bean Bag, Fuchsia Petal</div>
+                                        <div class="numKids"><span class="numPpl">86</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="23" data-ageMin="10"  data-ageMax="17"  data-gender="f">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/31amoYg-f6L.jpg" alt="Aeropostale Gift Card">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Aeropostale Gift Card</div>
+                                        <div class="numKids"><span class="numPpl">85</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="24" data-ageMin="10"  data-ageMax="18"  data-gender="f">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/31Y3LAI0sHL._SS40_.jpg" alt="EOS Lip Balm Strawberry Sorbet .25 oz">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">EOS Lip Balm Strawberry Sorbet .25 oz</div>
+                                        <div class="numKids"><span class="numPpl">78</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="25" data-ageMin="7"  data-ageMax="9"  data-gender="f">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/41WSCXxzysL._SX38_SY50_CR,0,0,38,50_.jpg" alt="Webkinz Orca Whale">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Webkinz Orca Whale</div>
+                                        <div class="numKids"><span class="numPpl">75</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="26" data-ageMin="3"  data-ageMax="6"  data-gender="m">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/41WSCXxzysL._SX38_SY50_CR,0,0,38,50_.jpg" alt="Webkinz Orca Whale">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Webkinz Orca Whale</div>
+                                        <div class="numKids"><span class="numPpl">75</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="27" data-ageMin="7"  data-ageMax="12"  data-gender="b">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/612CdbnmURL._SL1000_.jpg" alt="Canon PowerShot ELPH 300 HS 12.1 MP Digital Camera (Black)">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Canon PowerShot ELPH 300 HS 12.1 MP Digital Camera (Black)</div>
+                                        <div class="numKids"><span class="numPpl">71</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="28" data-ageMin="3"  data-ageMax="9"  data-gender="f">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/51LKZXFxjPL._SX385_.jpg" alt="My Little Pony Basic Applejack">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">My Little Pony Basic Applejack</div>
+                                        <div class="numKids"><span class="numPpl">68</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="29" data-ageMin="10"  data-ageMax="12"  data-gender="f">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/51jWYmyXcAL._SX385_.jpg" alt="6 piece Swimsuit Set Fits 18 American Girl Doll Clothes">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">6 piece Swimsuit Set Fits 18 American Girl Doll Clothes"</div>
+                                        <div class="numKids"><span class="numPpl">65</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="30" data-ageMin="10"  data-ageMax="12"  data-gender="f">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/31Q5hSi6uIL.jpg" alt=".5 X 1 Best Friends Double Necklace">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">.5 X 1 Best Friends Double Necklace</div>
+                                        <div class="numKids"><span class="numPpl">62</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="31" data-ageMin="9"  data-ageMax="16"  data-gender="f">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/51dxiVSpLwL._SY346_PJlook-inside-v2,TopRight,1,0_SH20_.jpg" alt="Catching Fire (The Second Book of the Hunger Games)">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Catching Fire (The Second Book of the Hunger Games)</div>
+                                        <div class="numKids"><span class="numPpl">59</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="32" data-ageMin="13"  data-ageMax="18"  data-gender="f">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/41p9rtDoMlL.jpg" alt="Body Shop Pink Grapefruit Shower Gel 8.4 Oz.">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Body Shop Pink Grapefruit Shower Gel 8.4 Oz.</div>
+                                        <div class="numKids"><span class="numPpl">57</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="33" data-ageMin="10"  data-ageMax="18"  data-gender="f">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/41ua5HiV45L._SX385_.jpg" alt="Apple iPhone 4S 16GB (White)">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Apple iPhone 4S 16GB (White)</div>
+                                        <div class="numKids"><span class="numPpl">55</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="34" data-ageMin="12"  data-ageMax="18"  data-gender="f">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/41N%2BMCQqxkL._SS40_.jpg" alt="Glow in the Dark Neon Nail Polish (6 Pack)">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Glow in the Dark Neon Nail Polish (6 Pack)</div>
+                                        <div class="numKids"><span class="numPpl">53</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="35" data-ageMin="8"  data-ageMax="17"  data-gender="f">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/51de0MHkzzL.jpg" alt="Round Bean Bag Chair in Brown/Turquoise">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Round Bean Bag Chair in Brown/Turquoise</div>
+                                        <div class="numKids"><span class="numPpl">51</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="36" data-ageMin="11"  data-ageMax="18"  data-gender="f">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/31TnJko7SoL.jpg" alt="China Glaze Sugar High #80931">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">China Glaze Sugar High #80931</div>
+                                        <div class="numKids"><span class="numPpl">51</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="37" data-ageMin="13"  data-ageMax="17"  data-gender="f">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/51bn216r67L._SX38_SY50_CR,0,0,38,50_.jpg" alt="Daily Day Planner Organizer Fashion Agenda">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Daily Day Planner Organizer Fashion Agenda</div>
+                                        <div class="numKids"><span class="numPpl">47</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="38" data-ageMin="7"  data-ageMax="12"  data-gender="f">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/41hGw52eYSL.jpg" alt="American Girl of the Year 2012 McKenna Doll & Book">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">American Girl of the Year 2012 McKenna Doll & Book</div>
+                                        <div class="numKids"><span class="numPpl">47</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="39" data-ageMin="3"  data-ageMax="6"  data-gender="f">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/812HOuqM%2B%2BL._SL1500_.jpg" alt="Barbie Sisters Barbie and Stacie Dolls 2-Pack">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Barbie Sisters Barbie and Stacie Dolls 2-Pack</div>
+                                        <div class="numKids"><span class="numPpl">47</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="40" data-ageMin="13"  data-ageMax="17"  data-gender="f">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/41k66TFC43L._SY346_PJlook-inside-v2,TopRight,1,0_SH20_.jpg" alt="Mockingjay (The Hunger Games, Book 3)">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Mockingjay (The Hunger Games, Book 3)</div>
+                                        <div class="numKids"><span class="numPpl">45</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="41" data-ageMin="8"  data-ageMax="16"  data-gender="f">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/51vlGuX7%2BFL._SY300__PJautoripBadge,BottomRight,4,-40_OU11__.jpg" alt="Speak Now">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Speak Now</div>
+                                        <div class="numKids"><span class="numPpl">42</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="42" data-ageMin="8"  data-ageMax="15"  data-gender="b">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/51NbOxBO%2BBL._SY346_.jpg" alt="Harry Potter and the Half-Blood Prince (Book 6)">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Harry Potter and the Half-Blood Prince (Book 6)</div>
+                                        <div class="numKids"><span class="numPpl">39</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="43" data-ageMin="3"  data-ageMax="7"  data-gender="f">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/51L6KHEeIBL._SX385_.jpg" alt="Monster High Draculaura Doll">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Monster High Draculaura Doll</div>
+                                        <div class="numKids"><span class="numPpl">35</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="44" data-ageMin="13"  data-ageMax="18"  data-gender="m">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/71ULGYAWR0L._SL1000_.jpg" alt="Fujifilm FinePix S2950 14 MP Digital Camera with Fujinon 18x Wide Angle Optical Zoom Lens and 3-Inch LCD">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Fujifilm FinePix S2950 14 MP Digital Camera with Fujinon 18x Wide Angle Optical Zoom Lens and 3-Inch LCD</div>
+                                        <div class="numKids"><span class="numPpl">34</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="45" data-ageMin="12"  data-ageMax="18"  data-gender="f">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/21bErreeQML.jpg" alt="Sephora Gift Card $50">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Sephora Gift Card $50</div>
+                                        <div class="numKids"><span class="numPpl">27</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="46" data-ageMin="3"  data-ageMax="6"  data-gender="f">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/41ECSeSvHyL._SX385_.jpg" alt="Webkinz Chihuahua">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Webkinz Chihuahua</div>
+                                        <div class="numKids"><span class="numPpl">26</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="47" data-ageMin="10"  data-ageMax="12"  data-gender="m">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/515-e28QGeL._SX38_SY50_CR,0,0,38,50_.jpg" alt="Webkinz Wooly Mammoth">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Webkinz Wooly Mammoth</div>
+                                        <div class="numKids"><span class="numPpl">24</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="48" data-ageMin="8"  data-ageMax="12"  data-gender="f">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/61mRED4vzRL._SL1000_.jpg" alt="Mikasa VSG Glow in the Dark Volleyball">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Mikasa VSG Glow in the Dark Volleyball</div>
+                                        <div class="numKids"><span class="numPpl">23</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="49" data-ageMin="3"  data-ageMax="6"  data-gender="f">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/81JYlrIN0eL._SL1500_.jpg" alt="Kodak Easyshare C1505 12 MP Digital Camera with 5x Digital Zoom - Red">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Kodak Easyshare C1505 12 MP Digital Camera with 5x Digital Zoom - Red</div>
+                                        <div class="numKids"><span class="numPpl">23</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                                <div class="productItem clearfix" data-productid="50" data-ageMin="7"  data-ageMax="9"  data-gender="m">
+                                    <div class="productImage verticalWrapper">
+                                        <div class="verticalMiddle">
+                                            <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/41--xzI-yhL._SX38_SY50_CR,0,0,38,50_.jpg" alt="Webkinz Tree Frog">
+                                        </div>
+                                        <img class="productDetailsIcon" src="img/magnifyingGlass.png">
+                                    </div>
+                                    <div class="productDetails">
+                                        <div class="title">Webkinz Tree Frog</div>
+                                        <div class="numKids"><span class="numPpl">19</span> kids saving for this</div>
+                                    </div>
+                                </div>
+
+                            </div>
+
                             <!-- Product HTML template for populating the UI from the DB -->
+                            <!-- This must be kept in sync with the "convertProductCSVJSON.js" file -->
                             <div class="productTemplate">
                                 <div class="productItem clearfix">
                                     <div class="productImage verticalWrapper">
@@ -212,7 +888,7 @@
                                     </div>
                                     <div class="productDetails">
                                         <div class="title"></div>
-                                        <div class="numKids"><span></span> kids saving for this</div>
+                                        <div class="numKids"><span class="numPpl"></span> kids saving for this</div>
                                     </div>
                                 </div>
                             </div>

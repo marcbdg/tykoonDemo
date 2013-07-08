@@ -20,7 +20,7 @@ fs.readFile('products.tsv', 'utf8', function(err, data) {
 
       for (var x in rows) {
          if (rows.hasOwnProperty(x)) {
-            console.log('x: ' + x + ' row: ' + rows[x]);
+            //console.log('x: ' + x + ' row: ' + rows[x]);
             cellData[x] = rows[x].split(/\t/);
          }
       }
@@ -31,9 +31,29 @@ fs.readFile('products.tsv', 'utf8', function(err, data) {
 
    var cellData = makeArray(data);
 
+
+
    for (var i in cellData) {
       if (cellData.hasOwnProperty(i)) {
+         var DOMString = '';
          var row = cellData[i];
+
+         //This must be kept in sync with the <div class="productTemplate"> in the index.html file
+         DOMString += '<div class="productItem clearfix" data-productid="' + Number(i) + '" data-ageMin="' + Number(row[7]) + '"  data-ageMax="' + Number(row[8]) + '"  data-gender="' + row[9] + '">\n';
+         DOMString += '   <div class="productImage verticalWrapper">\n';
+         DOMString += '      <div class="verticalMiddle">\n';
+         DOMString += '         <img class="thumbnail" src="' + row[10] + '" alt="' + row[0] + '">\n';
+         DOMString += '      </div>\n';
+         DOMString += '      <img class="productDetailsIcon" src="img/magnifyingGlass.png">\n';
+         DOMString += '   </div>\n';
+         DOMString += '   <div class="productDetails">\n';
+         DOMString += '      <div class="title">' + row[0] + '</div>\n';
+         DOMString += '      <div class="numKids"><span class="numPpl">' + Number(row[5]) + '</span> kids saving for this</div>\n';
+         DOMString += '   </div>\n';
+         DOMString += '</div>\n';
+
+         console.log(DOMString);
+
          var product = {
             id: Number(i),
             name: row[0],
@@ -55,4 +75,5 @@ fs.readFile('products.tsv', 'utf8', function(err, data) {
    }
 
    console.log(JSON.stringify(cannedProducts));
+
 });
