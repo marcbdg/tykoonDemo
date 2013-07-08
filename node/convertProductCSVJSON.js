@@ -8,31 +8,26 @@
 
 fs = require('fs');
 
+var makeArray = function(CSVData) {
+   var rows = CSVData.split(/\n/);
+   var cellData = [];
+
+   for (var x in rows) {
+      if (rows.hasOwnProperty(x)) {
+         //console.log('x: ' + x + ' row: ' + rows[x]);
+         cellData[x] = rows[x].split(/\t/);
+      }
+   }
+
+   //cellData = cleanCellData(cellData);
+   return cellData;
+};
 
 fs.readFile('products.tsv', 'utf8', function(err, data) {
    var cannedProducts = {
       products: []
    };
-
-   var makeArray = function(CSVData) {
-      var rows = CSVData.split(/\n/);
-      var cellData = [];
-
-      for (var x in rows) {
-         if (rows.hasOwnProperty(x)) {
-            //console.log('x: ' + x + ' row: ' + rows[x]);
-            cellData[x] = rows[x].split(/\t/);
-         }
-      }
-
-      //cellData = cleanCellData(cellData);
-      return cellData;
-   };
-
    var cellData = makeArray(data);
-
-
-
    for (var i in cellData) {
       if (cellData.hasOwnProperty(i)) {
          var DOMString = '';
@@ -73,7 +68,53 @@ fs.readFile('products.tsv', 'utf8', function(err, data) {
          cannedProducts.products.push(product);
       }
    }
-
+   console.log('\n');
+   console.log('\n');
    console.log(JSON.stringify(cannedProducts));
+   console.log('\n');
+   console.log('\n');
+
+});
+
+fs.readFile('tasks.tsv', 'utf8', function(err, data) {
+   var cannedTasks = {
+      tasks: []
+   };
+
+   var cellData = makeArray(data);
+
+   for (var i in cellData) {
+      if (cellData.hasOwnProperty(i)) {
+         var DOMString = '';
+         var row = cellData[i];
+
+         DOMString += '<div class="taskItem clearfix" data-taskid="' + Number(i) + '">\n';
+         DOMString += '   <div class="addButton">+</div>\n';
+         DOMString += '   <div class="taskDetails">\n';
+         DOMString += '      <div class="title">' + row[0] + '</div>\n';
+         DOMString += '      <div class="numKids"><span>' + row[2] + '</span> kids are doing this</div>\n';
+         DOMString += '   </div>\n';
+         DOMString += '</div>\n';
+
+         console.log(DOMString);
+
+         var task = {
+            id: Number(i),
+            name: row[0],
+            icon: row[1],
+            ageRange: {
+               min: Number(row[3]),
+               max: Number(row[4])
+            },
+            gender: row[5],
+            numPeople: Number(row[2])
+         }
+         cannedTasks.tasks.push(task);
+      }
+   }
+
+   console.log('\n');
+   console.log('\n');
+   console.log(JSON.stringify(cannedTasks));
 
 });

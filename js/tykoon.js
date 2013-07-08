@@ -12,6 +12,10 @@ var hideKeyboard = function() {
    $("input").blur();
 };
 
+$(document).bind('pagebeforehide', function(){
+   $('.backToPopularTasks, .backToPopularProducts').trigger('click');
+});
+
 $(document).ready(function() {
    // $('#tour').bind('resize', function(event) {
    //    $('#tour').css({'height': 768});
@@ -443,31 +447,38 @@ var getTaskPay = function(task) {
 };
 
 var populateTasksForChild = function(child) {
-  //populate page with child data
-  $(".childFirstName").html(child.name);
-  $(".childAge").html(child.getAge());
-  $(".childGender").html(child.getGenderNoun());
-  $(".childPossesivePronoun").html(child.getPossesivePronoun());
 
-  //clean page and populate page with tasks from catalog
- $('#startTasks .taskCatalog .tasks').empty();
- var taskTemplate = $("#startTasks .taskCatalog .taskTemplate .taskItem")[0];
-  for(var i in cannedTasks.tasks) {
-    var task = cannedTasks.tasks[i];
-    if ((task.gender == "b" || task.gender == child.gender) && (child.getAge() >= task.ageRange.min && child.getAge() <= task.ageRange.max)) {
-      var taskItem = $(taskTemplate).clone();
-      $(taskItem).attr("data-taskId", task.id);
-      $(taskItem).find(".title").html(task.name);
-      $(taskItem).find(".numKids span").html(task.numPeople);
-      $('#startTasks .taskCatalog .tasks').append($(taskItem));
-    }
-  }
-  $('#startTasks .taskCatalog .tasks').append("<div class='bottomSpacer'></div>");
+   //populate page with child data
+   $(".childFirstName").html(child.name);
+   $(".childAge").html(child.getAge());
+   $(".childGender").html(child.getGenderNoun());
+   $(".childPossesivePronoun").html(child.getPossesivePronoun());
 
-  // attach click events to freshly drawn tasks in the catalog
-  $("#startTasks .taskCatalog .taskItem").on("click", function(e){
+   //clean page and populate page with tasks from catalog
+   $('#startTasks .taskCatalog .tasks').empty();
+   var taskTemplate = $("#startTasks .taskCatalog .taskTemplate .taskItem")[0];
+
+
+
+   for(var i in cannedTasks.tasks) {
+      var task = cannedTasks.tasks[i];
+
+      if ((task.gender == "b" || task.gender == child.gender) && (child.getAge() >= task.ageRange.min && child.getAge() <= task.ageRange.max)) {
+
+         var taskItem = $(taskTemplate).clone();
+         $(taskItem).attr("data-taskId", task.id);
+         $(taskItem).find(".title").html(task.name);
+         $(taskItem).find(".numKids span").html(task.numPeople);
+
+         $('#startTasks .taskCatalog .tasks').append($(taskItem));
+      }
+   }
+   $('#startTasks .taskCatalog .tasks').append("<div class='bottomSpacer'></div>");
+
+   // attach click events to freshly drawn tasks in the catalog
+   $("#startTasks .taskCatalog .taskItem").on("click", function(e){
      configureTasks(e);
-  });
+   });
 };
 
 var swapConfigureTasksRepeats = function(e) {
@@ -605,7 +616,7 @@ var toggleTimeToEarnTooltip = function() {
 };
 var getTimeToEarn = function(price) {
   price = price.substring(1);
-  var moneyPerWeek = $("#slider-fill").val() * 1,
+  var moneyPerWeek = Number($("#slider-fill").val()),
       moneyPerDay = (moneyPerWeek) / 7;
 
   // console.log  (price + " :: " + moneyPerWeek + " :: " + moneyPerDay);
@@ -625,9 +636,10 @@ var getTimeToEarn = function(price) {
   
   // Time to earn in WEEKS only
   return ( moneyPerWeek >= price) ? "1 week" : Math.ceil(price / moneyPerWeek) + " weeks";
-}
+};
 
-/* ======== TEST DATA, comment me out to run for real ===========  */
+
+/* ======== TEST DATA, comment me out to run for real =========== */
 
 var testBdayString = '1998-10-29';
 var testBirthday = new Date(parseInt(testBdayString.substring(0,4)), parseInt(testBdayString.substring(5,7))-1, parseInt(testBdayString.substring(8)));
@@ -636,4 +648,4 @@ tykoonData.parent.children.push(currentChild);
 populateTasksForChild(currentChild);
 populateProductsForChild(currentChild);
 
-/* ======== END TEST DATA  ============================ */
+ /* ======== END TEST DATA  ============================ */
