@@ -85,8 +85,9 @@ $(document).ready(function() {
      $(".timeToEarn .time").each( function() {
        var productPrice = $(this).attr("data-price");
        if (productPrice) {
-         $(this).fadeOut(400).delay(400);
-         $(this).html( getTimeToEarn(productPrice) ).fadeIn(400);
+         $(this).fadeOut(200, function() {
+           $(this).html( getTimeToEarn(productPrice) );
+         }).delay(400).fadeIn(400);
        }
      });
    });
