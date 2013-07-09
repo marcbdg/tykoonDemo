@@ -80,6 +80,17 @@ $(document).ready(function() {
      restoreConfigureTaskPopup( $(e.currentTarget) );
    });
    
+   // Update any product time estimations when allowance slider is changed
+   $('#startTasks').on('slidestop','#slider-fill', function() { 
+     $(".timeToEarn .time").each( function() {
+       var productPrice = $(this).attr("data-price");
+       if (productPrice) {
+         $(this).fadeOut(400).delay(400).fadeIn(400);
+         $(this).html( getTimeToEarn(productPrice) );
+       }
+     });
+   });
+   
    $("#doneWithTasksButton").on("click", function(e){ 
       transitionToStartGoals(e);
    });
@@ -421,7 +432,7 @@ var addProductToChild = function(productId) {
   $(newProduct).find(".productTitle").html( currentProduct.name);
   $(newProduct).find(".thumbnail").attr({src: currentProduct.imgURL, alt: currentProduct.name});
   $(newProduct).find(".price").html(currentProduct.price);
-  $(newProduct).find(".time").html( getTimeToEarn(currentProduct.price) );  
+  $(newProduct).find(".time").html( getTimeToEarn(currentProduct.price) ).attr("data-price", currentProduct.price);  
       
   currentChild.products.push(currentProduct);
   $(newProduct).prependTo("#startTasks .selectedProducts").slideDown();  
