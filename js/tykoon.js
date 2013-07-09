@@ -256,7 +256,7 @@ var restoreConfigureTaskPopup = function(taskUI) {
         $("#configureNonRepeatPayment input[value='" + task.payType + "']").prop("checked",true);
         $("#configureNonRepeatPayment input").checkboxradio("refresh");
         if (task.payType == "money") {
-          $("#configureTasksHowMuch").val(task.payAmt);
+          $("#configureTasksHowMuch").val( dollarize(task.payAmt) );
         }
         if (task.dueDate != "") {
           $("#configureTasksDueDate").val( dateToYMD(task.dueDate) );
@@ -272,6 +272,18 @@ var restoreConfigureTaskPopup = function(taskUI) {
  }       
 };
 
+function dollarize(payAmt) {
+  var dotIndex = payAmt.indexOf(".");
+  if ( dotIndex == -1) {
+    return payAmt + ".00";
+  } else {
+    var cents = payAmt.substring(dotIndex+1);
+    if (cents.length < 2) {
+      return payAmt + "0";
+    }
+  }
+  return payAmt;
+}
 // function dateToMDY(date) {
 //   var d = date.getDate();
 //   var m = date.getMonth() + 1;
@@ -454,7 +466,7 @@ var getTaskRecurrance = function(task) {
 };
 var getTaskPay = function(task) {
   if (task.payType == "money") {
-    return "<span class='money'>$" + task.payAmt + "</span>";
+    return "<span class='money'>$" + dollarize(task.payAmt) + "</span>";
   } else {
     return "<span class='" + task.payType + "'>" + task.payType + "</span>";
   }
