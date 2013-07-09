@@ -420,7 +420,8 @@ var addProductToChild = function(productId) {
   $(newProduct).attr( "data-productId", productId);
   $(newProduct).find(".productTitle").html( currentProduct.name);
   $(newProduct).find(".thumbnail").attr({src: currentProduct.imgURL, alt: currentProduct.name});
-  
+  $(newProduct).find(".price").html(currentProduct.price);
+  $(newProduct).find(".time").html( getTimeToEarn(currentProduct.price) );  
       
   currentChild.products.push(currentProduct);
   $(newProduct).prependTo("#startTasks .selectedProducts").slideDown();  
