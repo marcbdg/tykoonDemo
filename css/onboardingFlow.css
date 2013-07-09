@@ -311,6 +311,10 @@ padding: 10px 20px;
 #startTasks .selectedProducts .productItem .productDetails {
     float: left;
 }
+#startTasks .taskCatalog .taskItem .taskDetails {
+    width: 85%;
+}
+
 #startTasks .taskCatalog .taskItem .numKids,
 #startTasks .productCatalog .productItem .numKids {
     color: #777;
