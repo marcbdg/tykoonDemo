@@ -206,11 +206,13 @@
     right: -22px;
 }
 
-#startTasks .productCatalog .products{
+#startTasks .productCatalog .products,
+#startTasks .taskCatalog .tasks{
     display:none;
 }
 
-#startTasks .productCatalog .productsNoResults{
+#startTasks .productCatalog .productsNoResults,
+#startTasks .taskCatalog .tasksNoResults{
     display:none;
 }
 
