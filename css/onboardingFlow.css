@@ -65,8 +65,26 @@
         -webkit-transform: translateX(-47%);
     }
 }
+@-webkit-keyframes slideRight {
+    20% {
+        -webkit-transform: translateX(-5%);
+    }
+    100% {
+        -webkit-transform: translateX(50%);
+    }
+    80% {
+        -webkit-transform: translateX(55%);
+    }
+    90% {
+        -webkit-transform: translateX(47%);
+    }
+}
+
 #startTasks .tasksPayGoals.left {
     -webkit-animation: slideLeft .7s ease-in-out forwards;
+}
+#startTasks .tasksPayGoals.right {
+    -webkit-animation: slideRight .7s ease-in-out forwards;
 }
 #startTasks .tasksPayGoals .ui-block-a {
     border-right: 1px solid #265465;
@@ -163,20 +181,12 @@
     z-index: 100;
     top: 18px;
     border-top: 15px solid transparent;
-    border-bottom: 15px solid transparent;
-    
-/*    border-left: 1px solid transparent;
-    border-right: 20px solid white;
-    left: -21px;
-*/
+    border-bottom: 15px solid transparent;    
     right: -16px;
     border-left: 15px solid #fff;
     border-right: 1px solid transparent;
 }
 #startTasks .cover:after {
-/*    border-right-color: #666;
-    left: -22px;
-*/
     z-index: 99;
     border-left-color: #666;
     right: -17px;

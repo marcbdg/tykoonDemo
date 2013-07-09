@@ -89,6 +89,7 @@ $(document).ready(function() {
    });
 
    $("#addTasksButton").on("click", function(e){ 
+      $("#startTasks .tasksPayGoals").removeClass("left");
       showAddTasks(e);
    });
    $("#addGoalsButton").on("click", function(e){ 
@@ -523,6 +524,9 @@ var transitionToStartGoals = function(e) {
 };
 
 var transitionToReview = function(e) {
+  if (! $("#startTasks .tasksPayGoals").hasClass("left")) {
+    $("#startTasks .tasksPayGoals").addClass("left");
+  }
   $(".footerBar").fadeOut(200);
   $(".cover").fadeOut("slow");
   $(".finishSetupFooter").delay(400).fadeIn(200);
