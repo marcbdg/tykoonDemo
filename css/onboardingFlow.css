@@ -511,6 +511,7 @@ padding: 10px 20px;
 .selectedProducts .time {
     color: #f93d22;
     font-size: 1.3em;
+    font-weight: bold;
 }
 .selectedProducts .completionBar {
     border-radius: 4px;
