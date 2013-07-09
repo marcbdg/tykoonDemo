@@ -207,6 +207,7 @@
 }
 
 #startTasks .taskCatalog .tasks,
+#startTasks .taskCatalog .popularTasks,
 #startTasks .productCatalog .products,
 #startTasks .productCatalog .popularProducts{
     height: 483px;

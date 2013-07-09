@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3831b584-dff0-4152-93c0-b6317c200807" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/cannedObjects/cannedTasks.js" afterPath="$PROJECT_DIR$/js/cannedObjects/cannedTasks.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node/file.txt" afterPath="$PROJECT_DIR$/node/file.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node/tasks.tsv" afterPath="$PROJECT_DIR$/node/tasks.tsv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/onboardingFlow.css" afterPath="$PROJECT_DIR$/css/onboardingFlow.css" />
     </list>
     <ignored path="tykoonDemo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -16,7 +13,7 @@
     <file path="/cannedTask.js" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1372284332553" ignored="false" />
     <file path="/child.js" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1372399607805" ignored="false" />
     <file path="/task.js" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1372291586316" ignored="false" />
-    <file path="/onboardingFlow.css" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1373326707777" ignored="false" />
+    <file path="/onboardingFlow.css" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1373328702161" ignored="false" />
     <file path="/main.css" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1372783519868" ignored="false" />
     <file path="/convertProductCSVJSON.js" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1373325725493" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -79,10 +76,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="145" column="106" selection-start="8572" selection-end="8590" vertical-scroll-proportion="0.33333334">
+            <state line="145" column="106" selection-start="8572" selection-end="8590" vertical-scroll-proportion="-2.4264705">
               <folding>
                 <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#1;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -108,23 +105,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="onboardingFlow.css" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="onboardingFlow.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/onboardingFlow.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="204" column="40" selection-start="4384" selection-end="4384" vertical-scroll-proportion="0.0">
-              <folding>
-                <marker date="1373327509000" expanded="true" signature="4451:4545" placeholder="{...}" />
-                <marker date="1373327509000" expanded="true" signature="4590:4606" placeholder="{...}" />
-                <marker date="1373327509000" expanded="true" signature="4908:5008" placeholder="{...}" />
-                <marker date="1373327509000" expanded="true" signature="5131:5323" placeholder="{...}" />
-                <marker date="1373327509000" expanded="true" signature="5526:5662" placeholder="{...}" />
-                <marker date="1373327509000" expanded="true" signature="5752:5799" placeholder="{...}" />
-                <marker date="1373327509000" expanded="true" signature="5934:5977" placeholder="{...}" />
-                <marker date="1373327509000" expanded="true" signature="6081:6153" placeholder="{...}" />
-                <marker date="1373327509000" expanded="true" signature="7414:7423" placeholder="{...}" />
-                <marker date="1373327509000" expanded="true" signature="7544:7617" placeholder="{...}" />
-                <marker date="1373327509000" expanded="true" signature="7892:7897" placeholder="{...}" />
-              </folding>
+            <state line="208" column="32" selection-start="4439" selection-end="4439" vertical-scroll-proportion="0.390625">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -164,10 +149,10 @@
         <option value="$PROJECT_DIR$/css/main.css" />
         <option value="$PROJECT_DIR$/js/cannedObjects/cannedProducts.js" />
         <option value="$PROJECT_DIR$/node/convertProductCSVJSON.js" />
-        <option value="$PROJECT_DIR$/css/onboardingFlow.css" />
         <option value="$PROJECT_DIR$/js/tykoon.js" />
         <option value="$PROJECT_DIR$/js/cannedObjects/cannedTasks.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/css/onboardingFlow.css" />
       </list>
     </option>
   </component>
@@ -864,19 +849,7 @@
     <entry file="file://$PROJECT_DIR$/css/onboardingFlow.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="231" column="29" selection-start="5154" selection-end="5160" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1373327509000" expanded="true" signature="4451:4545" placeholder="{...}" />
-            <marker date="1373327509000" expanded="true" signature="4590:4606" placeholder="{...}" />
-            <marker date="1373327509000" expanded="true" signature="4908:5008" placeholder="{...}" />
-            <marker date="1373327509000" expanded="true" signature="5131:5323" placeholder="{...}" />
-            <marker date="1373327509000" expanded="true" signature="5526:5662" placeholder="{...}" />
-            <marker date="1373327509000" expanded="true" signature="5752:5799" placeholder="{...}" />
-            <marker date="1373327509000" expanded="true" signature="5934:5977" placeholder="{...}" />
-            <marker date="1373327509000" expanded="true" signature="6081:6153" placeholder="{...}" />
-            <marker date="1373327509000" expanded="true" signature="7414:7423" placeholder="{...}" />
-            <marker date="1373327509000" expanded="true" signature="7544:7617" placeholder="{...}" />
-            <marker date="1373327509000" expanded="true" signature="7892:7897" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -912,25 +885,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/onboardingFlow.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="204" column="40" selection-start="4384" selection-end="4384" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1373327509000" expanded="true" signature="4451:4545" placeholder="{...}" />
-            <marker date="1373327509000" expanded="true" signature="4590:4606" placeholder="{...}" />
-            <marker date="1373327509000" expanded="true" signature="4908:5008" placeholder="{...}" />
-            <marker date="1373327509000" expanded="true" signature="5131:5323" placeholder="{...}" />
-            <marker date="1373327509000" expanded="true" signature="5526:5662" placeholder="{...}" />
-            <marker date="1373327509000" expanded="true" signature="5752:5799" placeholder="{...}" />
-            <marker date="1373327509000" expanded="true" signature="5934:5977" placeholder="{...}" />
-            <marker date="1373327509000" expanded="true" signature="6081:6153" placeholder="{...}" />
-            <marker date="1373327509000" expanded="true" signature="7414:7423" placeholder="{...}" />
-            <marker date="1373327509000" expanded="true" signature="7544:7617" placeholder="{...}" />
-            <marker date="1373327509000" expanded="true" signature="7892:7897" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node/convertProductCSVJSON.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="0" selection-start="176" selection-end="176" vertical-scroll-proportion="0.0">
@@ -954,10 +908,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="145" column="106" selection-start="8572" selection-end="8590" vertical-scroll-proportion="0.33333334">
+        <state line="145" column="106" selection-start="8572" selection-end="8590" vertical-scroll-proportion="-2.4264705">
           <folding>
             <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#1;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/onboardingFlow.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="208" column="32" selection-start="4439" selection-end="4439" vertical-scroll-proportion="0.390625">
+          <folding />
         </state>
       </provider>
     </entry>
