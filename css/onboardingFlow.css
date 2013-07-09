@@ -524,6 +524,7 @@ padding: 10px 20px;
     width: 100%;
     height: 38px;
     margin-bottom: 7px;
+    position: relative;
     background: #b0b0ae; /* Old browsers */
     background: -moz-linear-gradient(top, #b0b0ae 0%, #e7e7e5 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b0b0ae), color-stop(100%,#e7e7e5)); /* Chrome,Safari4+ */
@@ -533,6 +534,10 @@ padding: 10px 20px;
     background: linear-gradient(to bottom, #b0b0ae 0%,#e7e7e5 100%); /* W3C */
 }
 .selectedProducts .completionBar .bar {
+    border-radius: 4px;
+    height: 100%;
+    width: 0%;
+    background: rgba(250,0,0,.7);
 }
 .selectedProducts .completionBar .percent {
     color: #fff;
@@ -540,6 +545,9 @@ padding: 10px 20px;
     font-size: .8em;
     line-height: 38px;
     margin-left: 10px;
+    position: absolute;
+    width: 90%;
+    top: 0;
 }
 .selectedProducts .completionBar .percent span {
     font-size: 2em;
