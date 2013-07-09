@@ -90,7 +90,7 @@
     border-left: 1px solid #265465;
 }
 #startTasks .tasksPayGoals .header {
-    border-bottom: 3px solid #aaa;
+    border-bottom: 2px solid #999;
     position: relative;
 }
 #startTasks .tasksPayGoals .header .ui-btn {
@@ -104,9 +104,9 @@
     font-weight: bold;
 }
 #startTasks .tasksPayGoals .setAllowance {
-    border-top: 2px solid #bbb;
-    background: #ccc;
-    padding-right: 30px;
+    border-top: 2px solid #777;
+    background: #ddd url(../img/texture@2x.png);
+    padding: 15px 30px 15px 20px;
     position: relative;
 }
 #startTasks .tasksPayGoals .setAllowance label {
@@ -133,12 +133,15 @@
     text-shadow: 0 1px 0 #333;
     position: absolute;
     right: 63px;
-    bottom: 2.15em;
+    bottom: 1.9em;
     display: block;
     z-index: 10;
 }
 #startTasks .setAllowance .ui-slider-track {
     margin: 0 68px 0 15px;
+}
+#startTasks #slider-fill-label {
+    font-size: 19px;
 }
 #addTasksForm .ui-btn-shadow.ui-body-a,
 #addGoalForm .ui-btn-shadow.ui-body-a {
