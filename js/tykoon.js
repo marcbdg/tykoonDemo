@@ -32,34 +32,51 @@ function setOrientation() {
 
       case 672: //Browser mode, landscape
          visualEnv.orientation = 'landscape';
-         visualEnv.fullscreen = 'false';
+         visualEnv.fullscreen = false;
          break;
 
       case 928: //Browser mode, portrait
          visualEnv.orientation = 'portrait';
-         visualEnv.fullscreen = 'false';
+         visualEnv.fullscreen = false;
          break;
 
       case 748: //Fullscreen, landscape
          visualEnv.orientation = 'landscape';
-         visualEnv.fullscreen = 'true';
+         visualEnv.fullscreen = true;
          break;
 
       default: //Fullscreen, portrait (1004)
          visualEnv.orientation = 'portrait';
-         visualEnv.fullscreen = 'true';
+         visualEnv.fullscreen = true;
    }
+   //console.log('$(window).height(): ' + $(window).height() + ' visualEnv.orientation: ' + visualEnv.orientation + ' visualEnv.fullscreen:' + visualEnv.fullscreen);
 }
 
 $('#startTasks').resize(function(e) {
-   if(visualEnv.orientation == 'landscape') {
-      $('#startTasks').height(700);
-   } else {
-      //TODO Marc figure out size for portrait
-      $('#startTasks').height(800);
-   }
-   return false;
+   forceStartTasksHeight();
 });
+$('#startTasks').on('pageshow', function(e) {
+   forceStartTasksHeight();
+});
+
+function forceStartTasksHeight() {
+   if(visualEnv.orientation == 'landscape' && visualEnv.fullscreen) {
+      $('#startTasks').height(686);
+   }
+   if(visualEnv.orientation == 'landscape' && !visualEnv.fullscreen) {
+      $('#startTasks').height(610);
+   }
+
+   //TODO Marc figure out size for portrait
+   if(visualEnv.orientation == 'portrait' && visualEnv.fullscreen) {
+      //$('#startTasks').height(700);
+   }
+   if(visualEnv.orientation == 'portrait' && !visualEnv.fullscreen) {
+      //$('#startTasks').height(610);
+   }
+
+   return false;
+}
 
 
 //---------------------------------------------------
