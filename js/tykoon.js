@@ -410,9 +410,16 @@ var watchUserFilterInput = function(e) {
 
 var addConfiguredTaskToChild = function(e) {
   var taskId = $("#configureTasks .taskTitle").attr("data-taskId"),
-    // currentTask = new Task(taskId, taskTitle, '', [], '', '', '');  // new Task(id, name, icon, repeatDays, payType, payAmt, dueDate);
-    currentTask = cannedTasks.tasks[taskId];
-    if (! currentTask.repeatDays) currentTask.repeatDays = [];
+      currentTask;
+      
+    if (taskId == -1) {
+      var taskTitle = $("#configureTasks .taskTitle").html();
+      // new Task(id, name, icon, repeatDays, payType, payAmt, dueDate);
+      currentTask = new Task(taskId, taskTitle, 'iconGenericTask@2x.png', [], '', '', '');  
+    } else {
+      currentTask = cannedTasks.tasks[taskId];
+      if (! currentTask.repeatDays) currentTask.repeatDays = [];
+    }
 
   // If repeating task, collect repeatDays and paymentType
   var repeats = $("input:radio[name='configureTasksRepeats']:checked").val();
