@@ -12,6 +12,34 @@ var hideKeyboard = function() {
    $("input").blur();
 };
 
+//---------------------------------------------------
+// Section to handle startTask resizing
+//---------------------------------------------------
+var startTaskHeight = '';
+
+$('#startTasks').on('pageinit', function(e) {
+   startTaskHeight = $('#startTasks').height();
+   console.log('startTaskHeight:' + startTaskHeight);
+});
+
+$(window).on('orientationchange', function(e) {
+   startTaskHeight = $('#startTasks').height();
+   console.log('startTaskHeight:' + startTaskHeight);
+});
+
+$('#startTasks').resize(function(e) {
+   if($('#startTasks').height() < 300) {
+      $('#startTasks').css({height: startTaskHeight});
+      return false;
+   }
+});
+
+
+//---------------------------------------------------
+// End section to handle startTask resizing
+//---------------------------------------------------
+
+//clear the filter forms during the transition states
 $(document).bind('pagebeforehide', function(){
    $('.backToPopularTasks, .backToPopularProducts').trigger('click');
 });
@@ -217,31 +245,31 @@ var configureTasks = function(e) {
    $("#configureTasksDueDate").attr("min", dateToYMD(new Date()));
    
    resetConfigureTaskPopup();
-   $("#configureTasks").popup().popup("open", {transition: "pop"} );
+   $("#configureTasks").popup().popup("open", {transition: "pop"});
 };
 
 var resetConfigureTaskPopup = function(e) {
-  // reset the form before opening
-  $("#configureTaskRepeatsYes, #configureRepeatPaymentAllow, #configureNonRepeatPaymentMoney" ).prop( "checked", true ).checkboxradio( "refresh" );
-  $("#configureTaskRepeatsNo, #configureRepeatPaymentResp, #configureNonRepeatPaymentResp, #configureTasksWeeklyOn input[type='checkbox']" ).prop( "checked", false ).checkboxradio( "refresh" );
-  $("#configureTasksHowMuch, #configureTasksDueDate").val("");
-  $(".taskRepeatPaymentDetails .allow, .taskNonRepeatPaymentDetails .money").show();
-  $(".taskRepeatPaymentDetails .resp, .taskNonRepeatPaymentDetails .resp").hide();
+   // reset the form before opening
+   $("#configureTaskRepeatsYes, #configureRepeatPaymentAllow, #configureNonRepeatPaymentMoney" ).prop( "checked", true ).checkboxradio( "refresh" );
+   $("#configureTaskRepeatsNo, #configureRepeatPaymentResp, #configureNonRepeatPaymentResp, #configureTasksWeeklyOn input[type='checkbox']" ).prop( "checked", false ).checkboxradio( "refresh" );
+   $("#configureTasksHowMuch, #configureTasksDueDate").val("");
+   $(".taskRepeatPaymentDetails .allow, .taskNonRepeatPaymentDetails .money").show();
+   $(".taskRepeatPaymentDetails .resp, .taskNonRepeatPaymentDetails .resp").hide();
   
   swapConfigureTasksRepeats();
 };
 var restoreConfigureTaskPopup = function(taskUI) {
-  resetConfigureTaskPopup();
-  var taskId = $(taskUI).attr("data-taskId"),
-    title = $(taskUI).find(".taskTitle").html();
+   resetConfigureTaskPopup();
+   var taskId = $(taskUI).attr("data-taskId"),
+       title = $(taskUI).find(".taskTitle").html();
 
-  // find the fully configured task object matching the id and title of the task tapped
- for (i in currentChild.tasks) {
-   var task = currentChild.tasks[i];
-   if (task.id == taskId && task.name == title) {
+   // find the fully configured task object matching the id and title of the task tapped
+   for (i in currentChild.tasks) {
+      var task = currentChild.tasks[i];
+      if (task.id == taskId && task.name == title) {
      
-     // populate the disclosure
-     $("#configureTasks").find(".taskTitle").html(task.name).attr("data-taskId",task.id);
+         // populate the disclosure
+         $("#configureTasks").find(".taskTitle").html(task.name).attr("data-taskId",task.id);
      
       if ( task.repeatDays.length > 0) {
         $("#configureTasksRepeats input[value='1']").prop("checked",true);
