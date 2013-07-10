@@ -354,9 +354,10 @@ var watchUserFilterInput = function(e) {
 
 
 var addConfiguredTaskToChild = function(e) {
-  var taskTitle = $("#configureTasks .taskTitle").html(),
-    taskId = $("#configureTasks .taskTitle").attr("data-taskId"),
-    currentTask = new Task(taskId, taskTitle, [], '', '', '');  // new Task(id, name, repeatDays, payType, payAmt, dueDate);
+  var taskId = $("#configureTasks .taskTitle").attr("data-taskId"),
+    // currentTask = new Task(taskId, taskTitle, '', [], '', '', '');  // new Task(id, name, icon, repeatDays, payType, payAmt, dueDate);
+    currentTask = cannedTasks.tasks[taskId];
+    if (! currentTask.repeatDays) currentTask.repeatDays = [];
 
   // If repeating task, collect repeatDays and paymentType
   var repeats = $("input:radio[name='configureTasksRepeats']:checked").val();
@@ -409,6 +410,7 @@ var addConfiguredTaskToChild = function(e) {
   var taskUI = $($(".newTaskTemplate .taskItem")[0]).clone();
   $(taskUI).css("display","none").attr("data-taskId", currentTask.id);
   $(taskUI).find(".taskTitle").html(currentTask.name);
+  $(taskUI).find(".icon").attr("src","img/tasks/" +currentTask.icon);
   $(taskUI).find(".recurrance").html(getTaskRecurrance(currentTask));
   $(taskUI).find(".payment").html(getTaskPay(currentTask));
 
@@ -494,6 +496,7 @@ var populateTasksForChild = function(child) {
          var taskItem = $(taskTemplate).clone();
          $(taskItem).attr("data-taskId", task.id);
          $(taskItem).find(".title").html(task.name);
+         $(taskItem).find(".icon").attr("src", "img/tasks/" + task.icon);
          $(taskItem).find(".numKids span").html(task.numPeople);
 
          $('#startTasks .taskCatalog .popularTasks').append($(taskItem));

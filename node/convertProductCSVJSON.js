@@ -90,6 +90,7 @@ fs.readFile('tasks.tsv', 'utf8', function(err, data) {
 
          DOMString += '<div class="taskItem clearfix" data-taskid="' + Number(i) + '">\n';
          DOMString += '   <div class="addButton">+</div>\n';
+         DOMString += '   <img class="icon" src="img/tasks/' + row[1] + '"/>\n';
          DOMString += '   <div class="taskDetails">\n';
          DOMString += '      <div class="title">' + row[0] + '</div>\n';
          DOMString += '      <div class="numKids"><span>' + row[2] + '</span> kids are doing this</div>\n';

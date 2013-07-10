@@ -288,14 +288,14 @@ padding: 10px 20px;
     background: #ddd;
 }
 #startTasks .taskCatalog .taskItem .addButton {
-    width: 50px;
-    height: 50px;
-    margin-right: 15px;
+    width: 40px;
+    height: 40px;
+    margin: 10px 5px 0 0;
     float: left;
     border-radius: 10px;
     color: #fff;
     text-align: center;
-    line-height: 45px;
+    line-height: 35px;
     font-size: 2em;
     font-weight: bold;
 
@@ -310,12 +310,18 @@ padding: 10px 20px;
     background-image: linear-gradient( #86e3fe,#1abeee );
 }
 #startTasks .taskCatalog .taskItem .taskDetails,
+#startTasks .taskCatalog .taskItem .icon,
 #startTasks .productCatalog .productItem .productDetails,
 #startTasks .selectedProducts .productItem .productDetails {
     float: left;
 }
+#startTasks .taskCatalog .taskItem .icon {
+ width: 62px;
+ height: 62px;
+ margin-right: 10px;
+}
 #startTasks .taskCatalog .taskItem .taskDetails {
-    width: 85%;
+    width: 71%;
 }
 
 #startTasks .taskCatalog .taskItem .numKids,
@@ -339,6 +345,16 @@ padding: 10px 20px;
 #configureTasks .taskRepeatPaymentDetails .resp,
 #configureTasks .taskNonRepeatPaymentDetails .resp {
     display: none;
+}
+#startTasks .selectedTasks .taskItem .taskDetails {
+    float: left;
+    width: 80%;
+}
+#startTasks .selectedTasks .taskItem .icon {
+    float: left;
+    width: 62px;
+    height: 62px;
+    margin-right: 10px;
 }
 #startTasks .selectedTasks .taskItem .recurrance {
     color: #006d8e;

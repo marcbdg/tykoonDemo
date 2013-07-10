@@ -6,9 +6,10 @@
  * To change this template use File | Settings | File Templates.
  */
 
-var Task = function(id, name, repeatDays, payType, payAmt, dueDate) {
+var Task = function(id, name, icon, repeatDays, payType, payAmt, dueDate) {
   this.id = id;
   this.name = name;
+  this.icon = icon;
   this.repeatDays = repeatDays;
   this.payType = payType;
   this.payAmt = payAmt;
