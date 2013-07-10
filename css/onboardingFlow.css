@@ -34,6 +34,21 @@
     overflow: hidden;
 }
 
+/* TODO: MARC fix portrait */
+@media only screen
+and (orientation : landscape)
+and (max-height: 670 ) {
+    #startTasks {height:610px;}
+    body{background:red;}
+}
+/*
+@media only screen
+and (orientation : landscape)
+and (max-height: 670 ) {
+    #startTasks {height:610px;}
+}
+*/
+
 .logo {
     overflow: hidden;
     text-indent: -9000px;
@@ -218,6 +233,7 @@
 
 #startTasks .taskCatalog .tasks,
 #startTasks .taskCatalog .popularTasks,
+#startTasks .tasksPayGoals .selectedTasks,
 #startTasks .productCatalog .products,
 #startTasks .productCatalog .popularProducts{
     height: 483px;
