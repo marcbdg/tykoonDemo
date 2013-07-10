@@ -237,7 +237,7 @@
 #productDetailsPopup .details .title,
 #productDetailsPopup .details .price
 {
-    font-size: 1.6em;
+    font-size: 1.5em;
     line-height: 1.2em;
     font-weight: bold;
 }
@@ -327,6 +327,7 @@ padding: 10px 30px;
 #startTasks .taskCatalog .taskItem .numKids,
 #startTasks .productCatalog .productItem .numKids {
     color: #777;
+    font-size: .8em;
 }
 #configureTasks {
     background: #fff;
@@ -417,10 +418,12 @@ padding: 10px 30px;
 #startTasks .productCatalog .productItem .productDetailsIcon,
 #startTasks .selectedProducts .productItem .productDetailsIcon {
     position: absolute;
-    top: -5px;
+    top: -2px;
     left: -5px;
     opacity: .8;
     z-index: 10;
+    width: 19px;
+    height: 19px;
 }
 #startTasks .productCatalog .productItem .thumbnail,
 #startTasks .selectedProducts .productItem .thumbnail {

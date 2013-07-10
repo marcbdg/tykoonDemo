@@ -617,6 +617,7 @@ var populateProductsForChild = function(child) {
          var productItem = $(productTemplate).clone();
          $(productItem).attr("data-productId", product.id);
          $(productItem).find(".title").html(product.name);
+         $(productItem).find(".price").html(product.price);
          $(productItem).find(".numKids span").html(product.numPeople);
          $(productItem).find(".thumbnail").attr({src: product.imgURL, alt: product.name});
          $('#startTasks .productCatalog .popularProducts').append($(productItem));
