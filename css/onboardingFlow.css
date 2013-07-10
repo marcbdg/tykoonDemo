@@ -281,7 +281,7 @@
 #startTasks .selectedTasks .taskItem {
 border-bottom: 1px solid #ccc;
 border-top: 1px solid #aaa;
-padding: 10px 20px;
+padding: 10px 30px;
 }
 #startTasks .taskCatalog .taskItem:touch,
 #startTasks .productCatalog .productItem:touch {
@@ -290,7 +290,7 @@ padding: 10px 20px;
 #startTasks .taskCatalog .taskItem .addButton {
     width: 40px;
     height: 40px;
-    margin: 10px 5px 0 0;
+    margin: 10px 20px 0 0;
     float: left;
     border-radius: 10px;
     color: #fff;
@@ -321,7 +321,7 @@ padding: 10px 20px;
  margin-right: 10px;
 }
 #startTasks .taskCatalog .taskItem .taskDetails {
-    width: 71%;
+    width: 70%;
 }
 
 #startTasks .taskCatalog .taskItem .numKids,
@@ -348,7 +348,7 @@ padding: 10px 20px;
 }
 #startTasks .selectedTasks .taskItem .taskDetails {
     float: left;
-    width: 80%;
+    width: 84%;
 }
 #startTasks .selectedTasks .taskItem .icon {
     float: left;
@@ -391,20 +391,20 @@ padding: 10px 20px;
 #startTasks .selectedProducts .productItem {
     border-bottom: 1px solid #ccc;
     border-top: 1px solid #aaa;
-    padding: 10px 20px;
+    padding: 10px 30px;
 }
 #startTasks .productCatalog .productItem .productImage,
 #startTasks .selectedProducts .productItem .productImage {
     position: relative;
     background: #fff;
-    width: 150px;
-    height: 150px;
-    border: 1px solid #ccc;
+    width: 140px;
+    height: 140px;
     margin-right: 20px;
     float: left;
     display: table;
 }
 #startTasks .selectedProducts .productItem .productImage {
+    border: 1px solid #ccc;
     width: 100px;
     height: 100px;
 }
@@ -428,10 +428,10 @@ padding: 10px 20px;
     max-width: 100%;
 }
 #startTasks .productCatalog .productItem .productDetails {
-    width: 63%;
+    width: 64%;
 }
 #startTasks .selectedProducts .productItem .productDetails {
-    width: 74%;
+    width: 72%;
 }
 
 /* Product details popup */
