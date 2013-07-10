@@ -229,17 +229,25 @@
 }
 #startTasks .taskCatalog .title,
 #startTasks .taskCatalog .altTitle,
-#startTasks .addTaskContent .title,
-#startTasks .selectedTasks .taskTitle,
-#startTasks .addGoalContent .title,
 #startTasks .productCatalog .title,
 #startTasks .productCatalog .altTitle,
+#startTasks .addTaskContent .title,
+#startTasks .addGoalContent .title,
+#startTasks .selectedTasks .taskTitle,
 #productDetailsPopup .details .title,
 #productDetailsPopup .details .price
 {
     font-size: 1.5em;
     line-height: 1.2em;
     font-weight: bold;
+}
+#startTasks .productCatalog .popularProducts .title,
+#startTasks .selectedProducts .productTitle,
+#startTasks .productCatalog .products .title {
+    font-size: 1.2em;
+    line-height: 1.1em;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 #startTasks .taskCatalog > .title,
 #startTasks .taskCatalog > .altTitle,
