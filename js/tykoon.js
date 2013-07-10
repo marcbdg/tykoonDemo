@@ -459,7 +459,7 @@ var getTaskRecurrance = function(task) {
   if (task.repeatDays.length > 0) {   // repeating tasks
     return "↻ every " + task.repeatDays.join(", ");
   } else {    // non-repeating tasks
-    if (task.dueDate != "") {
+    if (task.dueDate) {
       return "<strong>By:</strong> " + prettyDate(task.dueDate);
     } else {
       return "one time";
