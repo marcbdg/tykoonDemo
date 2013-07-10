@@ -53,9 +53,9 @@ $(document).ready(function() {
    
    // Adjust element sizes based on the window size
    if ($(window).height() > 672) {   // FULLSCREEN ipad landscape
-     $("#startTasks .taskCatalog .tasks, #startTasks .taskCatalog .popularTasks, #startTasks .productCatalog .products, #startTasks .productCatalog .popularProducts").css("height","483px");
+     $("#startTasks .taskCatalog .tasks, #startTasks .taskCatalog .popularTasks, #startTasks .productCatalog .products, #startTasks .productCatalog .popularProducts").css("height","498px");
    } else {  // BROWSER bars ipad landscape
-     $("#startTasks .taskCatalog .tasks, #startTasks .taskCatalog .popularTasks, #startTasks .productCatalog .products, #startTasks .productCatalog .popularProducts").css("height","410px");
+     $("#startTasks .taskCatalog .tasks, #startTasks .taskCatalog .popularTasks, #startTasks .productCatalog .products, #startTasks .productCatalog .popularProducts").css("height","425px");
    }
    
    // Set so birthday can't be past today
