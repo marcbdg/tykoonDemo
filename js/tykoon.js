@@ -15,23 +15,50 @@ var hideKeyboard = function() {
 //---------------------------------------------------
 // Section to handle startTask resizing
 //---------------------------------------------------
-var startTaskHeight = '';
+var visualEnv = {orientation: '', fullscreen: true};
 
-$('#startTasks').on('pageinit', function(e) {
-   startTaskHeight = $('#startTasks').height();
-   console.log('startTaskHeight:' + startTaskHeight);
+$('#startTasks').on('pageshow', function(e) {
+   setOrientation();
 });
 
 $(window).on('orientationchange', function(e) {
-   startTaskHeight = $('#startTasks').height();
-   console.log('startTaskHeight:' + startTaskHeight);
+   setOrientation();
 });
 
-$('#startTasks').resize(function(e) {
-   if($('#startTasks').height() < 300) {
-      $('#startTasks').css({height: startTaskHeight});
-      return false;
+function setOrientation() {
+   //handles browser mode or fullscreen
+
+   switch($(window).height()) {
+
+      case 672: //Browser mode, landscape
+         visualEnv.orientation = 'landscape';
+         visualEnv.fullscreen = 'false';
+         break;
+
+      case 928: //Browser mode, portrait
+         visualEnv.orientation = 'portrait';
+         visualEnv.fullscreen = 'false';
+         break;
+
+      case 748: //Fullscreen, landscape
+         visualEnv.orientation = 'landscape';
+         visualEnv.fullscreen = 'true';
+         break;
+
+      default: //Fullscreen, portrait (1004)
+         visualEnv.orientation = 'portrait';
+         visualEnv.fullscreen = 'true';
    }
+}
+
+$('#startTasks').resize(function(e) {
+   if(visualEnv.orientation == 'landscape') {
+      $('#startTasks').height(700);
+   } else {
+      //TODO Marc figure out size for portrait
+      $('#startTasks').height(800);
+   }
+   return false;
 });
 
 
