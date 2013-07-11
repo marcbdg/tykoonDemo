@@ -231,9 +231,6 @@ $(document).ready(function() {
          $("#startTasks .productCatalog .productItem").on("click", function(e){
             showProductDetails(e);
          });
-         if($('.productx').is(":visible")) {
-            $('.productx').toggle();
-         }
       },
       no_results: '.productsNoResults'
    });
@@ -434,12 +431,16 @@ var watchUserFilterInput = function(e) {
       //tasks
       $('span.taskSearchTerm').text(e.currentTarget.value);
       if (e.currentTarget.value) {
-         $('.taskCatalog .title, .taskCatalog .popularTasks').hide();
-         $('.taskCatalog .altTitle, .taskCatalog .tasks').show();
+         $('.taskCatalog .title').hide();
+         $('.taskCatalog .popularTasks').addClass('offScreen');
+         $('.taskCatalog .altTitle').show();
+         $('.taskCatalog .tasks').removeClass('offScreen');
          $(".createNewTask").removeClass("ui-disabled");
       } else {
-         $('.taskCatalog .title, .taskCatalog .popularTasks').show();
-         $('.taskCatalog .altTitle, .taskCatalog .tasks').hide();
+         $('.taskCatalog .title').show();
+         $('.taskCatalog .popularTasks').removeClass('offScreen');
+         $('.taskCatalog .altTitle').hide();
+         $('.taskCatalog .tasks').addClass('offScreen');
          $(".createNewTask").addClass("ui-disabled");
       }
    }
