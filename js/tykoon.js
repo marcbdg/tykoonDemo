@@ -578,6 +578,9 @@ var populateTasksForChild = function(child) {
    $(".childAge").html(child.getAge());
    $(".childGender").html(child.getGenderNoun());
    $(".childPossesivePronoun").html(child.getPossesivePronoun());
+   if (child.gender == "f") {
+     $(".userModule .avatar").attr("src", "img/accountGirl@2x.png");
+   }
 
    //clean page and populate page with tasks from catalog
    $('#startTasks .taskCatalog .popularTasks').empty();
