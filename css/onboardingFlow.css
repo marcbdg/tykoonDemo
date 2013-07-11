@@ -50,12 +50,56 @@ and (max-height: 670 ) {
 */
 
 .logo {
+    float: left;
     overflow: hidden;
     text-indent: -9000px;
     width: 160px;
     height: 60px;
     background: transparent url(../img/logo@2x.png) no-repeat;
     background-size: 100%;
+    margin-left: 20px;
+}
+.ui-header .userModule {
+  float: right;
+  border-left: 1px solid #265465;;
+  width: 300px;
+}
+.ui-header .userModule .avatar {
+  float: left;
+  width: 50px;
+  height: 50px;
+  margin: 5px 10px 5px 15px;
+}
+.ui-header .userModule .userInfo {
+  float: left;
+  padding-top: 5px;
+  width: 75%;
+  position: relative;
+}
+.ui-header .userModule .dropArrow {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    border: 1px solid #199CC3;
+    background: #1abeee;
+    text-shadow: 0 1px 2px #2f3e46;
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #86e3fe ),to( #1abeee ));
+    background-image: -webkit-linear-gradient( #86e3fe,#1abeee );
+    background-image: -moz-linear-gradient( #86e3fe,#1abeee );
+    background-image: -ms-linear-gradient( #86e3fe,#1abeee );
+    background-image: -o-linear-gradient( #86e3fe,#1abeee );
+    background-image: linear-gradient( #86e3fe,#1abeee );
+}
+.ui-header .userModule .dropArrow .arrow {
+    width: 23px;
+    height: 20px;
+    margin-top: 9px;
+    background: url(../img/accountArrow@2x.png);
+    background-size: 50%;
 }
 #startTasks .tasksPayGoals {
     height: 100%;
@@ -225,7 +269,6 @@ and (max-height: 670 ) {
 #startTasks .taskCatalog .tasks{
     display:none;
 }
-
 #startTasks .productCatalog .productsNoResults,
 #startTasks .taskCatalog .tasksNoResults{
     display:none;
@@ -458,6 +501,10 @@ padding: 10px 30px;
 }
 #startTasks .selectedProducts .productItem .productDetails {
     width: 72%;
+}
+.productCatalog .price {
+    margin-bottom: 5px;
+    font-size: 1.3em;
 }
 
 /* Product details popup */
