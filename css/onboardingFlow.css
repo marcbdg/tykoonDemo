@@ -414,6 +414,19 @@ padding: 10px 30px;
 #configureTasks .taskNonRepeatPaymentDetails .resp {
     display: none;
 }
+#configureTasks .money div.ui-input-text,
+#customGoalForm .money div.ui-input-text {
+    display: inline-block;
+    width: 92%;
+}
+#configureTasks .money label,
+#customGoalForm .money label,
+#customGoalForm #newGoalName {
+    width: 100%;
+}
+#customGoalPopup-popup .customGoalContent {
+    min-width: 500px;
+}
 #startTasks .selectedTasks .taskItem .taskDetails {
     float: left;
     width: 84%;

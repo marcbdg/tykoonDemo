@@ -1446,6 +1446,12 @@
                     <form method="get" id="customGoalForm">
                         <label for="newGoalName">Goal Name</label>
                         <input type="text" id="newGoalName"  name="newGoalName" />
+                        <div data-role="fieldcontain" class="money">
+                            <label for="newGoalPrice">Price</label>
+                            <div class="clearfix">
+                                $ <input type="number" step="any" min="0" id="newGoalPrice" />
+                            </div>
+                        </div>
                         <input type="submit" id="createNewGoalButton" value="Add it" data-theme="a" />
                     </form>
                 </div>
@@ -1457,18 +1463,20 @@
                 <div class="taskTitle ui-bar ui-bar-a"></div>
                 <div class="taskContent" data-role="content">
                     <form method="get" id="configureTaskForm">
-                        <label>Repeats</label>
-
-                        <fieldset data-role="controlgroup" data-type="horizontal" id="configureTasksRepeats" data-theme="a">
-                            <input type="radio" name="configureTasksRepeats" id="configureTaskRepeatsYes" value="1"  data-theme="c" checked="checked" />
-                            <label for="configureTaskRepeatsYes">Yes</label>
-                            <input type="radio" name="configureTasksRepeats" id="configureTaskRepeatsNo" value="0"  data-theme="c" />
-                            <label for="configureTaskRepeatsNo">No</label>
-                        </fieldset>
+                        
+                        <div data-role="fieldcontain">
+                            <label>Repeats</label>
+                            <fieldset data-role="controlgroup" data-type="horizontal" id="configureTasksRepeats" data-theme="a">
+                                <input type="radio" name="configureTasksRepeats" id="configureTaskRepeatsYes" value="1"  data-theme="c" checked="checked" />
+                                <label for="configureTaskRepeatsYes">Yes</label>
+                                <input type="radio" name="configureTasksRepeats" id="configureTaskRepeatsNo" value="0"  data-theme="c" />
+                                <label for="configureTaskRepeatsNo">No</label>
+                            </fieldset>
+                        </div>
 
                         <div class="hideRepeat">
-                            <label>Weekly on</label>
                             <div data-role="fieldcontain">
+                                <label>Weekly on</label>
                                 <fieldset data-role="controlgroup" data-type="horizontal" id="configureTasksWeeklyOn" data-theme="a">
                                     <input type="checkbox" name="weeklyMon" id="weeklyMon" data-theme="c" value="mon" />
                                     <label for="weeklyMon">M</label>
@@ -1490,40 +1498,52 @@
                         </div>
                         
                         <div class="hideNonRepeat">
-                            <label for="configureTasksDueDate">Due date</label>
-                            <input type="date" id ="configureTasksDueDate" data-theme="a">
-                        </div>
-
-                        <label>Payment</label>
-                        <div class="hideRepeat">
-                            <fieldset data-role="controlgroup" data-type="horizontal" id="configureRepeatPayment" data-theme="c">
-                                <input type="radio" name="configureRepeatPayment" id="configureRepeatPaymentAllow" value="allowance"  data-theme="c" checked="checked" />
-                                <label for="configureRepeatPaymentAllow">Allowance</label>
-                                <input type="radio" name="configureRepeatPayment" id="configureRepeatPaymentResp" value="responsibility"  data-theme="c" />
-                                <label for="configureRepeatPaymentResp">Responsibility</label>
-                            </fieldset>
-                            <div class="taskRepeatPaymentDetails">
-                                <p class="allow">Goes towards weekly allowance</p>
-                                <p class="resp">It's nice to help out just because</p>
+                            <div data-role="fieldcontain">
+                                <label for="configureTasksDueDate">Due date</label>
+                                <input type="date" id ="configureTasksDueDate" data-theme="a">
                             </div>
                         </div>
 
-                        <div class="hideNonRepeat">
-                            <fieldset data-role="controlgroup" data-type="horizontal" id="configureNonRepeatPayment" data-theme="a">
-                                <input type="radio" name="configureNonRepeatPayment" id="configureNonRepeatPaymentMoney" value="money"  data-theme="c" checked="checked" />
-                                <label for="configureNonRepeatPaymentMoney">Money</label>
-                                <input type="radio" name="configureNonRepeatPayment" id="configureNonRepeatPaymentResp" value="responsibility"  data-theme="c" />
-                                <label for="configureNonRepeatPaymentResp">Responsibility</label>
-                            </fieldset>
+                        <div data-role="fieldcontain">
+                            <label>Payment</label>
+
+                            <div class="hideRepeat">
+                                <fieldset data-role="controlgroup" data-type="horizontal" id="configureRepeatPayment" data-theme="c">
+                                    <input type="radio" name="configureRepeatPayment" id="configureRepeatPaymentAllow" value="allowance"  data-theme="c" checked="checked" />
+                                    <label for="configureRepeatPaymentAllow">Allowance</label>
+                                    <input type="radio" name="configureRepeatPayment" id="configureRepeatPaymentResp" value="responsibility"  data-theme="c" />
+                                    <label for="configureRepeatPaymentResp">Responsibility</label>
+                                </fieldset>
+                                <div class="taskRepeatPaymentDetails">
+                                    <p class="allow">Goes towards weekly allowance</p>
+                                    <p class="resp">It's nice to help out just because</p>
+                                </div>
+                            </div>
+                            <div class="hideNonRepeat">
+                                <fieldset data-role="controlgroup" data-type="horizontal" id="configureNonRepeatPayment" data-theme="a">
+                                    <input type="radio" name="configureNonRepeatPayment" id="configureNonRepeatPaymentMoney" value="money"  data-theme="c" checked="checked" />
+                                    <label for="configureNonRepeatPaymentMoney">Money</label>
+                                    <input type="radio" name="configureNonRepeatPayment" id="configureNonRepeatPaymentResp" value="responsibility"  data-theme="c" />
+                                    <label for="configureNonRepeatPaymentResp">Responsibility</label>
+                                </fieldset>
+                            </div>
+                        </div>
+                              
+                        <div class="hideNonRepeat">        
                             <div class="taskNonRepeatPaymentDetails">
-                                <p class="money">
-                                    <label for="configureTasksHowMuch">How Much?</label>
-                                    <input type="number" step="any" min="0" id="configureTasksHowMuch" />
-                                    <div class="error" id="enterTaskMoney">Please enter how much</div>
-                                </p>
+                                <div class="money">
+                                    <div data-role="fieldcontain">
+                                        <label for="configureTasksHowMuch">How Much?</label>
+                                        <div class="clearfix">
+                                            $ <input type="number" step="any" min="0" id="configureTasksHowMuch" />
+                                        </div>
+                                        <div class="error" id="enterTaskMoney">Please enter how much</div>
+                                    </div>
+                                </div>
                                 <p class="resp">It's nice to help out just because</p>
                             </div>
                         </div>
+                            
 
                         <input type="submit" id="configureTasksAddIt" value="Add it" data-theme="a" />
                     </form>

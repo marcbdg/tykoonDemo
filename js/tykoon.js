@@ -325,7 +325,7 @@ var restoreConfigureTaskPopup = function(taskUI) {
    for (i in currentChild.tasks) {
       var task = currentChild.tasks[i];
       if (task.id == taskId && task.name == title) {
-     
+        
          // populate the disclosure
          $("#configureTasks").find(".taskTitle").html(task.name).attr("data-taskId",task.id);
      
@@ -344,7 +344,7 @@ var restoreConfigureTaskPopup = function(taskUI) {
         if (task.payType == "money") {
           $("#configureTasksHowMuch").val( dollarize(task.payAmt) );
         }
-        if (task.dueDate != "") {
+        if (task.dueDate) {
           $("#configureTasksDueDate").val( dateToYMD(task.dueDate) );
         }
         swapConfigureNonRepeatPayment();
@@ -478,6 +478,7 @@ var addConfiguredTaskToChild = function(e) {
     
   // Otherwise just collect payment type/amount and optional due date
   } else {
+    currentTask.repeatDays = [];
     var paymentType = $("input:radio[name='configureNonRepeatPayment']:checked").val();
     currentTask.payType = paymentType;
     if (paymentType == "money") {
