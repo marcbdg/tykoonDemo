@@ -716,7 +716,7 @@
 
                             <div class="productsNoResults" data-role="content">
                                 <p>Nothing in our catalog matches <span class="productSearchTerm"></span></p>
-                                <p><a href="#customGoalPopup" data-role="button" data-rel="popup" data-position-to="window" class="createNewProduct">Create your own goal</a></p>
+                                <p><a href="#customGoalPopup" data-role="button" data-rel="popup" data-position-to="window" class="createNewGoal">Create your own goal</a></p>
                             </div>
 
                             <div class="popularProducts"></div>
@@ -1444,6 +1444,8 @@
                 <div class="title ui-bar ui-bar-a">Create your own goal</div>
                 <div class="customGoalContent" data-role="content">
                     <form method="get" id="customGoalForm">
+                        <label for="newGoalName">Goal Name</label>
+                        <input type="text" id="newGoalName" />
                     </form>
                 </div>
             </div><!-- END custom goal popup form -->

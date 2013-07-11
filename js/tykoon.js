@@ -148,6 +148,11 @@ $(document).ready(function() {
      $('#configureTasks .taskTitle').html( $("#addTasksFormTaskName").val() ).attr("data-taskId","-1");
    });
    
+   $("#startTasks .createNewGoal").on("click", function(e) {
+     // resetConfigureTaskPopup();
+     $('#customGoalPopup #newGoalName').val( $("#addGoalFormGoalName").val() ).attr("data-goalId","-1");
+   });
+
    $("#startTasks .selectedTasks").on("click", ".taskItem", function(e) {
      restoreConfigureTaskPopup( $(e.currentTarget) );
    });
