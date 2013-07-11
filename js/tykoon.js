@@ -549,7 +549,13 @@ var addProductToChild = function(productId) {
   currentChild.products.push(currentProduct);
   $(newProduct).prependTo("#startTasks .selectedProducts").slideDown();  
       
-  // $(".selectedProducts").append(newProduct);  
+  // $(".selectedProducts").append(newProduct);
+
+   //remove from popular and full catalogs (-1 is a user-configured item)
+   if (productId != -1) {
+      console.log('currentProduct.id: ' +currentProduct.id)
+      $('.productCatalog .productItem[data-productid="' + currentProduct.id + '"]').slideUp().delay(400);
+   }
 };
 
 var getTaskRecurrance = function(task) {
