@@ -340,7 +340,7 @@ and (max-height: 670 ) {
 #startTasks .taskCatalog .taskTemplate,
 #startTasks .taskCatalog .newTaskTemplate,
 #startTasks .productCatalog .productTemplate,
-#startTasks .productCatalog .newProductTemplate{
+#startTasks .productCatalog .addProductTemplate{
     display: none;
 }
 #startTasks .taskCatalog .taskItem,
@@ -401,7 +401,8 @@ padding: 10px 30px;
 #configureTasks .taskContent.ui-content {
     min-width: 416px;
 }
-#configureTasks .taskTitle {
+#configureTasks .taskTitle,
+#customGoalPopup .title {
     border-top-left-radius: inherit;
     border-top-right-radius: inherit;
     font-size: 1.6em;

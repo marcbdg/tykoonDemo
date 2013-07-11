@@ -404,14 +404,13 @@ var watchUserFilterInput = function(e) {
 
       $('span.productSearchTerm').text(e.currentTarget.value);
       if (e.currentTarget.value) {
-
          $('.productCatalog .title, .productCatalog .popularProducts').hide();
          $('.productCatalog .altTitle, .productCatalog .products').show();
-         $(".createNewProduct").removeClass("ui-disabled");
+         $(".createNewGoal").removeClass("ui-disabled");
       } else {
          $('.productCatalog .title, .productCatalog .popularProducts').show();
          $('.productCatalog .altTitle, .productCatalog .products').hide();
-         $(".createNewProduct").addClass("ui-disabled");
+         $(".createNewGoal").addClass("ui-disabled");
       }
    } else {
       //tasks

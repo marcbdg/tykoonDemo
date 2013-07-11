@@ -696,7 +696,7 @@
                                         <input type="text" id="addGoalFormGoalName" data-theme="c" data-clear-btn="true" placeholder="Product / charity / save" data-path=".title" data-control-type="textbox" data-control-name="title-product-filter" data-control-action="filter" />
                                     </div>
                                     <div class="ui-block-b">
-                                        <a data-role="button" href="#configureNewProduct" data-rel="popup" data-theme="a" data-position-to="window" class="createNewGoal ui-disabled">Configure</a>
+                                        <a data-role="button" href="#customGoalPopup" data-rel="popup" data-theme="a" data-position-to="window" class="createNewGoal ui-disabled">Configure</a>
                                     </div>
                                 </div>
                                 <div class="drop-down" data-control-type="drop-down" data-control-name="sort" data-control-action="sort" style="display:none">
@@ -716,7 +716,7 @@
 
                             <div class="productsNoResults" data-role="content">
                                 <p>Nothing in our catalog matches <span class="productSearchTerm"></span></p>
-                                <p><a href="#configureProducts" data-role="button" data-rel="popup" data-position-to="window" class="createNewProduct">Create your own goal</a></p>
+                                <p><a href="#customGoalPopup" data-role="button" data-rel="popup" data-position-to="window" class="createNewProduct">Create your own goal</a></p>
                             </div>
 
                             <div class="popularProducts"></div>
@@ -1437,6 +1437,16 @@
                 
             </div><!-- END cover -->
             
+
+            <!-- create a custom goal form popup form -->
+            <div data-role="popup" id="customGoalPopup">
+                <a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+                <div class="title ui-bar ui-bar-a">Create your own goal</div>
+                <div class="customGoalContent" data-role="content">
+                    <form method="get" id="customGoalForm">
+                    </form>
+                </div>
+            </div><!-- END custom goal popup form -->
 
             <!-- start configureTasks -->
             <div data-role="popup" id="configureTasks">
