@@ -231,6 +231,7 @@ $(document).ready(function() {
          $("#startTasks .productCatalog .productItem").on("click", function(e){
             showProductDetails(e);
          });
+         $('.productCatalog .products').append('<div class="bottomSpacer"></div>');
       },
       no_results: '.productsNoResults'
    });
@@ -244,6 +245,7 @@ $(document).ready(function() {
          $("#startTasks .taskCatalog .taskItem").on("click", function(e){
             configureTasks(e);
          });
+         $('.taskCatalog .tasks').append('<div class="bottomSpacer"></div>');
       },
       no_results: '.tasksNoResults'
    });
