@@ -415,6 +415,7 @@ var watchUserFilterInput = function(e) {
       $('span.productSearchTerm').text(e.currentTarget.value);
       if (e.currentTarget.value) {
          $('.productCatalog .title, .productCatalog .popularProducts').hide();
+         //console.log('showing products');
          $('.productCatalog .altTitle, .productCatalog .products').show();
          $(".createNewGoal").removeClass("ui-disabled");
       } else {
@@ -554,7 +555,6 @@ var addProductToChild = function(productId) {
 
    //remove from popular and full catalogs (-1 is a user-configured item)
    if (productId != -1) {
-      console.log('currentProduct.id: ' +currentProduct.id)
       $('.productCatalog .productItem[data-productid="' + currentProduct.id + '"]').slideUp().delay(400);
    }
 };
