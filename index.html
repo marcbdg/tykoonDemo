@@ -1446,12 +1446,35 @@
                     <form method="get" id="customGoalForm">
                         <label for="newGoalName">Goal Name</label>
                         <input type="text" id="newGoalName"  name="newGoalName" />
-                        <div data-role="fieldcontain" class="money">
-                            <label for="newGoalPrice">Price</label>
-                            <div class="clearfix">
-                                $ <input type="number" step="any" min="0" id="newGoalPrice" />
+                        
+                        <div class="clearfix">
+                            <div class="goalDetails">
+                                <div data-role="fieldcontain" class="money">
+                                    <label for="newGoalPrice">Price</label>
+                                    <div class="clearfix">
+                                        $ <input type="number" step="any" min="0" id="newGoalPrice" />
+                                    </div>
+                                </div>                        
+                                <div data-role="fieldcontain">
+                                    <label>This is a</label>
+                                    <fieldset data-role="controlgroup" data-type="horizontal" id="goalType" data-theme="a">
+                                        <input type="radio" name="goalType" id="productGoal" value="p"  data-theme="c" checked="checked" />
+                                        <label for="productGoal">Product</label>
+                                        <input type="radio" name="goalType" id="charityGoal" value="c"  data-theme="c" />
+                                        <label for="charityGoal">Charity</label>
+                                        <input type="radio" name="goalType" id="savingsGoal" value="s"  data-theme="c" />
+                                        <label for="savingsGoal">Saving</label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="goalPhoto">
+                                <div data-role="fieldcontain">
+                                    <label for="newGoalPhoto">Upload a Photo</label>
+                                    <input type="file" id="newGoalPhoto" />
+                                </div>
                             </div>
                         </div>
+                        
                         <input type="submit" id="createNewGoalButton" value="Add it" data-theme="a" />
                     </form>
                 </div>

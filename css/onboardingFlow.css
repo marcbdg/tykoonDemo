@@ -427,6 +427,17 @@ padding: 10px 30px;
 #customGoalPopup-popup .customGoalContent {
     min-width: 500px;
 }
+#customGoalForm .goalDetails,
+#customGoalForm .goalPhoto {
+    float: left;
+    width: 50%;
+    margin-right: 40px;
+}
+#customGoalForm .goalPhoto {
+    width: 43%;
+    margin-right: 0;
+    background: #eee;
+}
 #startTasks .selectedTasks .taskItem .taskDetails {
     float: left;
     width: 84%;

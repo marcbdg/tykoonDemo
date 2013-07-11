@@ -773,7 +773,7 @@ var getTimeToEarn = function(price) {
 
 var testBdayString = '1998-10-29';
 var testBirthday = new Date(parseInt(testBdayString.substring(0,4)), parseInt(testBdayString.substring(5,7))-1, parseInt(testBdayString.substring(8)));
-currentChild = new Child(0, 'Kaiya', '', '', '', testBirthday, 0, 'f');
+currentChild = new Child(0, 'Kaiyl', '', '', '', testBirthday, 0, 'm');
 tykoonData.parent.children.push(currentChild);
 populateTasksForChild(currentChild);
 populateProductsForChild(currentChild);
