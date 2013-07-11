@@ -188,6 +188,11 @@ $(document).ready(function() {
    $("#addGoalsButton").on("click", function(e){ 
       showAddGoals(e);
    });
+   $("#customGoalForm").submit( function(e) {
+     $("#customGoalForm .error").hide();
+     addCustomGoalToChild(e);
+     return false;
+   });
 
    $('#configureTasksRepeats').on('change', function(e) {
       swapConfigureTasksRepeats(e);
@@ -432,6 +437,10 @@ var watchUserFilterInput = function(e) {
    }
 };
 
+var addCustomGoalToChild = function(e) {
+  var goalName = $("#newGoalName").val();
+  alert("Collect details about: " + goalName + ", and add to child.");
+};
 
 var addConfiguredTaskToChild = function(e) {
   var taskId = $("#configureTasks .taskTitle").attr("data-taskId"),
