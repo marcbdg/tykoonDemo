@@ -535,6 +535,7 @@ var addConfiguredTaskToChild = function(e) {
   }
 };
 
+
 var addProductToChild = function(productId) {
   var productTemplate = $("#startTasks .productCatalog .addProductTemplate .productItem")[0],
       newProduct = $(productTemplate).clone(),
