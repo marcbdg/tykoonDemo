@@ -34,20 +34,10 @@
     overflow: hidden;
 }
 
-/* TODO: MARC fix portrait */
-@media only screen
-and (orientation : landscape)
-and (max-height: 670 ) {
-    #startTasks {height:610px;}
-    body{background:red;}
+.offScreen{
+    position:absolute;
+    left:-5000px;
 }
-/*
-@media only screen
-and (orientation : landscape)
-and (max-height: 670 ) {
-    #startTasks {height:610px;}
-}
-*/
 
 .logo {
     float: left;
@@ -265,10 +255,6 @@ and (max-height: 670 ) {
     right: -22px;
 }
 
-#startTasks .productCatalog .products,
-#startTasks .taskCatalog .tasks{
-    display:none;
-}
 #startTasks .productCatalog .productsNoResults,
 #startTasks .taskCatalog .tasksNoResults{
     display:none;

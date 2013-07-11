@@ -94,14 +94,14 @@ $(document).ready(function() {
    //    $('#tour').css({'width': 1024});
    //    //alert('orientation change');
    // });
-   
+
    // Adjust element sizes based on the window size
    if ($(window).height() > 672) {   // FULLSCREEN ipad landscape
      $("#startTasks .taskCatalog .tasks, #startTasks .taskCatalog .popularTasks, #startTasks .productCatalog .products, #startTasks .productCatalog .popularProducts").css("height","498px");
    } else {  // BROWSER bars ipad landscape
      $("#startTasks .taskCatalog .tasks, #startTasks .taskCatalog .popularTasks, #startTasks .productCatalog .products, #startTasks .productCatalog .popularProducts").css("height","425px");
    }
-   
+
    // Set so birthday can't be past today
    $("#getStartedFormChildBirthday").attr("max", dateToYMD(new Date()));
 
@@ -231,6 +231,9 @@ $(document).ready(function() {
          $("#startTasks .productCatalog .productItem").on("click", function(e){
             showProductDetails(e);
          });
+         if($('.productx').is(":visible")) {
+            $('.productx').toggle();
+         }
       },
       no_results: '.productsNoResults'
    });
@@ -414,13 +417,17 @@ var watchUserFilterInput = function(e) {
 
       $('span.productSearchTerm').text(e.currentTarget.value);
       if (e.currentTarget.value) {
-         $('.productCatalog .title, .productCatalog .popularProducts').hide();
-         //console.log('showing products');
-         $('.productCatalog .altTitle, .productCatalog .products').show();
+         //show full product catalog and hide popular
+         $('.productCatalog .title').hide();
+         $('.productCatalog .popularProducts').addClass('offScreen');
+         $('.productCatalog .altTitle').show();
+         $('.productCatalog .products').removeClass('offScreen');
          $(".createNewGoal").removeClass("ui-disabled");
       } else {
-         $('.productCatalog .title, .productCatalog .popularProducts').show();
-         $('.productCatalog .altTitle, .productCatalog .products').hide();
+         $('.productCatalog .title').show();
+         $('.productCatalog .popularProducts').removeClass('offScreen');
+         $('.productCatalog .altTitle').hide();
+         $('.productCatalog .products').addClass('offScreen');
          $(".createNewGoal").addClass("ui-disabled");
       }
    } else {
@@ -783,7 +790,7 @@ var getTimeToEarn = function(price) {
 
 var testBdayString = '1998-10-29';
 var testBirthday = new Date(parseInt(testBdayString.substring(0,4)), parseInt(testBdayString.substring(5,7))-1, parseInt(testBdayString.substring(8)));
-currentChild = new Child(0, 'Kaiyl', '', '', '', testBirthday, 0, 'm');
+currentChild = new Child(0, 'Kaiyb', '', '', '', testBirthday, 0, 'm');
 tykoonData.parent.children.push(currentChild);
 populateTasksForChild(currentChild);
 populateProductsForChild(currentChild);
