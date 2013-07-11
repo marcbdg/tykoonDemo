@@ -163,6 +163,10 @@ $(document).ready(function() {
        }
      });
    });
+   // initialize the slider to 1.5 times the child's age
+   $('#startTasks').on('slidecreate','#slider-fill', function() { 
+     $("#slider-fill").val( Math.round(currentChild.getAge() * 1.5) ).slider("refresh");
+   });
    
    $("#doneWithTasksButton").on("click", function(e){ 
       transitionToStartGoals(e);
@@ -273,7 +277,7 @@ var transitionToStartTasks = function(e) {
    currentChild = child;
    populateTasksForChild(child);
    populateProductsForChild(child);
-
+   
    $.mobile.navigate( "#startTasks" );
 };
 
