@@ -452,7 +452,7 @@ var addCustomGoalToChild = function(e) {
    var newProduct = {};
    newProduct.id = -1;
    newProduct.name = $('#newGoalName').val();
-   newProduct.price = '$' + $('newGoalPrice').val();
+   newProduct.price = '$' + $('#newGoalPrice').val();
    newProduct.desc = $('#newGoalName').val();
    newProduct.type = $('input:radio[name="goalType"]:checked').val();
    newProduct.numPeople = '';
