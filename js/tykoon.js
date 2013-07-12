@@ -60,18 +60,22 @@ $('#startTasks').on('pageshow', function(e) {
 });
 
 function forceStartTasksHeight() {
-   if(visualEnv.orientation == 'landscape' && visualEnv.fullscreen) {
+   if(visualEnv.orientation == 'landscape' && visualEnv.fullscreen) {  // fullscreen
       $('#startTasks').height(686);
+      $("#startTasks .taskCatalog .tasks, #startTasks .taskCatalog .popularTasks, #startTasks .productCatalog .products, #startTasks .productCatalog .popularProducts").height(498);
+      $("#startTasks .selectedTasks").height(467);
    }
-   if(visualEnv.orientation == 'landscape' && !visualEnv.fullscreen) {
+   if(visualEnv.orientation == 'landscape' && !visualEnv.fullscreen) {  // in browser, with toolbars
       $('#startTasks').height(610);
-   }
+      $("#startTasks .taskCatalog .tasks, #startTasks .taskCatalog .popularTasks, #startTasks .productCatalog .products, #startTasks .productCatalog .popularProducts").height(425);
+      $("#startTasks .selectedTasks").height(389);
+    }
 
    //TODO Marc figure out size for portrait
-   if(visualEnv.orientation == 'portrait' && visualEnv.fullscreen) {
+   if(visualEnv.orientation == 'portrait' && visualEnv.fullscreen) {  // fullscreen
       //$('#startTasks').height(700);
    }
-   if(visualEnv.orientation == 'portrait' && !visualEnv.fullscreen) {
+   if(visualEnv.orientation == 'portrait' && !visualEnv.fullscreen) {  // in browser, with toolbars
       //$('#startTasks').height(610);
    }
 
@@ -89,18 +93,6 @@ $(document).bind('pagebeforehide', function(){
 });
 
 $(document).ready(function() {
-   // $('#tour').bind('resize', function(event) {
-   //    $('#tour').css({'height': 768});
-   //    $('#tour').css({'width': 1024});
-   //    //alert('orientation change');
-   // });
-
-   // Adjust element sizes based on the window size
-   if ($(window).height() > 672) {   // FULLSCREEN ipad landscape
-     $("#startTasks .taskCatalog .tasks, #startTasks .taskCatalog .popularTasks, #startTasks .productCatalog .products, #startTasks .productCatalog .popularProducts").css("height","498px");
-   } else {  // BROWSER bars ipad landscape
-     $("#startTasks .taskCatalog .tasks, #startTasks .taskCatalog .popularTasks, #startTasks .productCatalog .products, #startTasks .productCatalog .popularProducts").css("height","425px");
-   }
 
    // Set so birthday can't be past today
    $("#getStartedFormChildBirthday").attr("max", dateToYMD(new Date()));
@@ -270,11 +262,11 @@ var transitionToStartTasks = function(e) {
    var errors = false;
 
    if (name == "") {
-     $("#noNameError").show("fast");
+     $("#noNameError").show();
      errors = true;
    }
    if (birthdayString == "") {
-     $("#noBirthdayError").show("fast");
+     $("#noBirthdayError").show();
      errors = true;
    }
    if (errors) {
@@ -477,7 +469,7 @@ var addConfiguredTaskToChild = function(e) {
     }
     // check for length of repeatDays
     if  (!currentTask.repeatDays.length) {
-      $("#pickADay").show("fast");
+      $("#pickADay").show();
       return false;
     }
     
@@ -492,7 +484,7 @@ var addConfiguredTaskToChild = function(e) {
     if (paymentType == "money") {
       var moneyAmount = $("#configureTasksHowMuch").val();
       if (moneyAmount == "" || moneyAmount == "0") {
-        $("#enterTaskMoney").show("fast");
+        $("#enterTaskMoney").show();
         return false;
       }
       currentTask.payAmt = moneyAmount;
@@ -538,8 +530,8 @@ var addConfiguredTaskToChild = function(e) {
   // IF the task doesn't exist, add it  
   if (!taskExists) {
     currentChild.tasks.push(currentTask);
-    $(taskUI).prependTo("#startTasks .selectedTasks").slideDown();  
-    $(".taskCatalog .taskItem[data-taskId='" + currentTask.id + "']").slideUp().delay(400);
+    $(taskUI).prependTo("#startTasks .selectedTasks").show();  
+    $(".taskCatalog .taskItem[data-taskId='" + currentTask.id + "']").hide();
   }
 };
 
@@ -657,12 +649,12 @@ var swapConfigureNonRepeatPayment = function(e) {
 /* ADD GOALS section */
 
 var transitionToStartGoals = function(e) {
-  $(".addTaskContent, .startTasksFooter").fadeOut(200);
+  $(".addTaskContent, .startTasksFooter").fadeOut();
   
   // move the cover
   $("#startTasks .tasksPayGoals").addClass("left"); //.css("left","0");
   
-  $(".addGoalContent, .startGoalsFooter").delay(400).fadeIn(200);
+  $(".addGoalContent, .startGoalsFooter").delay(400).fadeIn();
 };
 
 var transitionToReview = function(e) {

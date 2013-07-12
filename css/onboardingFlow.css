@@ -127,10 +127,12 @@
 }
 
 #startTasks .tasksPayGoals.left {
-    -webkit-animation: slideLeft .7s ease-in-out forwards;
+/*    -webkit-animation: slideLeft .7s ease-in-out forwards;*/
+    left: 0;
 }
 #startTasks .tasksPayGoals.right {
-    -webkit-animation: slideRight .7s ease-in-out forwards;
+/*    -webkit-animation: slideRight .7s ease-in-out forwards;*/
+    left: 50%;
 }
 #startTasks .tasksPayGoals .ui-block-a {
     border-right: 1px solid #265465;
@@ -210,7 +212,6 @@
     position: absolute;
     height: 91%;
     height: calc(100% - 63px);
-/*    left: 50%;*/
     left: 0;
     top: 63px;
     width: 50%;
@@ -264,7 +265,8 @@
 #startTasks .taskCatalog .popularTasks,
 #startTasks .tasksPayGoals .selectedTasks,
 #startTasks .productCatalog .products,
-#startTasks .productCatalog .popularProducts{
+#startTasks .productCatalog .popularProducts,
+#startTasks .tasksPayGoals .selectedProducts {
     height: 483px;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
