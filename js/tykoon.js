@@ -33,21 +33,25 @@ function setOrientation() {
       case 672: //Browser mode, landscape
          visualEnv.orientation = 'landscape';
          visualEnv.fullscreen = false;
+         $("#portraitCover").hide();
          break;
 
       case 928: //Browser mode, portrait
          visualEnv.orientation = 'portrait';
          visualEnv.fullscreen = false;
+         $("#portraitCover").fadeIn("fast");
          break;
 
       case 748: //Fullscreen, landscape
          visualEnv.orientation = 'landscape';
          visualEnv.fullscreen = true;
+         $("#portraitCover").hide();
          break;
 
       default: //Fullscreen, portrait (1004)
          visualEnv.orientation = 'portrait';
          visualEnv.fullscreen = true;
+         $("#portraitCover").fadeIn("fast");
    }
    //console.log('$(window).height(): ' + $(window).height() + ' visualEnv.orientation: ' + visualEnv.orientation + ' visualEnv.fullscreen:' + visualEnv.fullscreen);
 }
@@ -94,7 +98,7 @@ $(document).bind('pagebeforehide', function(){
 
 // Show the body after the page has completed loading, to prevent FOUSC
 // NOTE: must add any pages you wish to start from with a browser RELOAD to this list
-$("#tour, #startTasks").one("pageinit",function(){
+$("#tour, #startTasks, #portraitCover").one("pageinit",function(){
     $("body").show();
 });
 

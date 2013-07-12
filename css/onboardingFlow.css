@@ -2,10 +2,11 @@
  * Tour/Sign In page
  * -------------------------*/
 
-#fullLoader {
+#portraitCover {
     text-align: center;
-/*    background: url(../img/loader2_big.gif) center center no-repeat;*/
     z-index: 99999;
+    background: #eee;
+    height: 100%;
 }
 
 #tour {
