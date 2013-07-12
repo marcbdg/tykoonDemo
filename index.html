@@ -159,7 +159,7 @@
 
                             <div class="popularTasks"></div>
 
-                            <div class="tasks">
+                            <div class="tasks offScreen">
 
                                 <div class="taskItem clearfix" data-taskid="0">
                                    <div class="addButton">+</div>
@@ -655,11 +655,6 @@
                                       <div class="numKids"><span>12</span> kids are doing this</div>
                                    </div>
                                 </div>
-                                
-                                
-                                <!--  when replacing tasks, KEEP THIS!!! -->
-                                <div class='bottomSpacer'></div>
-
                             </div><!-- END tasks -->
 
 
@@ -1391,11 +1386,6 @@
                                       <div class="price">$4.90</div>      <div class="numKids"><span class="numPpl">19</span> kids saving for this</div>
                                    </div>
                                 </div>
-                                
-                                
-                                <!--  when replacing tasks, KEEP THIS!!! -->
-                                <div class='bottomSpacer'></div>
-
                             </div><!-- END products -->
 
                             <!-- Product HTML template for populating the UI from the DB -->
@@ -1573,8 +1563,19 @@
                             </div>
                         </div>
                             
-
-                        <input type="submit" id="configureTasksAddIt" value="Add it" data-theme="a" />
+                        <div class="configureTasksNewTask">
+                            <input type="submit" id="configureTasksAddIt" value="Add it" data-theme="a" />
+                        </div>
+                        <div class="configureTasksEditTask">
+                            <div class="ui-grid-a">
+                                <div class="ui-block-a">
+                                    <input type="submit" id="configureTasksDelete" value="Delete" data-theme="c" />
+                                </div>
+                                <div class="ui-block-b">
+                                    <input type="submit" id="configureTasksSave" value="Save" data-theme="a" />
+                                </div>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>

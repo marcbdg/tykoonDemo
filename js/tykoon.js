@@ -223,9 +223,7 @@ $(document).ready(function() {
          $("#startTasks .productCatalog .productItem").on("click", function(e){
             showProductDetails(e);
          });
-         if($('.productx').is(":visible")) {
-            $('.productx').toggle();
-         }
+         $('.productCatalog .products').append('<div class="bottomSpacer"></div>');
       },
       no_results: '.productsNoResults'
    });
@@ -239,6 +237,7 @@ $(document).ready(function() {
          $("#startTasks .taskCatalog .taskItem").on("click", function(e){
             configureTasks(e);
          });
+         $('.taskCatalog .tasks').append('<div class="bottomSpacer"></div>');
       },
       no_results: '.tasksNoResults'
    });
@@ -344,6 +343,9 @@ var restoreConfigureTaskPopup = function(taskUI) {
         }
         swapConfigureNonRepeatPayment();
       }
+      //swap out the "add" button for "delete" & "save" buttons
+      $('.configureTasksNewTask, .configureTasksEditTask').toggle();
+
       $("#configureTasksRepeats input").checkboxradio("refresh");
      
      $("#configureTasks").popup().popup("open", {transition: "pop"} );
@@ -426,20 +428,47 @@ var watchUserFilterInput = function(e) {
       //tasks
       $('span.taskSearchTerm').text(e.currentTarget.value);
       if (e.currentTarget.value) {
-         $('.taskCatalog .title, .taskCatalog .popularTasks').hide();
-         $('.taskCatalog .altTitle, .taskCatalog .tasks').show();
+         $('.taskCatalog .title').hide();
+         $('.taskCatalog .popularTasks').addClass('offScreen');
+         $('.taskCatalog .altTitle').show();
+         $('.taskCatalog .tasks').removeClass('offScreen');
          $(".createNewTask").removeClass("ui-disabled");
       } else {
-         $('.taskCatalog .title, .taskCatalog .popularTasks').show();
-         $('.taskCatalog .altTitle, .taskCatalog .tasks').hide();
+         $('.taskCatalog .title').show();
+         $('.taskCatalog .popularTasks').removeClass('offScreen');
+         $('.taskCatalog .altTitle').hide();
+         $('.taskCatalog .tasks').addClass('offScreen');
          $(".createNewTask").addClass("ui-disabled");
       }
    }
 };
 
 var addCustomGoalToChild = function(e) {
-  var goalName = $("#newGoalName").val();
-  alert("Collect details about: " + goalName + ", and add to child.");
+   var newProduct = {};
+   newProduct.id = -1;
+   newProduct.name = $('#newGoalName').val();
+   newProduct.price = '$' + $('#newGoalPrice').val();
+   newProduct.desc = $('#newGoalName').val();
+   newProduct.type = $('input:radio[name="goalType"]:checked').val();
+   newProduct.numPeople = '';
+   newProduct.likes = '';
+   newProduct.gender = '';
+   newProduct.imgURL = '';
+
+   currentChild.products.push(newProduct);
+   appendProductToDOM(newProduct);
+
+};
+
+var appendProductToDOM = function(product) {
+   var productTemplate = $("#startTasks .productCatalog .addProductTemplate .productItem")[0];
+   var newProduct = $(productTemplate).clone();
+   $(newProduct).attr( "data-productId", product.id);
+   $(newProduct).find(".productTitle").html( product.name);
+   $(newProduct).find(".thumbnail").attr({src: product.imgURL, alt: product.name});
+   $(newProduct).find(".price").html(product.price);
+   $(newProduct).find(".time").html( getTimeToEarn(product.price) ).attr("data-price", product.price);
+   $(newProduct).prependTo("#startTasks .selectedProducts").slideDown();
 };
 
 var addConfiguredTaskToChild = function(e) {
@@ -537,20 +566,9 @@ var addConfiguredTaskToChild = function(e) {
 
 
 var addProductToChild = function(productId) {
-  var productTemplate = $("#startTasks .productCatalog .addProductTemplate .productItem")[0],
-      newProduct = $(productTemplate).clone(),
-      currentProduct = cannedProducts.products[productId];
-      
-  $(newProduct).attr( "data-productId", productId);
-  $(newProduct).find(".productTitle").html( currentProduct.name);
-  $(newProduct).find(".thumbnail").attr({src: currentProduct.imgURL, alt: currentProduct.name});
-  $(newProduct).find(".price").html(currentProduct.price);
-  $(newProduct).find(".time").html( getTimeToEarn(currentProduct.price) ).attr("data-price", currentProduct.price);  
-      
-  currentChild.products.push(currentProduct);
-  $(newProduct).prependTo("#startTasks .selectedProducts").slideDown();  
-      
-  // $(".selectedProducts").append(newProduct);
+   var currentProduct = cannedProducts.products[productId];
+   currentChild.products.push(currentProduct);
+   appendProductToDOM(currentProduct);
 
    //remove from popular and full catalogs (-1 is a user-configured item)
    if (productId != -1) {
