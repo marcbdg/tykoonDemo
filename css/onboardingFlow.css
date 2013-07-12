@@ -428,6 +428,9 @@ padding: 10px 30px;
 #customGoalForm .goalPhoto label {
     width: 100%;
 }
+#configureTasks .configureTasksEditTask{
+    display:none;
+}
 #customGoalPopup-popup .customGoalContent {
     min-width: 500px;
 }

@@ -351,6 +351,9 @@ var restoreConfigureTaskPopup = function(taskUI) {
         }
         swapConfigureNonRepeatPayment();
       }
+      //swap out the "add" button for "delete" & "save" buttons
+      $('.configureTasksNewTask, .configureTasksEditTask').toggle();
+
       $("#configureTasksRepeats input").checkboxradio("refresh");
      
      $("#configureTasks").popup().popup("open", {transition: "pop"} );
