@@ -92,8 +92,15 @@ $(document).bind('pagebeforehide', function(){
    $('.backToPopularTasks, .backToPopularProducts').trigger('click');
 });
 
+// Show the body after the page has completed loading, to prevent FOUSC
+// NOTE: must add any pages you wish to start from with a browser RELOAD to this list
+$("#tour, #startTasks").one("pageinit",function(){
+    $("body").show();
+});
+
 $(document).ready(function() {
 
+  
    // Set so birthday can't be past today
    $("#getStartedFormChildBirthday").attr("max", dateToYMD(new Date()));
 
@@ -468,7 +475,7 @@ var appendProductToDOM = function(product) {
    $(newProduct).find(".thumbnail").attr({src: product.imgURL, alt: product.name});
    $(newProduct).find(".price").html(product.price);
    $(newProduct).find(".time").html( getTimeToEarn(product.price) ).attr("data-price", product.price);
-   $(newProduct).prependTo("#startTasks .selectedProducts").slideDown();
+   $(newProduct).prependTo("#startTasks .selectedProducts").show();
 };
 
 var addConfiguredTaskToChild = function(e) {
@@ -572,7 +579,7 @@ var addProductToChild = function(productId) {
 
    //remove from popular and full catalogs (-1 is a user-configured item)
    if (productId != -1) {
-      $('.productCatalog .productItem[data-productid="' + currentProduct.id + '"]').slideUp().delay(400);
+      $('.productCatalog .productItem[data-productid="' + currentProduct.id + '"]').hide();
    }
 };
 

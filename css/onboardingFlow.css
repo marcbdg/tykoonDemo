@@ -2,6 +2,11 @@
  * Tour/Sign In page
  * -------------------------*/
 
+#fullLoader {
+    text-align: center;
+/*    background: url(../img/loader2_big.gif) center center no-repeat;*/
+    z-index: 99999;
+}
 
 #tour {
     height: 100%;
@@ -30,7 +35,6 @@
  * -------------------------*/
 #startTasks {
     position: relative;
-    width: 100%;
     overflow: hidden;
 }
 
@@ -429,9 +433,6 @@ padding: 10px 30px;
 #customGoalForm #newGoalName,
 #customGoalForm .goalPhoto label {
     width: 100%;
-}
-#configureTasks .configureTasksEditTask{
-    display:none;
 }
 #customGoalPopup-popup .customGoalContent {
     min-width: 500px;
