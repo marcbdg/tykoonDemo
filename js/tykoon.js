@@ -377,8 +377,6 @@ var deleteTaskFromChild = function(e) {
    }
    currentChild.tasks = replaceTasks;
 
-   console.dir(currentChild.tasks);
-
    //remove out of the DOM
    var DOMTaskList = $('.selectedTasks .taskItem[data-taskid="' + id + '"].taskItem[data-taskTitle="' + title + '"]').remove();
 
