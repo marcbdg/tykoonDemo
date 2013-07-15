@@ -545,6 +545,7 @@ var addConfiguredTaskToChild = function(e) {
 
   // If repeating task, collect repeatDays and paymentType
   var repeats = $("input:radio[name='configureTasksRepeats']:checked").val();
+  currentTask.repeatDays = [];
   if ( repeats == "1") {
     
     // add to 'repeatDays' array the days it repeats
@@ -566,7 +567,6 @@ var addConfiguredTaskToChild = function(e) {
     
   // Otherwise just collect payment type/amount and optional due date
   } else {
-    currentTask.repeatDays = [];
     var paymentType = $("input:radio[name='configureNonRepeatPayment']:checked").val();
     currentTask.payType = paymentType;
     if (paymentType == "money") {
