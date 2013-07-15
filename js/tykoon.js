@@ -377,9 +377,18 @@ var deleteTaskFromChild = function(e) {
    }
    currentChild.tasks = replaceTasks;
 
+   console.dir(currentChild.tasks);
+
    //remove out of the DOM
    var DOMTaskList = $('.selectedTasks .taskItem[data-taskid="' + id + '"].taskItem[data-taskTitle="' + title + '"]').remove();
 
+   //if it's from the catalog, add it back to the catalog
+   if (id != -1) {
+      $(".taskCatalog .taskItem[data-taskId='" + id + "']").show();
+   }
+
+   //close the popup
+   $("#configureTasks" ).popup( "close" );
 };
 
 var findChildTask = function(id, title) {
