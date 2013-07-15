@@ -364,8 +364,8 @@ var restoreConfigureTaskPopup = function(taskUI) {
 };
 
 var deleteTaskFromChild = function(e) {
-   var id = $("#configureTasks").attr('data-taskId');
-   var title = $("#configureTasks").find('.taskTitle');
+   var id = $("#configureTasks").find('.taskTitle').attr('data-taskId');
+   var title = $("#configureTasks").find('.taskTitle').text();
    var task = findChildTask(id, title);
    var replaceTasks = [];
 
@@ -378,7 +378,7 @@ var deleteTaskFromChild = function(e) {
    currentChild.tasks = replaceTasks;
 
    //remove out of the DOM
-   var DOMTaskList = $('.selectedTasks .taskItem[data-taskid=' + id + ']').find(".taskTitle").html()
+   var DOMTaskList = $('.selectedTasks .taskItem[data-taskid="' + id + '"].taskItem[data-taskTitle="' + title + '"]').remove();
 
 };
 
