@@ -1643,9 +1643,18 @@
         </div><!-- END startTasks page -->
         
         <!-- === Portrait coverup page === -->
-        <div data-role="page" id="portraitCover" class="clearfix">
-            <h1>This web app is best viewed in landscape</h1>
-            <h3>Please rotate your device</h3>
+        <div data-role="page" id="nonOptimalSizeCover" class="clearfix">
+            <div class="verticalWrapper">
+                <div class="verticalMiddle center">
+                    <h1>This app is best viewed in landscape <span class="nonIpad">on an iPad</span></h1>
+                    <h3 class="ipad">Please rotate your device</h3>
+                    <h4 class="continueNonOptimized">
+                        <span class="ipad">Tap</span>
+                        <span class="nonIpad">Click</span>
+                        here to continue anyway
+                    </h4>
+                </div>
+            </div>
         </div>
 
         <!-- script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script -->

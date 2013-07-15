@@ -2,11 +2,24 @@
  * Tour/Sign In page
  * -------------------------*/
 
-#portraitCover {
-    text-align: center;
+#nonOptimalSizeCover {
     z-index: 99999;
     background: #eee;
     height: 100%;
+}
+#nonOptimalSizeCover .verticalWrapper {
+    width: 100%;
+    height: 100%;
+}
+#nonOptimalSizeCover .verticalMiddle {
+    padding: 0 60px;
+}
+#nonOptimalSizeCover .nonIpad {
+    display: none;
+}
+#nonOptimalSizeCover .continueNonOptimized {
+    color: #aaa;
+    text-decoration: underline;
 }
 
 #tour {

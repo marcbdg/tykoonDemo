@@ -33,27 +33,34 @@ function setOrientation() {
       case 672: //Browser mode, landscape
          visualEnv.orientation = 'landscape';
          visualEnv.fullscreen = false;
-         $("#portraitCover").hide();
+         $("#nonOptimalSizeCover").hide();
          break;
 
       case 928: //Browser mode, portrait
          visualEnv.orientation = 'portrait';
          visualEnv.fullscreen = false;
-         $("#portraitCover").fadeIn("fast");
+         $("#nonOptimalSizeCover").fadeIn("fast");
          break;
 
-      case 748: //Fullscreen, landscape
+      case 748:
+      case 768: //Fullscreen, landscape
          visualEnv.orientation = 'landscape';
          visualEnv.fullscreen = true;
-         $("#portraitCover").hide();
+         $("#nonOptimalSizeCover").hide();
          break;
 
       default: //Fullscreen, portrait (1004)
          visualEnv.orientation = 'portrait';
          visualEnv.fullscreen = true;
-         $("#portraitCover").fadeIn("fast");
+         if ( navigator.userAgent.match(/iPad/i) != null ) {
+            $("#nonOptimalSizeCover .nonIpad").hide();
+         } else {
+            $("#nonOptimalSizeCover .nonIpad").show();
+            $("#nonOptimalSizeCover .ipad").hide();
+         }
+         $("#nonOptimalSizeCover").fadeIn("fast");
    }
-   //console.log('$(window).height(): ' + $(window).height() + ' visualEnv.orientation: ' + visualEnv.orientation + ' visualEnv.fullscreen:' + visualEnv.fullscreen);
+   // console.log('$(window).height(): ' + $(window).height() + ' visualEnv.orientation: ' + visualEnv.orientation + ' visualEnv.fullscreen:' + visualEnv.fullscreen);
 }
 
 $('#startTasks').resize(function(e) {
@@ -100,10 +107,16 @@ $(document).bind('pagebeforehide', function(){
 // NOTE: must add any pages you wish to start from with a browser RELOAD to this list
 $("#tour, #startTasks, #portraitCover").one("pageinit",function(){
     $("body").show();
+    setOrientation();
 });
 
 $(document).ready(function() {
 
+   $("#nonOptimalSizeCover .continueNonOptimized").on('click', function(e) {
+      $('#nonOptimalSizeCover').fadeOut('fast').delay('1600', function() {
+         $(this).remove();
+      });
+   });
   
    // Set so birthday can't be past today
    $("#getStartedFormChildBirthday").attr("max", dateToYMD(new Date()));
