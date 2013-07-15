@@ -170,7 +170,7 @@ $(document).ready(function() {
    });
 
    $("#startTasks .selectedTasks").on("click", ".taskItem", function(e) {
-     restoreConfigureTaskPopup( $(e.currentTarget) );
+      restoreConfigureTaskPopup( $(e.currentTarget) );
    });
    
    // Update any product time estimations when allowance slider is changed
@@ -221,9 +221,13 @@ $(document).ready(function() {
       swapConfigureNonRepeatPayment(e);
    });
    $("#configureTaskForm").submit( function(e) {
-     $("#configureTaskForm .error").hide();
-     addConfiguredTaskToChild(e);
-     return false;
+      $("#configureTaskForm .error").hide();
+      addConfiguredTaskToChild(e);
+      return false;
+   });
+   $('#configureTasksDelete').on('click', function(e) {
+      deleteTaskFromChild(e);
+      return false;
    });
    
    // resize the productDetails popup before showing
@@ -316,7 +320,7 @@ var configureTasks = function(e) {
       taskId = $(taskltem).attr("data-taskId");
 
    // populate the popup disclosure and show it
-   $('#configureTasks .taskTitle').html(taskName).attr("data-taskId",taskId);
+   $('#configureTasks .taskTitle').html(taskName).attr({'data-taskId': taskId, 'data-taskTitle': taskName});
    // set due date of today or later
    $("#configureTasksDueDate").attr("min", dateToYMD(new Date()));
    
@@ -329,10 +333,9 @@ var resetConfigureTaskPopup = function(e) {
    $("#configureTaskRepeatsYes, #configureRepeatPaymentAllow, #configureNonRepeatPaymentMoney" ).prop( "checked", true ).checkboxradio( "refresh" );
    $("#configureTaskRepeatsNo, #configureRepeatPaymentResp, #configureNonRepeatPaymentResp, #configureTasksWeeklyOn input[type='checkbox']" ).prop( "checked", false ).checkboxradio( "refresh" );
    $("#configureTasksHowMuch, #configureTasksDueDate").val("");
-   $(".taskRepeatPaymentDetails .allow, .taskNonRepeatPaymentDetails .money").show();
-   $(".taskRepeatPaymentDetails .resp, .taskNonRepeatPaymentDetails .resp").hide();
-  
-  swapConfigureTasksRepeats();
+   $(".taskRepeatPaymentDetails .allow, .taskNonRepeatPaymentDetails .money, .configureTasksNewTask").show();
+   $(".taskRepeatPaymentDetails .resp, .taskNonRepeatPaymentDetails .resp, .configureTasksEditTask").hide();
+   swapConfigureTasksRepeats();
 };
 var restoreConfigureTaskPopup = function(taskUI) {
    resetConfigureTaskPopup();
@@ -340,43 +343,74 @@ var restoreConfigureTaskPopup = function(taskUI) {
        title = $(taskUI).find(".taskTitle").html();
 
    // find the fully configured task object matching the id and title of the task tapped
-   for (i in currentChild.tasks) {
-      var task = currentChild.tasks[i];
-      if (task.id == taskId && task.name == title) {
-        
-         // populate the disclosure
-         $("#configureTasks").find(".taskTitle").html(task.name).attr("data-taskId",task.id);
+   var task = findChildTask(taskId, title);
+   // populate the disclosure
+   $("#configureTasks").find(".taskTitle").html(task.name).attr({'data-taskId': task.id, 'data-taskTitle': task.title});
      
-      if ( task.repeatDays.length > 0) {
-        $("#configureTasksRepeats input[value='1']").prop("checked",true);
-        $("#configureRepeatPayment input[value='" + task.payType + "']").prop("checked",true);
-        $("#configureRepeatPayment input").checkboxradio("refresh");
-        for (j in task.repeatDays) {
-          $("#configureTasksWeeklyOn input[value='" + task.repeatDays[j] + "']").prop("checked",true).checkboxradio("refresh");
-        }
-        swapConfigureRepeatPayment();
-      } else {  // NON-repeating task
-        $("#configureTasksRepeats input[value='0']").prop("checked",true);
-        $("#configureNonRepeatPayment input[value='" + task.payType + "']").prop("checked",true);
-        $("#configureNonRepeatPayment input").checkboxradio("refresh");
-        if (task.payType == "money") {
-          $("#configureTasksHowMuch").val( dollarize(task.payAmt) );
-        }
-        if (task.dueDate) {
-          $("#configureTasksDueDate").val( dateToYMD(task.dueDate) );
-        }
-        swapConfigureNonRepeatPayment();
-      }
-      //swap out the "add" button for "delete" & "save" buttons
-      $('.configureTasksNewTask, .configureTasksEditTask').toggle();
-
-      $("#configureTasksRepeats input").checkboxradio("refresh");
-     
-     $("#configureTasks").popup().popup("open", {transition: "pop"} );
-     swapConfigureTasksRepeats();
-     break;
+   if ( task.repeatDays.length > 0) {
+     $("#configureTasksRepeats input[value='1']").prop("checked",true);
+     $("#configureRepeatPayment input[value='" + task.payType + "']").prop("checked",true);
+     $("#configureRepeatPayment input").checkboxradio("refresh");
+     for (j in task.repeatDays) {
+       $("#configureTasksWeeklyOn input[value='" + task.repeatDays[j] + "']").prop("checked",true).checkboxradio("refresh");
+     }
+     swapConfigureRepeatPayment();
+   } else {  // NON-repeating task
+     $("#configureTasksRepeats input[value='0']").prop("checked",true);
+     $("#configureNonRepeatPayment input[value='" + task.payType + "']").prop("checked",true);
+     $("#configureNonRepeatPayment input").checkboxradio("refresh");
+     if (task.payType == "money") {
+       $("#configureTasksHowMuch").val( dollarize(task.payAmt) );
+     }
+     if (task.dueDate) {
+       $("#configureTasksDueDate").val( dateToYMD(task.dueDate) );
+     }
+     swapConfigureNonRepeatPayment();
    }
- }       
+   //swap out the "add" button for "delete" & "save" buttons
+   $('.configureTasksNewTask, .configureTasksEditTask').toggle();
+
+   $("#configureTasksRepeats input").checkboxradio("refresh");
+
+   $("#configureTasks").popup().popup("open", {transition: "pop"} );
+   swapConfigureTasksRepeats();
+};
+
+var deleteTaskFromChild = function(e) {
+   var id = $("#configureTasks").find('.taskTitle').attr('data-taskId');
+   var title = $("#configureTasks").find('.taskTitle').text();
+   var task = findChildTask(id, title);
+   var replaceTasks = [];
+
+   //remove out of the array
+   for (var i in currentChild.tasks) {
+      if (!(currentChild.tasks[i].id == id && currentChild.tasks[i].name == title)) {
+         replaceTasks.push(currentChild.tasks[i]);
+      }
+   }
+   currentChild.tasks = replaceTasks;
+
+   //remove out of the DOM
+   var DOMTaskList = $('.selectedTasks .taskItem[data-taskid="' + id + '"].taskItem[data-taskTitle="' + title + '"]').remove();
+
+   //if it's from the catalog, add it back to the catalog
+   if (id != -1) {
+      $(".taskCatalog .taskItem[data-taskId='" + id + "']").show();
+   }
+
+   //close the popup
+   $("#configureTasks" ).popup( "close" );
+};
+
+var findChildTask = function(id, title) {
+   var returnTask;
+   for (i in currentChild.tasks) {
+      if (currentChild.tasks[i].id == id && currentChild.tasks[i].name == title) {
+         returnTask = currentChild.tasks[i];
+         break;
+      }
+   }
+   return returnTask;
 };
 
 function dollarize(payAmt) {
@@ -551,18 +585,18 @@ var addConfiguredTaskToChild = function(e) {
     }
   }
   
-  $("#configureTasks" ).popup( "close" );
-  if ( $("#addTasksFormTaskName").val() != "" ) {
-    clearFilterTriggerPlugin(e); 
-  }
+   $("#configureTasks" ).popup( "close" );
+   if ( $("#addTasksFormTaskName").val() != "" ) {
+    clearFilterTriggerPlugin(e);
+   }
 
-  // create a template selectedTask and populate it
-  var taskUI = $($(".newTaskTemplate .taskItem")[0]).clone();
-  $(taskUI).css("display","none").attr("data-taskId", currentTask.id);
-  $(taskUI).find(".taskTitle").html(currentTask.name);
-  $(taskUI).find(".icon").attr("src","img/tasks/" +currentTask.icon);
-  $(taskUI).find(".recurrance").html(getTaskRecurrance(currentTask));
-  $(taskUI).find(".payment").html(getTaskPay(currentTask));
+   // create a template selectedTask and populate it
+   var taskUI = $($(".newTaskTemplate .taskItem")[0]).clone();
+   $(taskUI).css("display","none").attr({'data-taskId': currentTask.id, 'data-taskTitle': currentTask.name});
+   $(taskUI).find(".taskTitle").html(currentTask.name);
+   $(taskUI).find(".icon").attr("src","img/tasks/" +currentTask.icon);
+   $(taskUI).find(".recurrance").html(getTaskRecurrance(currentTask));
+   $(taskUI).find(".payment").html(getTaskPay(currentTask));
 
   // IF the task already exists, update it
   var taskExists = false;
@@ -642,7 +676,7 @@ var populateTasksForChild = function(child) {
       if ((task.gender == "b" || task.gender == child.gender) && (child.getAge() >= task.ageRange.min && child.getAge() <= task.ageRange.max)) {
 
          var taskItem = $(taskTemplate).clone();
-         $(taskItem).attr("data-taskId", task.id);
+         $(taskItem).attr({'data-taskId': task.id, 'data-taskTitle': task.name});
          $(taskItem).find(".title").html(task.name);
          $(taskItem).find(".icon").attr("src", "img/tasks/" + task.icon);
          $(taskItem).find(".numKids span").html(task.numPeople);
