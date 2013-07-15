@@ -89,7 +89,7 @@ fs.readFile('tasks.tsv', 'utf8', function(err, data) {
          var DOMString = '';
          var row = cellData[i];
 
-         DOMString += '<div class="taskItem clearfix" data-taskid="' + Number(i) + '">\n';
+         DOMString += '<div class="taskItem clearfix" data-taskid="' + Number(i) + '" >\n';
          DOMString += '   <div class="addButton">+</div>\n';
          DOMString += '   <img class="icon" src="img/tasks/' + row[1] + '"/>\n';
          DOMString += '   <div class="taskDetails">\n';
