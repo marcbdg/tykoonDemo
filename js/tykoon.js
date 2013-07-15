@@ -54,6 +54,7 @@ function setOrientation() {
          visualEnv.fullscreen = true;
          if ( navigator.userAgent.match(/iPad/i) != null ) {
             $("#nonOptimalSizeCover .nonIpad").hide();
+            $("#nonOptimalSizeCover .ipad").show();
          } else {
             $("#nonOptimalSizeCover .nonIpad").show();
             $("#nonOptimalSizeCover .ipad").hide();
