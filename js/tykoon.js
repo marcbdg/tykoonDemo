@@ -455,7 +455,7 @@ var deleteProductFromChild = function(e, callback) {
    //remove from the array
    for (var i in currentChild.products) {
       if (currentChild.products.hasOwnProperty(i)) {
-         if (currentChild.products[i].id == id && currentChild.products[i].name == name) {
+         if (! (currentChild.products[i].id == id && currentChild.products[i].name == name) ) {
             newProductsList.push(currentChild.products[i]);
          }
       }
@@ -478,17 +478,16 @@ var deleteProductFromChild = function(e, callback) {
 
 var deleteCustomProductFromChild = function(e) {
    var id = -1;
-   var name = $('#newGoalName').val();
-
-   console.log('id: ' + id + ' name: ' + name);
+   var name = $('#customGoalPopup').attr('data-productname');
    var newProductsList = [];
 
    //remove from the array
    for (var i in currentChild.products) {
       if (currentChild.products.hasOwnProperty(i)) {
          if (currentChild.products[i].id == id && currentChild.products[i].name == name) {
-            newProductsList.push(currentChild.products[i]);
+            continue;
          }
+         newProductsList.push(currentChild.products[i]);
       }
    }
    currentChild.products = newProductsList;
@@ -606,8 +605,8 @@ var addCustomGoalToChild = function(e) {
    var newProduct = {};
    newProduct.id = -1;
    newProduct.name = $('#newGoalName').val();
-   newProduct.price = '$' + $('#newGoalPrice').val();
-   newProduct.desc = $('#newGoalName').val();
+   newProduct.price = '$' + dollarize($('#newGoalPrice').val());
+   newProduct.desc = '';
    newProduct.type = $('input:radio[name="goalType"]:checked').val();
    newProduct.numPeople = '';
    newProduct.likes = '';
@@ -909,46 +908,33 @@ var editCustomProduct = function(e) {
 };
 
 var saveCustomProduct = function(e) {
-   var newProduct = {};
-   newProduct.name = $('#newGoalName').val();
-   newProduct.price = '$' + $('#newGoalPrice').val();
-   newProduct.type = $('input:radio[name="goalType"]:checked').val();
-   newProduct.imgURL = '';
-   productToTrack = {};
+   var newName = $('#newGoalName').val(),
+         newPrice = '$' + $('#newGoalPrice').val(),
+         newType = $('input:radio[name="goalType"]:checked').val(),
+         newImg = '',
+         previousName = $('#customGoalPopup').attr('data-productname');
 
-   var previousName = $('#customGoalPopup').attr('data-productname');
-
-   console.log('previousName: ' + previousName);
-
-   console.dir(currentChild.products);
-
-   //remove "old" product
+   // find and update "old" product
    for (var i in currentChild.products) {
       if(currentChild.products.hasOwnProperty(i)){
-         console.log('i: ' + i);
          if((currentChild.products[i].name == previousName && currentChild.products[i].id == -1)){
-            productToTrack = currentChild.products[i];
-            console.log('currentChild.products[i].name: ' + currentChild.products[i].name + ' currentChild.products[i].id: ' + currentChild.products[i].id);
-            currentChild.products[i].id = newProduct.id;
-            currentChild.products[i].name = newProduct.name;
-            currentChild.products[i].price = newProduct.price;
-            currentChild.products[i].desc = newProduct.desc;
-            currentChild.products[i].type = newProduct.id;
-            currentChild.products[i].numPeople = newProduct.type;
-            currentChild.products[i].likes = newProduct.likes;
-            currentChild.products[i].gender = newProduct.gender;
-            currentChild.products[i].imgURL = newProduct.imgURL;
+            var oldProduct = currentChild.products[i];
+            oldProduct.name = newName;
+            oldProduct.price = newPrice;
+            oldProduct.type = newType;
+            oldProduct.imgURL = newImg;
+            break;
          }
       }
    }
 
-   console.dir(currentChild.products);
-
-   //remove old product from the DOM
-   $('.selectedProducts .productItem[data-productid="-1"].productItem[data-productname="' + previousName + '"]').remove();
-
-   //push the new product to DOM
-   appendProductToDOM(productToTrack);
+   // update the product in the DOM
+   var productDom = $('.selectedProducts .productItem[data-productid="-1"].productItem[data-productname="' + previousName + '"]')[0];
+   $(productDom).attr("data-productname",newName);
+   $(productDom).find(".productTitle").html(newName);
+   $(productDom).find(".price").html(dollarize(newPrice));
+   $(productDom).find(".productImage .thumbnail").attr({ src : newImg, alt : newName});
+   $(productDom).find(".timeToEarn .time").html(getTimeToEarn(newPrice));
 
    //close the popup
    $("#customGoalPopup").popup( "close" );
