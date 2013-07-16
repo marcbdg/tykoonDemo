@@ -186,6 +186,7 @@ $(document).ready(function() {
    
    $("#startTasks .createNewGoal").on("click", function(e) {
      // resetConfigureTaskPopup();
+     restoreCustomProduct();
      $('#customGoalPopup #newGoalName').val( $("#addGoalFormGoalName").val() ).attr("data-goalId","-1");
    });
 
@@ -898,11 +899,13 @@ var editCustomProduct = function(e) {
 
    $('#newGoalName').val(product.name);
    $('#newGoalPrice').val(Number(product.price.substring(1)));
+   $("#goalType input").prop("checked",false).checkboxradio("refresh");
    $("#goalType input[value='" + product.type + "']").prop("checked",true).checkboxradio("refresh");
 
    $('#customGoalPopup').attr({'data-productid': productId, 'data-productname': productName});
 
-   $('#customGoalPopup .editCustomGoalButtonBox, #customGoalPopup .addCustomGoalButtonBox').toggle();
+   $('#customGoalPopup .editCustomGoalButtonBox').show();
+   $('#customGoalPopup .addCustomGoalButtonBox').hide();
 
    $('#customGoalPopup').popup().popup("open", {transition: "pop"} );
 };
@@ -946,6 +949,7 @@ var saveCustomProduct = function(e) {
 var restoreCustomProduct = function() {
    $('#newGoalName').val('');
    $('#newGoalPrice').val(null);
+   $("#goalType input").prop("checked",false).checkboxradio("refresh");
    $("#goalType input[value='p']").prop("checked",true).checkboxradio("refresh");
 
    $('#customGoalPopup .editCustomGoalButtonBox').hide();
