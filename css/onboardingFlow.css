@@ -642,6 +642,11 @@ padding: 10px 30px;
     color: #333;
     font-style: italic;
 }
+
+#productDetailsPopup .deleteProductButtonBox{
+    display:none;
+}
+
 #productDetailsPopup .bottom {
     background: #e9e9e9;
 }

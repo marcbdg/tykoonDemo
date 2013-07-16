@@ -230,6 +230,18 @@ $(document).ready(function() {
       deleteTaskFromChild(e);
       return false;
    });
+
+   $('.deleteProductButton').on('click', function(e) {
+      deleteProductFromChild(e, function() {
+         //toggle the buttons back to add product
+         $('.addProductButtonBox, .deleteProductButtonBox').toggle();
+      });
+      return false;
+   });
+
+   $("#startTasks .selectedProducts").on("click", ".productItem", function(e) {
+      showProductDetails(e);
+   });
    
    // resize the productDetails popup before showing
    $( "#productDetailsPopup" ).on({
@@ -377,6 +389,7 @@ var restoreConfigureTaskPopup = function(taskUI) {
    swapConfigureTasksRepeats();
 };
 
+
 var deleteTaskFromChild = function(e) {
    var id = $("#configureTasks").find('.taskTitle').attr('data-taskId');
    var title = $("#configureTasks").find('.taskTitle').text();
@@ -392,7 +405,7 @@ var deleteTaskFromChild = function(e) {
    currentChild.tasks = replaceTasks;
 
    //remove out of the DOM
-   var DOMTaskList = $('.selectedTasks .taskItem[data-taskid="' + id + '"].taskItem[data-taskTitle="' + title + '"]').remove();
+   $('.selectedTasks .taskItem[data-taskid="' + id + '"].taskItem[data-taskTitle="' + title + '"]').remove();
 
    //if it's from the catalog, add it back to the catalog
    if (id != -1) {
@@ -400,7 +413,36 @@ var deleteTaskFromChild = function(e) {
    }
 
    //close the popup
-   $("#configureTasks" ).popup( "close" );
+   $("#configureTasks").popup( "close" );
+};
+
+var deleteProductFromChild = function(e, callback) {
+   var id = $('#productDetailsPopup').attr('data-productid');
+   var name = $('#productDetailsPopup').attr('data-productname');
+   var newProductsList = [];
+
+   //remove from the array
+   for (var i in currentChild.products) {
+      if (currentChild.products.hasOwnProperty(i)) {
+         if (currentChild.products[i].id == id && currentChild.products[i].name == name) {
+            newProductsList.push(currentChild.products[i]);
+         }
+      }
+   }
+   currentChild.products = newProductsList;
+
+   //remove from the DOM
+   $('.selectedProducts .productItem[data-productid="' + id + '"].productItem[data-productname="' + name + '"]').remove();
+
+   //if it's from the catalog, add it back to the catalog
+   if (id != -1) {
+      $(".productCatalog .productItem[data-productid='" + id + "']").show();
+   }
+
+   //close the popup
+   $("#productDetailsPopup").popup( "close" );
+
+   callback();
 };
 
 var findChildTask = function(id, title) {
@@ -522,7 +564,7 @@ var addCustomGoalToChild = function(e) {
 var appendProductToDOM = function(product) {
    var productTemplate = $("#startTasks .productCatalog .addProductTemplate .productItem")[0];
    var newProduct = $(productTemplate).clone();
-   $(newProduct).attr( "data-productId", product.id);
+   $(newProduct).attr({"data-productid": product.id, 'data-productname': product.name});
    $(newProduct).find(".productTitle").html( product.name);
    $(newProduct).find(".thumbnail").attr({src: product.imgURL, alt: product.name});
    $(newProduct).find(".price").html(product.price);
@@ -770,7 +812,7 @@ var populateProductsForChild = function(child) {
       if ((product.gender == "b" || product.gender == child.gender) && (child.getAge() >= product.ageRange.min && child.getAge() <= product.ageRange.max)) {
 
          var productItem = $(productTemplate).clone();
-         $(productItem).attr("data-productId", product.id);
+         $(productItem).attr({'data-productId': product.id, 'data-productname': product.name});
          $(productItem).find(".title").html(product.name);
          $(productItem).find(".price").html(product.price);
          $(productItem).find(".numKids span").html(product.numPeople);
@@ -784,9 +826,18 @@ var populateProductsForChild = function(child) {
 var showProductDetails = function(e) {
   var productItem = $(e.currentTarget),
       productId = $(productItem).attr("data-productId"),
-      product = cannedProducts.products[productId];
+      product = {};
+  if (productId != -1) {
+     product = cannedProducts.products[productId];
+   }
+
+   //show delete button
+   if (e.currentTarget.parentElement.classList[0] == 'selectedProducts') {
+      $('.addProductButtonBox, .deleteProductButtonBox').toggle();
+   }
 
   // populate the popup disclosure and show it
+  $('#productDetailsPopup').attr({'data-productid': productId, 'data-productname': product.name});
   $('#productDetailsPopup .title').html(product.name);
   $('#productDetailsPopup .price').html(product.price);
   $('#productDetailsPopup .allowance').html($("#slider-fill").val());
