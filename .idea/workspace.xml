@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3831b584-dff0-4152-93c0-b6317c200807" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/cannedObjects/cannedProducts.js" afterPath="$PROJECT_DIR$/js/cannedObjects/cannedProducts.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/tykoon.js" afterPath="$PROJECT_DIR$/js/tykoon.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node/products.tsv" afterPath="$PROJECT_DIR$/node/products.tsv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tykoonDemo.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1374004734725" ignored="false" />
+    <file path="/Dummy.txt" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1374010433234" ignored="false" />
     <file path="/index.html" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1374003156122" ignored="false" />
     <file path="/tykoon.js" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1374010244021" ignored="false" />
     <file path="/cannedProduct.js" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1372283251442" ignored="false" />
@@ -81,25 +82,37 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1480" column="53" selection-start="104678" selection-end="104698" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="760" column="28" selection-start="46843" selection-end="120080" vertical-scroll-proportion="-15.625">
+              <folding>
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#1;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tykoon.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="tykoon.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/tykoon.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="950" column="36" selection-start="34025" selection-end="34025" vertical-scroll-proportion="0.8743363">
+            <state line="932" column="0" selection-start="33144" selection-end="33144" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cannedProducts.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="convertProductCSVJSON.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node/convertProductCSVJSON.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="13" selection-start="524" selection-end="536" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cannedProducts.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/cannedObjects/cannedProducts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="274" selection-start="464" selection-end="470" vertical-scroll-proportion="0.0">
+            <state line="14" column="3" selection-start="38335" selection-end="38335" vertical-scroll-proportion="0.37168142">
               <folding />
             </state>
           </provider>
@@ -138,12 +151,12 @@
         <option value="$PROJECT_DIR$/js/task.js" />
         <option value="$PROJECT_DIR$/js/child.js" />
         <option value="$PROJECT_DIR$/css/main.css" />
-        <option value="$PROJECT_DIR$/js/cannedObjects/cannedProducts.js" />
         <option value="$PROJECT_DIR$/js/cannedObjects/cannedTasks.js" />
         <option value="$PROJECT_DIR$/node/convertProductCSVJSON.js" />
         <option value="$PROJECT_DIR$/css/onboardingFlow.css" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/tykoon.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/cannedObjects/cannedProducts.js" />
       </list>
     </option>
   </component>
@@ -471,7 +484,7 @@
             <option name="mySupportsDeletion" value="false" />
             <option name="myCanBeAbsent" value="false" />
             <option name="myId" value="UPDATED" />
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/img/tasks/iconGenericTask@2x.png</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/js/tykoon.js</PATH>
           </FILE-GROUP>
           <FILE-GROUP>
             <option name="myUpdateName" value="Created" />
@@ -914,12 +927,16 @@
       <created>1374000190094</created>
       <updated>1374000190094</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="edit goals partially complete">
+      <created>1374010441965</created>
+      <updated>1374010441965</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="73" y="22" width="1362" height="878" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298153" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -931,7 +948,8 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2005277" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2005277" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298153" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -941,7 +959,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298153" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298153" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -988,7 +1005,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Delete custom goals complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit goals partially complete" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1002,7 +1019,6 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="attempt at improving scrolling in ios" />
     <MESSAGE value="production of canned products" />
     <MESSAGE value="fixed conversion script to force certain types as numbers" />
     <MESSAGE value="first hit on filtering product list" />
@@ -1027,6 +1043,7 @@
     <MESSAGE value="Delete products from child done!" />
     <MESSAGE value="Start of delete custom goals" />
     <MESSAGE value="Delete custom goals complete" />
+    <MESSAGE value="edit goals partially complete" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1046,7 +1063,10 @@
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#1;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1086,19 +1106,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="186" column="24" selection-start="3477" selection-end="3480" vertical-scroll-proportion="0.0" />
+        <state line="186" column="24" selection-start="3477" selection-end="3480" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/cannedObjects/cannedTasks.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="6868" selection-start="7044" selection-end="7044" vertical-scroll-proportion="0.18776079">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node/convertProductCSVJSON.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="86" selection-start="2952" selection-end="2952" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1117,23 +1132,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/cannedObjects/cannedProducts.js">
+    <entry file="file://$PROJECT_DIR$/js/tykoon.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="274" selection-start="464" selection-end="470" vertical-scroll-proportion="0.0">
+        <state line="932" column="0" selection-start="33144" selection-end="33144" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node/convertProductCSVJSON.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="13" selection-start="524" selection-end="536" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1480" column="53" selection-start="104678" selection-end="104698" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="760" column="28" selection-start="46843" selection-end="120080" vertical-scroll-proportion="-15.625">
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#1;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/tykoon.js">
+    <entry file="file://$PROJECT_DIR$/js/cannedObjects/cannedProducts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="950" column="36" selection-start="34025" selection-end="34025" vertical-scroll-proportion="0.8743363">
+        <state line="14" column="3" selection-start="38335" selection-end="38335" vertical-scroll-proportion="0.37168142">
           <folding />
         </state>
       </provider>
