@@ -1,0 +1,84 @@
+/* slider container */
+.sliderContainer {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   height: 100%;
+}
+
+.iosSlider {
+   position: relative;
+   top: 0;
+   left: 0;
+   overflow: hidden;
+   width: 100%;
+   height: 100%;
+
+   background: #20aed6; /* Old browsers */
+   background: -moz-linear-gradient(top, #20aed6 0%, #afe3f8 44%, #e1f5fe 100%); /* FF3.6+ */
+   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#20aed6), color-stop(44%,#afe3f8), color-stop(100%,#e1f5fe)); /* Chrome,Safari4+ */
+   background: -webkit-linear-gradient(top, #20aed6 0%,#afe3f8 44%,#e1f5fe 100%); /* Chrome10+,Safari5.1+ */
+   background: -o-linear-gradient(top, #20aed6 0%,#afe3f8 44%,#e1f5fe 100%); /* Opera 11.10+ */
+   background: -ms-linear-gradient(top, #20aed6 0%,#afe3f8 44%,#e1f5fe 100%); /* IE10+ */
+   background: linear-gradient(to bottom, #20aed6 0%,#afe3f8 44%,#e1f5fe 100%); /* W3C */
+}
+
+/* slider */
+.iosSlider .slider {
+   width: 100%;
+   height: 100%;
+}
+
+/* slide */
+.iosSlider .slide {
+   float: left;
+   width: 100%;
+   height: 100%;
+   position: relative;
+}
+
+.iosSlider .slide1 {
+}
+.iosSlider .slide2 {
+}
+.iosSlider .slide3 {
+}
+#tour h1 {
+   text-align: center;
+}
+#tour .continueMessage {
+    position: absolute;
+    bottom: 50px;
+    left: 38%;
+    -webkit-transform: rotate(-4deg);
+}
+
+.indicators {
+   position: absolute;
+   bottom: 100px;
+   left: 0;
+   width: 100%;
+   height: 10px;
+   margin: 0 auto;
+   text-align: center;
+   z-index: 10;
+}
+.indicators .center {
+   display: inline-block;
+}
+.indicators .item {
+   float: left;
+   width: 13px;
+   border-radius: 50%;
+   height: 13px;
+   margin: 0 10px 0 0;
+   border: 1px solid #333;
+   background: rgba(256,256,256,.8);
+   border-width: 1px 2px 2px 1px;
+}
+.indicators .selected {
+   background: #1081a3;
+}
+

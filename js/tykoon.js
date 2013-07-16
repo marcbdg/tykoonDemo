@@ -109,10 +109,29 @@ $(document).bind('pagebeforehide', function(){
 $("#tour, #startTasks, #portraitCover").one("pageinit",function(){
     $("body").show();
     setOrientation();
+
+    
 });
 
-$(document).ready(function() {
+function slideChange(args) {
+	try {
+		console.log('changed: ' + (args.currentSlideNumber - 1));
+	} catch(err) {
+	}
+	$('.indicators .item').removeClass('selected');
+	$('.indicators .item:eq(' + (args.currentSlideNumber - 1) + ')').addClass('selected');
+}
 
+$(document).ready(function() {
+   // to initialize the tour carousel
+   $('.iosSlider').iosSlider({
+	snapToChildren: true,
+	desktopClickDrag: true,
+	snapSlideCenter: true,
+	onSlideChange: slideChange
+   });
+
+   // To hide the non-optimial viewport coverup
    $("#nonOptimalSizeCover .continueNonOptimized").on('click', function(e) {
       $('#nonOptimalSizeCover').fadeOut('fast').delay('1600', function() {
          $(this).remove();

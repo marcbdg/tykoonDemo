@@ -34,6 +34,7 @@
     box-sizing: border-box;
     width: 70%;
     height: 100%;
+    position: relative;
 }
 #tour .signIn {
     width: 30%;

@@ -23,12 +23,13 @@
 
         <!-- please keep this last -->
         <!-- <link rel="stylesheet" href="fonts/MyFontsWebfontsKit.css"> -->
-        <link rel="stylesheet" href="css/jqmOverrides.css">
+        <link rel="stylesheet" href="css/jqmOverrides.css">        
+        <link rel="stylesheet" href="css/iosSlider.css">        
         <link rel="stylesheet" href="css/onboardingFlow.css">
         <!-- /please keep this last -->
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
-    <body style="display:none;">
+    < style="display:none;">
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
@@ -64,10 +65,43 @@
                  
                  <!-- Tour column -->
                  <div class="ui-block-b introTour">
-                     <p>Here was our really awesome page one</p>
-                 </div>
-                
-            </div>
+
+                     <!-- slider -->
+                     <div class="sliderContainer">
+                        <div class = 'iosSlider'>
+                           <div class = 'slider '>
+                              <div class="slide slide1">
+                                 <h1>Look what kids are doing to achieve their goals</h1>
+                                 <div class="continueMessage">See how easy it is</div>
+                              </div>
+                              <div class="slide slide2">
+                                 <h1>It's Easy and Visual</h1>
+                                 <div class="continueMessage">See what people are saying</div>
+                              </div>
+                              <div class="slide slide3">
+                                 <h1>Testimonials</h1>
+                                 <div class="continueMessage">See the power of community</div>
+                              </div>
+                              <div class="slide slide4">
+                                 <h1>The power of community</h1>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+
+                     <!-- slide indicator dots -->
+                     <div class="indicators">
+                        <div class="center clearfix">
+                           <div class="item selected"></div>
+                           <div class="item"></div>
+                           <div class="item"></div>
+                           <div class="item"></div>
+                        </div>
+                     </div>
+                              
+               </div>
+               
+            </div><!-- END 2-col layout block -->
             
         </div><!-- END tour page -->
 
@@ -1143,12 +1177,12 @@
                                 <div class="productItem clearfix" data-productid="32" data-ageMin="13"  data-ageMax="18"  data-gender="f">
                                    <div class="productImage verticalWrapper">
                                       <div class="verticalMiddle">
-                                         <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/41p9rtDoMlL.jpg" alt="Body Shop Pink Grapefruit Shower Gel 8.4 Oz.">
+                                         <img class="thumbnail" src="http://ecx.images-amazon.com/images/I/41p9rtDoMlL.jpg" alt=" Shop Pink Grapefruit Shower Gel 8.4 Oz.">
                                       </div>
                                       <img class="productDetailsIcon" src="img/magnifyingGlass.png">
                                    </div>
                                    <div class="productDetails">
-                                      <div class="title">Body Shop Pink Grapefruit Shower Gel 8.4 Oz.</div>
+                                      <div class="title"> Shop Pink Grapefruit Shower Gel 8.4 Oz.</div>
                                       <div class="price">$12.99</div>      <div class="numKids"><span class="numPpl">57</span> kids saving for this</div>
                                    </div>
                                 </div>
@@ -1666,6 +1700,11 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
         <!-- script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script -->
         <script src="js/vendor/jquery.mobile-1.3.1.min.js"></script>
+        
+        <!-- iosslider plugin -->
+        <script src="js/vendor/jquery.easing-1.3.js"></script>
+        <script src="js/vendor/jquery.iosslider.min.js"></script>
+        
         <script src="js/vendor/jplist.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
@@ -1685,5 +1724,5 @@
             g.src='http://www.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
-    </body>
+    </>
 </html>
