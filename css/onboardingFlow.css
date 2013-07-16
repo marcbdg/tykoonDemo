@@ -39,6 +39,16 @@
 #tour .signIn {
     width: 30%;
     height: 100%;
+    position: relative;
+    z-index: 20;
+    background: #3799b6; /* Old browsers */
+    background: url(../img/texture@2x.png), -moz-linear-gradient(top, #3799b6 0%, #66caea 21%, #67caea 71%, #2f8da9 100%); /* FF3.6+ */
+    background: url(../img/texture@2x.png), -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3799b6), color-stop(21%,#66caea), color-stop(71%,#67caea), color-stop(100%,#2f8da9)); /* Chrome,Safari4+ */
+    background: url(../img/texture@2x.png), -webkit-linear-gradient(top, #3799b6 0%,#66caea 21%,#67caea 71%,#2f8da9 100%); /* Chrome10+,Safari5.1+ */
+    background: url(../img/texture@2x.png), -o-linear-gradient(top, #3799b6 0%,#66caea 21%,#67caea 71%,#2f8da9 100%); /* Opera 11.10+ */
+    background: url(../img/texture@2x.png), -ms-linear-gradient(top, #3799b6 0%,#66caea 21%,#67caea 71%,#2f8da9 100%); /* IE10+ */
+    background: url(../img/texture@2x.png), linear-gradient(to bottom, #3799b6 0%,#66caea 21%,#67caea 71%,#2f8da9 100%); /* W3C */
+    box-shadow: 2px 0 5px rgba(0,0,0,.45);
 }
 #tour .signIn .error {
     margin-bottom: 15px;
