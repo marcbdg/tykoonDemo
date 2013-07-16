@@ -451,6 +451,9 @@ padding: 10px 30px;
 #customGoalPopup-popup .customGoalContent {
     min-width: 500px;
 }
+#customGoalPopup .editCustomGoalButtonBox{
+    display:none;
+}
 #customGoalForm .goalDetails,
 #customGoalForm .goalPhoto {
     float: left;
