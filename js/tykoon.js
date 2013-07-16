@@ -234,6 +234,10 @@ $(document).ready(function() {
       deleteCustomProductFromChild(e);
    });
 
+   $('#saveCustomGoalButton').on('click', function(e) {
+      saveCustomProduct(e);
+   });
+
    $('#configureTasksRepeats').on('change', function(e) {
       swapConfigureTasksRepeats(e);
    });
@@ -897,14 +901,65 @@ var editCustomProduct = function(e) {
    $('#newGoalPrice').val(Number(product.price.substring(1)));
    $("#goalType input[value='" + product.type + "']").prop("checked",true).checkboxradio("refresh");
 
+   $('#customGoalPopup').attr({'data-productid': productId, 'data-productname': productName});
+
    $('#customGoalPopup .editCustomGoalButtonBox, #customGoalPopup .addCustomGoalButtonBox').toggle();
 
    $('#customGoalPopup').popup().popup("open", {transition: "pop"} );
 };
 
+var saveCustomProduct = function(e) {
+   var newProduct = {};
+   newProduct.name = $('#newGoalName').val();
+   newProduct.price = '$' + $('#newGoalPrice').val();
+   newProduct.type = $('input:radio[name="goalType"]:checked').val();
+   newProduct.imgURL = '';
+   productToTrack = {};
+
+   var previousName = $('#customGoalPopup').attr('data-productname');
+
+   console.log('previousName: ' + previousName);
+
+   console.dir(currentChild.products);
+
+   //remove "old" product
+   for (var i in currentChild.products) {
+      if(currentChild.products.hasOwnProperty(i)){
+         console.log('i: ' + i);
+         if((currentChild.products[i].name == previousName && currentChild.products[i].id == -1)){
+            productToTrack = currentChild.products[i];
+            console.log('currentChild.products[i].name: ' + currentChild.products[i].name + ' currentChild.products[i].id: ' + currentChild.products[i].id);
+            currentChild.products[i].id = newProduct.id;
+            currentChild.products[i].name = newProduct.name;
+            currentChild.products[i].price = newProduct.price;
+            currentChild.products[i].desc = newProduct.desc;
+            currentChild.products[i].type = newProduct.id;
+            currentChild.products[i].numPeople = newProduct.type;
+            currentChild.products[i].likes = newProduct.likes;
+            currentChild.products[i].gender = newProduct.gender;
+            currentChild.products[i].imgURL = newProduct.imgURL;
+         }
+      }
+   }
+
+   console.dir(currentChild.products);
+
+   //remove old product from the DOM
+   $('.selectedProducts .productItem[data-productid="-1"].productItem[data-productname="' + previousName + '"]').remove();
+
+   //push the new product to DOM
+   appendProductToDOM(productToTrack);
+
+   //close the popup
+   $("#customGoalPopup").popup( "close" );
+
+   //reset the popup
+   restoreCustomProduct();
+};
+
 var restoreCustomProduct = function() {
    $('#newGoalName').val('');
-   $('#newGoalPrice').val('');
+   $('#newGoalPrice').val(null);
    $("#goalType input[value='p']").prop("checked",true).checkboxradio("refresh");
 
    $('#customGoalPopup .editCustomGoalButtonBox').hide();
