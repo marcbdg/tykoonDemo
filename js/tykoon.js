@@ -240,7 +240,11 @@ $(document).ready(function() {
    });
 
    $("#startTasks .selectedProducts").on("click", ".productItem", function(e) {
-      showProductDetails(e);
+      if ($(e.currentTarget).attr('data-productid') == -1) {
+         editCustomProduct(e);
+      } else {
+         showProductDetails(e);
+      }
    });
    
    // resize the productDetails popup before showing
@@ -823,13 +827,32 @@ var populateProductsForChild = function(child) {
    $('#startTasks .productCatalog .popularProducts').append("<div class='bottomSpacer'></div>");
 };
 
-var showProductDetails = function(e) {
-  var productItem = $(e.currentTarget),
+var editCustomProduct = function(e) {
+   var productItem = $(e.currentTarget),
       productId = $(productItem).attr("data-productId"),
+      productName = $(productItem).attr("data-productname"),
       product = {};
-  if (productId != -1) {
-     product = cannedProducts.products[productId];
+
+   for (var i in currentChild.products) {
+      if (currentChild.products.hasOwnProperty(i)) {
+         if (currentChild.products[i].id == productId && currentChild.products[i].name == productName) {
+            product = currentChild.products[i];
+         }
+      }
    }
+
+   $('#newGoalName').val(product.name);
+   $('#newGoalPrice').val(Number(product.price.substring(1)));
+   $("#goalType input[value='" + product.type + "']").prop("checked",true).checkboxradio("refresh");
+
+   $('#customGoalPopup').popup().popup("open", {transition: "pop"} );
+};
+
+var showProductDetails = function(e) {
+   var productItem = $(e.currentTarget),
+       productId = $(productItem).attr("data-productId"),
+       productName = $(productItem).attr("data-productname"),
+       product = cannedProducts.products[productId];
 
    //show delete button
    if (e.currentTarget.parentElement.classList[0] == 'selectedProducts') {
