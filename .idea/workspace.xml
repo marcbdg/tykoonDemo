@@ -7,7 +7,7 @@
     </list>
     <ignored path="tykoonDemo.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1374089597040" ignored="false" />
+    <file path="/Dummy.txt" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1374089627960" ignored="false" />
     <file path="/index.html" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1374087386900" ignored="false" />
     <file path="/tykoon.js" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1374079512893" ignored="false" />
     <file path="/cannedProduct.js" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1372283251442" ignored="false" />
@@ -116,7 +116,7 @@
       <file leaf-file-name="onboardingFlow.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/onboardingFlow.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="547" column="15" selection-start="13744" selection-end="13744" vertical-scroll-proportion="0.20920502">
+            <state line="548" column="2" selection-start="13747" selection-end="13747" vertical-scroll-proportion="0.23012552">
               <folding />
             </state>
           </provider>
@@ -838,7 +838,11 @@
       <created>1374089606988</created>
       <updated>1374089606989</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="styling of image upload">
+      <created>1374089630372</created>
+      <updated>1374089630373</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1053,7 +1057,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/onboardingFlow.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="547" column="15" selection-start="13744" selection-end="13744" vertical-scroll-proportion="0.20920502">
+        <state line="548" column="2" selection-start="13747" selection-end="13747" vertical-scroll-proportion="0.23012552">
           <folding />
         </state>
       </provider>
