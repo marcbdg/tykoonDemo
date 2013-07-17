@@ -48,10 +48,23 @@
 #tour .continueMessage {
     position: absolute;
     bottom: 30px;
-    left: 38%;
     -webkit-transform: rotate(-4deg);
+    background: url(../img/arrow@2x.png) no-repeat left top;
+    background-size: 50px 40px;
 }
-
+#tour .slide1 .continueMessage {
+   left: 35%;
+   padding: 37px 0 0 29px;
+}
+#tour .slide2 .continueMessage {
+   left: 35%;
+   padding: 37px 0 0 29px;
+}
+#tour .slide3 .continueMessage {
+   left: 25%;
+   padding: 50px 0 0 29px;
+   background-position: 72px 9px;
+}
 .indicators {
    position: absolute;
    bottom: 80px;
@@ -89,12 +102,26 @@
 .iosSlider .dot {
    border-radius: 50%;
    display: inline-block;
-   background: #fff;
    box-shadow: 0 2px 2px 1px rgba(0,0,0,.25);
+   background: #fff;
    width: 180px;
    height: 180px;
    margin-bottom: 5px;
+   background-size: 50%;
 }
+.iosSlider .dot1 {
+   background: #fff url(../img/iPodTouch@2x.png) no-repeat center center;
+   background-size: 60%;
+}
+.iosSlider .dot2 {
+   background: #fff url(../img/WWF@2x.png) no-repeat center center;
+   background-size: 70%;
+}
+.iosSlider .dot3 {
+   background: #fff url(../img/collegeBond@2x.png) no-repeat right center;
+   background-size: 90%;
+}
+
 .iosSlider .slide1 .doingThis {
    color: #777;
    font-size: .8em;
