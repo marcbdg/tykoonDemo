@@ -88,6 +88,14 @@
 #tour .ui-controlgroup-controls {
     width: 100%;
 }
+#getStartedForm .birthdayHolder,
+#getStartedFormChildGender,
+#getStartedForm .ui-submit {
+    margin: 15px 0;
+}
+#getStartedForm .ui-submit {
+    margin-top: 20px;
+}
 
 /* -----------------------
  * Start Tasks page

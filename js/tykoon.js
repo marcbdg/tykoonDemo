@@ -152,7 +152,10 @@ $(document).ready(function() {
       return false;
    });
 
-   $("#birthdayLabel, #getStartedFormChildBirthday").on("click", function(e){
+   $("#birthdayLabel").on("click", function(e){
+      $("#birthdayLabel").hide();
+   });
+   $("#getStartedFormChildBirthday").on("focus", function(e){
       $("#birthdayLabel").hide();
    });
    
