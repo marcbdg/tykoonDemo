@@ -46,13 +46,13 @@
                         <h2>New Users</h2>
                         <p>We just need a little info to help you customize a plan for your kids!</p>
                         <form method="post" id="getStartedForm">
-                            <label for="getStartedFormChildFirstName" data-theme="a">Child First Name</label>
                             <input type="text" name="getStartedFormChildFirstName" placeholder="Child First Name" id="getStartedFormChildFirstName" data-theme="a"/>
                             <div class="error" id="noNameError">Please enter a name</div>
-                            <label for="getStartedFormChildBirthday">Birthday</label>
-                            <input type="date" id="getStartedFormChildBirthday" placeholder="Birthday" data-theme="a" />
+                            <div class="birthdayHolder">
+                               <label id="birthdayLabel" for="getStartedFormChildBirthday">Birthday</label>
+                               <input type="date" id="getStartedFormChildBirthday" placeholder="Birthday" data-theme="a" />
+                            </div>
                             <div class="error" id="noBirthdayError">Please enter a birthday</div>
-                            <label for="getStartedFormChildGender">Gender</label>
                             <fieldset data-role="controlgroup" data-type="horizontal" id="getStartedFormChildGender" data-theme="c">
                                 <input type="radio" name="getStartedFormChildGender" checked id="genderBoy" value="m"  data-theme="c" />
                                 <label for="genderBoy">Boy</label>

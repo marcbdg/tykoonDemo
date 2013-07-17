@@ -152,6 +152,10 @@ $(document).ready(function() {
       return false;
    });
 
+   $("#birthdayLabel, #getStartedFormChildBirthday").on("click", function(e){
+      $("#birthdayLabel").hide();
+   });
+   
    //matched pair of entering in field
    $('#addTasksFormTaskName, #addGoalFormGoalName').on('keyup', function(e) {
       watchUserFilterInput(e);

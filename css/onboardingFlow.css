@@ -65,6 +65,29 @@
     margin-bottom: 15px;
     text-shadow: none;
 }
+#tour #getStartedFormChildBirthday {
+    background: url(../img/calendarIcon.jpg) no-repeat right center;
+    background-size: 28px 28px;
+}
+#tour .birthdayHolder {
+    position: relative;
+}
+#tour #birthdayLabel {
+    position: absolute;
+    color: #aaa;
+    text-shadow: none;
+    bottom: 3px;
+    z-index: 100;
+    background: #fff;
+    left: 7px;
+    width: 75%;
+}
+#tour .ui-radio {
+    width: 50%;
+}
+#tour .ui-controlgroup-controls {
+    width: 100%;
+}
 
 /* -----------------------
  * Start Tasks page
