@@ -227,3 +227,15 @@
 .slide3 .t3 .name {
    left: 45%;
 }
+
+.slide4 {
+   text-align: center;
+}
+.slide4 .stat {
+   text-align: right;
+   padding-right: 70px;
+   line-height: 50px;
+   font-size: 1.5em;
+   margin: 10px 60px;
+   font-weight: bold;
+}
