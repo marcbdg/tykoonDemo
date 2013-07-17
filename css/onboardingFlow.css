@@ -50,6 +50,17 @@
     background: url(../img/texture@2x.png), linear-gradient(to bottom, #3799b6 0%,#66caea 21%,#67caea 71%,#2f8da9 100%); /* W3C */
     box-shadow: 2px 0 5px rgba(0,0,0,.45);
 }
+
+#tour .signIn .logo {
+    float: none;
+    overflow: hidden;
+    text-indent: -9000px;
+    width: 240px;
+    height: 85px;
+    background: transparent url(../img/logo@2x.png) no-repeat;
+    background-size: 100%;
+    margin-left: 13px;
+}
 #tour .signIn .error {
     margin-bottom: 15px;
     text-shadow: none;

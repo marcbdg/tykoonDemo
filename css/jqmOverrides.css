@@ -23,12 +23,12 @@
 }
 
 .ui-bar-a {
-    background-image: url(../img/texture@2x.png), -webkit-gradient(linear,left top,left bottom,from( #3691ae ),to( #5ED8FF ));
-    background-image: url(../img/texture@2x.png), -webkit-linear-gradient( #3691ae,#5ED8FF );
-    background-image: url(../img/texture@2x.png), -moz-linear-gradient( #3691ae,#5ED8FF );
-    background-image: url(../img/texture@2x.png), -ms-linear-gradient( #3691ae,#5ED8FF );
-    background-image: url(../img/texture@2x.png), -o-linear-gradient( #3691ae,#5ED8FF );
-    background-image: url(../img/texture@2x.png), linear-gradient( #3691ae,#5ED8FF ) url(/img/texture.png);
+    background-image: url(../img/texture@2x.png), -webkit-gradient(linear,left top,left bottom,from( #58CBEF ),to( #5ED8FF ));
+    background-image: url(../img/texture@2x.png), -webkit-linear-gradient( #58CBEF,#5ED8FF );
+    background-image: url(../img/texture@2x.png), -moz-linear-gradient( #58CBEF,#5ED8FF );
+    background-image: url(../img/texture@2x.png), -ms-linear-gradient( #58CBEF,#5ED8FF );
+    background-image: url(../img/texture@2x.png), -o-linear-gradient( #58CBEF,#5ED8FF );
+    background-image: url(../img/texture@2x.png), linear-gradient( #58CBEF,#5ED8FF ) url(/img/texture.png);
 }
 .ui-slider-bg {
     background: #8ab106; /* Old browsers */
@@ -55,11 +55,11 @@
 /* RETINA IMAGES */
 @media all and (-webkit-min-device-pixel-ratio: 2) {
     .ui-bar-a {
-        background-image: url(../img/texture@2x.png), -webkit-gradient(linear,left top,left bottom,from( #3691ae ),to( #5ED8FF ));
-        background-image: url(../img/texture@2x.png), -webkit-linear-gradient( #3691ae,#5ED8FF );
-        background-image: url(../img/texture@2x.png), -moz-linear-gradient( #3691ae,#5ED8FF );
-        background-image: url(../img/texture@2x.png), -ms-linear-gradient( #3691ae,#5ED8FF );
-        background-image: url(../img/texture@2x.png), -o-linear-gradient( #3691ae,#5ED8FF );
-        background-image: url(../img/texture@2x.png), linear-gradient( #3691ae,#5ED8FF ) url(/img/texture.png);
+        background-image: url(../img/texture@2x.png), -webkit-gradient(linear,left top,left bottom,from( #58CBEF ),to( #5ED8FF ));
+        background-image: url(../img/texture@2x.png), -webkit-linear-gradient( #58CBEF,#5ED8FF );
+        background-image: url(../img/texture@2x.png), -moz-linear-gradient( #58CBEF,#5ED8FF );
+        background-image: url(../img/texture@2x.png), -ms-linear-gradient( #58CBEF,#5ED8FF );
+        background-image: url(../img/texture@2x.png), -o-linear-gradient( #58CBEF,#5ED8FF );
+        background-image: url(../img/texture@2x.png), linear-gradient( #58CBEF,#5ED8FF ) url(/img/texture.png);
     }
 }
