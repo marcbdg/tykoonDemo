@@ -137,24 +137,24 @@
    margin-top: 3px;
 }
 
-.iosSlider .slide3 {
+.iosSlider .slide3 .testimonialWrapper {
    position: relative;
 }
 .iosSlider .slide3 .testimonial {
    position: absolute;
 }
 .iosSlider .slide3 .t1 {
-   top: 170px;
+   top: 0;
    left: 30px;
    width: 270px;
 }
 .iosSlider .slide3 .t2 {
-   top: 250px;
+   top: 80px;
    right: 30px;
    width: 300px;
 }
 .iosSlider .slide3 .t3 {
-   top: 430px;
+   top: 260px;
    left: 95px;
    width: 285px;
 }
