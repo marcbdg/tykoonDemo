@@ -523,19 +523,18 @@ padding: 10px 30px;
     display:none;
 }
 #customGoalPopup #customGoalPreview {
-    max-height:300px;
-    max-width:300px;
+    max-height:250px;
+    max-width:250px;
     display:none;
 }
-#customGoalForm .goalDetails,
-#customGoalForm .goalPhoto {
+#customGoalForm .goalDetails{
     float: left;
-    width: 50%;
+    width: 327px;
     margin-right: 40px;
 }
 #customGoalForm .goalPhoto {
-    width: 43%;
-    margin-right: 0;
+    float: left;
+    width: 327px;
     background: #eee;
 }
 #startTasks .selectedTasks .taskItem .taskDetails {
