@@ -523,9 +523,10 @@ padding: 10px 30px;
     display:none;
 }
 #customGoalPopup #customGoalPreview {
-    max-height:250px;
-    max-width:250px;
+    max-height:180px;
+    max-width:180px;
     display:none;
+    margin: 15px 0 0 35px;
 }
 #customGoalForm .goalDetails{
     float: left;
@@ -534,8 +535,13 @@ padding: 10px 30px;
 }
 #customGoalForm .goalPhoto {
     float: left;
-    width: 327px;
+    width: 275px;
+    height: 300px;
     background: #eee;
+    padding-left:25px;
+}
+#customGoalForm .goalPhoto .photoContain div.ui-input-text{
+    width:90%;
 }
 #startTasks .selectedTasks .taskItem .taskDetails {
     float: left;
