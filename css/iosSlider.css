@@ -39,12 +39,6 @@
    position: relative;
 }
 
-.iosSlider .slide1 {
-}
-.iosSlider .slide2 {
-}
-.iosSlider .slide3 {
-}
 #tour h1 {
    text-align: center;
    text-shadow: 0 1px 1px #333;
@@ -53,14 +47,14 @@
 }
 #tour .continueMessage {
     position: absolute;
-    bottom: 50px;
+    bottom: 30px;
     left: 38%;
     -webkit-transform: rotate(-4deg);
 }
 
 .indicators {
    position: absolute;
-   bottom: 100px;
+   bottom: 80px;
    left: 0;
    width: 100%;
    height: 10px;
@@ -83,5 +77,46 @@
 }
 .indicators .selected {
    background: #1081a3;
+}
+
+
+/* individual tour slides */
+.iosSlider .slide1 .ui-block-a, 
+.iosSlider .slide1 .ui-block-b, 
+.iosSlider .slide1 .ui-block-c {
+   text-align: center;
+}
+.iosSlider .slide1 .goalContent .dot {
+   border-radius: 50%;
+   display: inline-block;
+   background: #fff;
+   box-shadow: 0 2px 2px 2px rgba(0,0,0,.45);
+   width: 180px;
+   height: 180px;
+   margin-bottom: 5px;
+}
+.iosSlider .slide1 .doingThis {
+   color: #777;
+   font-size: .8em;
+   margin-top: 5px;
+}
+.iosSlider .slide1 .text {
+   height: 57px;
+}
+.iosSlider .slide1 .task > img {
+   display: block;
+   margin: 10px auto 0;
+   max-width: 50px;
+   max-height: 50px;
+}
+.iosSlider .slide1 .task > span {
+   font-weight: bold;
+   color: #1081a3;
+}
+
+.iosSlider .slide2 {
+}
+
+.iosSlider .slide3 {
 }
 
