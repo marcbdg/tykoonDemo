@@ -43,7 +43,7 @@ fs.readFile('products.tsv', 'utf8', function(err, data) {
          DOMString += '   </div>\n';
          DOMString += '   <div class="productDetails">\n';
          DOMString += '      <div class="title">' + row[0] + '</div>\n';
-         DOMString += '      <div class="price">' + row[2]+ '</div>';
+         DOMString += '      <div class="price">' + row[2]+ '</div>\n';
          DOMString += '      <div class="numKids"><span class="numPpl">' + Number(row[5]) + '</span> kids saving for this</div>\n';
          DOMString += '   </div>\n';
          DOMString += '</div>\n';
