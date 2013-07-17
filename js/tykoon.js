@@ -1043,6 +1043,29 @@ var getTimeToEarn = function(price) {
   return ( moneyPerWeek >= price) ? "1 week" : Math.ceil(price / moneyPerWeek) + " weeks";
 };
 
+/* ---------------- Custom product image upload --------------------------*/
+
+function readURL(input) {
+
+   if (input.files && input.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+         $('#customGoalPreview').attr('src', e.target.result).show();
+      };
+
+      reader.readAsDataURL(input.files[0]);
+   }
+}
+
+$("#newGoalPhotoUpload").change(function(){
+   readURL(this);
+});
+
+/* ---------------- End Custom product image upload --------------------------*/
+
+
+
 
 /* ======== TEST DATA, comment me out to run for real =========== */
 

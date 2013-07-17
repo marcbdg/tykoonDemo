@@ -522,6 +522,11 @@ padding: 10px 30px;
 #customGoalPopup .editCustomGoalButtonBox{
     display:none;
 }
+#customGoalPopup #customGoalPreview {
+    max-height:300px;
+    max-width:300px;
+    display:none;
+}
 #customGoalForm .goalDetails,
 #customGoalForm .goalPhoto {
     float: left;

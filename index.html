@@ -1734,10 +1734,15 @@
                             </div>
                             <div class="goalPhoto">
                                 <div data-role="fieldcontain">
-                                    <label for="newGoalPhoto">Upload a Photo</label>
-                                    <input type="file" id="newGoalPhoto" />
+
+                                    <label for="newGoalPhotoUpload">Upload a Photo</label>
+
+                                    <input type='file' id="newGoalPhotoUpload" />
+                                    <img id="customGoalPreview" src="#" alt="custom goal" />
                                 </div>
+
                             </div>
+
                         </div>
                         <div class="addCustomGoalButtonBox">
                             <input type="submit" id="createNewGoalButton" value="Add it" data-theme="a" />
@@ -1750,6 +1755,9 @@
                                 <input type="button" id="saveCustomGoalButton" value="Save" data-theme="a" />
                             </div>
                         </div>
+                    </form>
+                    <form id="form1" runat="server">
+
                     </form>
                 </div>
             </div><!-- END custom goal popup form -->
