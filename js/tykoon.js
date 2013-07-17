@@ -909,6 +909,7 @@ var editCustomProduct = function(e) {
    $('#newGoalPrice').val(Number(product.price.substring(1)));
    $("#goalType input").prop("checked",false).checkboxradio("refresh");
    $("#goalType input[value='" + product.type + "']").prop("checked",true).checkboxradio("refresh");
+   $('#customGoalPreview').attr({'src': product.imgURL});
 
    $('#customGoalPopup').attr({'data-productid': productId, 'data-productname': productName});
 

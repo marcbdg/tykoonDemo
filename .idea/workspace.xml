@@ -9,14 +9,14 @@
     </list>
     <ignored path="tykoonDemo.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1374075348902" ignored="false" />
+    <file path="/Dummy.txt" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1374079064539" ignored="false" />
     <file path="/index.html" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1374076618344" ignored="false" />
-    <file path="/tykoon.js" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1374076938367" ignored="false" />
+    <file path="/tykoon.js" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1374079512893" ignored="false" />
     <file path="/cannedProduct.js" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1372283251442" ignored="false" />
     <file path="/cannedTask.js" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1372284332553" ignored="false" />
     <file path="/child.js" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1372399607805" ignored="false" />
     <file path="/task.js" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1372291586316" ignored="false" />
-    <file path="/onboardingFlow.css" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1374076919831" ignored="false" />
+    <file path="/onboardingFlow.css" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1374080234656" ignored="false" />
     <file path="/main.css" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1372783519868" ignored="false" />
     <file path="/convertProductCSVJSON.js" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1374020890793" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -82,16 +82,16 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1740" column="62" selection-start="125821" selection-end="125838" vertical-scroll-proportion="-12.5">
+            <state line="1716" column="66" selection-start="124049" selection-end="124060" vertical-scroll-proportion="-12.5">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tykoon.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="tykoon.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/tykoon.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1053" column="69" selection-start="38146" selection-end="38146" vertical-scroll-proportion="0.6960926">
+            <state line="911" column="57" selection-start="32402" selection-end="32402" vertical-scroll-proportion="-13.461538">
               <folding />
             </state>
           </provider>
@@ -115,10 +115,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="onboardingFlow.css" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="onboardingFlow.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/onboardingFlow.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="527" column="17" selection-start="13332" selection-end="13332" vertical-scroll-proportion="-9.384615">
+            <state line="514" column="28" selection-start="13036" selection-end="13047" vertical-scroll-proportion="0.08683068">
               <folding />
             </state>
           </provider>
@@ -151,9 +151,9 @@
         <option value="$PROJECT_DIR$/js/cannedObjects/cannedTasks.js" />
         <option value="$PROJECT_DIR$/node/convertProductCSVJSON.js" />
         <option value="$PROJECT_DIR$/js/cannedObjects/cannedProducts.js" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/css/onboardingFlow.css" />
         <option value="$PROJECT_DIR$/js/tykoon.js" />
+        <option value="$PROJECT_DIR$/css/onboardingFlow.css" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -941,7 +941,15 @@
       <created>1374021039841</created>
       <updated>1374021039841</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Start on image upload">
+      <created>1374077051724</created>
+      <updated>1374077051724</updated>
+    </task>
+    <task id="LOCAL-00059" summary="Image upload on product listing now">
+      <created>1374079340986</created>
+      <updated>1374079340986</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -959,6 +967,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19920844" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298153" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -968,7 +977,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298153" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298153" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1015,7 +1023,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="New products (savings and charities) -- now sorted" />
+    <option name="LAST_COMMIT_MESSAGE" value="Image upload on product listing now" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1029,8 +1037,6 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="first hit on filtering product list" />
-    <MESSAGE value="better filtering clearing of products" />
     <MESSAGE value="filtering styling" />
     <MESSAGE value="static loading of product catalog" />
     <MESSAGE value="Fix scrolling of popular tasks" />
@@ -1054,6 +1060,8 @@
     <MESSAGE value="edit goals partially complete" />
     <MESSAGE value="New products (savings and charities" />
     <MESSAGE value="New products (savings and charities) -- now sorted" />
+    <MESSAGE value="Start on image upload" />
+    <MESSAGE value="Image upload on product listing now" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1140,23 +1148,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/tykoon.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="911" column="57" selection-start="32402" selection-end="32402" vertical-scroll-proportion="-13.461538">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1740" column="62" selection-start="125821" selection-end="125838" vertical-scroll-proportion="-12.5">
+        <state line="1716" column="66" selection-start="124049" selection-end="124060" vertical-scroll-proportion="-12.5">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/onboardingFlow.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="527" column="17" selection-start="13332" selection-end="13332" vertical-scroll-proportion="-9.384615">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/tykoon.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1053" column="69" selection-start="38146" selection-end="38146" vertical-scroll-proportion="0.6960926">
+        <state line="514" column="28" selection-start="13036" selection-end="13047" vertical-scroll-proportion="0.08683068">
           <folding />
         </state>
       </provider>
