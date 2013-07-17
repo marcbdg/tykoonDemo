@@ -81,16 +81,16 @@
 
 
 /* individual tour slides */
-.iosSlider .slide1 .ui-block-a, 
-.iosSlider .slide1 .ui-block-b, 
-.iosSlider .slide1 .ui-block-c {
+.iosSlider .slide .ui-block-a, 
+.iosSlider .slide .ui-block-b, 
+.iosSlider .slide .ui-block-c {
    text-align: center;
 }
-.iosSlider .slide1 .goalContent .dot {
+.iosSlider .dot {
    border-radius: 50%;
    display: inline-block;
    background: #fff;
-   box-shadow: 0 2px 2px 2px rgba(0,0,0,.45);
+   box-shadow: 0 2px 2px 1px rgba(0,0,0,.25);
    width: 180px;
    height: 180px;
    margin-bottom: 5px;
@@ -114,7 +114,27 @@
    color: #1081a3;
 }
 
-.iosSlider .slide2 {
+.iosSlider .slide2 .simpleSteps .dot {
+   float: left;
+   margin: 0 20px 0 0;
+   width: 50px;
+   height: 50px;
+   line-height: 50px;
+   color: #1081a3;
+   text-align: center;
+   font-size: 2em;
+   font-weight: bold;
+}
+.iosSlider .slide2 .simpleSteps .text {
+   width: 260px;
+   margin: 0 auto 20px;
+}
+.iosSlider .slide2 .simpleSteps .dotText {
+   font-weight: bold;
+   float: left;
+   width: 185px;
+   text-align: left;
+   margin-top: 3px;
 }
 
 .iosSlider .slide3 {
