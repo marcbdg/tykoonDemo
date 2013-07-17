@@ -523,8 +523,8 @@ padding: 10px 30px;
     display:none;
 }
 #customGoalPopup #customGoalPreview {
-    max-height:300px;
-    max-width:300px;
+    max-height:200px;
+    max-width:200px;
     display:none;
 }
 #customGoalForm .goalDetails,
