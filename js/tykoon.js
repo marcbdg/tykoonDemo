@@ -126,7 +126,7 @@ $(document).ready(function() {
    // to initialize the tour carousel
    $('.iosSlider').iosSlider({
 	snapToChildren: true,
-      // infiniteSlider: true,
+      infiniteSlider: true,
 	desktopClickDrag: true,
 	snapSlideCenter: true,
 	onSlideChange: slideChange
