@@ -772,6 +772,7 @@ var populateTasksForChild = function(child) {
    $(".childAge").html(child.getAge());
    $(".childGender").html(child.getGenderNoun());
    $(".childPossesivePronoun").html(child.getPossesivePronoun());
+   $(".childPersonalPronoun").html(child.getPersonalPronoun());
    if (child.gender == "f") {
      $(".userModule .avatar").attr("src", "img/accountGirl@2x.png");
    }

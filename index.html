@@ -1972,6 +1972,42 @@
                     </div>
                 </div>
             </div> <!-- END product details popup -->
+            
+            <!-- family agreement popup -->
+            <div data-role="popup" id="familyAgreementPopup">
+                <a href="#" data-rel="back"  class="closePopupButton ui-btn-right">X</a>
+                <div class="title ui-bar ui-bar-a">
+                   FAMILY AGREEMENT
+                   <div class="subTitle">
+                      Now just confirm your approvals to start earning and learning
+                   </div>
+                </div>
+                <div class="agreementContent" data-role="content">
+                   <div class="ui-grid-a">
+                      <div class="ui-block-a">
+                         I,
+                         <input type="text" id="agreementParentFirst" placeholder="parent first name" data-theme="a" data-inline="true" />
+                         <input type="text" id="agreementParentLast" placeholder="last name" data-theme="a" />
+                         agree to allow <strong class="childFirstName"></strong> to earn his way to some fantastic goals,
+                         to regularly encourage <span class="childPossesivePronoun"></span> progress, and to give <span class="childPersonalPronoun"></span>
+                         the chance to make <span class="childPossesivePronoun"></span> own money smart choices.
+                         <div class="email">
+                            <input type="email" id="agreementParentEmail" placeholder="parent email" data-theme="a" />
+                         </div>
+                         <input id="agreementButtonParent" type="submit" data-inline="true" data-theme="a" value="Parent&rsquo;s Approval" />
+                      </div>
+                      <div class="ui-block-b">
+                         I, <strong class="childFirstName"></strong>, agree to complete my tasks responsibly, to make tough choices about things that I really want,
+                         and to have fun doing it.
+                         <div class="email">
+                            <input type="email" id="agreementChildEmail" placeholder="child email" data-theme="a" /> <span>optional</span>
+                         </div>
+                         <input id="agreementButtonChild" type="submit" data-inline="true" data-theme="a" value="Child Approval" />
+                      </div>
+                   </div>
+                </div>
+            </div> <!-- END product details popup -->
+            
 
             <!-- start footer -->
             <div data-role="footer" class="ui-bar">
@@ -1985,7 +2021,7 @@
                 </div>
                 <div  class="finishSetupFooter footerBar">
                     Once you and <span class="childFirstName">[childName]</span> have agreed your selections, your account is ready to use.
-                    <input type="button" id="signAgreementButton" data-theme="b" value="FINISH AND ACTIVATE &nbsp;&nbsp;  ▶" data-inline="true" />
+                    <a href="#familyAgreementPopup" data-role="button" id="signAgreementButton" data-rel="popup" data-position-to="window" data-theme="b" data-inline="true">FINISH AND ACTIVATE &nbsp;&nbsp;  ▶</a>
                 </div>
                 <div  class="doneAddingTasks footerBar">
                     When you're done adding Tasks

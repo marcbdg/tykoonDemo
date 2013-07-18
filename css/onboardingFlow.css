@@ -493,7 +493,8 @@ padding: 10px 30px;
     box-shadow: 0 0px 4px rgba(0,0,0,.75);
 }
 #configureTasks .taskTitle,
-#customGoalPopup .title {
+#customGoalPopup .title,
+#familyAgreementPopup .title {
     border-top-left-radius: inherit;
     border-top-right-radius: inherit;
     font-size: 1.6em;
@@ -778,4 +779,43 @@ padding: 10px 30px;
 }
 .selectedProducts .completionBar .percent span {
     font-size: 2em;
+}
+
+/* family agreement */
+#familyAgreementPopup .title {
+    border-bottom: 2px solid #999;
+}
+#familyAgreementPopup .subTitle {
+    font-size: .75em;
+    font-weight: normal;
+}
+#familyAgreementPopup .agreementContent {
+    border-top: 2px solid #777;
+    background: #ddd url(../img/texture@2x.png);
+}
+#familyAgreementPopup .ui-input-text {
+    display: inline-block;
+    margin-bottom: 0;
+}
+#familyAgreementPopup .ui-block-a,
+#familyAgreementPopup .ui-block-b {
+    padding: 20px;
+    height: 350px;
+    font-size: 1.2em;
+    line-height: 1.7em;
+}
+#familyAgreementPopup .ui-block-a {
+    border-right: 1px solid #aaa;
+    padding-right: 40px;
+}
+#familyAgreementPopup .ui-block-b {
+    border-left: 1px solid #fff;
+    padding-left: 40px;
+}
+#familyAgreementPopup .email {
+    margin-bottom: 20px;
+}
+#familyAgreementPopup .email span {
+    font-size: .8em;
+    color: #777;
 }
