@@ -2,14 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3831b584-dff0-4152-93c0-b6317c200807" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/tykoon.js" afterPath="$PROJECT_DIR$/js/tykoon.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tykoonDemo.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1374185634646" ignored="false" />
-    <file path="/index.html" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1374094925077" ignored="false" />
-    <file path="/tykoon.js" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1374188807225" ignored="false" />
+    <file path="/Dummy.txt" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1374189320338" ignored="false" />
+    <file path="/index.html" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1374191703653" ignored="false" />
+    <file path="/tykoon.js" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1374191309034" ignored="false" />
     <file path="/cannedProduct.js" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1372283251442" ignored="false" />
     <file path="/cannedTask.js" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1372284332553" ignored="false" />
     <file path="/child.js" changelist="3831b584-dff0-4152-93c0-b6317c200807" time="1372399607805" ignored="false" />
@@ -77,10 +78,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="828" column="55" selection-start="52060" selection-end="52075" vertical-scroll-proportion="-5.72">
+            <state line="2245" column="65" selection-start="162124" selection-end="162125" vertical-scroll-proportion="0.9524564">
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -90,10 +91,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tykoon.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="tykoon.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/tykoon.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="924" column="50" selection-start="31928" selection-end="31928" vertical-scroll-proportion="-4.0610685">
+            <state line="673" column="42" selection-start="22683" selection-end="22683" vertical-scroll-proportion="-8.961538">
               <folding />
             </state>
           </provider>
@@ -126,9 +127,9 @@
         <option value="$PROJECT_DIR$/js/cannedObjects/cannedTasks.js" />
         <option value="$PROJECT_DIR$/node/convertProductCSVJSON.js" />
         <option value="$PROJECT_DIR$/css/onboardingFlow.css" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/cannedObjects/cannedProducts.js" />
         <option value="$PROJECT_DIR$/js/tykoon.js" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -831,7 +832,11 @@
       <created>1374185644500</created>
       <updated>1374185644501</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Fixed bug of duplicated popular products">
+      <created>1374189325728</created>
+      <updated>1374189325728</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -905,7 +910,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Boy demo data inserted" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug of duplicated popular products" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -919,7 +924,6 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="Fixing popup so screen doesn't white out" />
     <MESSAGE value="Hiding products once they've been added to a child" />
     <MESSAGE value="ooops, removing console.log" />
     <MESSAGE value="Forced hiding product catalog (was showing both)" />
@@ -944,6 +948,7 @@
     <MESSAGE value="styling of image upload" />
     <MESSAGE value="Restart demo link" />
     <MESSAGE value="Boy demo data inserted" />
+    <MESSAGE value="Fixed bug of duplicated popular products" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1037,21 +1042,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/tykoon.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="673" column="42" selection-start="22683" selection-end="22683" vertical-scroll-proportion="-8.961538">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="828" column="55" selection-start="52060" selection-end="52075" vertical-scroll-proportion="-5.72">
+        <state line="2245" column="65" selection-start="162124" selection-end="162125" vertical-scroll-proportion="0.9524564">
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#1;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/tykoon.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="924" column="50" selection-start="31928" selection-end="31928" vertical-scroll-proportion="-4.0610685">
-          <folding />
         </state>
       </provider>
     </entry>

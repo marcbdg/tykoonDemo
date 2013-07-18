@@ -672,7 +672,6 @@ var addCustomGoalToChild = function(e) {
    newProduct.imgURL = $('#customGoalPreview').attr('src');
 
    currentChild.products.push(newProduct);
-   console.dir(currentChild.products);
    appendProductToDOM(newProduct);
 
    $('.backToPopularProducts').trigger('click');
@@ -943,6 +942,7 @@ var populateProductsForChild = function(child) {
 };
 
 var editCustomProduct = function(e) {
+   $('#customGoalPopup .title').text('Edit goal');
    var productItem = $(e.currentTarget),
       productId = $(productItem).attr("data-productId"),
       productName = $(productItem).attr("data-productname"),
@@ -1007,6 +1007,7 @@ var saveCustomProduct = function(e) {
 };
 
 var restoreCustomProduct = function() {
+   $('#customGoalPopup .title').text('Create your own goal');
    $('#newGoalName').val('');
    $('#newGoalPrice').val(null);
    $("#goalType input").prop("checked",false).checkboxradio("refresh");
