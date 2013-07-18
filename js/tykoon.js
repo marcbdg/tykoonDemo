@@ -159,6 +159,14 @@ $(document).ready(function() {
    $("#getStartedFormChildBirthday").on("focus", function(e){
       $("#birthdayLabel").hide();
    });
+
+   $('.userModule').on('click', function(e) {
+      $('.userOptions').toggle();
+   });
+
+   $('.userOptions').on('click', function(e) {
+      restartSession();
+   });
    
    //matched pair of entering in field
    $('#addTasksFormTaskName, #addGoalFormGoalName').on('keyup', function(e) {
@@ -333,6 +341,47 @@ var tykoonData = {
    currentChildIndex : 0
 };
 var currentChild;
+
+
+var restartSession = function() {
+   $('.userOptions').hide();
+
+   tykoonData = {
+      parent: {
+         children: []
+      },
+      currentChildIndex : 0
+   };
+   currentChild = {};
+
+   //rest tasks
+   $('.backToPopularTasks').trigger('click');
+   $('.taskCatalog .popularTasks').empty();
+   $('.selectedTasks .taskItem').remove();
+   var tasks = $('.taskCatalog .tasks .taskItem');
+   for (var i in tasks) {
+      if (tasks.hasOwnProperty(i)) {
+         $(tasks[i]).show();
+      }
+   }
+   $('.taskCatalog .popularTasks').removeClass('offScreen');
+   $('.taskCatalog .tasks').addClass('offScreen');
+
+   //reset products
+   $('.backToPopularProducts').trigger('click');
+   $('.productCatalog .popularProducts').empty();
+   $('.selectedProducts .productItem').remove();
+   var products = $('.productCatalog .products .productItem');
+   for (var j in products) {
+      if (products.hasOwnProperty(j)) {
+         $(products[j]).show();
+      }
+   }
+   $('.productCatalog .popularProducts').removeClass('offScreen');
+   $('.taskCatalog .tasks').addClass('offScreen');
+
+   window.location = 'index.html';
+};
 
 var transitionToStartTasks = function(e) {
 
@@ -797,7 +846,7 @@ var populateTasksForChild = function(child) {
          $('#startTasks .taskCatalog .popularTasks').append($(taskItem));
       }
    }
-   $('#startTasks .taskCatalog .tasks, #startTasks .taskCatalog .popularTasks').append("<div class='bottomSpacer'></div>");
+   $('#startTasks .taskCatalog .popularTasks').append("<div class='bottomSpacer'></div>");
 
    // attach click events to freshly drawn tasks in the catalog
    $("#startTasks .taskCatalog .taskItem").on("click", function(e){

@@ -139,6 +139,7 @@
   float: right;
   border-left: 1px solid #265465;;
   width: 300px;
+    height:60px;
 }
 .ui-header .userModule .avatar {
   float: left;
@@ -177,6 +178,22 @@
     background: url(../img/accountArrow@2x.png);
     background-size: 50%;
 }
+
+.ui-header .userOptions{
+    border-left: 1px solid #265465;
+    width: 300px;
+    position:relative;
+    top: 60px;
+    left:0;
+    height: 60px;
+    display: none;
+    font-size: 1.6em;
+    line-height: 1.7em;
+    font-weight: bold;
+
+    background-color:#58CBEF;
+}
+
 #startTasks .tasksPayGoals {
     height: 100%;
     position: relative;
