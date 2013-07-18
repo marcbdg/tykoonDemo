@@ -948,7 +948,7 @@ var saveCustomProduct = function(e) {
    $(productDom).find(".productTitle").html(newName);
    $(productDom).find(".price").html(dollarize(newPrice));
    $(productDom).find(".productImage .thumbnail").attr({ src : newImg, alt : newName});
-   $(productDom).find(".timeToEarn .time").html(getTimeToEarn(newPrice));
+   $(productDom).find(".timeToEarn .time").attr("data-price",dollarize(newPrice)).html(getTimeToEarn(newPrice));
 
    //close the popup
    $("#customGoalPopup").popup( "close" );
