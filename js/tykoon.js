@@ -921,8 +921,8 @@ var showAddGoals = function() {
 
 var populateProductsForChild = function(child) {
 
-   //clean page and populate page with tasks from catalog
-   $('#startTasks .productCatalog .goals').empty();
+   //clean page and populate page with products from catalog
+   $('#startTasks .productCatalog .popularProducts').empty();
    var productTemplate = $("#startTasks .productCatalog .productTemplate .productItem")[0];
    var temp = 0;
    for(var i in cannedProducts.products) {
@@ -1124,14 +1124,16 @@ $("#newGoalPhotoUpload").change(function(){
 
 
 
+      /* ======== TEST DATA, comment me out to run for real =========== */
 
-/* ======== TEST DATA, comment me out to run for real =========== */
+      var testBdayString = '1998-10-29';
+      var testBirthday = new Date(parseInt(testBdayString.substring(0,4)), parseInt(testBdayString.substring(5,7))-1, parseInt(testBdayString.substring(8)));
+      currentChild = new Child(0, 'Kaiyb', '', '', '', testBirthday, 0, 'm');
+      tykoonData.parent.children.push(currentChild);
+      populateTasksForChild(currentChild);
+      populateProductsForChild(currentChild);
 
-var testBdayString = '1998-10-29';
-var testBirthday = new Date(parseInt(testBdayString.substring(0,4)), parseInt(testBdayString.substring(5,7))-1, parseInt(testBdayString.substring(8)));
-currentChild = new Child(0, 'Kaiyb', '', '', '', testBirthday, 0, 'm');
-tykoonData.parent.children.push(currentChild);
-populateTasksForChild(currentChild);
-populateProductsForChild(currentChild);
+
+
 
  /* ======== END TEST DATA  ============================ */
