@@ -975,7 +975,11 @@ var showProductDetails = function(e) {
 
    //show delete button
    if (e.currentTarget.parentElement.classList[0] == 'selectedProducts') {
-      $('.addProductButtonBox, .deleteProductButtonBox').toggle();
+      $('.addProductButtonBox').hide();
+      $('.deleteProductButtonBox').show();
+   } else {
+      $('.addProductButtonBox').show();
+      $('.deleteProductButtonBox').hide();
    }
 
   // populate the popup disclosure and show it
