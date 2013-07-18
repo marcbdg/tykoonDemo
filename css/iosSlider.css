@@ -51,22 +51,23 @@
 #tour .continueMessage {
     position: absolute;
     bottom: 30px;
-    -webkit-transform: rotate(-4deg);
+/*    -webkit-transform: rotate(-4deg);*/
     background: url(../img/arrow@2x.png) no-repeat left top;
     background-size: 50px 40px;
+    margin-bottom: -7px;
 }
 #tour .slide1 .continueMessage {
    left: 35%;
-   padding: 37px 0 0 29px;
+   padding: 44px 0 0 0;
 }
 #tour .slide2 .continueMessage {
    left: 35%;
-   padding: 37px 0 0 29px;
+   padding: 44px 0 0 0px;
 }
 #tour .slide3 .continueMessage {
-   left: 25%;
-   padding: 50px 0 0 29px;
-   background-position: 72px 9px;
+   left: 20%;
+   padding: 52px 0 0 29px;
+   background-position: 109px 9px;
 }
 .indicators {
    position: absolute;
@@ -231,37 +232,15 @@
 .slide4 {
    text-align: center;
 }
-.slide4 .stat {
-   text-align: right;
-   padding-right: 60px;
-   line-height: 50px;
-   font-size: 1.5em;
-   margin: 10px 70px;
-   font-weight: bold;
-}
-.slide4 .stat1 {
-   background: url(../img/iconTasksHomeTour@2x.png) right center no-repeat;
-   background-size: 45px 45px;
-}
-.slide4 .stat2 {
-   background: url(../img/iconSavingsHomeTour@2x.png) right center no-repeat;
-   background-size: 45px 45px;
-}
-.slide4 .stat3 {
-   background: url(../img/iconCharitiesHomeTour@2x.png) right center no-repeat;
-   background-size: 45px 45px;
-}
-.slide4 .stat1 > span {
-   color: #01799c;
-}
-.slide4 .stat2 > span {
-   color: #779f25;
-}
-.slide4 .stat3 > span {
-   color: #6e4da6;
+#tour .slide4 h1 {
+   margin-bottom: 10px;
 }
 .slide4 h2 {
    color: white;
-   text-shadow: 0 1px 1px #333;
-   margin-top: 90px;
+   margin-top: 0;
+   color: #1081a3;
+}
+.slide4 .stats {
+   margin: 10px auto 0;
+   max-width: 80%;
 }
