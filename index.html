@@ -2219,13 +2219,17 @@
                         
                         <div class="clearfix">
                             <div class="goalDetails">
-                                <label for="newGoalName">Goal Name</label>
-                                <input type="text" id="newGoalName"  name="newGoalName" />
+                                <div data-role="fieldcontain" class="customGoalNameContain">
+                                    <label for="newGoalName">Goal Name</label>
+                                    <input type="text" id="newGoalName"  name="newGoalName" />
+                                    <div class="error" id="setAGoalName">Set a goal name</div>
+                                </div>
                                 <div data-role="fieldcontain" class="money">
                                     <label for="newGoalPrice">Amount</label>
                                     <div class="clearfix">
                                         $ <input type="number" step="any" min="0" id="newGoalPrice" />
                                     </div>
+                                    <div class="error" id="setAPrice">Set a price for the goal</div>
                                 </div>                        
                                 <div data-role="fieldcontain">
                                     <label>This is a</label>

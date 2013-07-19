@@ -546,6 +546,15 @@ padding: 10px 30px;
     display:none;
     margin: 15px 0 0 35px;
 }
+
+#customGoalPopup #setAGoalName,
+#customGoalPopup #setAPrice{
+    display:none;
+
+}
+
+
+
 #customGoalForm .goalDetails{
     float: left;
     width: 327px;

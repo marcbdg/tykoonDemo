@@ -663,13 +663,29 @@ var addCustomGoalToChild = function(e) {
    var newProduct = {};
    newProduct.id = -1;
    newProduct.name = $('#newGoalName').val();
-   newProduct.price = '$' + dollarize($('#newGoalPrice').val());
+   var formPrice = $('#newGoalPrice').val();
+   newProduct.price = '$' + dollarize(formPrice);
    newProduct.desc = '';
    newProduct.type = $('input:radio[name="goalType"]:checked').val();
    newProduct.numPeople = '';
    newProduct.likes = '';
    newProduct.gender = '';
    newProduct.imgURL = $('#customGoalPreview').attr('src');
+
+   $('#setAGoalName').hide();
+   $('#setAPrice').hide();
+
+
+   if(newProduct.name == ''){
+      $('#setAGoalName').show();
+      return false;
+   }
+
+   if (formPrice == null || formPrice == '' || Number(formPrice) == 'NaN') {
+      $('#setAPrice').show();
+      return false;
+   }
+
 
    currentChild.products.push(newProduct);
    appendProductToDOM(newProduct);
@@ -972,10 +988,24 @@ var editCustomProduct = function(e) {
 
 var saveCustomProduct = function(e) {
    var newName = $('#newGoalName').val(),
-         newPrice = '$' + $('#newGoalPrice').val(),
-         newType = $('input:radio[name="goalType"]:checked').val(),
-         newImg = '',
-         previousName = $('#customGoalPopup').attr('data-productname');
+      formPrice = $('#newGoalPrice').val(),
+      newPrice = '$' + formPrice,
+      newType = $('input:radio[name="goalType"]:checked').val(),
+      newImg = '',
+      previousName = $('#customGoalPopup').attr('data-productname');
+
+   $('#setAGoalName').hide();
+   $('#setAPrice').hide();
+
+   if(newName == ''){
+      $('#setAGoalName').show();
+      return false;
+   }
+
+   if (formPrice == null || formPrice == '' || Number(formPrice) == 'NaN') {
+      $('#setAPrice').show();
+      return false;
+   }
 
    // find and update "old" product
    for (var i in currentChild.products) {
@@ -1016,6 +1046,11 @@ var restoreCustomProduct = function() {
 
    $('#customGoalPopup .editCustomGoalButtonBox').hide();
    $('#customGoalPopup .addCustomGoalButtonBox').show();
+
+   $('#setAGoalName').hide();
+   $('#setAPrice').hide();
+
+
 };
 
 var showProductDetails = function(e) {
